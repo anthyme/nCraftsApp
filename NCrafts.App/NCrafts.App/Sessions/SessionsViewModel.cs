@@ -1,33 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
+﻿using System.Collections.ObjectModel;
 using System.Threading.Tasks;
-using NCrafts.App.Annotations;
-using NCrafts.App.Common.Infrastructure;
+using System.Windows.Input;
+using NCrafts.App.Common;
+using NCrafts.App.Common.Infrastructure.Fx;
 
 namespace NCrafts.App.Sessions
 {
-    public class SessionsViewModel : Observable
+    public class SessionsViewModel : ViewModelBase
     {
-        private readonly ISessionRespository sessionRespository;
+        private readonly IQueryMany<Session> getAllSessions;
         private ObservableCollection<Session> sessions;
         private string header;
 
-        public SessionsViewModel(ISessionRespository sessionRespository)
+        public SessionsViewModel(ICommand selectSessionCommand, IQueryMany<Session> getAllSessions)
         {
-            this.sessionRespository = sessionRespository;
+            this.getAllSessions = getAllSessions;
+            SelectSessionCommand = selectSessionCommand;
         }
 
-        public async Task StartAsync()
-        {
-            Sessions = new ObservableCollection<Session>(sessionRespository.GetAll());
-            Header = "Sessions";
-        }
+        public ICommand SelectSessionCommand { get; }
 
         public string Header
         {
@@ -39,6 +30,13 @@ namespace NCrafts.App.Sessions
         {
             get { return sessions; }
             set { sessions = value; OnPropertyChanged(); }
+        }
+
+        public override Task Start()
+        {
+            Sessions = new ObservableCollection<Session>(getAllSessions.Execute());
+            Header = "Sessions";
+            return Task.FromResult(0);
         }
     }
 }

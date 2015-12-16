@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using NCrafts.App.Annotations;
 
-namespace NCrafts.App.Common.Infrastructure
+namespace NCrafts.App.Common.Infrastructure.Fx
 {
     public class Observable : INotifyPropertyChanged
     {

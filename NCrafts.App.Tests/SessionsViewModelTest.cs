@@ -1,4 +1,8 @@
-﻿using NCrafts.App.Sessions;
+﻿using System.Windows.Input;
+using NCrafts.App.Common;
+using NCrafts.App.Sessions;
+using NCrafts.App.Sessions.Commands;
+using NCrafts.App.Sessions.Queries;
 using Shouldly;
 using Xunit;
 
@@ -9,9 +13,10 @@ namespace NCrafts.App.Tests
         [Fact]
         public async void When_starting_Then_sessions_are_loaded()
         {
-            var sut = new SessionsViewModel(new SessionRespository());
+            var selectSessionCommand = NSubstitute.Substitute.For<ICommand>();
+            var sut = new SessionsViewModel(selectSessionCommand, new GetAllSessionsQuery(new DataSource()));
 
-            await sut.StartAsync();
+            await sut.Start();
 
             sut.Sessions.ShouldNotBeEmpty();
         }

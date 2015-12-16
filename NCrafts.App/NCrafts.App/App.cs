@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NCrafts.App.Sessions;
+﻿using NCrafts.App.Common;
+using NCrafts.App.Common.Infrastructure;
 using Xamarin.Forms;
 
 namespace NCrafts.App
@@ -11,9 +8,11 @@ namespace NCrafts.App
     {
         public App()
         {
-            var vm = new SessionsViewModel(new SessionRespository());
-            MainPage = new SessionsView() { BindingContext = vm };
-            vm.StartAsync();
+            var dataSource = new DataSource();
+            var navigationPage = new NavigationPage();
+            var navigateTo = new NavigateTo(navigationPage, dataSource);
+            MainPage = navigationPage;
+            navigateTo.Sessions();
         }
 
         protected override void OnStart()
