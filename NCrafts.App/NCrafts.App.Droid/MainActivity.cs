@@ -14,7 +14,7 @@ namespace NCrafts.App.Droid
             base.OnCreate(bundle);
 
             Forms.Init(this, bundle);
-            LoadApplication(new App());
+            LoadApplication(new Common.Infrastructure.App());
         }
     }
 }

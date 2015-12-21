@@ -1,42 +1,38 @@
 ﻿using System.Threading.Tasks;
-using NCrafts.App.Common.Infrastructure.Fx;
+using Microsoft.Practices.Unity;
+using NCrafts.App.Core.Common;
+using NCrafts.App.Core.Common.Infrastructure;
 using NCrafts.App.Sessions;
-using NCrafts.App.Sessions.Commands;
-using NCrafts.App.Sessions.Queries;
 using Xamarin.Forms;
 
 namespace NCrafts.App.Common.Infrastructure
 {
-    public interface INavigateTo
-    {
-        Task Session(int sessionId);
-        Task Sessions();
-    }
-
     public class NavigateTo : INavigateTo
     {
         private readonly NavigationPage navigation;
-        private readonly DataSource dataSource;
+        private readonly IUnityContainer container;
 
-        public NavigateTo(NavigationPage navigation, DataSource dataSource)
+        public NavigateTo(NavigationPage navigation, IUnityContainer container)
         {
             this.navigation = navigation;
-            this.dataSource = dataSource;
+            this.container = container;
         }
 
         public Task Sessions()
         {
-            var vm = new SessionsViewModel(new OpenSessionCommand(this), new GetAllSessionsQuery(dataSource));
-            var view = new SessionsView();
-            return LoadAndNavigateTo(view, vm);
+            return CreateLoadAndNavigateTo<SessionsView, SessionsViewModel>();
         }
 
-        public Task Session(int sessionId)
+        public Task Session(SessionId sessionId)
         {
-            var vm = new SessionDetailsViewModel(new GetSessionByIdQuery(dataSource));
+            var vm = Create<SessionDetailsViewModel>();
             vm.Init(sessionId);
-            var view = new SessionDetailsView();
-            return LoadAndNavigateTo(view, vm);
+            return LoadAndNavigateTo(Create<SessionDetailsView>(), vm);
+        }
+
+        private Task CreateLoadAndNavigateTo<TView, TViewModel>() where TView : ContentPage where TViewModel : ViewModelBase
+        {
+            return LoadAndNavigateTo(Create<TView>(), Create<TViewModel>());
         }
 
         private async Task LoadAndNavigateTo(ContentPage view, ViewModelBase viewModel)
@@ -44,6 +40,11 @@ namespace NCrafts.App.Common.Infrastructure
             view.BindingContext = viewModel;
             await viewModel.Start();
             await navigation.PushAsync(view);
+        }
+
+        private T Create<T>()
+        {
+            return container.Resolve<T>();
         }
     }
 }

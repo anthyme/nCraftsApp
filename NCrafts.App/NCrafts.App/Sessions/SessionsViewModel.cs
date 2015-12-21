@@ -1,21 +1,26 @@
 ﻿using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using NCrafts.App.Common;
-using NCrafts.App.Common.Infrastructure.Fx;
+using NCrafts.App.Common.Infrastructure;
+using NCrafts.App.Core.Common;
+using NCrafts.App.Core.Sessions.Command;
+using NCrafts.App.Core.Sessions.Query;
+using Xamarin.Forms;
 
 namespace NCrafts.App.Sessions
 {
     public class SessionsViewModel : ViewModelBase
     {
-        private readonly IQueryMany<Session> getAllSessions;
-        private ObservableCollection<Session> sessions;
+        private readonly GetSessionSumariesQuery getSessionSumariesQuery;
+        private ObservableCollection<SessionSummary> sessions;
         private string header;
 
-        public SessionsViewModel(ICommand openSessionCommand, IQueryMany<Session> getAllSessions)
+        public SessionsViewModel(
+            OpenSessionCommand openSessionCommand, 
+            GetSessionSumariesQuery getSessionSumariesQuery)
         {
-            this.getAllSessions = getAllSessions;
-            OpenSessionCommand = openSessionCommand;
+            this.getSessionSumariesQuery = getSessionSumariesQuery;
+            OpenSessionCommand = new Command<SessionId>(x => openSessionCommand(x));
         }
 
         public ICommand OpenSessionCommand { get; }
@@ -26,15 +31,15 @@ namespace NCrafts.App.Sessions
             set { header = value; OnPropertyChanged(); }
         }
 
-        public ObservableCollection<Session> Sessions
+        public ObservableCollection<SessionSummary> Sessions
         {
             get { return sessions; }
             set { sessions = value; OnPropertyChanged(); }
         }
 
-        public override Task Start()
+        protected override Task OnStart()
         {
-            Sessions = new ObservableCollection<Session>(getAllSessions.Execute());
+            Sessions = new ObservableCollection<SessionSummary>(getSessionSumariesQuery());
             Header = "Sessions";
             return Task.FromResult(0);
         }

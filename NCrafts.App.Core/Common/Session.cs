@@ -1,8 +1,8 @@
-﻿namespace NCrafts.App.Common
+﻿namespace NCrafts.App.Core.Common
 {
     public class Session
     {
-        public int Id { get; set; }
+        public SessionId Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
     }
