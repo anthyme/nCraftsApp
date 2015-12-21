@@ -3,11 +3,11 @@ using NCrafts.App.Common.Infrastructure.Fx;
 
 namespace NCrafts.App.Sessions.Commands
 {
-    public class SelectSessionCommand : CommandBase<int>
+    public class OpenSessionCommand : CommandBase<int>
     {
         private readonly INavigateTo navigateTo;
 
-        public SelectSessionCommand(INavigateTo navigateTo)
+        public OpenSessionCommand(INavigateTo navigateTo)
         {
             this.navigateTo = navigateTo;
         }

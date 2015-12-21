@@ -26,7 +26,7 @@ namespace NCrafts.App.Common.Infrastructure
 
         public Task Sessions()
         {
-            var vm = new SessionsViewModel(new SelectSessionCommand(this), new GetAllSessionsQuery(dataSource));
+            var vm = new SessionsViewModel(new OpenSessionCommand(this), new GetAllSessionsQuery(dataSource));
             var view = new SessionsView();
             return LoadAndNavigateTo(view, vm);
         }

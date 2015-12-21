@@ -16,7 +16,7 @@
               <b:BehaviorCollection>
                 <b:EventToCommand
                     EventName="Tapped"
-                    Command="{Binding Path=BindingContext.SelectSessionCommand, Source={x:Reference root}}"
+                    Command="{Binding Path=BindingContext.OpenSessionCommand, Source={x:Reference root}, }"
                     CommandParameter="{Binding Id}" />
               </b:BehaviorCollection>
             </b:Interaction.Behaviors>

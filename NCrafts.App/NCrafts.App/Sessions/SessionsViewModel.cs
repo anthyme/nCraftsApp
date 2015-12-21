@@ -12,13 +12,13 @@ namespace NCrafts.App.Sessions
         private ObservableCollection<Session> sessions;
         private string header;
 
-        public SessionsViewModel(ICommand selectSessionCommand, IQueryMany<Session> getAllSessions)
+        public SessionsViewModel(ICommand openSessionCommand, IQueryMany<Session> getAllSessions)
         {
             this.getAllSessions = getAllSessions;
-            SelectSessionCommand = selectSessionCommand;
+            OpenSessionCommand = openSessionCommand;
         }
 
-        public ICommand SelectSessionCommand { get; }
+        public ICommand OpenSessionCommand { get; }
 
         public string Header
         {
