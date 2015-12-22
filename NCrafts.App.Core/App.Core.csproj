@@ -35,9 +35,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Common\DataSource.cs" />
+    <Compile Include="Common\Infrastructure\ErrorHandler.cs" />
     <Compile Include="Common\Infrastructure\Fx\Observable.cs" />
     <Compile Include="Common\Infrastructure\Fx\UnityContainerExtensions.cs" />
-    <Compile Include="Common\Infrastructure\INavigateTo.cs" />
+    <Compile Include="Common\Infrastructure\Logger.cs" />
+    <Compile Include="Common\Infrastructure\Navigation.cs" />
     <Compile Include="Common\Session.cs" />
     <Compile Include="Common\SessionId.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

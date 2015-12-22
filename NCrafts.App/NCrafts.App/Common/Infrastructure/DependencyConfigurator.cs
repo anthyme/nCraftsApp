@@ -13,7 +13,10 @@ namespace NCrafts.App.Common.Infrastructure
         {
             return new UnityContainer()
                 .RegisterType<NavigationPage>(new ContainerControlledLifetimeManager())
-                .RegisterType<INavigateTo, NavigateTo>()
+                .RegisterType<IViewFactory, ViewFactory>()
+                .RegisterClosures<Logger>()
+                .RegisterClosures<ErrorHandler>()
+                .RegisterClosures<Navigation>()
                 .RegisterClosures<Commands>()
                 .RegisterClosures<Queries>()
                 ;
