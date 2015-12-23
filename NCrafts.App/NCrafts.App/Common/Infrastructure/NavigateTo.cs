@@ -5,6 +5,7 @@ using NCrafts.App.Core.Common.Infrastructure;
 using NCrafts.App.Sessions;
 using Xamarin.Forms;
 
+
 namespace NCrafts.App.Common.Infrastructure
 {
     public class NavigateTo : INavigateTo
@@ -14,6 +15,7 @@ namespace NCrafts.App.Common.Infrastructure
 
         public NavigateTo(NavigationPage navigation, IUnityContainer container)
         {
+            
             this.navigation = navigation;
             this.container = container;
         }
