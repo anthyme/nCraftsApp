@@ -1,12 +1,12 @@
 ﻿using NCrafts.App.Common.Infrastructure;
 using Xunit;
 
-namespace NCrafts.App.Tests
+namespace NCrafts.App.Tests.Infrastructure
 {
-    public class DependencyConfiguratorTests
+    public class Given_a_DependencyConfigurator
     {
         [Fact]
-        public void Configure()
+        public void Configure_Should_work()
         {
             DependencyConfigurator.Configure();
         }

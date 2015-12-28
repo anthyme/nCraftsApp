@@ -94,10 +94,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DependencyConfiguratorTests.cs" />
+    <Compile Include="Infrastructure\DependencyConfiguratorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegisterClosuresTests.cs" />
-    <Compile Include="SessionsViewModelTest.cs" />
+    <Compile Include="Infrastructure\RegisterClosuresTests.cs" />
+    <Compile Include="Sessions\SessionsViewModelTest.cs" />
+    <Compile Include="Infrastructure\ViewFactoryTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -5,7 +5,7 @@ using NCrafts.App.Sessions;
 using Shouldly;
 using Xunit;
 
-namespace NCrafts.App.Tests
+namespace NCrafts.App.Tests.Sessions
 {
     public class Given_a_SessionsViewModel
     {
