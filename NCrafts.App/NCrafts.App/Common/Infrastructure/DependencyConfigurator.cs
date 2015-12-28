@@ -12,14 +12,16 @@ namespace NCrafts.App.Common.Infrastructure
         public static IUnityContainer Configure()
         {
             return new UnityContainer()
-                .RegisterType<IViewFactory, ViewFactory>()
-                .RegisterType<NavigationPage>(new ContainerControlledLifetimeManager())
-                .RegisterClosures<Logger>(new ContainerControlledLifetimeManager())
-                .RegisterClosures<ErrorHandler>(new ContainerControlledLifetimeManager())
-                .RegisterClosures<Navigation>(new ContainerControlledLifetimeManager())
-                .RegisterClosures<Commands>(new ContainerControlledLifetimeManager())
-                .RegisterClosures<Queries>(new ContainerControlledLifetimeManager())
+                .RegisterType<IViewFactory, ViewFactory>(AsSingleton)
+                .RegisterType<NavigationPage>(AsSingleton)
+                .RegisterClosures<Logger>(AsSingleton)
+                .RegisterClosures<ErrorHandler>(AsSingleton)
+                .RegisterClosures<Navigation>(AsSingleton)
+                .RegisterClosures<Commands>(AsSingleton)
+                .RegisterClosures<Queries>(AsSingleton)
                 ;
         }
+
+        private static LifetimeManager AsSingleton => new ContainerControlledLifetimeManager();
     }
 }
