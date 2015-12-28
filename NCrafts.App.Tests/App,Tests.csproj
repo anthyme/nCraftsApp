@@ -95,7 +95,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Infrastructure\DependencyConfiguratorTests.cs" />
+    <Compile Include="Infrastructure\DependencyConfiguratorTest.cs" />
     <Compile Include="IntegratedTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\RegisterClosuresTests.cs" />
