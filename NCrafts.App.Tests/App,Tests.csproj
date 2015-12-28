@@ -96,8 +96,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Infrastructure\DependencyConfiguratorTests.cs" />
+    <Compile Include="IntegratedTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\RegisterClosuresTests.cs" />
+    <Compile Include="Sessions\SessionDetailsViewModelTest.cs" />
     <Compile Include="Sessions\SessionsViewModelTest.cs" />
     <Compile Include="Infrastructure\ViewFactoryTests.cs" />
   </ItemGroup>
