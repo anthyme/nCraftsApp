@@ -9,18 +9,20 @@ namespace NCrafts.App.Core.Sessions.Query
 
     public class Queries
     {
-        public static GetSessionSumariesQuery CreateGetSessionSumariesQuery(DataSource dataSource)
+        public static GetSessionSumariesQuery CreateGetSessionSumariesQuery(IDataSourceRepository dataSourceRepository)
         {
-            return () => dataSource.Sessions.Select(x => new SessionSummary { Id = x.Id, Title = x.Title }).ToList();
+            return () => dataSourceRepository.Retreive().Sessions
+                            .Select(x => new SessionSummary { Id = x.Id, Title = x.Title })
+                            .ToList();
         }
 
-        public static GetSessionDetailsQuery CreateGetSessionDetailsQuery(DataSource dataSource)
+        public static GetSessionDetailsQuery CreateGetSessionDetailsQuery(IDataSourceRepository dataSourceRepository)
         {
-            return sessionId => 
-                dataSource.Sessions
-                .Where(x => x.Id.Equals(sessionId))
-                .Select(x => new SessionDetails { Id = x.Id, Title = x.Title })
-                .First();
+            return sessionId =>
+                dataSourceRepository.Retreive().Sessions
+                    .Where(x => x.Id.Equals(sessionId))
+                    .Select(x => new SessionDetails {Id = x.Id, Title = x.Title})
+                    .First();
         }
     }
 }
