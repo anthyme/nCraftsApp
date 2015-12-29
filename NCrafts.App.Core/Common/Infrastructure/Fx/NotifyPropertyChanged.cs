@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace NCrafts.App.Core.Common.Infrastructure.Fx
 {
-    public class Observable : INotifyPropertyChanged
+    public class NotifyPropertyChanged : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

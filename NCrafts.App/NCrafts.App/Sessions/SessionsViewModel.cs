@@ -1,4 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Reactive.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using NCrafts.App.Common.Infrastructure;
@@ -16,7 +18,7 @@ namespace NCrafts.App.Sessions
         private string header;
 
         public SessionsViewModel(
-            OpenSessionCommand openSessionCommand, 
+            OpenSessionCommand openSessionCommand,
             GetSessionSumariesQuery getSessionSumariesQuery)
         {
             this.getSessionSumariesQuery = getSessionSumariesQuery;
@@ -39,7 +41,7 @@ namespace NCrafts.App.Sessions
 
         protected override Task OnStart()
         {
-            Sessions = new ObservableCollection<SessionSummary>(getSessionSumariesQuery());
+            getSessionSumariesQuery().Subscribe(x => { Sessions = new ObservableCollection<SessionSummary>(x); });
             Header = "Sessions";
             return Task.FromResult(0);
         }

@@ -1,9 +1,10 @@
 ﻿using System.Threading.Tasks;
 using NCrafts.App.Core.Common.Infrastructure.Fx;
+using ReactiveUI;
 
 namespace NCrafts.App.Common.Infrastructure
 {
-    public class ViewModelBase : Observable
+    public class ViewModelBase : NotifyPropertyChanged
     {
         public Task Start()
         {
