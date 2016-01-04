@@ -2,12 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NCrafts.App.Sessions.SessionDetailsView"
-             xmlns:local="clr-namespace:NCrafts.App.Sessions;assembly=NCrafts.App">
+             xmlns:converter="clr-namespace:NCrafts.App.Common.Converter;assembly=NCrafts.App">
 
   <ContentPage.Resources>
     <ResourceDictionary>
-      <local:DatetimeConverter x:Key="DatetimeConverter"></local:DatetimeConverter>
-      
+      <converter:DatetimeConverter x:Key="DatetimeConverter"></converter:DatetimeConverter>
+      <converter:TagListConverter x:Key="TagListConverter"></converter:TagListConverter>
     </ResourceDictionary>
   </ContentPage.Resources>
   
@@ -16,6 +16,6 @@
     <Label Text="{Binding Session.Description}" />
     <Label Text="{Binding Session.Room}" />
     <Label Text="Try to format string!!!!!! ->" />
-    <Label Text="{Binding Session.DateStart, Converter={StaticResource DatetimeConverter}, ConverterParameter=1}" />
+    <!--<Label Text="{Binding Session.DateStart, Converter={StaticResource DatetimeConverter}, ConverterParameter=}" />-->
   </StackLayout>
 </ContentPage>

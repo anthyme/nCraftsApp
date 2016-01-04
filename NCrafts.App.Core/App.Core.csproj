@@ -38,6 +38,7 @@
     <Compile Include="Common\Infrastructure\Fx\Observable.cs" />
     <Compile Include="Common\Infrastructure\Fx\UnityContainerExtensions.cs" />
     <Compile Include="Common\Infrastructure\INavigateTo.cs" />
+    <Compile Include="Common\Interval.cs" />
     <Compile Include="Common\Session.cs" />
     <Compile Include="Common\SessionId.cs" />
     <Compile Include="Common\Speaker.cs" />
