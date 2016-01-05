@@ -4,7 +4,7 @@ namespace NCrafts.App.Core.Common
 {
     public class Speaker
     {
-        public int Id { get; set; }
+        public SpeakerId Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Company { get; set; }
