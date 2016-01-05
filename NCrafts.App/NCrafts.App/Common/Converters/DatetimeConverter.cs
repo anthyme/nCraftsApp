@@ -25,13 +25,13 @@ namespace NCrafts.App.Common.Converters
             switch (type)
             {
                 case DateTimeConvertion.TextHours:
-                    return AppResources.HourText + ((TimeSlot)value).GetHoursStartEnd();
+                    return AppResources.HourText + ((TimeSlot)value).StartDate.ToString(AppResources.FormatHourMinute) + "-" + ((TimeSlot)value).EndDate.ToString(AppResources.FormatHourMinute);
                 case DateTimeConvertion.OnlyHours:
-                    return ((TimeSlot)value).GetHoursStartEnd();
+                    return ((TimeSlot)value).StartDate.ToString(AppResources.FormatHourMinute) + "-" + ((TimeSlot)value).EndDate.ToString(AppResources.FormatHourMinute);
                 case DateTimeConvertion.TextDate:
-                    return AppResources.DateText + ((TimeSlot)value).GetDateStart();
+                    return AppResources.DateText + ((TimeSlot)value).StartDate.ToString(AppResources.FormatDateMonthDayYear);
                 case DateTimeConvertion.OnlyDate:
-                    return ((TimeSlot)value).GetDateStart(); ;
+                    return ((TimeSlot)value).StartDate.ToString(AppResources.FormatDateMonthDayYear);
                 case DateTimeConvertion.None:
                     return AppResources.NoDate;
                 default:

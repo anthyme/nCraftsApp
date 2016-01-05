@@ -80,7 +80,7 @@ namespace NCrafts.App.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0:MM/dd/yy}.
+        ///   Looks up a localized string similar to MM/dd/yy.
         /// </summary>
         public static string FormatDateMonthDayYear {
             get {
@@ -89,7 +89,7 @@ namespace NCrafts.App.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0:HH:mm}.
+        ///   Looks up a localized string similar to HH:mm.
         /// </summary>
         public static string FormatHourMinute {
             get {
