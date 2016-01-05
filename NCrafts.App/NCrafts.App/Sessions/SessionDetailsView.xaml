@@ -51,7 +51,7 @@
        Grid.Row="2" Grid.Column="1" Grid.RowSpan="3" />
 
     </Grid>
-    <StackLayout Orientation="Vertical">
+    <StackLayout Orientation="Vertical" Padding="0,10,0,0">
       <Label Text="{x:Static resx:AppResources.Details}"
            FontAttributes="Bold"
            FontSize="18"/>
