@@ -5,28 +5,20 @@ namespace NCrafts.App.Core.Common
 {
     public class DataSource
     {
-        //public ICollection<Session> Sessions { get; } = new List<Session>
-        //    {
-        //        new Session { Id = new SessionId("1"), Title = "C# pour les nuls", Description = "C# pour les devs vraiment pas bons"},
-        //        new Session { Id = new SessionId("2"), Title = "F# pour les nuls", Description = "F# pour les devs vraiment pas bons"},
-        //        new Session { Id = new SessionId("3"), Title = "Xamarin pour les nuls", Description = "Xamarin pour les devs vraiment pas bons"},
-        //    };
-
-
         public ICollection<Tag> Tags { get; } = new List<Tag>
             {
-                new Tag { Title = "C#", Image = "", Count = 4},
-                new Tag { Title = "F#", Image = "", Count = 17},
-                new Tag { Title = "C++", Image = "", Count = 1},
-                new Tag { Title = "C", Image = "", Count = 2},
-                new Tag { Title = "Compiler", Image = "", Count = 34},
-                new Tag { Title = "NCrafts", Image = "", Count = 2},
-                new Tag { Title = "Mobile", Image = "", Count = 6},
-                new Tag { Title = "Android", Image = "", Count = 7},
-                new Tag { Title = "Xamarin", Image = "", Count = 21},
-                new Tag { Title = "Testing", Image = "", Count = 4},
-                new Tag { Title = "iOS", Image = "", Count = 3},
-                new Tag { Title = "Windows Phone", Image = "", Count = 0},
+                new Tag { Title = "C#", Count = 4},
+                new Tag { Title = "F#", Count = 17},
+                new Tag { Title = "C++", Count = 1},
+                new Tag { Title = "C", Count = 2},
+                new Tag { Title = "Compiler", Count = 34},
+                new Tag { Title = "NCrafts", Count = 2},
+                new Tag { Title = "Mobile", Count = 6},
+                new Tag { Title = "Android", Count = 7},
+                new Tag { Title = "Xamarin", Count = 21},
+                new Tag { Title = "Testing", Count = 4},
+                new Tag { Title = "iOS", Count = 3},
+                new Tag { Title = "Windows Phone", Count = 0},
             };
 
         public ICollection<Speaker> Speakers { get; } = new List<Speaker>
