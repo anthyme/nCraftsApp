@@ -5,17 +5,15 @@ using NCrafts.App.Core.Common;
 using NCrafts.App.Resx;
 using Xamarin.Forms;
 
-namespace NCrafts.App.Common.Converter
+namespace NCrafts.App.Common.Converters
 {
-    public class TagListConverter : IValueConverter
+    public class SpeakerListConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            var tags = (List<Tag>) value;
-            if (!(tags?.Count > 0)) return AppResources.NoTag;
-            var result = tags.Aggregate(AppResources.TagsText, (current, tag) => current + (tag.Title + AppResources.TagSeparator));
-            result = result.Remove(result.Length - AppResources.TagSeparator.Length) + ".";
-            return result;
+            var speakers = (List<Speaker>)value;
+            if (speakers?.Any() != true) return AppResources.NoSpeaker;
+            return string.Join("\n", speakers.Select(x => x.FirstName + " " + x.LastName).ToArray());
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)

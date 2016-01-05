@@ -2,14 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NCrafts.App.Sessions.SessionDetailsView"
-             xmlns:converter="clr-namespace:NCrafts.App.Common.Converter;assembly=NCrafts.App"
+             xmlns:converters="clr-namespace:NCrafts.App.Common.Converters;assembly=NCrafts.App"
              xmlns:resx="clr-namespace:NCrafts.App.Resx;assembly=NCrafts.App">
 
   <ContentPage.Resources>
     <ResourceDictionary>
-      <converter:DatetimeConverter x:Key="DatetimeConverter"></converter:DatetimeConverter>
-      <converter:TagListConverter x:Key="TagListConverter"></converter:TagListConverter>
-      <converter:SpeakerListConverter x:Key="SpeakerListConverter"></converter:SpeakerListConverter>
+      <converters:DatetimeConverter x:Key="DatetimeConverter"></converters:DatetimeConverter>
+      <converters:TagListConverter x:Key="TagListConverter"></converters:TagListConverter>
+      <converters:SpeakerListConverter x:Key="SpeakerListConverter"></converters:SpeakerListConverter>
     </ResourceDictionary>
   </ContentPage.Resources>
   
@@ -37,13 +37,13 @@
        FontAttributes="Bold"
        FontSize="18"
        Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" />
-      <Label Text="{Binding Session.Interval, Converter={StaticResource DatetimeConverter}, ConverterParameter={x:Static converter:DateConverterType.TextDate} }"
+      <Label Text="{Binding Session.Interval, Converter={StaticResource DatetimeConverter}, ConverterParameter={x:Static converters:DateTimeConvertion.TextDate} }"
        VerticalOptions="Center"
        Grid.Row="2" Grid.Column="0"/>
-      <Label Text="{Binding Session.Interval, Converter={StaticResource DatetimeConverter}, ConverterParameter={x:Static converter:DateConverterType.TextHours} }"
+      <Label Text="{Binding Session.Interval, Converter={StaticResource DatetimeConverter}, ConverterParameter={x:Static converters:DateTimeConvertion.TextHours} }"
        VerticalOptions="Center"
        Grid.Row="3" Grid.Column="0"/>
-      <Label Text="{Binding Session.Room, StringFormat='Room: {0:N}'}"
+      <Label Text="{Binding Session.Room.Name, StringFormat='Room: {0:N}'}"
        VerticalOptions="Center"
        Grid.Row="4" Grid.Column="0"/>
       <Label Text="{Binding Session.Tags, Converter={StaticResource TagListConverter}}"

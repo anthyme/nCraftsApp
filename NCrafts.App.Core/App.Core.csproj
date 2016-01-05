@@ -38,7 +38,8 @@
     <Compile Include="Common\Infrastructure\ErrorHandler.cs" />
     <Compile Include="Common\Infrastructure\Fx\Observable.cs" />
     <Compile Include="Common\Infrastructure\Fx\UnityContainerExtensions.cs" />
-    <Compile Include="Common\Interval.cs" />
+    <Compile Include="Common\Room.cs" />
+    <Compile Include="Common\TimeSlot.cs" />
     <Compile Include="Common\Infrastructure\Logger.cs" />
     <Compile Include="Common\Infrastructure\Navigation.cs" />
     <Compile Include="Common\Session.cs" />

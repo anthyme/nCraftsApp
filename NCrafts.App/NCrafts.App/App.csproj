@@ -35,8 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Common\Converter\SpeakerListConverter.cs" />
-    <Compile Include="Common\Converter\TagListConverter.cs" />
+    <Compile Include="Common\Converters\SpeakerListConverter.cs" />
+    <Compile Include="Common\Converters\TagListConverter.cs" />
     <Compile Include="Common\Infrastructure\App.cs" />
     <Compile Include="Common\Infrastructure\Navigation.cs" />
     <Compile Include="Common\Infrastructure\ViewFactory.cs" />
@@ -49,7 +49,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Common\Converter\DatetimeConverter.cs" />
+    <Compile Include="Common\Converters\DatetimeConverter.cs" />
     <Compile Include="Sessions\SessionDetailsView.xaml.cs">
       <DependentUpon>SessionDetailsView.xaml</DependentUpon>
     </Compile>

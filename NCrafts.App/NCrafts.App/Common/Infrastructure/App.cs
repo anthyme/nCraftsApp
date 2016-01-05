@@ -2,7 +2,6 @@
 using NCrafts.App.Core.Common.Infrastructure;
 using Xamarin.Forms;
 
-
 namespace NCrafts.App.Common.Infrastructure
 {
     public class App : Application

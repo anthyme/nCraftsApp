@@ -3,9 +3,9 @@ using NCrafts.App.Core.Common;
 using NCrafts.App.Resx;
 using Xamarin.Forms;
 
-namespace NCrafts.App.Common.Converter
+namespace NCrafts.App.Common.Converters
 {
-    public enum DateConverterType
+    public enum DateTimeConvertion
     {
         TextHours,
         TextDate,
@@ -14,7 +14,6 @@ namespace NCrafts.App.Common.Converter
         None
     }
 
-
     public class DatetimeConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
@@ -22,18 +21,18 @@ namespace NCrafts.App.Common.Converter
             if (value == null)
                 return AppResources.NoDate;
 
-            var type = (DateConverterType)parameter;
+            var type = (DateTimeConvertion)parameter;
             switch (type)
             {
-                case DateConverterType.TextHours:
-                    return AppResources.HourText + ((Interval)value).GetHoursStartEnd();
-                case DateConverterType.OnlyHours:
-                    return ((Interval)value).GetHoursStartEnd();
-                case DateConverterType.TextDate:
-                    return AppResources.DateText + ((Interval)value).GetDateStart();
-                case DateConverterType.OnlyDate:
-                    return ((Interval)value).GetDateStart(); ;
-                case DateConverterType.None:
+                case DateTimeConvertion.TextHours:
+                    return AppResources.HourText + ((TimeSlot)value).GetHoursStartEnd();
+                case DateTimeConvertion.OnlyHours:
+                    return ((TimeSlot)value).GetHoursStartEnd();
+                case DateTimeConvertion.TextDate:
+                    return AppResources.DateText + ((TimeSlot)value).GetDateStart();
+                case DateTimeConvertion.OnlyDate:
+                    return ((TimeSlot)value).GetDateStart(); ;
+                case DateTimeConvertion.None:
                     return AppResources.NoDate;
                 default:
                     throw new ArgumentOutOfRangeException();

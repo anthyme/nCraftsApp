@@ -33,17 +33,17 @@ namespace NCrafts.App.Core.Common
 
         public ICollection<Session> Sessions { get; } = new List<Session>
             {
-                new Session { Id = new SessionId("1"), Title = "C# pour les nuls", Description = "C# pour les devs vraiment pas bons", Speakers = new List<Speaker>(), Room = "666", Tags = new List<Tag>()},
-                new Session { Id = new SessionId("2"), Title = "F# pour les nuls", Description = "F# pour les devs vraiment pas bons", Speakers = new List<Speaker>(), Room = "69", Tags = new List<Tag>()},
-                new Session { Id = new SessionId("3"), Title = "Xamarin pour les nuls", Description = "Xamarin pour les devs vraiment pas bons", Speakers = new List<Speaker>(), Room = "42", Tags = new List<Tag>()},
-                new Session { Id = new SessionId("4"), Title = "Xamarin FORMS", Description = "Xamarin.Forms is a cross-platform UI toolkit that allows developers to easily create native user interface layouts that can be shared across Android, iOS, and Windows Phone. This section contains the introduction to Xamarin.Forms and our guides to help you build Xamarin.Forms apps. You can also learn more about its capabilities, try our samples, and browse the API documentation.", Speakers = new List<Speaker>(), Room = "Secret", Tags = new List<Tag>()},
-                new Session { Id = new SessionId("5"), Title = "YOLO Speak!!", Description = "F# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bons", Speakers = new List<Speaker>(), Room = "LALARoom", Tags = new List<Tag>()}
+                new Session { Id = new SessionId("1"), Title = "C# pour les nuls", Description = "C# pour les devs vraiment pas bons", Speakers = new List<Speaker>(), Room = new Room {Name = "42"}, Tags = new List<Tag>()},
+                new Session { Id = new SessionId("2"), Title = "F# pour les nuls", Description = "F# pour les devs vraiment pas bons", Speakers = new List<Speaker>(), Room = new Room {Name = "69"}, Tags = new List<Tag>()},
+                new Session { Id = new SessionId("3"), Title = "Xamarin pour les nuls", Description = "Xamarin pour les devs vraiment pas bons", Speakers = new List<Speaker>(), Room = new Room {Name = "WhiteRoom"}, Tags = new List<Tag>()},
+                new Session { Id = new SessionId("4"), Title = "Xamarin FORMS", Description = "Xamarin.Forms is a cross-platform UI toolkit that allows developers to easily create native user interface layouts that can be shared across Android, iOS, and Windows Phone. This section contains the introduction to Xamarin.Forms and our guides to help you build Xamarin.Forms apps. You can also learn more about its capabilities, try our samples, and browse the API documentation.", Speakers = new List<Speaker>(), Room = new Room {Name = "VIP"}, Tags = new List<Tag>()},
+                new Session { Id = new SessionId("5"), Title = "YOLO Speak!!", Description = "F# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bons", Speakers = new List<Speaker>(), Room = new Room {Name = "SecretRoom"}, Tags = new List<Tag>()}
             };
 
         public DataSource()
         {
             var speaker = Speakers.GetEnumerator();
-            var interval = new Interval {DateStart = DateTime.Now, DateEnd = DateTime.MaxValue};
+            var interval = new TimeSlot {StartDate = DateTime.Now, EndDate = DateTime.MaxValue};
             var tag = Tags.GetEnumerator();
             foreach (var session in Sessions)
             {
