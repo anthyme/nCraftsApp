@@ -23,7 +23,7 @@ namespace NCrafts.App.Core.Sessions.Query
                 {
                     Id = x.Id,
                     Title = x.Title,
-                    Speakers = x.Speakers,
+                    Speakers = x.Speakers.Select(speaker => new SpeakerSummary {Id = speaker.Id, FirstName = speaker.FirstName, LastName = speaker.LastName}).ToList(),
                     Interval = x.Interval,
                     Room = x.Room,
                     Tags = x.Tags,

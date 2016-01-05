@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using NCrafts.App.Core.Common;
+using NCrafts.App.Core.Sessions.Query;
 using NCrafts.App.Resx;
 using Xamarin.Forms;
 
@@ -11,7 +11,7 @@ namespace NCrafts.App.Common.Converters
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            var speakers = (List<Speaker>)value;
+            var speakers = (List<SpeakerSummary>)value;
             if (speakers?.Any() != true) return AppResources.NoSpeaker;
             return string.Join("\n", speakers.Select(x => x.FirstName + " " + x.LastName).ToArray());
         }
