@@ -5,23 +5,39 @@ using Xamarin.Forms;
 
 namespace NCrafts.App.Common.Converter
 {
+    public enum DateConverterType
+    {
+        TextHours,
+        TextDate,
+        OnlyHours,
+        OnlyDate,
+        None
+    }
+
+
     public class DatetimeConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-
             if (value == null)
-                return string.Empty;
+                return AppResources.NoDate;
 
-            var type = (string)parameter;
-            var datetime = (Interval)value;
-            if (type.Equals(AppResources.TextAndHoursFormat, StringComparison.Ordinal))
-                return AppResources.HourText + datetime.GetHoursStartEnd();
-            if (type.Equals(AppResources.HoursFormatOnly, StringComparison.Ordinal))
-                return datetime.GetHoursStartEnd();
-            if (type.Equals(AppResources.TextAndDateFormat, StringComparison.Ordinal))
-                return AppResources.DateText + datetime.GetDateStart(); ;
-            return string.Empty;
+            var type = (DateConverterType)parameter;
+            switch (type)
+            {
+                case DateConverterType.TextHours:
+                    return AppResources.HourText + ((Interval)value).GetHoursStartEnd();
+                case DateConverterType.OnlyHours:
+                    return ((Interval)value).GetHoursStartEnd();
+                case DateConverterType.TextDate:
+                    return AppResources.DateText + ((Interval)value).GetDateStart();
+                case DateConverterType.OnlyDate:
+                    return ((Interval)value).GetDateStart(); ;
+                case DateConverterType.None:
+                    return AppResources.NoDate;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)

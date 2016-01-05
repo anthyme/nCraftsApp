@@ -12,7 +12,7 @@ namespace NCrafts.App.Common.Converter
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             var speakers = (List<Speaker>)value;
-            if (!(speakers?.Count > 0)) return AppResources.NoTagsText;
+            if (!(speakers?.Count > 0)) return AppResources.NoSpeaker;
             var result = speakers.Aggregate("", (current, speaker) => current + speaker.FirstName + " " + speaker.LastName + "\n");
             result = result.Remove(result.Length - 1);
             return result;

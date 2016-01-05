@@ -12,9 +12,9 @@ namespace NCrafts.App.Common.Converter
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             var tags = (List<Tag>) value;
-            if (!(tags?.Count > 0)) return AppResources.NoTagsText;
-            var result = tags.Aggregate(AppResources.TagsText, (current, tag) => current + (tag.Title + ", "));
-            result = result.Remove(result.Length - 2) + ".";
+            if (!(tags?.Count > 0)) return AppResources.NoTag;
+            var result = tags.Aggregate(AppResources.TagsText, (current, tag) => current + (tag.Title + AppResources.TagSeparator));
+            result = result.Remove(result.Length - AppResources.TagSeparator.Length) + ".";
             return result;
         }
 

@@ -126,28 +126,28 @@
   <data name="FormatHourMinute" xml:space="preserve">
     <value>{0:HH:mm}</value>
   </data>
-  <data name="TextAndHoursFormat" xml:space="preserve">
-    <value>TextAndHoursFormat</value>
-  </data>
   <data name="HoursSeparator" xml:space="preserve">
     <value> - </value>
   </data>
   <data name="HourText" xml:space="preserve">
     <value>Hours: </value>
   </data>
-  <data name="HoursFormatOnly" xml:space="preserve">
-    <value>HoursFormatOnly</value>
-  </data>
-  <data name="NoTagsText" xml:space="preserve">
-    <value>No tag found</value>
+  <data name="NoTag" xml:space="preserve">
+    <value>Tag not found</value>
   </data>
   <data name="TagsText" xml:space="preserve">
     <value>Tags: </value>
   </data>
-  <data name="TextAndDateFormat" xml:space="preserve">
-    <value>TextAndDateFormat</value>
-  </data>
   <data name="Details" xml:space="preserve">
     <value>Details:</value>
+  </data>
+  <data name="NoDate" xml:space="preserve">
+    <value>Date not found</value>
+  </data>
+  <data name="NoSpeaker" xml:space="preserve">
+    <value>Speaker not found</value>
+  </data>
+  <data name="TagSeparator" xml:space="preserve">
+    <value>, </value>
   </data>
 </root>

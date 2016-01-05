@@ -98,15 +98,6 @@ namespace NCrafts.App.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to HoursFormatOnly.
-        /// </summary>
-        public static string HoursFormatOnly {
-            get {
-                return ResourceManager.GetString("HoursFormatOnly", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to  - .
         /// </summary>
         public static string HoursSeparator {
@@ -125,11 +116,38 @@ namespace NCrafts.App.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No tag found.
+        ///   Looks up a localized string similar to Date not found.
         /// </summary>
-        public static string NoTagsText {
+        public static string NoDate {
             get {
-                return ResourceManager.GetString("NoTagsText", resourceCulture);
+                return ResourceManager.GetString("NoDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Speaker not found.
+        /// </summary>
+        public static string NoSpeaker {
+            get {
+                return ResourceManager.GetString("NoSpeaker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tag not found.
+        /// </summary>
+        public static string NoTag {
+            get {
+                return ResourceManager.GetString("NoTag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to , .
+        /// </summary>
+        public static string TagSeparator {
+            get {
+                return ResourceManager.GetString("TagSeparator", resourceCulture);
             }
         }
         
@@ -139,24 +157,6 @@ namespace NCrafts.App.Resx {
         public static string TagsText {
             get {
                 return ResourceManager.GetString("TagsText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to TextAndDateFormat.
-        /// </summary>
-        public static string TextAndDateFormat {
-            get {
-                return ResourceManager.GetString("TextAndDateFormat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to TextAndHoursFormat.
-        /// </summary>
-        public static string TextAndHoursFormat {
-            get {
-                return ResourceManager.GetString("TextAndHoursFormat", resourceCulture);
             }
         }
     }

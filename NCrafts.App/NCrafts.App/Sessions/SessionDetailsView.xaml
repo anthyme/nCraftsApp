@@ -32,15 +32,15 @@
        FontAttributes="Bold"
        FontSize="18"
        Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" />
-      <Label Text="{Binding Session.Speakers, Converter={StaticResource SpeakerListConverter}}"
+      <Label Text="{Binding Session.Speakers, Converter={StaticResource SpeakerListConverter} }"
        VerticalOptions="Center"
        FontAttributes="Bold"
        FontSize="18"
        Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" />
-      <Label Text="{Binding Session.Interval, Converter={StaticResource DatetimeConverter}, ConverterParameter={x:Static resx:AppResources.TextAndDateFormat} }"
+      <Label Text="{Binding Session.Interval, Converter={StaticResource DatetimeConverter}, ConverterParameter={x:Static converter:DateConverterType.TextDate} }"
        VerticalOptions="Center"
        Grid.Row="2" Grid.Column="0"/>
-      <Label Text="{Binding Session.Interval, Converter={StaticResource DatetimeConverter}, ConverterParameter={x:Static resx:AppResources.TextAndHoursFormat} }"
+      <Label Text="{Binding Session.Interval, Converter={StaticResource DatetimeConverter}, ConverterParameter={x:Static converter:DateConverterType.TextHours} }"
        VerticalOptions="Center"
        Grid.Row="3" Grid.Column="0"/>
       <Label Text="{Binding Session.Room, StringFormat='Room: {0:N}'}"
