@@ -35,6 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Common\Converter\SpeakerListConverter.cs" />
     <Compile Include="Common\Converter\TagListConverter.cs" />
     <Compile Include="Common\Infrastructure\App.cs" />
     <Compile Include="Common\Infrastructure\NavigateTo.cs" />

@@ -9,11 +9,11 @@
     <ResourceDictionary>
       <converter:DatetimeConverter x:Key="DatetimeConverter"></converter:DatetimeConverter>
       <converter:TagListConverter x:Key="TagListConverter"></converter:TagListConverter>
+      <converter:SpeakerListConverter x:Key="SpeakerListConverter"></converter:SpeakerListConverter>
     </ResourceDictionary>
   </ContentPage.Resources>
   
   <StackLayout Orientation="Vertical">
-    
     <Grid>
       <Grid.RowDefinitions>
         <RowDefinition Height="*" />
@@ -29,31 +29,33 @@
 
       <Label Text="{Binding Session.Title}"
        VerticalOptions="Center"
+       FontAttributes="Bold"
+       FontSize="18"
        Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" />
-
-      <Label Text="speaker"
+      <Label Text="{Binding Session.Speakers, Converter={StaticResource SpeakerListConverter}}"
        VerticalOptions="Center"
+       FontAttributes="Bold"
+       FontSize="18"
        Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" />
-
       <Label Text="{Binding Session.Interval, Converter={StaticResource DatetimeConverter}, ConverterParameter={x:Static resx:AppResources.TextAndDateFormat} }"
        VerticalOptions="Center"
        Grid.Row="2" Grid.Column="0"/>
-
-      <Label Text="hour"
+      <Label Text="{Binding Session.Interval, Converter={StaticResource DatetimeConverter}, ConverterParameter={x:Static resx:AppResources.TextAndHoursFormat} }"
        VerticalOptions="Center"
        Grid.Row="3" Grid.Column="0"/>
-
       <Label Text="{Binding Session.Room, StringFormat='Room: {0:N}'}"
        VerticalOptions="Center"
        Grid.Row="4" Grid.Column="0"/>
-
       <Label Text="{Binding Session.Tags, Converter={StaticResource TagListConverter}}"
        VerticalOptions="Center"
        Grid.Row="2" Grid.Column="1" Grid.RowSpan="3" />
 
     </Grid>
-    
-    <Label Text="{Binding Session.Description}" />
-    <!--<Label Text="{Binding Session.DateStart, Converter={StaticResource DatetimeConverter}, ConverterParameter=}" />-->
+    <StackLayout Orientation="Vertical">
+      <Label Text="{x:Static resx:AppResources.Details}"
+           FontAttributes="Bold"
+           FontSize="18"/>
+      <Label Text="{Binding Session.Description}" />
+    </StackLayout>
   </StackLayout>
 </ContentPage>

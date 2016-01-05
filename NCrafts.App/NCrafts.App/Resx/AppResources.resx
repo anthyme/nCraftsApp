@@ -147,4 +147,7 @@
   <data name="TextAndDateFormat" xml:space="preserve">
     <value>TextAndDateFormat</value>
   </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details:</value>
+  </data>
 </root>
