@@ -7,13 +7,13 @@ namespace NCrafts.App.Common.Infrastructure
 {
     public class App : Application
     {
+        private IUnityContainer dependencyContainer;
+
         protected override void OnStart()
         {
-            var dependencyContainer = DependencyConfigurator.Configure();
-            var navigationPage = dependencyContainer.Resolve<NavigationPage>();
-            var navigateTo = dependencyContainer.Resolve<INavigateTo>();
-            MainPage = navigationPage;
-            navigateTo.Sessions();
+            dependencyContainer = DependencyConfigurator.Configure();
+            MainPage = dependencyContainer.Resolve<NavigationPage>();
+            dependencyContainer.Resolve<NavigateToSessions>()();
         }
 
         protected override void OnSleep()

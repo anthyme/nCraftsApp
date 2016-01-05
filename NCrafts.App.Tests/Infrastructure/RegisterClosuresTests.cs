@@ -4,7 +4,7 @@ using NCrafts.App.Core.Common.Infrastructure.Fx;
 using Shouldly;
 using Xunit;
 
-namespace NCrafts.App.Tests
+namespace NCrafts.App.Tests.Infrastructure
 {
     public class RegisterClosuresTests
     {

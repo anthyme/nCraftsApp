@@ -38,7 +38,8 @@
     <Compile Include="Common\Converter\SpeakerListConverter.cs" />
     <Compile Include="Common\Converter\TagListConverter.cs" />
     <Compile Include="Common\Infrastructure\App.cs" />
-    <Compile Include="Common\Infrastructure\NavigateTo.cs" />
+    <Compile Include="Common\Infrastructure\Navigation.cs" />
+    <Compile Include="Common\Infrastructure\ViewFactory.cs" />
     <Compile Include="Common\Infrastructure\ViewModelBase.cs" />
     <Compile Include="Common\Infrastructure\DependencyConfigurator.cs" />
     <Compile Include="Properties\Annotations.cs" />
