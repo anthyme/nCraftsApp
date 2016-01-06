@@ -1,6 +1,6 @@
-﻿using NCrafts.App.Core.Common;
+﻿using NCrafts.App.Business.Common;
 
-namespace NCrafts.App.Core.Sessions.Query
+namespace NCrafts.App.Business.Sessions.Query
 {
     public class SessionSummary
     {

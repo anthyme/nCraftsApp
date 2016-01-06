@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Practices.ObjectBuilder2;
-using NCrafts.App.Core.Common;
+using NCrafts.App.Business.Common;
 
-namespace NCrafts.App.Core.Sessions.Query
+namespace NCrafts.App.Business.Sessions.Query
 {
     public delegate ICollection<SessionSummary> GetSessionSumariesQuery();
     public delegate SessionDetails GetSessionDetailsQuery(SessionId sessionId);

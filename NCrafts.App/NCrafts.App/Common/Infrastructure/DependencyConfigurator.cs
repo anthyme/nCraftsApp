@@ -1,9 +1,9 @@
 ﻿using Microsoft.Practices.Unity;
-using NCrafts.App.Core.Common;
-using NCrafts.App.Core.Common.Infrastructure;
-using NCrafts.App.Core.Common.Infrastructure.Fx;
-using NCrafts.App.Core.Sessions.Command;
-using NCrafts.App.Core.Sessions.Query;
+using NCrafts.App.Business.Common;
+using NCrafts.App.Business.Common.Infrastructure;
+using NCrafts.App.Business.Common.Infrastructure.Fx;
+using NCrafts.App.Business.Sessions.Command;
+using NCrafts.App.Business.Sessions.Query;
 using Xamarin.Forms;
 
 namespace NCrafts.App.Common.Infrastructure

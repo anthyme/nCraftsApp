@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace NCrafts.App.Core.Common.Infrastructure
+namespace NCrafts.App.Business.Common.Infrastructure
 {
     public delegate void Log(string message);
     public delegate void LogError(Exception exepction);

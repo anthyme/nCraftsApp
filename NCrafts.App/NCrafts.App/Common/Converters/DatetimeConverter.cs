@@ -1,5 +1,5 @@
 ﻿using System;
-using NCrafts.App.Core.Common;
+using NCrafts.App.Business.Common;
 using NCrafts.App.Resx;
 using Xamarin.Forms;
 

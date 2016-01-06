@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using System.Windows.Input;
 using NCrafts.App.Common.Infrastructure;
-using NCrafts.App.Core.Common;
-using NCrafts.App.Core.Sessions.Command;
-using NCrafts.App.Core.Sessions.Query;
+using NCrafts.App.Business.Common;
+using NCrafts.App.Business.Sessions.Command;
+using NCrafts.App.Business.Sessions.Query;
 using Xamarin.Forms;
 
 namespace NCrafts.App.Sessions

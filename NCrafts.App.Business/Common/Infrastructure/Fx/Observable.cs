@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace NCrafts.App.Core.Common.Infrastructure.Fx
+namespace NCrafts.App.Business.Common.Infrastructure.Fx
 {
     public class Observable : INotifyPropertyChanged
     {

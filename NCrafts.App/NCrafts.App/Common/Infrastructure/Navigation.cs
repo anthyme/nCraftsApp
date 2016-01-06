@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using NCrafts.App.Core.Common.Infrastructure;
+using NCrafts.App.Business.Common.Infrastructure;
 using NCrafts.App.Sessions;
 using Xamarin.Forms;
 

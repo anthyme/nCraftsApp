@@ -1,10 +1,10 @@
-﻿namespace NCrafts.App.Core.Common
+﻿namespace NCrafts.App.Business.Common
 {
-    public struct SessionId
+    public class SpeakerId
     {
         private readonly string title;
 
-        public SessionId(string title)
+        public SpeakerId(string title)
         {
             this.title = title;
         }

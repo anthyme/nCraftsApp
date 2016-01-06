@@ -1,5 +1,5 @@
 using Microsoft.Practices.Unity;
-using NCrafts.App.Core.Common;
+using NCrafts.App.Business.Common;
 using NCrafts.App.Sessions;
 using Shouldly;
 using Xunit;

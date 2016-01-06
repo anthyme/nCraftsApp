@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using NCrafts.App.Common.Infrastructure;
-using NCrafts.App.Core.Common;
-using NCrafts.App.Core.Sessions.Query;
+using NCrafts.App.Business.Common;
+using NCrafts.App.Business.Sessions.Query;
 
 namespace NCrafts.App.Sessions
 {

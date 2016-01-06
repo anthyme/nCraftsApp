@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace NCrafts.App.Core.Common
+﻿namespace NCrafts.App.Business.Common
 {
     public class Room
     {

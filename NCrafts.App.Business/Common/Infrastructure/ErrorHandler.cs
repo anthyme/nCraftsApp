@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace NCrafts.App.Core.Common.Infrastructure
+namespace NCrafts.App.Business.Common.Infrastructure
 {
     public delegate void OnError(Exception exception);
     public delegate void HandleError(Action call);

@@ -107,9 +107,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NCrafts.App.Core\App.Core.csproj">
-      <Project>{EC47274C-2C46-4AA8-9CDC-196EF6171AE3}</Project>
-      <Name>App.Core</Name>
+    <ProjectReference Include="..\NCrafts.App.Business\App.Business.csproj">
+      <Project>{ec47274c-2c46-4aa8-9cdc-196ef6171ae3}</Project>
+      <Name>App.Business</Name>
     </ProjectReference>
     <ProjectReference Include="..\NCrafts.App\NCrafts.App\App.csproj">
       <Project>{B1F109B6-446E-41AE-BB29-70CC60650124}</Project>

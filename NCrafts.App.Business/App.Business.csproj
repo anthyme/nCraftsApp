@@ -8,8 +8,8 @@
     <ProjectGuid>{EC47274C-2C46-4AA8-9CDC-196EF6171AE3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NCrafts.App.Core</RootNamespace>
-    <AssemblyName>NCrafts.App.Core</AssemblyName>
+    <RootNamespace>NCrafts.App.Business</RootNamespace>
+    <AssemblyName>NCrafts.App.Business</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

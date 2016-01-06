@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NCrafts.App.Core.Common
+namespace NCrafts.App.Business.Common
 {
     public class DataSource
     {

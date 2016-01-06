@@ -1,5 +1,5 @@
 ﻿using Microsoft.Practices.Unity;
-using NCrafts.App.Core.Common.Infrastructure;
+using NCrafts.App.Business.Common.Infrastructure;
 using Xamarin.Forms;
 
 namespace NCrafts.App.Common.Infrastructure

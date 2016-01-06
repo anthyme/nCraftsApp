@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Linq.Expressions;
 
-namespace NCrafts.App.Core.Common
+namespace NCrafts.App.Business.Common
 {
     public class TimeSlot
     {
