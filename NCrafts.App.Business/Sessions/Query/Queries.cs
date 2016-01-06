@@ -1,33 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Practices.ObjectBuilder2;
 using NCrafts.App.Business.Common;
+using NCrafts.App.Business.Core.Data;
 
 namespace NCrafts.App.Business.Sessions.Query
 {
     public delegate ICollection<SessionSummary> GetSessionSumariesQuery();
     public delegate SessionDetails GetSessionDetailsQuery(SessionId sessionId);
-    public delegate string GetSessionSpearkersNameQuery(SessionId sessionId);
-    public delegate string GetSessionTagTitleQuery(SessionId sessionId);
 
-    public class Queries
+    class Queries
     {
-        public static GetSessionSpearkersNameQuery CreateGetSessionSpearkersNameQuery(IDataSourceRepository dataSourceRepository)
-        {
-            return sessionId =>
-                dataSourceRepository.Retreive().Sessions
-                    .Single(x => x.Id.Equals(sessionId))
-                    .Speakers.JoinStrings("\n", speaker => speaker.FirstName + " " + speaker.LastName);
-        }
-
-        public static GetSessionTagTitleQuery CreateGetSessionTagTitleQuery(IDataSourceRepository dataSourceRepository)
-        {
-            return sessionId =>
-                dataSourceRepository.Retreive().Sessions
-                    .Single(x => x.Id.Equals(sessionId))
-                    .Tags.JoinStrings(", ", tag => tag.Title);
-        }
-
         public static GetSessionSumariesQuery CreateGetSessionSumariesQuery(IDataSourceRepository dataSourceRepository)
         {
             return () => dataSourceRepository.Retreive().Sessions
@@ -45,9 +27,9 @@ namespace NCrafts.App.Business.Sessions.Query
                     Id = x.Id,
                     Title = x.Title,
                     Interval = x.Interval,
-                    Room = x.Room,
-                    Tags = x.Tags,
-                    Description = x.Description
+                    Speakers = string.Join("\n", x.Speakers.Select(s => s.FirstName + " " + s.LastName)),
+                    Tags = string.Join(", ", x.Tags.Select(t => t.Title)),
+                    Description = x.Description,
                 })
                 .First();
         }

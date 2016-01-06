@@ -5,7 +5,7 @@ namespace NCrafts.App.Tests
 {
     public class IntegratedTest
     {
-        private static readonly IUnityContainer ParentContainer = DependencyConfigurator.Configure();
+        private static readonly IUnityContainer ParentContainer = AppDependencyConfigurator.Configure();
         protected IUnityContainer Container;
 
         public IntegratedTest()

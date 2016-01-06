@@ -11,7 +11,7 @@ namespace NCrafts.App.Tests.Infrastructure
         [Fact]
         public void Configure_Should_work()
         {
-            DependencyConfigurator.Configure();
+            AppDependencyConfigurator.Configure();
         }
 
         [Fact]

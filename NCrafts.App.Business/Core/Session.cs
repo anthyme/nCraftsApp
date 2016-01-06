@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using NCrafts.App.Business.Common;
 
-namespace NCrafts.App.Business.Common
+namespace NCrafts.App.Business.Core
 {
-    public class Session
+    class Session
     {
         public SessionId Id { get; set; }
         public string Title { get; set; }

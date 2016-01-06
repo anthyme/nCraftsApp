@@ -1,6 +1,6 @@
-﻿namespace NCrafts.App.Business.Common
+﻿namespace NCrafts.App.Business.Core
 {
-    public class Tag
+    class Tag
     {
         public string Title { get; set; }
         public int Count { get; set; }

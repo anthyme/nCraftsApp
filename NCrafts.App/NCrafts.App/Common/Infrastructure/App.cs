@@ -10,7 +10,7 @@ namespace NCrafts.App.Common.Infrastructure
 
         protected override void OnStart()
         {
-            dependencyContainer = DependencyConfigurator.Configure();
+            dependencyContainer = AppDependencyConfigurator.Configure();
             MainPage = dependencyContainer.Resolve<NavigationPage>();
             dependencyContainer.Resolve<NavigateToSessions>()();
         }

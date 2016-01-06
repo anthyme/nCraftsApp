@@ -39,7 +39,7 @@
     <Compile Include="Common\Infrastructure\Navigation.cs" />
     <Compile Include="Common\Infrastructure\ViewFactory.cs" />
     <Compile Include="Common\Infrastructure\ViewModelBase.cs" />
-    <Compile Include="Common\Infrastructure\DependencyConfigurator.cs" />
+    <Compile Include="Common\Infrastructure\AppDependencyConfigurator.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resx\AppResources.Designer.cs">

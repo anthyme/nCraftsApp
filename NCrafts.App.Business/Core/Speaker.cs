@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using NCrafts.App.Business.Common;
 
-namespace NCrafts.App.Business.Common
+namespace NCrafts.App.Business.Core
 {
-    public class Speaker
+    class Speaker
     {
         public SpeakerId Id { get; set; }
         public string FirstName { get; set; }

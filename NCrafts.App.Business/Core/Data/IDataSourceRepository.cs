@@ -1,11 +1,11 @@
-﻿namespace NCrafts.App.Business.Common
+﻿namespace NCrafts.App.Business.Core.Data
 {
-    public interface IDataSourceRepository
+    interface IDataSourceRepository
     {
         DataSource Retreive();
     }
 
-    public class DataSourceRepository : IDataSourceRepository
+    class DataSourceRepository : IDataSourceRepository
     {
         public DataSource Retreive()
         {

@@ -25,7 +25,7 @@ namespace NCrafts.App.Tests.Infrastructure
                             .FirstOrDefault(v => v.Name == vm.Name.Substring(0, vm.Name.Length - 5))
                     }).ToList();
 
-            var container = DependencyConfigurator.Configure();
+            var container = AppDependencyConfigurator.Configure();
             var sut = container.Resolve<ViewFactory>();
 
             foreach (var viewViewModelType in viewViewModelTypes)

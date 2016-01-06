@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using NCrafts.App.Business.Common;
 
-namespace NCrafts.App.Business.Common
+namespace NCrafts.App.Business.Core.Data
 {
-    public class DataSource
+    class DataSource
     {
         public ICollection<Tag> Tags { get; } = new List<Tag>
             {

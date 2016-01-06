@@ -6,7 +6,7 @@ namespace NCrafts.App.Business.Sessions.Command
 {
     public delegate Task OpenSessionCommand(SessionId sessionId);
 
-    public class Commands
+    class Commands
     {
         public static OpenSessionCommand CreateOpenSessionCommand(NavigateToSessionDetails navigateToSessionDetails)
         {
