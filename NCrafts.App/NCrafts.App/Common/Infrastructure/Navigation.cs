@@ -13,8 +13,9 @@ namespace NCrafts.App.Common.Infrastructure
         {
             return async (view, vm) =>
             {
-                await vm.Start();
+                var startTask = vm.Start();
                 await navigationPage.PushAsync(view);
+                await startTask;
             };
         }
 

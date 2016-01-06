@@ -12,31 +12,33 @@ namespace NCrafts.App.Core.Sessions.Query
 
     public class Queries
     {
-        public static GetSessionSpearkersNameQuery CreateGetSessionSpearkersNameQuery(DataSource dataSource)
+        public static GetSessionSpearkersNameQuery CreateGetSessionSpearkersNameQuery(IDataSourceRepository dataSourceRepository)
         {
             return sessionId =>
-            dataSource.Sessions
-            .Single(x => x.Id.Equals(sessionId))
-            .Speakers.JoinStrings("\n", speaker => speaker.FirstName + " " + speaker.LastName);
+                dataSourceRepository.Retreive().Sessions
+                    .Single(x => x.Id.Equals(sessionId))
+                    .Speakers.JoinStrings("\n", speaker => speaker.FirstName + " " + speaker.LastName);
         }
 
-        public static GetSessionTagTitleQuery CreateGetSessionTagTitleQuery(DataSource dataSource)
+        public static GetSessionTagTitleQuery CreateGetSessionTagTitleQuery(IDataSourceRepository dataSourceRepository)
         {
             return sessionId =>
-            dataSource.Sessions
-            .Single(x => x.Id.Equals(sessionId))
-            .Tags.JoinStrings(", ", tag => tag.Title);
+                dataSourceRepository.Retreive().Sessions
+                    .Single(x => x.Id.Equals(sessionId))
+                    .Tags.JoinStrings(", ", tag => tag.Title);
         }
 
-        public static GetSessionSumariesQuery CreateGetSessionSumariesQuery(DataSource dataSource)
+        public static GetSessionSumariesQuery CreateGetSessionSumariesQuery(IDataSourceRepository dataSourceRepository)
         {
-            return () => dataSource.Sessions.Select(x => new SessionSummary { Id = x.Id, Title = x.Title }).ToList();
+            return () => dataSourceRepository.Retreive().Sessions
+                            .Select(x => new SessionSummary { Id = x.Id, Title = x.Title })
+                            .ToList();
         }
 
-        public static GetSessionDetailsQuery CreateGetSessionDetailsQuery(DataSource dataSource)
+        public static GetSessionDetailsQuery CreateGetSessionDetailsQuery(IDataSourceRepository dataSourceRepository)
         {
             return sessionId =>
-                dataSource.Sessions
+                dataSourceRepository.Retreive().Sessions
                 .Where(x => x.Id.Equals(sessionId))
                 .Select(x => new SessionDetails
                 {
