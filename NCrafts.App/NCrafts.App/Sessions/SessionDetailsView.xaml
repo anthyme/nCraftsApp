@@ -8,8 +8,6 @@
   <ContentPage.Resources>
     <ResourceDictionary>
       <converters:DatetimeConverter x:Key="DatetimeConverter"></converters:DatetimeConverter>
-      <converters:TagListConverter x:Key="TagListConverter"></converters:TagListConverter>
-      <converters:SpeakerListConverter x:Key="SpeakerListConverter"></converters:SpeakerListConverter>
     </ResourceDictionary>
   </ContentPage.Resources>
   
@@ -32,7 +30,7 @@
        FontAttributes="Bold"
        FontSize="18"
        Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" />
-      <Label Text="{Binding Session.Speakers, Converter={StaticResource SpeakerListConverter} }"
+      <Label Text="{Binding Speakers}"
        VerticalOptions="Center"
        FontAttributes="Bold"
        FontSize="18"
@@ -46,7 +44,7 @@
       <Label Text="{Binding Session.Room.Name, StringFormat='Room: {0:N}'}"
        VerticalOptions="Center"
        Grid.Row="4" Grid.Column="0"/>
-      <Label Text="{Binding Session.Tags, Converter={StaticResource TagListConverter}}"
+      <Label Text="{Binding Tags}"
        VerticalOptions="Center"
        Grid.Row="2" Grid.Column="1" Grid.RowSpan="3" />
 

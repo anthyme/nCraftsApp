@@ -1,14 +1,33 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Practices.ObjectBuilder2;
 using NCrafts.App.Core.Common;
 
 namespace NCrafts.App.Core.Sessions.Query
 {
     public delegate ICollection<SessionSummary> GetSessionSumariesQuery();
     public delegate SessionDetails GetSessionDetailsQuery(SessionId sessionId);
+    public delegate string GetSessionSpearkersNameQuery(SessionId sessionId);
+    public delegate string GetSessionTagTitleQuery(SessionId sessionId);
 
     public class Queries
     {
+        public static GetSessionSpearkersNameQuery CreateGetSessionSpearkersNameQuery(DataSource dataSource)
+        {
+            return sessionId =>
+            dataSource.Sessions
+            .Single(x => x.Id.Equals(sessionId))
+            .Speakers.JoinStrings("\n", speaker => speaker.FirstName + " " + speaker.LastName);
+        }
+
+        public static GetSessionTagTitleQuery CreateGetSessionTagTitleQuery(DataSource dataSource)
+        {
+            return sessionId =>
+            dataSource.Sessions
+            .Single(x => x.Id.Equals(sessionId))
+            .Tags.JoinStrings(", ", tag => tag.Title);
+        }
+
         public static GetSessionSumariesQuery CreateGetSessionSumariesQuery(DataSource dataSource)
         {
             return () => dataSource.Sessions.Select(x => new SessionSummary { Id = x.Id, Title = x.Title }).ToList();
@@ -23,7 +42,6 @@ namespace NCrafts.App.Core.Sessions.Query
                 {
                     Id = x.Id,
                     Title = x.Title,
-                    Speakers = x.Speakers.Select(speaker => new SpeakerSummary {Id = speaker.Id, FirstName = speaker.FirstName, LastName = speaker.LastName}).ToList(),
                     Interval = x.Interval,
                     Room = x.Room,
                     Tags = x.Tags,
