@@ -5,6 +5,7 @@
              xmlns:converters="clr-namespace:NCrafts.App.Common.Converters;assembly=NCrafts.App"
              xmlns:resx="clr-namespace:NCrafts.App.Resx;assembly=NCrafts.App">
 
+ 
   <ContentPage.Resources>
     <ResourceDictionary>
       <converters:DatetimeConverter x:Key="DatetimeConverter"></converters:DatetimeConverter>
@@ -41,10 +42,10 @@
       <Label Text="{Binding Session.Interval, Converter={StaticResource DatetimeConverter}, ConverterParameter={x:Static converters:DateTimeConvertion.TextHours} }"
        VerticalOptions="Center"
        Grid.Row="3" Grid.Column="0"/>
-      <Label Text="{Binding Session.Room.Name, StringFormat='Room: {0:N}'}"
+      <Label Text="{Binding Session.Room, StringFormat='Room: {0:N}'}"
        VerticalOptions="Center"
        Grid.Row="4" Grid.Column="0"/>
-      <Label Text="{Binding Session.Tags}"
+      <Label Text="{Binding Session.Tags, StringFormat='Tags: {0:N}'}"
        VerticalOptions="Center"
        Grid.Row="2" Grid.Column="1" Grid.RowSpan="3" />
 

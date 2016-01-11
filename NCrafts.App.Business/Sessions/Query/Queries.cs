@@ -26,8 +26,9 @@ namespace NCrafts.App.Business.Sessions.Query
                 {
                     Id = x.Id,
                     Title = x.Title,
-                    Interval = x.Interval,
                     Speakers = string.Join("\n", x.Speakers.Select(s => s.FirstName + " " + s.LastName)),
+                    Interval = x.Interval,
+                    Room = x.Room.Name,
                     Tags = string.Join(", ", x.Tags.Select(t => t.Title)),
                     Description = x.Description,
                 })
