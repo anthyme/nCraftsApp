@@ -1,8 +1,6 @@
 ﻿using Microsoft.Practices.Unity;
 using NCrafts.App.Business.Common.Infrastructure.Fx;
 using NCrafts.App.Business.Core.Data;
-using NCrafts.App.Business.Sessions.Command;
-using NCrafts.App.Business.Sessions.Query;
 
 namespace NCrafts.App.Business.Common.Infrastructure
 {
@@ -14,8 +12,10 @@ namespace NCrafts.App.Business.Common.Infrastructure
                 .RegisterType<IDataSourceRepository, DataSourceRepository>(AsSingleton)
                 .RegisterClosures<Logger>(AsSingleton)
                 .RegisterClosures<ErrorHandler>(AsSingleton)
-                .RegisterClosures<Commands>(AsSingleton)
-                .RegisterClosures<Queries>(AsSingleton)
+                .RegisterClosures<Sessions.Command.Commands>(AsSingleton)
+                .RegisterClosures<Sessions.Query.Queries>(AsSingleton)
+                .RegisterClosures<Speakers.Command.Commands>(AsSingleton)
+                .RegisterClosures<Speakers.Query.Queries>(AsSingleton)
                 ;
         }
 

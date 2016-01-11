@@ -12,7 +12,7 @@ namespace NCrafts.App.Common.Infrastructure
         {
             dependencyContainer = AppDependencyConfigurator.Configure();
             MainPage = dependencyContainer.Resolve<NavigationPage>();
-            dependencyContainer.Resolve<NavigateToSessions>()();
+            dependencyContainer.Resolve<NavigateToSpeakers>()();
         }
 
         protected override void OnSleep()

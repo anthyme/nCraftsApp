@@ -40,7 +40,7 @@ namespace NCrafts.App.Sessions
         protected override Task OnStart()
         {
             Sessions = new ObservableCollection<SessionSummary>(getSessionSumariesQuery());
-            Header = "Sessions";
+            Header = Resx.AppResources.Sessions;
             return Task.FromResult(0);
         }
     }

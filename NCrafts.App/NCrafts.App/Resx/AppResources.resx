@@ -150,4 +150,10 @@
   <data name="TagSeparator" xml:space="preserve">
     <value>, </value>
   </data>
+  <data name="Sessions" xml:space="preserve">
+    <value>Sessions</value>
+  </data>
+  <data name="SpeakersHeader" xml:space="preserve">
+    <value>Speakers:</value>
+  </data>
 </root>

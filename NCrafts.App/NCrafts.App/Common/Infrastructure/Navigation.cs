@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using NCrafts.App.Business.Common.Infrastructure;
 using NCrafts.App.Sessions;
+using NCrafts.App.Speakers;
 using Xamarin.Forms;
 
 namespace NCrafts.App.Common.Infrastructure
@@ -36,6 +37,16 @@ namespace NCrafts.App.Common.Infrastructure
             {
                 var vvm = viewFactory.Create<SessionDetailsView, SessionDetailsViewModel>();
                 vvm.ViewModel.Init(sessionId);
+                return navigateToView(vvm.View, vvm.ViewModel);
+            });
+        }
+
+        public static NavigateToSpeakers CreateNavigateToSpeakers(HandleErrorAsync handleErrorAsync,
+    NavigateToView navigateToView, IViewFactory viewFactory)
+        {
+            return () => handleErrorAsync(() =>
+            {
+                var vvm = viewFactory.Create<SpeakersView, SpeakersViewModel>();
                 return navigateToView(vvm.View, vvm.ViewModel);
             });
         }
