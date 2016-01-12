@@ -1,10 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
+             xmlns:resx="clr-namespace:NCrafts.App.Resx;assembly=NCrafts.App"
              x:Class="NCrafts.App.Speakers.SpeakersView">
 
   <StackLayout x:Name="root">
-    <Label Text="{Binding Header}"></Label>
+    <Label Text="{x:Static resx:AppResources.SpeakersHeader}"></Label>
     <ListView ItemsSource="{Binding Speakers}" VerticalOptions="Fill" HorizontalOptions="Fill">
       <ListView.ItemTemplate>
         <DataTemplate>
@@ -12,6 +14,14 @@
             <StackLayout Padding="7,0">
               <Label Text="{Binding Name}" />
             </StackLayout>
+            <behaviors:Interaction.Behaviors>
+              <behaviors:BehaviorCollection>
+                <behaviors:EventToCommand
+                    EventName="Tapped"
+                    Command="{Binding Path=BindingContext.OpenSpeakerCommand, Source={x:Reference root}, }"
+                    CommandParameter="{Binding Id}" />
+              </behaviors:BehaviorCollection>
+            </behaviors:Interaction.Behaviors>
           </ViewCell>
         </DataTemplate>
       </ListView.ItemTemplate>

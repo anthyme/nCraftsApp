@@ -57,6 +57,7 @@
     <Compile Include="Sessions\Query\SessionSummary.cs" />
     <Compile Include="Speakers\Command\Commands.cs" />
     <Compile Include="Speakers\Query\Queries.cs" />
+    <Compile Include="Speakers\Query\SpeakerDetails.cs" />
     <Compile Include="Speakers\Query\SpeakerSummary.cs" />
   </ItemGroup>
   <ItemGroup>

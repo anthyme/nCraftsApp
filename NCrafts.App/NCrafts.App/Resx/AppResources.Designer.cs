@@ -152,6 +152,24 @@ namespace NCrafts.App.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sessions:.
+        /// </summary>
+        public static string SessionsHeader {
+            get {
+                return ResourceManager.GetString("SessionsHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Who I am:.
+        /// </summary>
+        public static string SpeakersDetails {
+            get {
+                return ResourceManager.GetString("SpeakersDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Speakers:.
         /// </summary>
         public static string SpeakersHeader {

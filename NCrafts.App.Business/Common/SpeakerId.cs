@@ -1,6 +1,6 @@
 ﻿namespace NCrafts.App.Business.Common
 {
-    public class SpeakerId
+    public struct SpeakerId
     {
         private readonly string title;
 

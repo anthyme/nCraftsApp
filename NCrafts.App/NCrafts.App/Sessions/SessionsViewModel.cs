@@ -13,7 +13,6 @@ namespace NCrafts.App.Sessions
     {
         private readonly GetSessionSumariesQuery getSessionSumariesQuery;
         private ObservableCollection<SessionSummary> sessions;
-        private string header;
 
         public SessionsViewModel(
             OpenSessionCommand openSessionCommand, 
@@ -25,12 +24,6 @@ namespace NCrafts.App.Sessions
 
         public ICommand OpenSessionCommand { get; }
 
-        public string Header
-        {
-            get { return header; }
-            set { header = value; OnPropertyChanged(); }
-        }
-
         public ObservableCollection<SessionSummary> Sessions
         {
             get { return sessions; }
@@ -40,7 +33,6 @@ namespace NCrafts.App.Sessions
         protected override Task OnStart()
         {
             Sessions = new ObservableCollection<SessionSummary>(getSessionSumariesQuery());
-            Header = Resx.AppResources.Sessions;
             return Task.FromResult(0);
         }
     }

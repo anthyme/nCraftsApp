@@ -156,4 +156,10 @@
   <data name="SpeakersHeader" xml:space="preserve">
     <value>Speakers:</value>
   </data>
+  <data name="SessionsHeader" xml:space="preserve">
+    <value>Sessions:</value>
+  </data>
+  <data name="SpeakersDetails" xml:space="preserve">
+    <value>Who I am:</value>
+  </data>
 </root>

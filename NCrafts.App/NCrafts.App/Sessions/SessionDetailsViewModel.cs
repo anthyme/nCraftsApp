@@ -2,6 +2,7 @@
 using NCrafts.App.Business.Common;
 using NCrafts.App.Business.Sessions.Query;
 using NCrafts.App.Common.Infrastructure;
+using Xamarin.Forms;
 
 namespace NCrafts.App.Sessions
 {

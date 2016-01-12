@@ -50,5 +50,16 @@ namespace NCrafts.App.Common.Infrastructure
                 return navigateToView(vvm.View, vvm.ViewModel);
             });
         }
+
+        public static NavigateToSpeakerDetails CreateNavigateToSpeakerDetails(HandleErrorAsync handleErrorAsync,
+    NavigateToView navigateToView, IViewFactory viewFactory)
+        {
+            return speakerId => handleErrorAsync(() =>
+            {
+                var vvm = viewFactory.Create<SpeakerDetailsView, SpeakerDetailsViewModel>();
+                vvm.ViewModel.Init(speakerId);
+                return navigateToView(vvm.View, vvm.ViewModel);
+            });
+        }
     }
 }
