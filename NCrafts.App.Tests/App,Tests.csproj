@@ -102,6 +102,8 @@
     <Compile Include="Sessions\SessionDetailsViewModelTest.cs" />
     <Compile Include="Sessions\SessionsViewModelTest.cs" />
     <Compile Include="Infrastructure\ViewFactoryTests.cs" />
+    <Compile Include="Speakers\SpeakersDetailsViewModelTest.cs" />
+    <Compile Include="Speakers\SpeakersViewModelTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
