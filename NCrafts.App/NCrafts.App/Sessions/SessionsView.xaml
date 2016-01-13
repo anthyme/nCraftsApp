@@ -3,15 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
              xmlns:resx="clr-namespace:NCrafts.App.Resx;assembly=NCrafts.App"
+             xmlns:converters="clr-namespace:NCrafts.App.Common.Converters;assembly=NCrafts.App"
              x:Class="NCrafts.App.Sessions.SessionsView">
-  <StackLayout x:Name="root">
-    <Label Text="{x:Static resx:AppResources.SessionsHeader}"></Label>
-    <ListView ItemsSource="{Binding Sessions}" VerticalOptions="Fill" HorizontalOptions="Fill">
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <converters:DatetimeConverter x:Key="DatetimeConverter"></converters:DatetimeConverter>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <StackLayout Padding="2,0,2,0" x:Name="root">
+    <ListView ItemsSource="{Binding Sessions}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" SeparatorColor="Gray">
       <ListView.ItemTemplate>
-        <DataTemplate>
+        <DataTemplate >
           <ViewCell>
-            <StackLayout Padding="15,0">
-              <Label Text="{Binding Title}" />
+            <StackLayout Padding="2,0,2,0" Spacing="0">
+              <Label Text="{Binding Title}" LineBreakMode="TailTruncation" FontSize="17" FontAttributes="Bold" />
+              <Label Text="{Binding Interval, Converter={StaticResource DatetimeConverter}, ConverterParameter={x:Static converters:DateTimeConvertion.TextDateHours}}" FontSize="14" />
             </StackLayout>
             <b:Interaction.Behaviors>
               <b:BehaviorCollection>

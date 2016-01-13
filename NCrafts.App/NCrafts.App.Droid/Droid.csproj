@@ -126,6 +126,8 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable\mapicon.png" />
+    <AndroidResource Include="Resources\drawable\clockicon.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NCrafts.App\App.csproj">

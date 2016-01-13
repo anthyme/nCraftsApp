@@ -162,4 +162,7 @@
   <data name="SpeakersDetails" xml:space="preserve">
     <value>Who I am:</value>
   </data>
+  <data name="FormatDateMonthDay" xml:space="preserve">
+    <value>MM/dd</value>
+  </data>
 </root>

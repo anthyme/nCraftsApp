@@ -80,6 +80,15 @@ namespace NCrafts.App.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to MM/dd.
+        /// </summary>
+        public static string FormatDateMonthDay {
+            get {
+                return ResourceManager.GetString("FormatDateMonthDay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to MM/dd/yy.
         /// </summary>
         public static string FormatDateMonthDayYear {

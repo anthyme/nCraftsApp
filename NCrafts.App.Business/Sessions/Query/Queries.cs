@@ -13,7 +13,7 @@ namespace NCrafts.App.Business.Sessions.Query
         public static GetSessionSumariesQuery CreateGetSessionSumariesQuery(IDataSourceRepository dataSourceRepository)
         {
             return () => dataSourceRepository.Retreive().Sessions
-                            .Select(x => new SessionSummary { Id = x.Id, Title = x.Title })
+                            .Select(x => new SessionSummary { Id = x.Id, Title = x.Title, Interval = x.Interval})
                             .ToList();
         }
 

@@ -7,6 +7,7 @@ namespace NCrafts.App.Common.Converters
 {
     public enum DateTimeConvertion
     {
+        TextDateHours,
         TextHours,
         TextDate,
         OnlyHours,
@@ -24,6 +25,8 @@ namespace NCrafts.App.Common.Converters
             var type = (DateTimeConvertion)parameter;
             switch (type)
             {
+                case DateTimeConvertion.TextDateHours:
+                    return AppResources.DateText + ((TimeSlot)value).StartDate.ToString(AppResources.FormatDateMonthDay) + " from " + ((TimeSlot)value).StartDate.ToString(AppResources.FormatHourMinute) + " to " + ((TimeSlot)value).EndDate.ToString(AppResources.FormatHourMinute);
                 case DateTimeConvertion.TextHours:
                     return AppResources.HourText + ((TimeSlot)value).StartDate.ToString(AppResources.FormatHourMinute) + "-" + ((TimeSlot)value).EndDate.ToString(AppResources.FormatHourMinute);
                 case DateTimeConvertion.OnlyHours:
