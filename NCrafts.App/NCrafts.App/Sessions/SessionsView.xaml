@@ -12,14 +12,14 @@
     </ResourceDictionary>
   </ContentPage.Resources>
 
-  <StackLayout Padding="2,0,2,0" x:Name="root">
-    <ListView ItemsSource="{Binding Sessions}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" SeparatorColor="Gray">
+  <StackLayout Padding="2,2,2,2" x:Name="root">
+    <ListView ItemsSource="{Binding Sessions}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" SeparatorColor="Gray" HasUnevenRows="True">
       <ListView.ItemTemplate>
-        <DataTemplate >
+        <DataTemplate>
           <ViewCell>
-            <StackLayout Padding="2,0,2,0" Spacing="0">
-              <Label Text="{Binding Title}" LineBreakMode="TailTruncation" FontSize="17" FontAttributes="Bold" />
-              <Label Text="{Binding Interval, Converter={StaticResource DatetimeConverter}, ConverterParameter={x:Static converters:DateTimeConvertion.TextDateHours}}" FontSize="14" />
+            <StackLayout Padding="5,5,5,5" Spacing="5">
+              <Label Text="{Binding Title}" LineBreakMode="TailTruncation" FontSize="18" FontAttributes="Bold" />
+              <Label Text="{Binding Interval, Converter={StaticResource DatetimeConverter}, ConverterParameter={x:Static converters:DateTimeConvertion.TextDateHours}}" FontSize="12" />
             </StackLayout>
             <b:Interaction.Behaviors>
               <b:BehaviorCollection>
