@@ -19,7 +19,7 @@
           <ViewCell>
             <StackLayout Padding="5,5,5,5" Spacing="5">
               <Label Text="{Binding Title}" LineBreakMode="TailTruncation" FontSize="18" FontAttributes="Bold" />
-              <Label Text="{Binding Interval, Converter={StaticResource DatetimeConverter}, ConverterParameter={x:Static converters:DateTimeConvertion.TextDateHours}}" FontSize="12" />
+              <Label Text="{Binding Date}" FontSize="11" />
             </StackLayout>
             <b:Interaction.Behaviors>
               <b:BehaviorCollection>

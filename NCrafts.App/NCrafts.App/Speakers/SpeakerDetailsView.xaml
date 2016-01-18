@@ -4,7 +4,7 @@
              xmlns:resx="clr-namespace:NCrafts.App.Resx;assembly=NCrafts.App"
              x:Class="NCrafts.App.Speakers.SpeakerDetailsView">
 
-  <StackLayout>
+  <StackLayout Padding="5,5,5,5" >
     <Grid>
       <Grid.RowDefinitions>
         <RowDefinition Height="Auto" />
@@ -33,12 +33,12 @@
       <Label Text="{Binding Speaker.Company, StringFormat='Working at {0:N}'}"
        VerticalOptions="Center"
        FontAttributes="Bold"
-       FontSize="12"
+       FontSize="11"
        Grid.Row="2" Grid.Column="1"/>
       <Label Text="{Binding Speaker.Skills, StringFormat='Skills: {0:N}'}"
        VerticalOptions="Center"
        FontAttributes="Bold"
-       FontSize="12"
+       FontSize="11"
        Grid.Row="3" Grid.Column="1"/>
     </Grid>
 

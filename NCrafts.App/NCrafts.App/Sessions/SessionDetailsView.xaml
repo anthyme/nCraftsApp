@@ -12,47 +12,31 @@
     </ResourceDictionary>
   </ContentPage.Resources>
   
-  <StackLayout Padding="2,0,2,0" Orientation="Vertical">
-    <Grid>
-      <Grid.RowDefinitions>
-        <RowDefinition Height="Auto" />
-        <RowDefinition Height="Auto" />
-        <RowDefinition Height="Auto" />
-      </Grid.RowDefinitions>
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="*" />
-        <ColumnDefinition Width="*" />
-      </Grid.ColumnDefinitions>
-
+  <StackLayout Padding="5,0,5,0" Orientation="Vertical">
       <Label Text="{Binding Session.Title}"
        VerticalOptions="Center"
        FontAttributes="Bold"
-       FontSize="18"
-       Grid.Row="0" Grid.Column="0" />
+       FontSize="18" />
       <Label Text="{Binding Session.Speakers}"
        VerticalOptions="Center"
        FontAttributes="Bold"
-       FontSize="18"
-       Grid.Row="0" Grid.Column="1" />
-      <StackLayout Padding="3,0,0,0" Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
+       FontSize="18" />
+      <StackLayout Orientation="Horizontal">
         <Image Source="clockicon" WidthRequest="18" />
-        <StackLayout Orientation="Vertical">
-          <Label Text="{Binding Session.Interval, Converter={StaticResource DatetimeConverter}, ConverterParameter={x:Static converters:DateTimeConvertion.TextDate} }"
-       VerticalOptions="Center" />
-          <Label Text="{Binding Session.Interval, Converter={StaticResource DatetimeConverter}, ConverterParameter={x:Static converters:DateTimeConvertion.TextHours} }"
-       VerticalOptions="Center" />
-        </StackLayout>
-      </StackLayout>
-      <StackLayout Padding="3,0,0,0" Orientation="Horizontal" Grid.Row="2" Grid.Column="0">
-        <Image Source="mapicon" WidthRequest="18" />
-        <Label Text="{Binding Session.Room, StringFormat='Room: {0:N}'}"
-         VerticalOptions="Center" />
-      </StackLayout>
-      <Label Text="{Binding Session.Tags, StringFormat='Tags: {0:N}'}"
+        <Label Text="{Binding Session.Date}"
        VerticalOptions="Center"
-       Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" />
+       FontSize="12" />
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Image Source="mapicon" WidthRequest="18" />
+        <Label Text="{Binding Session.Room}"
+         VerticalOptions="Center"
+        FontSize="12" />
+      </StackLayout>
+      <Label Text="{Binding Session.Tags}"
+       VerticalOptions="Center" 
+       FontSize="12" />
 
-    </Grid>
     <StackLayout Orientation="Vertical" Padding="0,10,0,0">
       <Label Text="{x:Static resx:AppResources.Details}"
            FontAttributes="Bold"

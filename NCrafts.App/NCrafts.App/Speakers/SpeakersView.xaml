@@ -5,13 +5,13 @@
              xmlns:resx="clr-namespace:NCrafts.App.Resx;assembly=NCrafts.App"
              x:Class="NCrafts.App.Speakers.SpeakersView">
 
-  <StackLayout x:Name="root">
+  <StackLayout x:Name="root" Padding="2,2,2,2">
     <Label Text="{x:Static resx:AppResources.SpeakersHeader}"></Label>
     <ListView ItemsSource="{Binding Speakers}" VerticalOptions="Fill" HorizontalOptions="Fill">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout Padding="7,0">
+            <StackLayout Padding="5,5,5,5">
               <Label Text="{Binding Name}" />
             </StackLayout>
             <behaviors:Interaction.Behaviors>
