@@ -1,5 +1,5 @@
 ﻿using Microsoft.Practices.Unity;
-using NCrafts.App.Business.Common.Infrastructure;
+using NCrafts.App.Menu;
 using Xamarin.Forms;
 
 namespace NCrafts.App.Common.Infrastructure
@@ -11,8 +11,9 @@ namespace NCrafts.App.Common.Infrastructure
         protected override void OnStart()
         {
             dependencyContainer = AppDependencyConfigurator.Configure();
-            MainPage = dependencyContainer.Resolve<NavigationPage>();
-            dependencyContainer.Resolve<NavigateToSessions>()();
+            var menuViewModel = dependencyContainer.Resolve<IViewFactory>().Create<MenuView, MenuViewModel>();
+            menuViewModel.ViewModel.Start();
+            MainPage = menuViewModel.View;
         }
 
         protected override void OnSleep()

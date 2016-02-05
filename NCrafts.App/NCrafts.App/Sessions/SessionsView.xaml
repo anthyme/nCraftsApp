@@ -4,14 +4,9 @@
              xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
              xmlns:resx="clr-namespace:NCrafts.App.Resx;assembly=NCrafts.App"
              xmlns:converters="clr-namespace:NCrafts.App.Common.Converters;assembly=NCrafts.App"
-             x:Class="NCrafts.App.Sessions.SessionsView">
-
-  <ContentPage.Resources>
-    <ResourceDictionary>
-      <converters:DatetimeConverter x:Key="DatetimeConverter"></converters:DatetimeConverter>
-    </ResourceDictionary>
-  </ContentPage.Resources>
-
+             x:Class="NCrafts.App.Sessions.SessionsView"
+             Title="Sessions">
+ 
   <StackLayout Padding="2,2,2,2" x:Name="root">
     <ListView ItemsSource="{Binding Sessions}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" SeparatorColor="Gray" HasUnevenRows="True">
       <ListView.ItemTemplate>

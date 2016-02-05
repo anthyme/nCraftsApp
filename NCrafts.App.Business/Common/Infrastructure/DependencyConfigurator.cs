@@ -16,6 +16,8 @@ namespace NCrafts.App.Business.Common.Infrastructure
                 .RegisterClosures<Sessions.Query.Queries>(AsSingleton)
                 .RegisterClosures<Speakers.Command.Commands>(AsSingleton)
                 .RegisterClosures<Speakers.Query.Queries>(AsSingleton)
+                .RegisterClosures<Menu.Command.Commands>(AsSingleton)
+                .RegisterClosures<Menu.Query.Queries>(AsSingleton)
                 ;
         }
 

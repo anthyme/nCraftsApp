@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NCrafts.App.Sessions.TabbedDailyView">
+
+  <TabbedPage.Children>
+    <ContentPage Title="YOLO">
+      <StackLayout>
+        <Label Text="LALALALALALALALALA"></Label>
+      </StackLayout>
+    </ContentPage>
+    <ContentPage Title="LALA">
+      <StackLayout>
+        <Label Text="Je suis un papillon de lumière !!!!!!"></Label>
+      </StackLayout>
+    </ContentPage>
+    <ContentPage Title="TEST">
+      <StackLayout>
+        <Label Text="C'est bon ça marche !!"></Label>
+      </StackLayout>
+    </ContentPage>
+  </TabbedPage.Children>
+</TabbedPage>
