@@ -4,6 +4,7 @@ using NCrafts.App.Business.Common.Infrastructure;
 using NCrafts.App.Menu;
 using NCrafts.App.Sessions;
 using NCrafts.App.Speakers;
+using NCrafts.App.About;
 using Xamarin.Forms;
 
 namespace NCrafts.App.Common.Infrastructure
@@ -52,6 +53,15 @@ namespace NCrafts.App.Common.Infrastructure
             });
         }
 
+        public static MenuOpenAbout CreateMenuOpenAbout(HandleErrorAsync handleErrorAsync, MenuOpenView menuOpenView, IViewFactory viewFactory)
+        {
+            return () => handleErrorAsync(() =>
+            {
+                var vvm = viewFactory.Create<AboutView, AboutViewModel>();
+                return menuOpenView(vvm.View, vvm.ViewModel);
+            });
+        }
+
         public static MenuOpenSpeakers CreateMenuOpenSpeakers(HandleErrorAsync handleErrorAsync, MenuOpenView menuOpenView, IViewFactory viewFactory)
         {
             return () => handleErrorAsync(() =>
@@ -62,7 +72,7 @@ namespace NCrafts.App.Common.Infrastructure
         }
 
         public static NavigateToMenu CreateNavigateToMenu(HandleErrorAsync handleErrorAsync,
-NavigateToView navigateToView, IViewFactory viewFactory)
+            NavigateToView navigateToView, IViewFactory viewFactory)
         {
             return () => handleErrorAsync(() =>
             {
@@ -93,7 +103,7 @@ NavigateToView navigateToView, IViewFactory viewFactory)
         }
 
         public static NavigateToSpeakers CreateNavigateToSpeakers(HandleErrorAsync handleErrorAsync,
-    NavigateToView navigateToView, IViewFactory viewFactory)
+            NavigateToView navigateToView, IViewFactory viewFactory)
         {
             return () => handleErrorAsync(() =>
             {
@@ -103,7 +113,7 @@ NavigateToView navigateToView, IViewFactory viewFactory)
         }
 
         public static NavigateToSpeakerDetails CreateNavigateToSpeakerDetails(HandleErrorAsync handleErrorAsync,
-    NavigateToView navigateToView, IViewFactory viewFactory)
+            NavigateToView navigateToView, IViewFactory viewFactory)
         {
             return speakerId => handleErrorAsync(() =>
             {

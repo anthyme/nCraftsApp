@@ -3333,11 +3333,14 @@ namespace NCrafts.App.Droid
 			// aapt resource value: 0x7f020065
 			public const int mr_ic_settings_light = 2130837605;
 			
-			// aapt resource value: 0x7f020067
-			public const int notification_template_icon_bg = 2130837607;
+			// aapt resource value: 0x7f020068
+			public const int notification_template_icon_bg = 2130837608;
 			
 			// aapt resource value: 0x7f020066
 			public const int personicon = 2130837606;
+			
+			// aapt resource value: 0x7f020067
+			public const int viseoicon = 2130837607;
 			
 			static Drawable()
 			{
