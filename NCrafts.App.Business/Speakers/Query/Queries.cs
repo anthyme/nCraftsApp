@@ -31,7 +31,8 @@ namespace NCrafts.App.Business.Speakers.Query
                             Id = x.Id,
                             FirstName = x.FirstName,
                             LastName = x.LastName,
-                            Details = x.Details
+                            Details = x.Details,
+                            SessionsIds = x.Sessions
                         })
                         .First();
         }

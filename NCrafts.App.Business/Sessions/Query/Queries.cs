@@ -7,6 +7,7 @@ using NCrafts.App.Business.Core.Data;
 namespace NCrafts.App.Business.Sessions.Query
 {
     public delegate ICollection<SessionSummary> GetSessionSumariesQuery();
+    public delegate ICollection<SessionSummary> GetSessionSumariesSpeakerQuery(List<SessionId> sessionIds);
     public delegate SessionDetails GetSessionDetailsQuery(SessionId sessionId);
 
     //public delegate int GetDaysQuery();
@@ -31,6 +32,19 @@ namespace NCrafts.App.Business.Sessions.Query
         public static GetSessionSumariesQuery CreateGetSessionSumariesQuery(IDataSourceRepository dataSourceRepository)
         {
             return () => dataSourceRepository.Retreive().Sessions
+                            .Select(x => new SessionSummary
+                            {
+                                Id = x.Id,
+                                Title = x.Title,
+                                Date = "Day " + GetDay(dataSourceRepository.Retreive().OpeningTime, x.Interval.StartDate) + ": " + x.Interval.StartDate.ToString("t") + " - " + x.Interval.EndDate.ToString("t"),
+                            })
+                            .ToList();
+        }
+
+        public static GetSessionSumariesSpeakerQuery CreateGetSessionSumariesSpeakerQuery(IDataSourceRepository dataSourceRepository)
+        {
+            return sessionIds => dataSourceRepository.Retreive().Sessions
+                            .Where(x => sessionIds.Contains(x.Id))
                             .Select(x => new SessionSummary
                             {
                                 Id = x.Id,

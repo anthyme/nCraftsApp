@@ -1,4 +1,5 @@
-﻿using NCrafts.App.Business.Common;
+﻿using System.Collections.Generic;
+using NCrafts.App.Business.Common;
 
 namespace NCrafts.App.Business.Speakers.Query
 {
@@ -8,5 +9,6 @@ namespace NCrafts.App.Business.Speakers.Query
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Details { get; set; }
+        public List<SessionId> SessionsIds { get; set; } 
     }
 }

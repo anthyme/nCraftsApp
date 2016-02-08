@@ -10,6 +10,6 @@ namespace NCrafts.App.Business.Core
         public string LastName { get; set; }
         public string ProfilPicture { get; set; }
         public string Details { get; set; }
-        public List<Session> Sessions { get; set; }
+        public List<SessionId> Sessions { get; set; }
     }
 }
