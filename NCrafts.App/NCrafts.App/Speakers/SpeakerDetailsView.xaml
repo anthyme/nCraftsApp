@@ -4,47 +4,33 @@
              xmlns:resx="clr-namespace:NCrafts.App.Resx;assembly=NCrafts.App"
              x:Class="NCrafts.App.Speakers.SpeakerDetailsView">
 
-  <StackLayout Padding="5,5,5,5" >
-    <Grid>
-      <Grid.RowDefinitions>
-        <RowDefinition Height="Auto" />
-        <RowDefinition Height="Auto" />
-        <RowDefinition Height="Auto" />
-        <RowDefinition Height="Auto" />
-      </Grid.RowDefinitions>
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="*"  />
-        <ColumnDefinition Width="*" />
-      </Grid.ColumnDefinitions>
-
-      <Image
-        Source="personicon.png"
-        Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" />
-      <Label Text="{Binding Speaker.FirstName}"
-       VerticalOptions="Center"
-       FontAttributes="Bold"
-       FontSize="18"
-       Grid.Row="0" Grid.Column="1"/>
-      <Label Text="{Binding Speaker.LastName}"
-       VerticalOptions="Center"
-       FontAttributes="Bold"
-       FontSize="18"
-       Grid.Row="1" Grid.Column="1"/>
-      <Label Text="{Binding Speaker.Company, StringFormat='Working at {0:N}'}"
-       VerticalOptions="Center"
-       FontAttributes="Bold"
-       FontSize="11"
-       Grid.Row="2" Grid.Column="1"/>
-      <Label Text="{Binding Speaker.Skills, StringFormat='Skills: {0:N}'}"
-       VerticalOptions="Center"
-       FontAttributes="Bold"
-       FontSize="11"
-       Grid.Row="3" Grid.Column="1"/>
-    </Grid>
-
+  <StackLayout Padding="5,5,5,5" Orientation="Vertical">
+    <StackLayout Orientation="Horizontal">
+      <RelativeLayout>
+        <Image Source="personicon.png"
+          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.50}"
+          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.50}"/>
+        <Label Text="{Binding Speaker.FirstName}"
+           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.50}"
+           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.525}"
+           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}"
+           VerticalOptions="Center"
+           FontAttributes="Bold"
+           FontSize="18" />
+        <Label Text="{Binding Speaker.LastName}"
+           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.50}"
+           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.525}"
+           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.55}"
+           VerticalOptions="Center"
+           FontAttributes="Bold"
+           FontSize="18" />
+      </RelativeLayout>
+    </StackLayout>
     <Label Text="{x:Static resx:AppResources.SpeakersDetails}"
-         FontAttributes="Bold"
-         FontSize="18"/>
+      FontAttributes="Bold"
+      FontSize="18"/>
     <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
       <Label Text="{Binding Speaker.Details}" />
     </ScrollView>

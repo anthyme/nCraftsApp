@@ -41,7 +41,6 @@
     <Compile Include="Common\Infrastructure\Fx\Observable.cs" />
     <Compile Include="Common\Infrastructure\Fx\UnityContainerExtensions.cs" />
     <Compile Include="Core\Room.cs" />
-    <Compile Include="Core\Skill.cs" />
     <Compile Include="Common\SpeakerId.cs" />
     <Compile Include="Common\TimeSlot.cs" />
     <Compile Include="Common\Infrastructure\Logger.cs" />

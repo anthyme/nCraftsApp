@@ -31,8 +31,6 @@ namespace NCrafts.App.Business.Speakers.Query
                             Id = x.Id,
                             FirstName = x.FirstName,
                             LastName = x.LastName,
-                            Company = x.Company,
-                            Skills = string.Join(", ", x.Skills.Select(skill => skill.Name)),
                             Details = x.Details
                         })
                         .First();
