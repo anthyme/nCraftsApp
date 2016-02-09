@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NCrafts.App.Sessions.SessionDetailsView"
              xmlns:converters="clr-namespace:NCrafts.App.Common.Converters;assembly=NCrafts.App"
-             xmlns:resx="clr-namespace:NCrafts.App.Resx;assembly=NCrafts.App">
+             xmlns:resx="clr-namespace:NCrafts.App.Resx;assembly=NCrafts.App"
+             Title="Conference details">
 
  
   <ContentPage.Resources>

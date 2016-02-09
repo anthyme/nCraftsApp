@@ -35,6 +35,7 @@ namespace NCrafts.App.Speakers
             set { speaker = value; OnPropertyChanged(); }
         }
 
+        // TODO: find a proper solution, Don't use binding!!
         public double HeightList
         {
             get { return heightList; }

@@ -3,11 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:behaviors="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
              xmlns:resx="clr-namespace:NCrafts.App.Resx;assembly=NCrafts.App"
-             x:Class="NCrafts.App.Speakers.SpeakersView">
+             x:Class="NCrafts.App.Speakers.SpeakersView"
+             Title="Speakers">
 
   <StackLayout x:Name="root" Padding="2,2,2,2">
-    <Label Text="{x:Static resx:AppResources.SpeakersHeader}"></Label>
-    <ListView ItemsSource="{Binding Speakers}" VerticalOptions="Fill" HorizontalOptions="Fill">
+    <ListView ItemsSource="{Binding Speakers}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>

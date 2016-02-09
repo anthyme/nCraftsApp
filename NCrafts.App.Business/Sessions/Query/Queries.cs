@@ -10,9 +10,8 @@ namespace NCrafts.App.Business.Sessions.Query
     public delegate ICollection<SessionSummary> GetSessionSumariesSpeakerQuery(List<SessionId> sessionIds);
     public delegate SessionDetails GetSessionDetailsQuery(SessionId sessionId);
 
-    //public delegate int GetDaysQuery();
-    //public delegate ICollection<ICollection<SessionSummary>> GetSessionSumariesByDayQuery();
-    ////public delegate ICollection<ICollection<SessionSummary>> GetSessionSumariesByDayQuery();
+    public delegate List<int> GetDaysNumberQuery();
+    public delegate ICollection<SessionSummary> GetSessionSumariesByDayQuery(int day);
 
     class Queries
     {
@@ -54,45 +53,25 @@ namespace NCrafts.App.Business.Sessions.Query
                             .ToList();
         }
 
-        //public static GetDaysQuery CreateGetDaysQuery(IDataSourceRepository dataSourceRepository)
-        //{
-        //    return () =>
-        //    {
-        //        return dataSourceRepository.Retreive().Sessions.GroupBy(session => session.Interval.StartDate.DayOfYear).Count();
-        //    };
-        //}
+        public static GetDaysNumberQuery CreateGetDaysNumberQuery(IDataSourceRepository dataSourceRepository)
+        {
+            return () => dataSourceRepository.Retreive()
+                        .Sessions.GroupBy(session => session.Interval.StartDate.DayOfYear)
+                        .Select(x => x.Key).ToList();
+        }
 
-
-        //public static GetSessionSumariesByDayQuery CreateGetSessionSumariesByDayQuery(IDataSourceRepository dataSourceRepository)
-        //{
-        //    return () =>
-        //    {
-        //        var test = dataSourceRepository.Retreive().Sessions.Select(x => new SessionSummary
-        //        {
-        //            Id = x.Id,
-        //            Title = x.Title,
-        //            Date =
-        //                "Day " + GetDay(dataSourceRepository.Retreive().OpeningTime, x.Interval.StartDate) + ": " +
-        //                x.Interval.StartDate.ToString("t") + " - " + x.Interval.EndDate.ToString("t"),
-        //        }).ToList();
-        //        // TODO: order by date.
-        //        var lala = dataSourceRepository.Retreive().Sessions.GroupBy(session => session.Interval.StartDate.DayOfYear)
-        //                    .Select(day => day.ToList().OrderBy(session => session.Interval.StartDate).ToList().Select(x => new SessionSummary
-        //                    {
-        //                        Id = x.Id,
-        //                        Title = x.Title,
-        //                        Date = "Day " + GetDay(dataSourceRepository.Retreive().OpeningTime, x.Interval.StartDate) + ": " + x.Interval.StartDate.ToString("t") + " - " + x.Interval.EndDate.ToString("t"),
-        //                    }))
-        //                    .ToList();
-        //        var tmp = "";
-        //        //return (ICollection<ICollection<SessionSummary>>)lala;
-        //       // return lala;
-        //        return null;
-        //        return new ICollection<SessionSummary>[4];
-        //    };
-        //}
-
-
+        public static GetSessionSumariesByDayQuery CreateGetSessionSumariesByDayQuery(IDataSourceRepository dataSourceRepository)
+        {
+            return day => dataSourceRepository.Retreive().Sessions
+                        .GroupBy(session => session.Interval.StartDate.DayOfYear)
+                        .Where(x => x.Key == day)
+                        .Select(days => days.ToList().Select(x => new SessionSummary
+                        {
+                            Id = x.Id,
+                            Title = x.Title,
+                            Date = "Day " + GetDay(dataSourceRepository.Retreive().OpeningTime, x.Interval.StartDate) + ": " + x.Interval.StartDate.ToString("t") + " - " + x.Interval.EndDate.ToString("t"),
+                        })).SelectMany(x => x).ToList();
+        }
 
         public static GetSessionDetailsQuery CreateGetSessionDetailsQuery(IDataSourceRepository dataSourceRepository)
         {
