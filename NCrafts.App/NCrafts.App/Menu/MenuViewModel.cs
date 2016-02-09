@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using NCrafts.App.Business.Menu.Command;
@@ -13,7 +14,6 @@ namespace NCrafts.App.Menu
     {
         private readonly GetMenuItemsQuery getMenuItemsQuery;
         private ObservableCollection<MenuItem> categories;
-        private bool isMenuPresented;
 
         public MenuViewModel(
             OpenMenuItemCommand openMenuItemCommand,
@@ -31,16 +31,10 @@ namespace NCrafts.App.Menu
             set { categories = value; OnPropertyChanged(); }
         }
 
-        public bool IsMenuPresented
-        {
-            get { return isMenuPresented; }
-            set { isMenuPresented = value; OnPropertyChanged(); }
-        }
-
         protected override Task OnStart()
         {
             Categories = new ObservableCollection<MenuItem>(getMenuItemsQuery());
-            IsMenuPresented = false;
+            OpenMenuItemCommand.Execute(categories.First().ItemId);
             return Task.FromResult(0);
         }
     }

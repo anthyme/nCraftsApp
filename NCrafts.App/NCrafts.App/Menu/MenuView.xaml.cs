@@ -10,9 +10,8 @@ namespace NCrafts.App.Menu
         public MenuView(IUnityContainer dependencyContainer)
         {
             InitializeComponent();
-            var vvmTabbed = dependencyContainer.Resolve<IViewFactory>().Create<TabbedDailyView, TabbedDailyViewModel>();
-            Detail = dependencyContainer.Resolve<NavigationPage>(new ParameterOverride("root", vvmTabbed.View));
-            vvmTabbed.ViewModel.Start();
+            Detail = dependencyContainer.Resolve<NavigationPage>();
+            dependencyContainer.RegisterInstance(this);
         }
     }
 }

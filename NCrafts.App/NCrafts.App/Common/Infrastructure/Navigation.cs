@@ -4,6 +4,7 @@ using NCrafts.App.Business.Common.Infrastructure;
 using NCrafts.App.Sessions;
 using NCrafts.App.Speakers;
 using NCrafts.App.About;
+using NCrafts.App.Menu;
 using Xamarin.Forms;
 
 namespace NCrafts.App.Common.Infrastructure
@@ -23,14 +24,15 @@ namespace NCrafts.App.Common.Infrastructure
             };
         }
 
-        public static MenuOpenView CreateMenuOpenView(NavigationPage navigationPage)
+        public static MenuOpenView CreateMenuOpenView(NavigationPage navigationPage, MenuView menuView)
         {
             return async (view, vm) =>
             {
                 var startTask = vm.Start();
                 navigationPage.Navigation.InsertPageBefore(view, navigationPage.Navigation.NavigationStack.First());
-                await navigationPage.PopToRootAsync();
+                menuView.IsPresented = false;
                 await startTask;
+                await navigationPage.PopToRootAsync(false);
             };
         }
 

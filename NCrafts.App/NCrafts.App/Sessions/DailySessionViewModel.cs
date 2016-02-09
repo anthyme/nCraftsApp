@@ -18,11 +18,10 @@ namespace NCrafts.App.Sessions
         private readonly GetSessionSumariesByDayQuery getSessionSumariesByDayQuery;
         private string title = "";
 
-        // TODO: implement the command, right it's breaking the tabbed view.
-        public DailySessionViewModel(/*OpenSessionCommand openSessionCommand, */GetSessionSumariesByDayQuery getSessionSumariesByDayQuery)
+        public DailySessionViewModel(OpenSessionCommand openSessionCommand, GetSessionSumariesByDayQuery getSessionSumariesByDayQuery)
         {
             this.getSessionSumariesByDayQuery = getSessionSumariesByDayQuery;
-            //OpenSessionCommand = new Command<SessionId>(x => openSessionCommand(x));
+            OpenSessionCommand = new Command<SessionId>(x => openSessionCommand(x));
         }
 
         public ICommand OpenSessionCommand { get; }
