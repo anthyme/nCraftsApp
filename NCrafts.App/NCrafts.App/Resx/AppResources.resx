@@ -165,4 +165,7 @@
   <data name="FormatDateMonthDay" xml:space="preserve">
     <value>MM/dd</value>
   </data>
+  <data name="BlueNCraft" xml:space="preserve">
+    <value>#2eb9dc</value>
+  </data>
 </root>

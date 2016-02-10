@@ -14,5 +14,10 @@ namespace NCrafts.App.Speakers
         {
             InitializeComponent();
         }
+
+        private void ListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            ((ListView)sender).SelectedItem = null;
+        }
     }
 }

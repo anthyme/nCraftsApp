@@ -8,9 +8,9 @@ using Xamarin.Forms;
 
 namespace NCrafts.App.Sessions
 {
-    public partial class SessionsView : ContentPage
+    public partial class DailySessionsView : ContentPage
     {
-        public SessionsView()
+        public DailySessionsView()
         {
             InitializeComponent();
         }

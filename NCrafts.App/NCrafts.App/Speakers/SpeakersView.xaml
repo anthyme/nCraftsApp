@@ -7,7 +7,7 @@
              Title="Speakers">
 
   <StackLayout x:Name="root" Padding="2,2,2,2">
-    <ListView ItemsSource="{Binding Speakers}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+    <ListView ItemsSource="{Binding Speakers}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" ItemSelected="ListView_OnItemSelected">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>

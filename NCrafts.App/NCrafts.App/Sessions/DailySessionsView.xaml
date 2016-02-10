@@ -6,7 +6,7 @@
              Title="{Binding Title}">
   
   <StackLayout Padding="2,2,2,2" x:Name="root">
-    <ListView ItemsSource="{Binding Sessions}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" SeparatorColor="Gray" HasUnevenRows="True">
+    <ListView ItemsSource="{Binding Sessions}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" SeparatorColor="Gray" HasUnevenRows="True" ItemSelected="ListView_OnItemSelected">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>

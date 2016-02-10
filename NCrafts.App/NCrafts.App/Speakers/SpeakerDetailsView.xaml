@@ -34,7 +34,7 @@
       <StackLayout Padding="3,0,0,-8">
         <Label Text="{x:Static resx:AppResources.SpeakersDetails}"
                FontAttributes="Bold"
-               TextColor="Blue"
+               TextColor="{x:Static resx:AppResources.BlueNCraft}"
                FontSize="18"/>
       </StackLayout>
       <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" />
@@ -44,11 +44,11 @@
       <StackLayout Padding="3,10,0,-8">
         <Label Text="Conferences"
                FontAttributes="Bold"
-               TextColor="Blue"
+               TextColor="{x:Static resx:AppResources.BlueNCraft}"
                FontSize="18"/>
       </StackLayout>
       <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" />
-        <ListView ItemsSource="{Binding Sessions}" HorizontalOptions="Fill" SeparatorVisibility="None" HasUnevenRows="True" HeightRequest="{Binding HeightList}" >
+        <ListView ItemsSource="{Binding Sessions}" HorizontalOptions="Fill" SeparatorVisibility="None" HasUnevenRows="True" HeightRequest="{Binding HeightList}" ItemSelected="ListView_OnItemSelected">
           <ListView.ItemTemplate>
             <DataTemplate>
               <ViewCell>

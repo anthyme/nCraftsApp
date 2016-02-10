@@ -62,6 +62,15 @@ namespace NCrafts.App.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to #2eb9dc.
+        /// </summary>
+        public static string BlueNCraft {
+            get {
+                return ResourceManager.GetString("BlueNCraft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Day: .
         /// </summary>
         public static string DateText {
