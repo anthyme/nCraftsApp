@@ -9,14 +9,16 @@ namespace NCrafts.App.Business.Menu.Command
 
     class Commands
     {
-        public static OpenMenuItemCommand CreateOpenMenuItemCommand(MenuOpenTabbedDaily menuOpenTabbedDaily, MenuOpenSessions menuOpenSessions, MenuOpenSpeakers menuOpenSpeakers, MenuOpenAbout menuOpenAbout)
+        public static OpenMenuItemCommand CreateOpenMenuItemCommand(
+            MenuOpenTabbedDaily menuOpenTabbedDaily, NavigateToSessionsFromMenu navigateToSessionsFromMenu,
+            NavigateToSpeakersFromMenu navigateToSpeakersFromMenu, NavigateToAboutFromMenu navigateToAboutFromMenu)
         {
             var menuTask = new Dictionary<string, Delegate>
             {
                 { "0", menuOpenTabbedDaily },
-                { "1", menuOpenSessions },
-                { "2", menuOpenSpeakers },
-                { "3", menuOpenAbout }
+                { "1", navigateToSessionsFromMenu },
+                { "2", navigateToSpeakersFromMenu },
+                { "3", navigateToAboutFromMenu }
             };
             return (id) => (Task)menuTask[id].DynamicInvoke();
         }

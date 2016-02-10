@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using NCrafts.App.Business.Common.Infrastructure;
 using NCrafts.App.Sessions;
@@ -6,10 +7,12 @@ using NCrafts.App.Speakers;
 using NCrafts.App.About;
 using NCrafts.App.Menu;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace NCrafts.App.Common.Infrastructure
 {
     public delegate Task NavigateToView(Page page, ViewModelBase viewModelBase);
+    public delegate Task NavigateToViewFromMenu(Page page, ViewModelBase viewModelBase);
     public delegate Task MenuOpenView(Page page, ViewModelBase viewModelBase);
 
     public class Navigation
@@ -19,7 +22,26 @@ namespace NCrafts.App.Common.Infrastructure
             return async (view, vm) =>
             {
                 var startTask = vm.Start();
-                await navigationPage.PushAsync(view);
+                await startTask;
+                await navigationPage.PushAsync(view, false);
+            };
+        }
+
+        public static NavigateToViewFromMenu CreateNavigateToViewFromMenu(NavigationPage navigationPage, MenuView menuView)
+        {
+            return async (view, vm) =>
+            {
+                var startTask = vm.Start();
+                if (navigationPage.Navigation.NavigationStack.Count != 1)
+                {
+                    var tmp = navigationPage.Navigation.NavigationStack.First();
+                    navigationPage.Navigation.InsertPageBefore(view, navigationPage.Navigation.NavigationStack.First());
+                    await navigationPage.PopToRootAsync(false);
+                    navigationPage.Navigation.InsertPageBefore(tmp, navigationPage.Navigation.NavigationStack.First());
+                }
+                else
+                    await navigationPage.PushAsync(view, false);
+                menuView.IsPresented = false;
                 await startTask;
             };
         }
@@ -36,15 +58,6 @@ namespace NCrafts.App.Common.Infrastructure
             };
         }
 
-        public static MenuOpenSessions CreateMenuOpenSessions(HandleErrorAsync handleErrorAsync, MenuOpenView menuOpenView, IViewFactory viewFactory)
-        {
-            return () => handleErrorAsync(() =>
-            {
-                var vvm = viewFactory.Create<SessionsView, SessionsViewModel>();
-                return menuOpenView(vvm.View, vvm.ViewModel);
-            });
-        }
-
         public static MenuOpenTabbedDaily CreateMenuOpenTabbedDaily(HandleErrorAsync handleErrorAsync, MenuOpenView menuOpenView, IViewFactory viewFactory)
         {
             return () => handleErrorAsync(() =>
@@ -54,21 +67,33 @@ namespace NCrafts.App.Common.Infrastructure
             });
         }
 
-        public static MenuOpenAbout CreateMenuOpenAbout(HandleErrorAsync handleErrorAsync, MenuOpenView menuOpenView, IViewFactory viewFactory)
+        public static NavigateToSessionsFromMenu CreateNavigateToSessionsFromMenu(HandleErrorAsync handleErrorAsync,
+            NavigateToViewFromMenu navigateToView, IViewFactory viewFactory)
         {
             return () => handleErrorAsync(() =>
             {
-                var vvm = viewFactory.Create<AboutView, AboutViewModel>();
-                return menuOpenView(vvm.View, vvm.ViewModel);
+                var vvm = viewFactory.Create<SessionsView, SessionsViewModel>();
+                return navigateToView(vvm.View, vvm.ViewModel);
             });
         }
 
-        public static MenuOpenSpeakers CreateMenuOpenSpeakers(HandleErrorAsync handleErrorAsync, MenuOpenView menuOpenView, IViewFactory viewFactory)
+        public static NavigateToSpeakersFromMenu CreateNavigateToSpeakersFromMenu(HandleErrorAsync handleErrorAsync,
+            NavigateToViewFromMenu navigateToView, IViewFactory viewFactory)
         {
             return () => handleErrorAsync(() =>
             {
                 var vvm = viewFactory.Create<SpeakersView, SpeakersViewModel>();
-                return menuOpenView(vvm.View, vvm.ViewModel);
+                return navigateToView(vvm.View, vvm.ViewModel);
+            });
+        }
+
+        public static NavigateToAboutFromMenu CreateNavigateToAboutFromMenu(HandleErrorAsync handleErrorAsync,
+            NavigateToViewFromMenu navigateToView, IViewFactory viewFactory)
+        {
+            return () => handleErrorAsync(() =>
+            {
+                var vvm = viewFactory.Create<AboutView, AboutViewModel>();
+                return navigateToView(vvm.View, vvm.ViewModel);
             });
         }
 
