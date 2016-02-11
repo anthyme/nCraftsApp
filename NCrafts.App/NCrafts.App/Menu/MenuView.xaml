@@ -8,7 +8,7 @@
     <ContentPage Title="MENU">
       <Label Text="MENU"/>
       <StackLayout Padding="2,2,2,2" x:Name="root">
-        <ListView ItemsSource="{Binding Categories}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" SeparatorColor="Gray" HasUnevenRows="True">
+        <ListView ItemsSource="{Binding Categories}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" SeparatorColor="Gray" HasUnevenRows="True" ItemSelected="ListView_OnItemSelected">
           <ListView.ItemTemplate>
             <DataTemplate>
               <ViewCell>

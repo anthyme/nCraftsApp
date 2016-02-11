@@ -10,12 +10,12 @@ namespace NCrafts.App.Business.Menu.Command
     class Commands
     {
         public static OpenMenuItemCommand CreateOpenMenuItemCommand(
-            MenuOpenTabbedDaily menuOpenTabbedDaily, NavigateToSessionsFromMenu navigateToSessionsFromMenu,
+            NavigateToMenuFromMenu navigateToMenuFromMenu, NavigateToSessionsFromMenu navigateToSessionsFromMenu,
             NavigateToSpeakersFromMenu navigateToSpeakersFromMenu, NavigateToAboutFromMenu navigateToAboutFromMenu)
         {
             var menuTask = new Dictionary<string, Delegate>
             {
-                { "0", menuOpenTabbedDaily },
+                { "0", navigateToMenuFromMenu },
                 { "1", navigateToSessionsFromMenu },
                 { "2", navigateToSpeakersFromMenu },
                 { "3", navigateToAboutFromMenu }

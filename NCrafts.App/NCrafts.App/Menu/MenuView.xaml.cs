@@ -1,6 +1,4 @@
 ﻿using Microsoft.Practices.Unity;
-using NCrafts.App.Common.Infrastructure;
-using NCrafts.App.Sessions;
 using Xamarin.Forms;
 
 namespace NCrafts.App.Menu
@@ -12,6 +10,11 @@ namespace NCrafts.App.Menu
             InitializeComponent();
             Detail = dependencyContainer.Resolve<NavigationPage>();
             dependencyContainer.RegisterInstance(this);
+        }
+
+        private void ListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            ((ListView)sender).SelectedItem = null;
         }
     }
 }

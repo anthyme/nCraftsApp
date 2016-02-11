@@ -67,6 +67,15 @@ namespace NCrafts.App.Common.Infrastructure
             });
         }
 
+        public static NavigateToMenuFromMenu CreateNavigateToMenuFromMenu(HandleErrorAsync handleErrorAsync, NavigationPage navigationPage, MenuView menuView)
+        {
+            return () => handleErrorAsync(async () =>
+            {
+                menuView.IsPresented = false;
+                await navigationPage.PopToRootAsync(false);
+            });
+        }
+
         public static NavigateToSessionsFromMenu CreateNavigateToSessionsFromMenu(HandleErrorAsync handleErrorAsync,
             NavigateToViewFromMenu navigateToView, IViewFactory viewFactory)
         {

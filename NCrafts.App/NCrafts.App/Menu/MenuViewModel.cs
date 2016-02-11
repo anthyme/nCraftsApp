@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using NCrafts.App.Business.Common.Infrastructure;
 using NCrafts.App.Business.Menu.Command;
 using NCrafts.App.Business.Menu.Query;
 using NCrafts.App.Common.Infrastructure;
@@ -15,12 +16,13 @@ namespace NCrafts.App.Menu
         private readonly GetMenuItemsQuery getMenuItemsQuery;
         private ObservableCollection<MenuItem> categories;
 
-        public MenuViewModel(
-            OpenMenuItemCommand openMenuItemCommand,
-            GetMenuItemsQuery getMenuItemsQuery)
+        public MenuViewModel(OpenMenuItemCommand openMenuItemCommand,
+                             GetMenuItemsQuery getMenuItemsQuery,
+                             MenuOpenTabbedDaily menuOpenTabbedDaily)
         {
             OpenMenuItemCommand = new Command<string>(x => openMenuItemCommand(x));
             this.getMenuItemsQuery = getMenuItemsQuery;
+            menuOpenTabbedDaily();
         }
 
         public ICommand OpenMenuItemCommand { get; }
@@ -34,7 +36,7 @@ namespace NCrafts.App.Menu
         protected override Task OnStart()
         {
             Categories = new ObservableCollection<MenuItem>(getMenuItemsQuery());
-            OpenMenuItemCommand.Execute(categories.First().ItemId);
+            //OpenMenuItemCommand.Execute(categories.First().ItemId);
             return Task.FromResult(0);
         }
     }
