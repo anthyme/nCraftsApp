@@ -130,6 +130,10 @@
     <AndroidResource Include="Resources\drawable\viseoicon.png" />
     <AndroidResource Include="Resources\drawable\profilpicture.png" />
     <AndroidResource Include="Resources\drawable\profilpictureicon.png" />
+    <AndroidResource Include="Resources\drawable\dailyicon.png" />
+    <AndroidResource Include="Resources\drawable\sessionsicon.png" />
+    <AndroidResource Include="Resources\drawable\speakersicon.png" />
+    <AndroidResource Include="Resources\drawable\abouticon.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NCrafts.App\App.csproj">

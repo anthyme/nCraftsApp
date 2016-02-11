@@ -2,18 +2,19 @@
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
+             xmlns:resx="clr-namespace:NCrafts.App.Resx;assembly=NCrafts.App"
              x:Class="NCrafts.App.Menu.MenuView">
   
   <MasterDetailPage.Master>
     <ContentPage Title="MENU">
-      <Label Text="MENU"/>
       <StackLayout Padding="2,2,2,2" x:Name="root">
-        <ListView ItemsSource="{Binding Categories}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" SeparatorColor="Gray" HasUnevenRows="True" ItemSelected="ListView_OnItemSelected">
+        <ListView ItemsSource="{Binding Categories}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" HasUnevenRows="True" ItemSelected="ListView_OnItemSelected">
           <ListView.ItemTemplate>
             <DataTemplate>
               <ViewCell>
-                <StackLayout Padding="5,5,5,5" Spacing="5">
-                  <Label Text="{Binding Title}" LineBreakMode="TailTruncation" FontSize="18" FontAttributes="Bold" />
+                <StackLayout Padding="5,5,5,5" Spacing="20" Orientation="Horizontal" HeightRequest="40">
+                  <Image Source="{Binding Icon}" />
+                  <Label Text="{Binding Title}" LineBreakMode="TailTruncation" FontSize="18" FontAttributes="Bold"  VerticalTextAlignment="Center" />
                 </StackLayout>
                 <b:Interaction.Behaviors>
                   <b:BehaviorCollection>

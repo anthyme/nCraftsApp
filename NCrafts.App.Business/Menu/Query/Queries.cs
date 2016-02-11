@@ -11,10 +11,10 @@ namespace NCrafts.App.Business.Menu.Query
         {
             return () => new List<MenuItem>
             {
-                new MenuItem {Title = "Daily", ItemId = "0"},
-                new MenuItem {Title = "Sessions", ItemId = "1"},
-                new MenuItem {Title = "Speakers", ItemId = "2"},
-                new MenuItem {Title = "About", ItemId = "3"},
+                new MenuItem {Title = "Daily", ItemId = "0", Icon = "dailyicon.png"},
+                new MenuItem {Title = "Sessions", ItemId = "1", Icon = "sessionsicon.png"},
+                new MenuItem {Title = "Speakers", ItemId = "2", Icon = "speakersicon.png"},
+                new MenuItem {Title = "About", ItemId = "3", Icon = "abouticon.png"},
             };
         }
     }
