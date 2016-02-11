@@ -7,5 +7,6 @@ namespace NCrafts.App.Business.Speakers.Query
     {
         public SpeakerId Id { get; set; }
         public string Name { get; set; }
+        public string ProfilPicture { get; set; }
     }
 }

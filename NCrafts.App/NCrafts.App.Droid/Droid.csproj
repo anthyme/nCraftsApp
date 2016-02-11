@@ -120,7 +120,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
-    <AndroidResource Include="Resources\drawable\personicon.png" />
     <AndroidResource Include="Resources\drawable-hdpi\iconxamarin.png" />
     <AndroidResource Include="Resources\drawable\icon.png" />
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
@@ -129,6 +128,8 @@
     <AndroidResource Include="Resources\drawable\mapicon.png" />
     <AndroidResource Include="Resources\drawable\clockicon.png" />
     <AndroidResource Include="Resources\drawable\viseoicon.png" />
+    <AndroidResource Include="Resources\drawable\profilpicture.png" />
+    <AndroidResource Include="Resources\drawable\profilpictureicon.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NCrafts.App\App.csproj">

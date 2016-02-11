@@ -11,8 +11,9 @@
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout Padding="5,5,5,5">
-              <Label Text="{Binding Name}" />
+            <StackLayout Padding="5,5,5,5" Orientation="Horizontal">
+              <Image Aspect="AspectFit" Source="{Binding ProfilPicture}"/>
+              <Label Text="{Binding Name}" LineBreakMode="TailTruncation" FontSize="18" FontAttributes="Bold" />
             </StackLayout>
             <behaviors:Interaction.Behaviors>
               <behaviors:BehaviorCollection>
