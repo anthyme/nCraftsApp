@@ -56,7 +56,7 @@ namespace NCrafts.App.Speakers
         protected override Task OnStart()
         {
             Speaker = getSpeakerDetailsQuery(id);
-            Sessions = new ObservableCollection<SessionSummary>(getSessionSumariesSpeakerQuery(Speaker.SessionsIds));
+            Sessions = new ObservableCollection<SessionSummary>(getSessionSumariesSpeakerQuery(Speaker.SessionsId));
             HeightList = sessions.Count*52;
             return Task.FromResult(0);
         }

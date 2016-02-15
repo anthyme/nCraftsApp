@@ -13,7 +13,7 @@
           <ViewCell>
             <StackLayout Padding="5,5,5,5" Orientation="Horizontal">
               <Image Aspect="AspectFit" Source="{Binding ProfilPicture}"/>
-              <Label Text="{Binding Name}" LineBreakMode="TailTruncation" FontSize="18" FontAttributes="Bold" />
+              <Label Text="{Binding Name}" LineBreakMode="TailTruncation" FontSize="18" FontAttributes="Bold" VerticalTextAlignment="Center" />
             </StackLayout>
             <behaviors:Interaction.Behaviors>
               <behaviors:BehaviorCollection>
