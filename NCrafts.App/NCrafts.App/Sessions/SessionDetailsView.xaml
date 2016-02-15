@@ -12,6 +12,7 @@
       <Label Text="{Binding Session.Title}"
              VerticalOptions="Center"
              HorizontalOptions="Center"
+             HorizontalTextAlignment="Center"
              FontAttributes="Bold"
              FontSize="18" />
       <StackLayout Orientation="Horizontal">
