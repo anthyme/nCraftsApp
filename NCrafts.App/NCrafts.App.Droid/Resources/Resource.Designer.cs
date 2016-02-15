@@ -3339,8 +3339,8 @@ namespace NCrafts.App.Droid
 			// aapt resource value: 0x7f020067
 			public const int mr_ic_settings_light = 2130837607;
 			
-			// aapt resource value: 0x7f02006d
-			public const int notification_template_icon_bg = 2130837613;
+			// aapt resource value: 0x7f02006e
+			public const int notification_template_icon_bg = 2130837614;
 			
 			// aapt resource value: 0x7f020068
 			public const int profilpicture = 2130837608;
@@ -3355,7 +3355,10 @@ namespace NCrafts.App.Droid
 			public const int speakersicon = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int viseoicon = 2130837612;
+			public const int splashscreen = 2130837612;
+			
+			// aapt resource value: 0x7f02006d
+			public const int viseoicon = 2130837613;
 			
 			static Drawable()
 			{
@@ -4507,6 +4510,15 @@ namespace NCrafts.App.Droid
 			
 			// aapt resource value: 0x7f080006
 			public const int CardView_Light = 2131230726;
+			
+			// aapt resource value: 0x7f080145
+			public const int MyTheme = 2131231045;
+			
+			// aapt resource value: 0x7f080144
+			public const int MyTheme_Base = 2131231044;
+			
+			// aapt resource value: 0x7f080146
+			public const int MyTheme_Splash = 2131231046;
 			
 			// aapt resource value: 0x7f080016
 			public const int Platform_AppCompat = 2131230742;

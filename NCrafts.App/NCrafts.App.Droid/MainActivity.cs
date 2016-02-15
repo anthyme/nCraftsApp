@@ -6,7 +6,8 @@ using Xamarin.Forms.Platform.Android;
 
 namespace NCrafts.App.Droid
 {
-    [Activity(Label = "NCrafts", Icon = "@drawable/icon", Theme = "@android:style/Theme.Holo.Light", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "NCrafts", Icon = "@drawable/icon", Theme = "@style/MyTheme",
+              ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : FormsApplicationActivity
     {
         protected override void OnCreate(Bundle bundle)
