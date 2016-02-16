@@ -17,7 +17,7 @@ namespace NCrafts.App.Business.Speakers.Query
             return
                 () =>
                     dataSourceRepository.Retreive()
-                        .Speakers.Select(x => new SpeakerSummary {Id = x.Id, Name = x.FirstName + " " + x.LastName, ProfilPicture = x.ProfilPicture})
+                        .Speakers.Select(x => new SpeakerSummary {Id = x.Id, Name = x.FirstName + " " + x.LastName, ProfilPicture = x.ProfilPictureIcon})
                         .ToList();
         }
 
@@ -47,7 +47,7 @@ namespace NCrafts.App.Business.Speakers.Query
                             {
                                 Id = x.Id,
                                 Name = x.FirstName + " " + x.LastName,
-                                ProfilPicture = x.ProfilPicture,
+                                ProfilPicture = x.ProfilPictureIcon,
                             })
                             .ToList();
         }

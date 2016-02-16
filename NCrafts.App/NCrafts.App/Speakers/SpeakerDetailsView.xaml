@@ -10,7 +10,7 @@
     <StackLayout Padding="5,5,5,5" Orientation="Vertical">
       <StackLayout Orientation="Horizontal">
         <RelativeLayout>
-          <Image Source="profilpicture.png"
+          <Image Source="{Binding Speaker.ProfilPicture}"
             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.50}"
             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.50}"/>
           <Label Text="{Binding Speaker.FirstName}"

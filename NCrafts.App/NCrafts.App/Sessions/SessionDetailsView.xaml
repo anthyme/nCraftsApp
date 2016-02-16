@@ -59,7 +59,7 @@
           <DataTemplate>
             <ViewCell>
               <StackLayout Padding="5,5,5,5" Spacing="5" Orientation="Horizontal">
-                <Image Aspect="AspectFit" Source="{Binding ProfilPicture}"/>
+                <Image Aspect="AspectFit" HeightRequest="75" Source="{Binding ProfilPicture}"/>
                 <Label Text="{Binding Name}" LineBreakMode="TailTruncation" FontSize="18" FontAttributes="Bold" VerticalTextAlignment="Center" />
               </StackLayout>
               <behaviors:Interaction.Behaviors>

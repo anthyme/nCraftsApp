@@ -137,6 +137,9 @@
     <AndroidResource Include="Resources\drawable\abouticon.png" />
     <AndroidResource Include="Resources\values\style.xml" />
     <AndroidResource Include="Resources\drawable\splashscreen.xml" />
+    <AndroidResource Include="Resources\drawable\simonbrown.jpg" />
+    <AndroidResource Include="Resources\drawable\simonbrown50.jpg" />
+    <AndroidResource Include="Resources\drawable\simonbrown75.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NCrafts.App\App.csproj">

@@ -58,7 +58,7 @@ namespace NCrafts.App.Sessions
         {
             Session = getSessionDetailsQuery(sessionId);
             Speakers = new ObservableCollection<SpeakerSummary>(getSpeakersSumariesSessionQuery(session.SpeakersId));
-            HeightList = speakers.Count * 59;
+            HeightList = speakers.Count * 85;
             return Task.FromResult(0);
         }
     }

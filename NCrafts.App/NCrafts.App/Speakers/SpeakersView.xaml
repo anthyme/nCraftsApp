@@ -7,12 +7,12 @@
              Title="Speakers">
 
   <StackLayout x:Name="root" Padding="2,2,2,2">
-    <ListView ItemsSource="{Binding Speakers}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" ItemSelected="ListView_OnItemSelected">
+    <ListView ItemsSource="{Binding Speakers}" HorizontalOptions="Fill" SeparatorVisibility="None" HasUnevenRows="True" ItemSelected="ListView_OnItemSelected">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
             <StackLayout Padding="5,5,5,5" Orientation="Horizontal">
-              <Image Aspect="AspectFit" Source="{Binding ProfilPicture}"/>
+              <Image Aspect="AspectFit" HeightRequest="75" Source="{Binding ProfilPicture}"/>
               <Label Text="{Binding Name}" LineBreakMode="TailTruncation" FontSize="18" FontAttributes="Bold" VerticalTextAlignment="Center" />
             </StackLayout>
             <behaviors:Interaction.Behaviors>
