@@ -5,6 +5,7 @@ using NCrafts.App.Business.Common.Infrastructure;
 using NCrafts.App.Sessions;
 using NCrafts.App.Speakers;
 using NCrafts.App.About;
+using NCrafts.App.Business.Common.Infrastructure.Fx;
 using NCrafts.App.Menu;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -37,7 +38,6 @@ namespace NCrafts.App.Common.Infrastructure
                 navigationPage.Navigation.NavigationStack
                     .Skip(1)
                     .Take(navigationPage.Navigation.NavigationStack.Count - 2)
-                    .ToList()
                     .ForEach(navigationPage.Navigation.RemovePage);
                 await startTask;
             };
