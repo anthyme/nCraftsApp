@@ -14,6 +14,7 @@ namespace NCrafts.App.Common.Infrastructure
 {
     public delegate Task NavigateToView(Page page, ViewModelBase viewModelBase);
     public delegate Task NavigateToViewFromMenu(Page page, ViewModelBase viewModelBase);
+    public delegate void SetMenuVisibility(bool isVisible);
 
     public class Navigation
     {
@@ -27,41 +28,43 @@ namespace NCrafts.App.Common.Infrastructure
             };
         }
 
-        public static NavigateToViewFromMenu CreateNavigateToViewFromMenu(NavigationPage navigationPage, MenuView menuView)
+        public static NavigateToViewFromMenu CreateNavigateToViewFromMenu(NavigationPage navigationPage, SetMenuVisibility setMenuVisibility)
         {
             return async (view, vm) =>
             {
                 var startTask = vm.Start();
 
-                menuView.IsPresented = false;
+                setMenuVisibility(false);
                 await navigationPage.PushAsync(view, true);
                 navigationPage.Navigation.NavigationStack
                     .Skip(1)
                     .Take(navigationPage.Navigation.NavigationStack.Count - 2)
+                    .ToList()
                     .ForEach(navigationPage.Navigation.RemovePage);
                 await startTask;
             };
         }
 
-        public static NavigateToTabbedDaily CreateMenuOpenTabbedDaily(NavigationPage navigationPage, 
-            MenuView menuView, IViewFactory viewFactory, HandleErrorAsync handleErrorAsync)
+        public static NavigateToTabbedDaily CreateMenuOpenTabbedDaily(NavigationPage navigationPage,
+            SetMenuVisibility setMenuVisibility, IViewFactory viewFactory, HandleErrorAsync handleErrorAsync)
         {
             return () => handleErrorAsync(async () =>
             {
                 var vvm = viewFactory.Create<TabbedDailyView, TabbedDailyViewModel>();
                 var startTask = vvm.ViewModel.Start();
-                menuView.IsPresented = false;
+                setMenuVisibility(false);
                 await navigationPage.PushAsync(vvm.View, false);
                 navigationPage.Navigation.RemovePage(navigationPage.Navigation.NavigationStack.First());
                 await startTask;
             });
         }
 
-        public static NavigateToMenuFromMenu CreateNavigateToMenuFromMenu(HandleErrorAsync handleErrorAsync, NavigationPage navigationPage, MenuView menuView)
+        public static NavigateToMenuFromMenu CreateNavigateToMenuFromMenu(
+            HandleErrorAsync handleErrorAsync, NavigationPage navigationPage, SetMenuVisibility setMenuVisibility)
         {
             return () => handleErrorAsync(async () =>
             {
-                menuView.IsPresented = false;
+                setMenuVisibility(false);
                 await navigationPage.PopToRootAsync(false);
             });
         }

@@ -3,13 +3,11 @@ using Xamarin.Forms;
 
 namespace NCrafts.App.Menu
 {
-    public partial class MenuView : MasterDetailPage
+    public partial class MenuView : ContentPage
     {
         public MenuView(IUnityContainer dependencyContainer)
         {
             InitializeComponent();
-            Detail = dependencyContainer.Resolve<NavigationPage>();
-            dependencyContainer.RegisterInstance(this);
         }
 
         private void ListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)

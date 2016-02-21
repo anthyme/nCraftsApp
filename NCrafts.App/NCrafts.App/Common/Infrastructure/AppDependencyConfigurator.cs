@@ -13,6 +13,7 @@ namespace NCrafts.App.Common.Infrastructure
                 .RegisterType<IViewFactory, ViewFactory>(AsSingleton)
                 .RegisterType<NavigationPage>(AsSingleton)
                 .RegisterClosures<Navigation>(AsSingleton)
+                .RegisterClosures<Bootstrapper>(AsSingleton)
                 ;
         }
 

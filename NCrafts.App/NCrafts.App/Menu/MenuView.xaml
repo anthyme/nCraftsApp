@@ -1,34 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
-             xmlns:resx="clr-namespace:NCrafts.App.Resx;assembly=NCrafts.App"
-             x:Class="NCrafts.App.Menu.MenuView">
-  
-  <MasterDetailPage.Master>
-    <ContentPage Title="MENU">
-      <StackLayout Padding="2,2,2,2" x:Name="root">
-        <ListView ItemsSource="{Binding Categories}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" HasUnevenRows="True" ItemSelected="ListView_OnItemSelected">
-          <ListView.ItemTemplate>
-            <DataTemplate>
-              <ViewCell>
-                <StackLayout Padding="5,5,5,5" Spacing="20" Orientation="Horizontal" HeightRequest="40">
-                  <Image Source="{Binding Icon}" />
-                  <Label Text="{Binding Title}" LineBreakMode="TailTruncation" FontSize="18" FontAttributes="Bold"  VerticalTextAlignment="Center" />
-                </StackLayout>
-                <b:Interaction.Behaviors>
-                  <b:BehaviorCollection>
-                    <b:EventToCommand
-                        EventName="Tapped"
-                        Command="{Binding Path=BindingContext.OpenMenuItemCommand, Source={x:Reference root}, }"
-                        CommandParameter="{Binding ItemId}" />
-                  </b:BehaviorCollection>
-                </b:Interaction.Behaviors>
-              </ViewCell>
-            </DataTemplate>
-          </ListView.ItemTemplate>
-        </ListView>
-      </StackLayout>
-    </ContentPage>
-  </MasterDetailPage.Master>
-</MasterDetailPage>
+<ContentPage
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
+  xmlns:resx="clr-namespace:NCrafts.App.Resx;assembly=NCrafts.App"
+  x:Class="NCrafts.App.Menu.MenuView"
+  Title="MENU">
+  <StackLayout Padding="2,2,2,2" x:Name="root">
+    <ListView ItemsSource="{Binding Categories}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" HasUnevenRows="True" ItemSelected="ListView_OnItemSelected">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Padding="5,5,5,5" Spacing="20" Orientation="Horizontal" HeightRequest="40">
+              <Image Source="{Binding Icon}" />
+              <Label Text="{Binding Title}" LineBreakMode="TailTruncation" FontSize="18" FontAttributes="Bold"  VerticalTextAlignment="Center" />
+            </StackLayout>
+            <b:Interaction.Behaviors>
+              <b:BehaviorCollection>
+                <b:EventToCommand
+                    EventName="Tapped"
+                    Command="{Binding Path=BindingContext.OpenMenuItemCommand, Source={x:Reference root}, }"
+                    CommandParameter="{Binding ItemId}" />
+              </b:BehaviorCollection>
+            </b:Interaction.Behaviors>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>
