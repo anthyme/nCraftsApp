@@ -17,12 +17,12 @@ namespace NCrafts.App.Menu
         private ObservableCollection<MenuItem> categories;
 
         public MenuViewModel(OpenMenuItemCommand openMenuItemCommand,
-                             GetMenuItemsQuery getMenuItemsQuery,
-                             MenuOpenTabbedDaily menuOpenTabbedDaily)
+                               GetMenuItemsQuery getMenuItemsQuery,
+                               NavigateToTabbedDaily navigateToTabbedDaily)
         {
             OpenMenuItemCommand = new Command<string>(x => openMenuItemCommand(x));
             this.getMenuItemsQuery = getMenuItemsQuery;
-            menuOpenTabbedDaily();
+            navigateToTabbedDaily();
         }
 
         public ICommand OpenMenuItemCommand { get; }

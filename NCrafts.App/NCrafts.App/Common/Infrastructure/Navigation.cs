@@ -13,7 +13,6 @@ namespace NCrafts.App.Common.Infrastructure
 {
     public delegate Task NavigateToView(Page page, ViewModelBase viewModelBase);
     public delegate Task NavigateToViewFromMenu(Page page, ViewModelBase viewModelBase);
-    public delegate Task MenuOpenView(Page page, ViewModelBase viewModelBase);
 
     public class Navigation
     {
@@ -22,8 +21,8 @@ namespace NCrafts.App.Common.Infrastructure
             return async (view, vm) =>
             {
                 var startTask = vm.Start();
+                await navigationPage.PushAsync(view, true);
                 await startTask;
-                await navigationPage.PushAsync(view, false);
             };
         }
 
@@ -32,38 +31,29 @@ namespace NCrafts.App.Common.Infrastructure
             return async (view, vm) =>
             {
                 var startTask = vm.Start();
-                if (navigationPage.Navigation.NavigationStack.Count != 1)
-                {
-                    var tmp = navigationPage.Navigation.NavigationStack.First();
-                    navigationPage.Navigation.InsertPageBefore(view, navigationPage.Navigation.NavigationStack.First());
-                    await navigationPage.PopToRootAsync(false);
-                    navigationPage.Navigation.InsertPageBefore(tmp, navigationPage.Navigation.NavigationStack.First());
-                }
-                else
-                    await navigationPage.PushAsync(view, false);
+
                 menuView.IsPresented = false;
+                await navigationPage.PushAsync(view, true);
+                navigationPage.Navigation.NavigationStack
+                    .Skip(1)
+                    .Take(navigationPage.Navigation.NavigationStack.Count - 2)
+                    .ToList()
+                    .ForEach(navigationPage.Navigation.RemovePage);
                 await startTask;
             };
         }
 
-        public static MenuOpenView CreateMenuOpenView(NavigationPage navigationPage, MenuView menuView)
+        public static NavigateToTabbedDaily CreateMenuOpenTabbedDaily(NavigationPage navigationPage, 
+            MenuView menuView, IViewFactory viewFactory, HandleErrorAsync handleErrorAsync)
         {
-            return async (view, vm) =>
-            {
-                var startTask = vm.Start();
-                navigationPage.Navigation.InsertPageBefore(view, navigationPage.Navigation.NavigationStack.First());
-                menuView.IsPresented = false;
-                await startTask;
-                await navigationPage.PopToRootAsync(false);
-            };
-        }
-
-        public static MenuOpenTabbedDaily CreateMenuOpenTabbedDaily(HandleErrorAsync handleErrorAsync, MenuOpenView menuOpenView, IViewFactory viewFactory)
-        {
-            return () => handleErrorAsync(() =>
+            return () => handleErrorAsync(async () =>
             {
                 var vvm = viewFactory.Create<TabbedDailyView, TabbedDailyViewModel>();
-                return menuOpenView(vvm.View, vvm.ViewModel);
+                var startTask = vvm.ViewModel.Start();
+                menuView.IsPresented = false;
+                await navigationPage.PushAsync(vvm.View, false);
+                navigationPage.Navigation.RemovePage(navigationPage.Navigation.NavigationStack.First());
+                await startTask;
             });
         }
 

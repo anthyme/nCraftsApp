@@ -9,5 +9,5 @@ namespace NCrafts.App.Business.Common.Infrastructure
     public delegate Task NavigateToSessionDetails(SessionId sessionId);
     public delegate Task NavigateToSpeakerDetails(SpeakerId speakerId);
 
-    public delegate Task MenuOpenTabbedDaily();
+    public delegate Task NavigateToTabbedDaily();
 }
