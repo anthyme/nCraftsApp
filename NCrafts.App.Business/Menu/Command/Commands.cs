@@ -1,26 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using NCrafts.App.Business.Common.Infrastructure;
 
 namespace NCrafts.App.Business.Menu.Command
 {
-    public delegate Task OpenMenuItemCommand(string id);
+    public delegate Task OpenDailyCommand();
+    public delegate Task OpenSessionsCommand();
+    public delegate Task OpenSpeakersCommand();
+    public delegate Task OpenAboutCommand();
 
     class Commands
     {
-        public static OpenMenuItemCommand CreateOpenMenuItemCommand(
-            NavigateToMenuFromMenu navigateToMenuFromMenu, NavigateToSessionsFromMenu navigateToSessionsFromMenu,
-            NavigateToSpeakersFromMenu navigateToSpeakersFromMenu, NavigateToAboutFromMenu navigateToAboutFromMenu)
+        public static OpenDailyCommand CreateOpenDailyCommand(NavigateToMenuFromMenu navigateToMenuFromMenu)
         {
-            var menuTask = new Dictionary<string, Delegate>
-            {
-                { "0", navigateToMenuFromMenu },
-                { "1", navigateToSessionsFromMenu },
-                { "2", navigateToSpeakersFromMenu },
-                { "3", navigateToAboutFromMenu }
-            };
-            return (id) => (Task)menuTask[id].DynamicInvoke();
+            return () => navigateToMenuFromMenu();
+        }
+
+        public static OpenSessionsCommand CreateOpenSessionsCommand(NavigateToSessionsFromMenu navigateToSessionsFromMenu)
+        {
+            return () => navigateToSessionsFromMenu();
+        }
+
+        public static OpenSpeakersCommand CreateOpenSpeakersCommand(NavigateToSpeakersFromMenu navigateToSpeakersFromMenu)
+        {
+            return () => navigateToSpeakersFromMenu();
+        }
+
+        public static OpenAboutCommand CreateOpenAboutCommand(NavigateToAboutFromMenu navigateToAboutFromMenu)
+        {
+            return () => navigateToAboutFromMenu();
         }
     }
 }

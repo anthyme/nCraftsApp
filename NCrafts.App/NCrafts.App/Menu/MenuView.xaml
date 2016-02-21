@@ -20,7 +20,7 @@
                 <b:EventToCommand
                     EventName="Tapped"
                     Command="{Binding Path=BindingContext.OpenMenuItemCommand, Source={x:Reference root}, }"
-                    CommandParameter="{Binding ItemId}" />
+                    CommandParameter="{Binding .}" />
               </b:BehaviorCollection>
             </b:Interaction.Behaviors>
           </ViewCell>

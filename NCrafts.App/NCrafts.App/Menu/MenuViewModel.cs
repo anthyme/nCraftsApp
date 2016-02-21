@@ -16,10 +16,9 @@ namespace NCrafts.App.Menu
         private readonly GetMenuItemsQuery getMenuItemsQuery;
         private ObservableCollection<MenuItem> categories;
 
-        public MenuViewModel(OpenMenuItemCommand openMenuItemCommand,
-                               GetMenuItemsQuery getMenuItemsQuery)
+        public MenuViewModel(GetMenuItemsQuery getMenuItemsQuery)
         {
-            OpenMenuItemCommand = new Command<string>(x => openMenuItemCommand(x));
+            OpenMenuItemCommand = new Command<MenuItem>(x => x.OpenCommand());
             this.getMenuItemsQuery = getMenuItemsQuery;
         }
 
@@ -34,7 +33,6 @@ namespace NCrafts.App.Menu
         protected override Task OnStart()
         {
             Categories = new ObservableCollection<MenuItem>(getMenuItemsQuery());
-            //OpenMenuItemCommand.Execute(categories.First().ItemId);
             return Task.FromResult(0);
         }
     }
