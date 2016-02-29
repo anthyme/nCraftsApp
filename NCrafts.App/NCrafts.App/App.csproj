@@ -57,7 +57,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Common\Converters\DatetimeConverter.cs" />
     <Compile Include="Sessions\DailySessionsView.xaml.cs">
       <DependentUpon>DailySessionsView.xaml</DependentUpon>
     </Compile>
