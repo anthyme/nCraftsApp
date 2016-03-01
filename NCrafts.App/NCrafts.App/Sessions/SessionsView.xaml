@@ -2,8 +2,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
-             xmlns:resx="clr-namespace:NCrafts.App.Resx;assembly=NCrafts.App"
-             xmlns:converters="clr-namespace:NCrafts.App.Common.Converters;assembly=NCrafts.App"
              x:Class="NCrafts.App.Sessions.SessionsView"
              Title="Sessions">
  
