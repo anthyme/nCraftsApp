@@ -28,13 +28,12 @@ namespace NCrafts.App.Common.Infrastructure
             };
         }
 
-        public static NavigateToViewFromMenu CreateNavigateToViewFromMenu(NavigationPage navigationPage, SetMenuVisibility setMenuVisibility)
+        public static NavigateToViewFromMenu CreateNavigateToViewFromMenu(NavigationPage navigationPage)
         {
             return async vvm =>
             {
                 var startTask = vvm.ViewModel.Start();
 
-                setMenuVisibility(false);
                 await navigationPage.PushAsync(vvm.View, true);
                 navigationPage.Navigation.NavigationStack
                     .Skip(1)
@@ -45,8 +44,8 @@ namespace NCrafts.App.Common.Infrastructure
             };
         }
 
-        public static NavigateToMenuFromMenu CreateNavigateToMenuFromMenu(
-            HandleErrorAsync handleErrorAsync, NavigationPage navigationPage, SetMenuVisibility setMenuVisibility)
+        public static NavigateToMenuFromMenu CreateNavigateToMenuFromMenu(HandleErrorAsync handleErrorAsync,
+            NavigationPage navigationPage, SetMenuVisibility setMenuVisibility)
         {
             return () => handleErrorAsync(async () =>
             {
@@ -56,21 +55,36 @@ namespace NCrafts.App.Common.Infrastructure
         }
 
         public static NavigateToSessionsFromMenu CreateNavigateToSessionsFromMenu(HandleErrorAsync handleErrorAsync,
-            NavigateToViewFromMenu navigateToView, IViewFactory viewFactory)
+            NavigateToViewFromMenu navigateToView, IViewFactory viewFactory, SetMenuVisibility setMenuVisibility, NavigationPage navigationPage)
         {
-            return () => handleErrorAsync(() => navigateToView(viewFactory.Create<SessionsView, SessionsViewModel>()));
+            return () => handleErrorAsync(async () =>
+            {
+                setMenuVisibility(false);
+                if (navigationPage.CurrentPage.GetType() != typeof(SessionsView))
+                    await navigateToView(viewFactory.Create<SessionsView, SessionsViewModel>());
+            });
         }
 
         public static NavigateToSpeakersFromMenu CreateNavigateToSpeakersFromMenu(HandleErrorAsync handleErrorAsync,
-            NavigateToViewFromMenu navigateToView, IViewFactory viewFactory)
+            NavigateToViewFromMenu navigateToView, IViewFactory viewFactory, SetMenuVisibility setMenuVisibility, NavigationPage navigationPage)
         {
-            return () => handleErrorAsync(() => navigateToView(viewFactory.Create<SpeakersView, SpeakersViewModel>()));
+            return () => handleErrorAsync(async () =>
+            {
+                setMenuVisibility(false);
+                if (navigationPage.CurrentPage.GetType() != typeof(SpeakersView))
+                    await navigateToView(viewFactory.Create<SpeakersView, SpeakersViewModel>());
+            });
         }
 
         public static NavigateToAboutFromMenu CreateNavigateToAboutFromMenu(HandleErrorAsync handleErrorAsync,
-            NavigateToViewFromMenu navigateToView, IViewFactory viewFactory)
+            NavigateToViewFromMenu navigateToView, IViewFactory viewFactory, SetMenuVisibility setMenuVisibility, NavigationPage navigationPage)
         {
-            return () => handleErrorAsync(() => navigateToView(viewFactory.Create<AboutView, AboutViewModel>()));
+            return () => handleErrorAsync(async () =>
+            {
+                setMenuVisibility(false);
+                if (navigationPage.CurrentPage.GetType() != typeof(AboutView))
+                    await navigateToView(viewFactory.Create<AboutView, AboutViewModel>());
+            });
         }
 
         public static NavigateToSessionDetails CreateNavigateToSessionDetails(HandleErrorAsync handleErrorAsync,
