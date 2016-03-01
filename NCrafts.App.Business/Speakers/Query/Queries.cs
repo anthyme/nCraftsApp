@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Xml.Linq;
 using NCrafts.App.Business.Common;
 using NCrafts.App.Business.Core.Data;
 
@@ -51,6 +50,5 @@ namespace NCrafts.App.Business.Speakers.Query
                             })
                             .ToList();
         }
-
     }
 }

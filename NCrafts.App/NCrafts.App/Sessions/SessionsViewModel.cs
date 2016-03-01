@@ -14,9 +14,7 @@ namespace NCrafts.App.Sessions
         private readonly GetSessionSumariesQuery getSessionSumariesQuery;
         private ObservableCollection<SessionSummary> sessions;
 
-        public SessionsViewModel(
-            OpenSessionCommand openSessionCommand, 
-            GetSessionSumariesQuery getSessionSumariesQuery)
+        public SessionsViewModel(OpenSessionCommand openSessionCommand, GetSessionSumariesQuery getSessionSumariesQuery)
         {
             this.getSessionSumariesQuery = getSessionSumariesQuery;
             OpenSessionCommand = new Command<SessionId>(x => openSessionCommand(x));

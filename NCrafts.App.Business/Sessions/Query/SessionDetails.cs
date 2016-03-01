@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using NCrafts.App.Business.Common;
-using NCrafts.App.Business.Core;
 
 namespace NCrafts.App.Business.Sessions.Query
 {

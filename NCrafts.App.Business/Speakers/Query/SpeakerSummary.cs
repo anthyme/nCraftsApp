@@ -1,5 +1,4 @@
-﻿using System.Xml;
-using NCrafts.App.Business.Common;
+﻿using NCrafts.App.Business.Common;
 
 namespace NCrafts.App.Business.Speakers.Query
 {

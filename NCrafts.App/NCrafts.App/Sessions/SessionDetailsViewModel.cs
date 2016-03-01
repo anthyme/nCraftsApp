@@ -19,8 +19,6 @@ namespace NCrafts.App.Sessions
         private double heightList;
         private ObservableCollection<SpeakerSummary> speakers;
 
-        public ICommand OpenSpeakerCommand { get; }
-
         public SessionDetailsViewModel(OpenSpeakerCommand openSpeakerCommand,
                                        GetSessionDetailsQuery getSessionDetailsQuery,
                                        GetSpeakersSumariesSessionQuery getSpeakersSumariesSessionQuery)
@@ -29,6 +27,8 @@ namespace NCrafts.App.Sessions
             this.getSessionDetailsQuery = getSessionDetailsQuery;
             this.getSpeakersSumariesSessionQuery = getSpeakersSumariesSessionQuery;
         }
+
+        public ICommand OpenSpeakerCommand { get; }
 
         public SessionDetails Session
         {

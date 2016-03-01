@@ -13,9 +13,8 @@ namespace NCrafts.App.Sessions
 {
     public class DailySessionViewModel : ViewModelBase
     {
-        public int Day { get; set; }
-        private ObservableCollection<SessionSummary> sessions;
         private readonly GetSessionSumariesByDayQuery getSessionSumariesByDayQuery;
+        private ObservableCollection<SessionSummary> sessions;
         private string title = "";
 
         public DailySessionViewModel(OpenSessionCommand openSessionCommand, GetSessionSumariesByDayQuery getSessionSumariesByDayQuery)
@@ -23,6 +22,8 @@ namespace NCrafts.App.Sessions
             this.getSessionSumariesByDayQuery = getSessionSumariesByDayQuery;
             OpenSessionCommand = new Command<SessionId>(x => openSessionCommand(x));
         }
+
+        public int Day { get; set; }
 
         public ICommand OpenSessionCommand { get; }
 

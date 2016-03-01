@@ -13,20 +13,19 @@ namespace NCrafts.App.Business.Common.Infrastructure.Fx
                 .ForEach(closure =>
                 {
                     RegisterClosure(container, closure,
-                        lifetimeManager == null
-                            ? new TransientLifetimeManager()
-                            : (LifetimeManager)Activator.CreateInstance(lifetimeManager.GetType()));
+                                    lifetimeManager == null
+                                        ? new TransientLifetimeManager()
+                                        : (LifetimeManager)Activator.CreateInstance(lifetimeManager.GetType()));
                 });
             return container;
         }
 
-        public static IUnityContainer RegisterClosure(this IUnityContainer container,
-            MethodInfo closure, LifetimeManager lifetimeManager = null)
+        public static IUnityContainer RegisterClosure(this IUnityContainer container, MethodInfo closure, LifetimeManager lifetimeManager = null)
         {
             lifetimeManager = lifetimeManager ?? new TransientLifetimeManager();
             container.RegisterType(closure.ReturnType, lifetimeManager,
-                new InjectionFactory(c => closure.Invoke(null,
-                    closure.GetParameters().Select(x => container.Resolve(x.ParameterType)).ToArray())));
+                                   new InjectionFactory(c => closure.Invoke(null,
+                                                                            closure.GetParameters().Select(x => container.Resolve(x.ParameterType)).ToArray())));
             return container;
         }
     }

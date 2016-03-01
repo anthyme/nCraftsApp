@@ -48,6 +48,7 @@ namespace NCrafts.App.Speakers
             set { sessions = value; OnPropertyChanged(); }
         } 
 
+        // TODO: check to put the speakerid inside the constructor
         public void Init(SpeakerId id)
         {
             this.id = id;

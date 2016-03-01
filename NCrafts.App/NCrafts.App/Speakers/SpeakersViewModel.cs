@@ -14,13 +14,13 @@ namespace NCrafts.App.Speakers
         private readonly GetSpeakerSumariesQuery getSpeakerSumariesQuery;
         private ObservableCollection<SpeakerSummary> speakers;
 
-        public ICommand OpenSpeakerCommand { get; }
-
         public SpeakersViewModel(OpenSpeakerCommand openSpeakerCommand, GetSpeakerSumariesQuery getSpeakerSumariesQuery)
         {
             OpenSpeakerCommand = new Command<SpeakerId>(x => openSpeakerCommand(x));
             this.getSpeakerSumariesQuery = getSpeakerSumariesQuery;
         }
+
+        public ICommand OpenSpeakerCommand { get; }
 
         public ObservableCollection<SpeakerSummary> Speakers
         {

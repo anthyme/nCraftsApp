@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using NCrafts.App.Business.Core.Data;
 using NCrafts.App.Business.Menu.Command;
 
 namespace NCrafts.App.Business.Menu.Query
@@ -8,11 +7,10 @@ namespace NCrafts.App.Business.Menu.Query
 
     class Queries
     {
-        public static GetMenuItemsQuery CreateGetMenuItemsQuery(
-            OpenDailyCommand openDailyCommand,
-            OpenSessionsCommand openSessionsCommand,
-            OpenSpeakersCommand openSpeakersCommand,
-            OpenAboutCommand openAboutCommand)
+        public static GetMenuItemsQuery CreateGetMenuItemsQuery(OpenDailyCommand openDailyCommand,
+                                                                OpenSessionsCommand openSessionsCommand,
+                                                                OpenSpeakersCommand openSpeakersCommand,
+                                                                OpenAboutCommand openAboutCommand)
         {
             return () => new List<MenuItem>
             {
