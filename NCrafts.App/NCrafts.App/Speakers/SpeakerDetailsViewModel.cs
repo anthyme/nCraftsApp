@@ -14,13 +14,17 @@ namespace NCrafts.App.Speakers
     {
         private readonly GetSpeakerDetailsQuery getSpeakerDetailsQuery;
         private readonly GetSessionSumariesSpeakerQuery getSessionSumariesSpeakerQuery;
-        private SpeakerId id;
+        private readonly SpeakerId id;
         private SpeakerDetails speaker;
         private double heightList;
         private ObservableCollection<SessionSummary> sessions; 
 
-        public SpeakerDetailsViewModel(OpenSessionCommand openSessionCommand, GetSpeakerDetailsQuery getSpeakerDetailsQuery, GetSessionSumariesSpeakerQuery getSessionSumariesSpeakerQuery)
+        public SpeakerDetailsViewModel(OpenSessionCommand openSessionCommand,
+                                       GetSpeakerDetailsQuery getSpeakerDetailsQuery,
+                                       GetSessionSumariesSpeakerQuery getSessionSumariesSpeakerQuery,
+                                       SpeakerId id)
         {
+            this.id = id;
             this.getSpeakerDetailsQuery = getSpeakerDetailsQuery;
             this.getSessionSumariesSpeakerQuery = getSessionSumariesSpeakerQuery;
             heightList = 0;
@@ -47,12 +51,6 @@ namespace NCrafts.App.Speakers
             get { return sessions; }
             set { sessions = value; OnPropertyChanged(); }
         } 
-
-        // TODO: check to put the speakerid inside the constructor
-        public void Init(SpeakerId id)
-        {
-            this.id = id;
-        }
 
         protected override Task OnStart()
         {

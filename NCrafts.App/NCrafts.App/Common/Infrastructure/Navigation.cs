@@ -1,14 +1,12 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using NCrafts.App.Business.Common.Infrastructure;
 using NCrafts.App.Sessions;
 using NCrafts.App.Speakers;
 using NCrafts.App.About;
+using NCrafts.App.Business.Common;
 using NCrafts.App.Business.Common.Infrastructure.Fx;
-using NCrafts.App.Menu;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace NCrafts.App.Common.Infrastructure
 {
@@ -92,8 +90,7 @@ namespace NCrafts.App.Common.Infrastructure
         {
             return sessionId => handleErrorAsync(() =>
             {
-                var vvm = viewFactory.Create<SessionDetailsView, SessionDetailsViewModel>();
-                vvm.ViewModel.Init(sessionId);
+                var vvm = viewFactory.Create<SessionDetailsView, SessionDetailsViewModel, SessionId>(sessionId);
                 return navigateToView(vvm);
             });
         }
@@ -103,8 +100,7 @@ namespace NCrafts.App.Common.Infrastructure
         {
             return speakerId => handleErrorAsync(() =>
             {
-                var vvm = viewFactory.Create<SpeakerDetailsView, SpeakerDetailsViewModel>();
-                vvm.ViewModel.Init(speakerId);
+                var vvm = viewFactory.Create<SpeakerDetailsView, SpeakerDetailsViewModel, SpeakerId>(speakerId);
                 return navigateToView(vvm);
             });
         }

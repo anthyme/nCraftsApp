@@ -1,6 +1,8 @@
-﻿namespace NCrafts.App.Business.Common
+﻿using NCrafts.App.Business.Common.Infrastructure.Fx;
+
+namespace NCrafts.App.Business.Common
 {
-    public struct SpeakerId
+    public struct SpeakerId : IId
     {
         private readonly string title;
 
