@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Threading.Tasks;
-using NCrafts.App.Business.Sessions.Query;
+﻿using System.Threading.Tasks;
 using NCrafts.App.Common.Infrastructure;
 
 namespace NCrafts.App.Sessions

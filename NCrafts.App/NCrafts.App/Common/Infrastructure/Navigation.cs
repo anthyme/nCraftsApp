@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
@@ -15,6 +16,7 @@ namespace NCrafts.App.Common.Infrastructure
     public delegate Task NavigateToView(IViewViewModel viewViewModel);
     public delegate Task NavigateToViewFromMenu(IViewViewModel viewViewModel);
     public delegate void SetMenuVisibility(bool isVisible);
+    public delegate void SetTabbedCurrentPage(string title);
 
     public class Navigation
     {
@@ -45,12 +47,24 @@ namespace NCrafts.App.Common.Infrastructure
         }
 
         public static NavigateToMenuFromMenu CreateNavigateToMenuFromMenu(HandleErrorAsync handleErrorAsync,
-            NavigationPage navigationPage, SetMenuVisibility setMenuVisibility)
+            NavigationPage navigationPage, SetMenuVisibility setMenuVisibility, SetTabbedCurrentPage setTabbedCurrentPage)
         {
             return () => handleErrorAsync(async () =>
             {
                 setMenuVisibility(false);
-                await navigationPage.PopToRootAsync(false);
+                setTabbedCurrentPage("D1");
+                await navigationPage.PopToRootAsync();
+            });
+        }
+
+        public static NavigateToAboutFromMenu CreateNavigateToAboutFromMenu(HandleErrorAsync handleErrorAsync, ViewFactory viewFactory,
+            NavigationPage navigationPage, SetMenuVisibility setMenuVisibility, SetTabbedCurrentPage setTabbedCurrentPage)
+        {
+            return () => handleErrorAsync(async () =>
+            {
+                setMenuVisibility(false);
+                setTabbedCurrentPage("About");
+                await navigationPage.PopToRootAsync();
             });
         }
 
@@ -71,16 +85,6 @@ namespace NCrafts.App.Common.Infrastructure
             {
                 if (HandleNavigationFromMenu(typeof(SpeakersView), navigationPage, setMenuVisibility))
                     await navigateToView(viewFactory.Create<SpeakersView, SpeakersViewModel>());
-            });
-        }
-
-        public static NavigateToAboutFromMenu CreateNavigateToAboutFromMenu(HandleErrorAsync handleErrorAsync,
-            NavigateToViewFromMenu navigateToView, IViewFactory viewFactory, SetMenuVisibility setMenuVisibility, NavigationPage navigationPage)
-        {
-            return () => handleErrorAsync(async () =>
-            {
-                if (HandleNavigationFromMenu(typeof(AboutView), navigationPage, setMenuVisibility))
-                    await navigateToView(viewFactory.Create<AboutView, AboutViewModel>());
             });
         }
 

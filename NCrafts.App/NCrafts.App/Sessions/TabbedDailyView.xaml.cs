@@ -1,35 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Microsoft.Practices.Unity;
-using NCrafts.App.Business.Sessions.Command;
-using NCrafts.App.Business.Sessions.Query;
-using NCrafts.App.Common.Infrastructure;
+using NCrafts.App.Business.Common.Infrastructure.Fx;
 using Xamarin.Forms;
 
 namespace NCrafts.App.Sessions
 {
     public partial class TabbedDailyView : TabbedPage
     {
-        public TabbedDailyView(IViewFactory viewFactory, GetDaysNumberQuery getDaysNumberQuery)
+        public TabbedDailyView(IEnumerable<Page> childrenPages)
         {
-            List<int> days = getDaysNumberQuery();
-            var cpmt = 1;
-
-            foreach (var day in days)
-            {
-                var vvm = viewFactory.Create<DailySessionsView, DailySessionViewModel>();
-                vvm.ViewModel.Day = day;
-                vvm.ViewModel.Title = "D" + cpmt;
-                Children.Add(vvm.View);
-                var startTask = vvm.ViewModel.Start();
-                ++cpmt;
-            }
+            childrenPages.ForEach(Children.Add);
             InitializeComponent();
+        }
+
+        // TODO: see if title is a good option (Normally not possible to have two times the same title).
+        // TODO: pb with title if we change it we have to change it everywhere (check to put it in resources)
+        public void SetTabbedCurrentPage(string title)
+        {
+            CurrentPage = Children.Single(x => x.Title == title);
         }
     }
 }

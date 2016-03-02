@@ -5,7 +5,7 @@ namespace NCrafts.App.Common.Infrastructure
 {
     public interface IViewFactory
     {
-        ViewViewModel<TView, TViewModel> Create<TView, TViewModel>(params ResolverOverride[] paramters) where TView : Page where TViewModel : ViewModelBase;
+        ViewViewModel<TView, TViewModel> Create<TView, TViewModel>(params ResolverOverride[] parameters) where TView : Page where TViewModel : ViewModelBase;
     }
 
     public class ViewFactory : IViewFactory
@@ -17,9 +17,9 @@ namespace NCrafts.App.Common.Infrastructure
             this.container = container;
         }
 
-        public ViewViewModel<TView, TViewModel> Create<TView, TViewModel>(params ResolverOverride[] paramters) where TView : Page where TViewModel : ViewModelBase
+        public ViewViewModel<TView, TViewModel> Create<TView, TViewModel>(params ResolverOverride[] parameters) where TView : Page where TViewModel : ViewModelBase
         {
-            var vvm = new ViewViewModel<TView, TViewModel>(container.Resolve<TView>(), container.Resolve<TViewModel>(paramters));
+            var vvm = new ViewViewModel<TView, TViewModel>(container.Resolve<TView>(parameters), container.Resolve<TViewModel>(parameters));
             vvm.View.BindingContext = vvm.ViewModel;
             return vvm;
         }
