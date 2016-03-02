@@ -43,20 +43,16 @@ namespace NCrafts.App.Common.Infrastructure
 
         private static List<Page> GetTabbedChildrenViews(IViewFactory viewFactory, HandleErrorAsync handleErrorAsync, GetDaysNumberQuery getDaysNumberQuery)
         {
-            List<Page> views = new List<Page>();
+            var views = new List<Page>();
             // TODO: check to make a query that already 
-            List<int> days = getDaysNumberQuery();
-            var cpmt = 1;
+            var days = getDaysNumberQuery();
+            var cpmt = 0;
             
-            // TODO: clean the foreach... A bit ugly -> check with the constructor parameter: way more cleaner
             foreach (var day in days)
             {
-                var vvm = viewFactory.Create<DailySessionsView, DailySessionViewModel>();
-                vvm.ViewModel.Day = day;
-                vvm.ViewModel.Title = "D" + cpmt;
+                var vvm = viewFactory.Create<DailySessionsView, DailySessionViewModel>(new ParameterOverride("day", day), new ParameterOverride("title", "D" + ++cpmt));
                 views.Add(vvm.View);
                 vvm.ViewModel.Start();
-                ++cpmt;
             }
             views.Add(StartView<AboutView, AboutViewModel>(viewFactory, handleErrorAsync));
             return views;

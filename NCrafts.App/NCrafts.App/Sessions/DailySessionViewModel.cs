@@ -4,8 +4,6 @@ using System.Windows.Input;
 using NCrafts.App.Business.Common;
 using NCrafts.App.Business.Sessions.Command;
 using NCrafts.App.Business.Sessions.Query;
-using NCrafts.App.Business.Speakers.Command;
-using NCrafts.App.Business.Speakers.Query;
 using NCrafts.App.Common.Infrastructure;
 using Xamarin.Forms;
 
@@ -15,15 +13,17 @@ namespace NCrafts.App.Sessions
     {
         private readonly GetSessionSumariesByDayQuery getSessionSumariesByDayQuery;
         private ObservableCollection<SessionSummary> sessions;
-        private string title = "";
+        private string title;
 
-        public DailySessionViewModel(OpenSessionCommand openSessionCommand, GetSessionSumariesByDayQuery getSessionSumariesByDayQuery)
+        public DailySessionViewModel(int day, string title, OpenSessionCommand openSessionCommand, GetSessionSumariesByDayQuery getSessionSumariesByDayQuery)
         {
+            Day = day;
+            this.title = title;
             this.getSessionSumariesByDayQuery = getSessionSumariesByDayQuery;
             OpenSessionCommand = new Command<SessionId>(x => openSessionCommand(x));
         }
 
-        public int Day { get; set; }
+        public int Day { get; }
 
         public ICommand OpenSessionCommand { get; }
 
