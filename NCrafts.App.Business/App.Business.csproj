@@ -36,7 +36,6 @@
   <ItemGroup>
     <Compile Include="Common\Infrastructure\DependencyConfigurator.cs" />
     <Compile Include="Common\Infrastructure\Fx\EnumerableExtension.cs" />
-    <Compile Include="Common\Infrastructure\Fx\IId.cs" />
     <Compile Include="Core\Data\DataSource.cs" />
     <Compile Include="Core\Data\IDataSourceRepository.cs" />
     <Compile Include="Common\Infrastructure\ErrorHandler.cs" />

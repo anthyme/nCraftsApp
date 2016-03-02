@@ -1,5 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Practices.Unity;
 using NCrafts.App.Business.Common.Infrastructure;
 using NCrafts.App.Sessions;
 using NCrafts.App.Speakers;
@@ -57,8 +59,7 @@ namespace NCrafts.App.Common.Infrastructure
         {
             return () => handleErrorAsync(async () =>
             {
-                setMenuVisibility(false);
-                if (navigationPage.CurrentPage.GetType() != typeof(SessionsView))
+                if (HandleNavigationFromMenu(typeof(SessionsView), navigationPage, setMenuVisibility))
                     await navigateToView(viewFactory.Create<SessionsView, SessionsViewModel>());
             });
         }
@@ -68,8 +69,7 @@ namespace NCrafts.App.Common.Infrastructure
         {
             return () => handleErrorAsync(async () =>
             {
-                setMenuVisibility(false);
-                if (navigationPage.CurrentPage.GetType() != typeof(SpeakersView))
+                if (HandleNavigationFromMenu(typeof(SpeakersView), navigationPage, setMenuVisibility))
                     await navigateToView(viewFactory.Create<SpeakersView, SpeakersViewModel>());
             });
         }
@@ -79,30 +79,27 @@ namespace NCrafts.App.Common.Infrastructure
         {
             return () => handleErrorAsync(async () =>
             {
-                setMenuVisibility(false);
-                if (navigationPage.CurrentPage.GetType() != typeof(AboutView))
+                if (HandleNavigationFromMenu(typeof(AboutView), navigationPage, setMenuVisibility))
                     await navigateToView(viewFactory.Create<AboutView, AboutViewModel>());
             });
+        }
+
+        private static bool HandleNavigationFromMenu(Type viewType, NavigationPage navigationPage, SetMenuVisibility setMenuVisibility)
+        {
+            setMenuVisibility(false);
+            return navigationPage.CurrentPage.GetType() != viewType;
         }
 
         public static NavigateToSessionDetails CreateNavigateToSessionDetails(HandleErrorAsync handleErrorAsync,
             NavigateToView navigateToView, IViewFactory viewFactory)
         {
-            return sessionId => handleErrorAsync(() =>
-            {
-                var vvm = viewFactory.Create<SessionDetailsView, SessionDetailsViewModel, SessionId>(sessionId);
-                return navigateToView(vvm);
-            });
+            return sessionId => handleErrorAsync(() => navigateToView(viewFactory.Create<SessionDetailsView, SessionDetailsViewModel>(new ParameterOverride("id", sessionId))));
         }
 
         public static NavigateToSpeakerDetails CreateNavigateToSpeakerDetails(HandleErrorAsync handleErrorAsync,
             NavigateToView navigateToView, IViewFactory viewFactory)
         {
-            return speakerId => handleErrorAsync(() =>
-            {
-                var vvm = viewFactory.Create<SpeakerDetailsView, SpeakerDetailsViewModel, SpeakerId>(speakerId);
-                return navigateToView(vvm);
-            });
+            return speakerId => handleErrorAsync(() => navigateToView(viewFactory.Create<SpeakerDetailsView, SpeakerDetailsViewModel>(new ParameterOverride("id", speakerId))));
         }
     }
 }

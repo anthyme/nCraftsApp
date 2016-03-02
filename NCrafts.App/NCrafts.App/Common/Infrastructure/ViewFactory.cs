@@ -1,13 +1,11 @@
 using Microsoft.Practices.Unity;
-using NCrafts.App.Business.Common.Infrastructure.Fx;
 using Xamarin.Forms;
 
 namespace NCrafts.App.Common.Infrastructure
 {
     public interface IViewFactory
     {
-        ViewViewModel<TView, TViewModel> Create<TView, TViewModel>() where TView : Page where TViewModel : ViewModelBase;
-        ViewViewModel<TView, TViewModel> Create<TView, TViewModel, TId>(TId id) where TView : Page where TViewModel : ViewModelBase where TId : IId;
+        ViewViewModel<TView, TViewModel> Create<TView, TViewModel>(params ResolverOverride[] paramters) where TView : Page where TViewModel : ViewModelBase;
     }
 
     public class ViewFactory : IViewFactory
@@ -19,16 +17,9 @@ namespace NCrafts.App.Common.Infrastructure
             this.container = container;
         }
 
-        public ViewViewModel<TView, TViewModel> Create<TView, TViewModel>() where TView : Page where TViewModel : ViewModelBase
+        public ViewViewModel<TView, TViewModel> Create<TView, TViewModel>(params ResolverOverride[] paramters) where TView : Page where TViewModel : ViewModelBase
         {
-            var vvm = new ViewViewModel<TView, TViewModel>(container.Resolve<TView>(), container.Resolve<TViewModel>());
-            vvm.View.BindingContext = vvm.ViewModel;
-            return vvm;
-        }
-
-        public ViewViewModel<TView, TViewModel> Create<TView, TViewModel, TId>(TId id) where TView : Page where TViewModel : ViewModelBase where TId : IId
-        {
-            var vvm = new ViewViewModel<TView, TViewModel>(container.Resolve<TView>(), container.Resolve<TViewModel>(new ParameterOverride("id", id)));
+            var vvm = new ViewViewModel<TView, TViewModel>(container.Resolve<TView>(), container.Resolve<TViewModel>(paramters));
             vvm.View.BindingContext = vvm.ViewModel;
             return vvm;
         }
