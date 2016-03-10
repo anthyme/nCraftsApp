@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using NCrafts.App.Business.Common;
+using NCrafts.App.Business.Common.Infrastructure.Fx;
 using NCrafts.App.Business.Core.Data;
 
 namespace NCrafts.App.Business.Sessions.Query
 {
     public delegate ICollection<SessionSummary> GetSessionSumariesQuery();
+    public delegate ICollection<Grouping<string, SessionSummary>> GetSessionSumariesQuery2();
     public delegate ICollection<SessionSummary> GetSessionSumariesSpeakerQuery(List<SessionId> sessionsId);
     public delegate SessionDetails GetSessionDetailsQuery(SessionId sessionId);
 
@@ -38,6 +40,28 @@ namespace NCrafts.App.Business.Sessions.Query
                                 Date = "Day " + GetDay(dataSourceRepository.Retreive().OpeningTime, x.Interval.StartDate) + ": " + x.Interval.StartDate.ToString("t") + " - " + x.Interval.EndDate.ToString("t"),
                             })
                             .ToList();
+        }
+
+        // TODO: wait for implementation
+        public static GetSessionSumariesQuery2 CreateGetSessionSumariesQuery2(IDataSourceRepository dataSourceRepository)
+        {
+            return () =>
+            {
+                var test = dataSourceRepository.Retreive().Sessions
+                    .OrderBy(x => x.Interval.StartDate)
+                    .GroupBy(x => string.Format("Day: {0:dd}/{0:MM} at {0:hhtt}", x.Interval.StartDate))
+                    .Select(
+                        days =>
+                            new Grouping<string, SessionSummary>(days.Key, days.ToList().Select(x => new SessionSummary
+                            {
+                                Id = x.Id,
+                                Title = x.Title,
+                                Date =
+                                    "Day " + GetDay(dataSourceRepository.Retreive().OpeningTime, x.Interval.StartDate) +
+                                    ": " + x.Interval.StartDate.ToString("t") + " - " + x.Interval.EndDate.ToString("t"),
+                            }))).ToList();
+                return test;
+            };
         }
 
         public static GetSessionSumariesSpeakerQuery CreateGetSessionSumariesSpeakerQuery(IDataSourceRepository dataSourceRepository)

@@ -4,9 +4,28 @@
              xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
              x:Class="NCrafts.App.Sessions.SessionsView"
              Title="Sessions">
- 
+
   <StackLayout Padding="2,2,2,2" x:Name="root">
-    <ListView ItemsSource="{Binding Sessions}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" SeparatorColor="Gray" HasUnevenRows="True" ItemSelected="ListView_OnItemSelected">
+    <ListView ItemsSource="{Binding Sessions2}"
+              IsGroupingEnabled="True"
+              GroupDisplayBinding="{Binding Key}"
+              GroupShortNameBinding="{Binding Key}"
+              VerticalOptions="FillAndExpand"
+              HorizontalOptions="Fill"
+              SeparatorColor="Gray"
+              HasUnevenRows="True"
+              ItemSelected="ListView_OnItemSelected">
+      <ListView.GroupHeaderTemplate>
+        <DataTemplate>
+          <ViewCell Height="25">
+            <StackLayout VerticalOptions="FillAndExpand"
+                         Padding="5"
+                         BackgroundColor="#99D6D8">
+              <Label Text="{Binding Key}" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center"/>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.GroupHeaderTemplate>
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
@@ -26,5 +45,25 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
+    <!--<ListView ItemsSource="{Binding Sessions}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" SeparatorColor="Gray" HasUnevenRows="True" ItemSelected="ListView_OnItemSelected">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Padding="5,5,5,5" Spacing="5">
+              <Label Text="{Binding Title}" LineBreakMode="TailTruncation" FontSize="18" FontAttributes="Bold" />
+              <Label Text="{Binding Date}" FontSize="11" />
+            </StackLayout>
+            <b:Interaction.Behaviors>
+              <b:BehaviorCollection>
+                <b:EventToCommand
+                    EventName="Tapped"
+                    Command="{Binding Path=BindingContext.OpenSessionCommand, Source={x:Reference root}, }"
+                    CommandParameter="{Binding Id}" />
+              </b:BehaviorCollection>
+            </b:Interaction.Behaviors>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>-->
   </StackLayout>
 </ContentPage>
