@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iOS", "NCrafts.App\NCrafts.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "NCrafts.App\NCrafts.App\App.csproj", "{B1F109B6-446E-41AE-BB29-70CC60650124}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App,Tests", "NCrafts.App.Tests\App,Tests.csproj", "{FDF86FE5-2855-4ED8-A21A-0929F1159C5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App,Tests", "NCrafts.App.Tests\App.Tests.csproj", "{FDF86FE5-2855-4ED8-A21A-0929F1159C5F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Business", "NCrafts.App.Business\App.Business.csproj", "{EC47274C-2C46-4AA8-9CDC-196EF6171AE3}"
 EndProject

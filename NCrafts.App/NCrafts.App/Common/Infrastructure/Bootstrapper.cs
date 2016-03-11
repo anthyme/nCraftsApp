@@ -34,7 +34,7 @@ namespace NCrafts.App.Common.Infrastructure
         private static void StartFirstView(IUnityContainer container, IViewFactory viewFactory, HandleErrorAsync handleErrorAsync,
             GetDaysNumberQuery getDaysNumberQuery, NavigationPage navigationPage)
         {
-            var daily = StartView<TabbedDailyView, TabbedDailyViewModel>(viewFactory, handleErrorAsync, GetTabbedChildrenViews(viewFactory, handleErrorAsync, getDaysNumberQuery));
+            var daily = StartView<TabbedDailyView, TabbedDailyViewModel>(viewFactory, handleErrorAsync, new ParameterOverride("childrenPages", GetTabbedChildrenViews(viewFactory, handleErrorAsync, getDaysNumberQuery)));
             container.RegisterInstance<SetTabbedCurrentPage>(daily.SetTabbedCurrentPage);
             daily.SetTabbedCurrentPage("About");
             handleErrorAsync(() => navigationPage.PushAsync(daily, false));
@@ -43,36 +43,22 @@ namespace NCrafts.App.Common.Infrastructure
 
         private static List<Page> GetTabbedChildrenViews(IViewFactory viewFactory, HandleErrorAsync handleErrorAsync, GetDaysNumberQuery getDaysNumberQuery)
         {
-            var views = new List<Page>();
-            // TODO: check to make a query that already 
             var days = getDaysNumberQuery();
             var cpmt = 0;
-            
-            foreach (var day in days)
-            {
-                var vvm = viewFactory.Create<DailySessionsView, DailySessionViewModel>(new ParameterOverride("day", day), new ParameterOverride("title", "D" + ++cpmt));
-                views.Add(vvm.View);
-                vvm.ViewModel.Start();
-            }
+            var views = days.Select(day => 
+                        StartView<DailySessionsView, DailySessionViewModel>(viewFactory, handleErrorAsync,
+                                                                            new ParameterOverride("day", day),
+                                                                            new ParameterOverride("title", "D" + ++cpmt)))
+                                                                            .Cast<Page>().ToList();
             views.Add(StartView<AboutView, AboutViewModel>(viewFactory, handleErrorAsync));
             return views;
         }
 
-        // TODO: factorise those 2 methods
-        private static TView StartView<TView, TViewModel>(IViewFactory viewFactory, HandleErrorAsync handleErrorAsync)
+        private static TView StartView<TView, TViewModel>(IViewFactory viewFactory, HandleErrorAsync handleErrorAsync, params ResolverOverride[] parameters)
             where TView : Page
             where TViewModel : ViewModelBase
         {
-            var menu = viewFactory.Create<TView, TViewModel>();
-            handleErrorAsync(() => menu.ViewModel.Start());
-            return menu.View;
-        }
-
-        private static TView StartView<TView, TViewModel>(IViewFactory viewFactory, HandleErrorAsync handleErrorAsync, List<Page> dailySessionsViews)
-            where TView : Page
-            where TViewModel : ViewModelBase
-        {
-            var tabbed = viewFactory.Create<TView, TViewModel>(new ParameterOverride("childrenPages", dailySessionsViews));
+            var tabbed = viewFactory.Create<TView, TViewModel>(parameters);
             handleErrorAsync(() => tabbed.ViewModel.Start());
             return tabbed.View;
         }
