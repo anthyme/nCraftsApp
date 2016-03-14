@@ -6,6 +6,7 @@ namespace NCrafts.App.Business.Core.Data
 {
     class DataSource
     {
+        // TODO: check how to manage the days with NCraft, if they send me the opening hours of each day or if I should retreive it form the conferences.
         public ICollection<TimeSlot> OpeningTime { get; } = new List<TimeSlot>()
         {
             new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(9, 30, 0), EndDate = DateTime.Now.Date + new TimeSpan(19, 30, 0)},
