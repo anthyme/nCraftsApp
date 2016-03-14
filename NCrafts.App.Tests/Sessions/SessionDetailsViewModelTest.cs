@@ -11,9 +11,7 @@ namespace NCrafts.App.Tests.Sessions
         [Fact]
         public async void When_starting_Then_sessions_are_loaded()
         {
-            var sut = Container.Resolve<SessionDetailsViewModel>();
-            sut.Init(new SessionId("1"));
-
+            var sut = Container.Resolve<SessionDetailsViewModel>(new ParameterOverride("id", new SessionId("1")));
             await sut.Start();
 
             sut.Session.ShouldNotBeNull();

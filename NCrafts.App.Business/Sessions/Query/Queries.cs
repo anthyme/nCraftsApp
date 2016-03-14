@@ -18,6 +18,7 @@ namespace NCrafts.App.Business.Sessions.Query
     class Queries
     {
         // TODO: I didn't know where i should put this method so right now I left it there.
+        // TODO: Check also if the data will be formatted on this pattern
         private static string GetDay(ICollection<TimeSlot> days, DateTime day)
         {
             int result = 1;

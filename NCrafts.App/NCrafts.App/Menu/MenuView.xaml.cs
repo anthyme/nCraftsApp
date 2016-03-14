@@ -1,11 +1,10 @@
-﻿using Microsoft.Practices.Unity;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace NCrafts.App.Menu
 {
     public partial class MenuView : ContentPage
     {
-        public MenuView(IUnityContainer dependencyContainer)
+        public MenuView()
         {
             InitializeComponent();
         }

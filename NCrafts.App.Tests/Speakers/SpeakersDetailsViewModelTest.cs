@@ -12,9 +12,7 @@ namespace NCrafts.App.Tests.Speakers
         [Fact]
         public async void When_starting_Then_Speakers_are_loaded()
         {
-            var sut = Container.Resolve<SpeakerDetailsViewModel>();
-            sut.Init(new SpeakerId("1"));
-
+            var sut = Container.Resolve<SpeakerDetailsViewModel>(new ParameterOverride("id", new SessionId("1")));
             await sut.Start();
 
             sut.Speaker.ShouldNotBeNull();

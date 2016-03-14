@@ -1,6 +1,6 @@
 ﻿namespace NCrafts.App.Business.Core
 {
-    class Room
+    public class Room
     {
          public string Name { get; set; }
     }

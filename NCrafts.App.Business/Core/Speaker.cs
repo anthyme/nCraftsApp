@@ -3,7 +3,7 @@ using NCrafts.App.Business.Common;
 
 namespace NCrafts.App.Business.Core
 {
-    class Speaker
+    public class Speaker
     {
         public SpeakerId Id { get; set; }
         public string FirstName { get; set; }

@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
 using NCrafts.App.Business.Common.Infrastructure;
 using NCrafts.App.Sessions;
 using NCrafts.App.Speakers;
-using NCrafts.App.About;
-using NCrafts.App.Business.Common;
 using NCrafts.App.Business.Common.Infrastructure.Fx;
 using Xamarin.Forms;
 
