@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.Practices.Unity;
-using NCrafts.App.Core.Common.Infrastructure.Fx;
+using NCrafts.App.Business.Common.Infrastructure.Fx;
 using Shouldly;
 using Xunit;
 

@@ -1,21 +1,36 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using NCrafts.App.Business.Common;
+using NCrafts.App.Business.Sessions.Query;
+using NCrafts.App.Business.Speakers.Command;
+using NCrafts.App.Business.Speakers.Query;
 using NCrafts.App.Common.Infrastructure;
-using NCrafts.App.Core.Common;
-using NCrafts.App.Core.Sessions.Query;
+using Xamarin.Forms;
 
 namespace NCrafts.App.Sessions
 {
     public class SessionDetailsViewModel : ViewModelBase
     {
         private readonly GetSessionDetailsQuery getSessionDetailsQuery;
-
-        private SessionId sessionId;
+        private readonly GetSpeakersSumariesSessionQuery getSpeakersSumariesSessionQuery;
+        private readonly SessionId id;
         private SessionDetails session;
+        private double heightList;
+        private ObservableCollection<SpeakerSummary> speakers;
 
-        public SessionDetailsViewModel(GetSessionDetailsQuery getSessionDetailsQuery)
+        public SessionDetailsViewModel(OpenSpeakerCommand openSpeakerCommand,
+                                       GetSessionDetailsQuery getSessionDetailsQuery,
+                                       GetSpeakersSumariesSessionQuery getSpeakersSumariesSessionQuery,
+                                       SessionId id)
         {
+            this.id = id;
+            OpenSpeakerCommand = new Command<SpeakerId>(x => openSpeakerCommand(x));
             this.getSessionDetailsQuery = getSessionDetailsQuery;
+            this.getSpeakersSumariesSessionQuery = getSpeakersSumariesSessionQuery;
         }
+
+        public ICommand OpenSpeakerCommand { get; }
 
         public SessionDetails Session
         {
@@ -23,14 +38,24 @@ namespace NCrafts.App.Sessions
             set { session = value; OnPropertyChanged(); }
         }
 
-        public void Init(SessionId sessionId) //todo: put sessionId initialization in ctor if possible with the IoC
+        // TODO: find a proper solution, Don't use binding!!
+        public double HeightList
         {
-            this.sessionId = sessionId;
+            get { return heightList; }
+            set { heightList = value; OnPropertyChanged(); }
+        }
+
+        public ObservableCollection<SpeakerSummary> Speakers
+        {
+            get { return speakers; }
+            set { speakers = value; OnPropertyChanged(); }
         }
 
         protected override Task OnStart()
         {
-            Session = getSessionDetailsQuery(sessionId);
+            Session = getSessionDetailsQuery(id);
+            Speakers = new ObservableCollection<SpeakerSummary>(getSpeakersSumariesSessionQuery(session.SpeakersId));
+            HeightList = speakers.Count * 85;
             return Task.FromResult(0);
         }
     }

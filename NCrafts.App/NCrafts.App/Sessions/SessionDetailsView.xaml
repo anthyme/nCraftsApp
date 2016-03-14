@@ -1,9 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="NCrafts.App.Sessions.SessionDetailsView">
-  <StackLayout>
-    <Label Text="{Binding Session.Title}" />
-    <Label Text="{Binding Session.Description}" />
-  </StackLayout>
+             x:Class="NCrafts.App.Sessions.SessionDetailsView"
+             xmlns:resx="clr-namespace:NCrafts.App.Resx;assembly=NCrafts.App"
+             xmlns:behaviors="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
+             Title="Session details">
+
+  <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand" x:Name="root">
+    <StackLayout Padding="5,5,5,5"
+               Orientation="Vertical">
+      <Label Text="{Binding Session.Title}"
+             VerticalOptions="Center"
+             HorizontalOptions="Center"
+             HorizontalTextAlignment="Center"
+             FontAttributes="Bold"
+             FontSize="18" />
+      <StackLayout Orientation="Horizontal">
+        <Image Source="clockicon"
+               WidthRequest="18" />
+        <Label Text="{Binding Session.Date}"
+               VerticalOptions="Center"
+               FontSize="12" />
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Image Source="mapicon"
+               WidthRequest="18" />
+        <Label Text="{Binding Session.Room}"
+               VerticalOptions="Center"
+               FontSize="12" />
+      </StackLayout>
+      <StackLayout Padding="4,0,0,0">
+        <Label Text="{Binding Session.Tags}"
+               VerticalOptions="Center"
+               FontSize="12" />
+      </StackLayout>
+
+      <StackLayout Padding="3,0,0,-8">
+        <Label Text="{x:Static resx:AppResources.Details}"
+               TextColor="{x:Static resx:AppResources.BlueNCraft}"
+               FontAttributes="Bold"
+               FontSize="18"/>
+      </StackLayout>
+      <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" />
+      <StackLayout Padding="3,0,0,0">
+        <Label Text="{Binding Session.Description}" />
+      </StackLayout>
+
+      <StackLayout Padding="3,10,0,-8">
+        <Label Text="Speakers"
+               FontAttributes="Bold"
+               TextColor="{x:Static resx:AppResources.BlueNCraft}"
+               FontSize="18"/>
+      </StackLayout>
+      <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" />
+
+      <ListView ItemsSource="{Binding Speakers}" HorizontalOptions="Fill" SeparatorVisibility="None" HasUnevenRows="True" HeightRequest="{Binding HeightList}" ItemSelected="ListView_OnItemSelected">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout Padding="5,5,5,5" Spacing="5" Orientation="Horizontal">
+                <Image Aspect="AspectFit" HeightRequest="75" Source="{Binding ProfilPicture}"/>
+                <Label Text="{Binding Name}" LineBreakMode="TailTruncation" FontSize="18" FontAttributes="Bold" VerticalTextAlignment="Center" />
+              </StackLayout>
+              <behaviors:Interaction.Behaviors>
+                <behaviors:BehaviorCollection>
+                  <behaviors:EventToCommand
+                      EventName="Tapped"
+                      Command="{Binding Path=BindingContext.OpenSpeakerCommand, Source={x:Reference root}, }"
+                      CommandParameter="{Binding Id}" />
+                </behaviors:BehaviorCollection>
+              </behaviors:Interaction.Behaviors>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </ScrollView>
 </ContentPage>

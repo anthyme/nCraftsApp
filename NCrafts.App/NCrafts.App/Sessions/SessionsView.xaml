@@ -2,15 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
-             x:Class="NCrafts.App.Sessions.SessionsView">
-  <StackLayout x:Name="root">
-    <Label Text="{Binding Header}"></Label>
-    <ListView ItemsSource="{Binding Sessions}" VerticalOptions="Fill" HorizontalOptions="Fill">
+             x:Class="NCrafts.App.Sessions.SessionsView"
+             Title="Sessions">
+ 
+  <StackLayout Padding="2,2,2,2" x:Name="root">
+    <ListView ItemsSource="{Binding Sessions}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" SeparatorColor="Gray" HasUnevenRows="True" ItemSelected="ListView_OnItemSelected">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout Padding="15,0">
-              <Label Text="{Binding Title}" />
+            <StackLayout Padding="5,5,5,5" Spacing="5">
+              <Label Text="{Binding Title}" LineBreakMode="TailTruncation" FontSize="18" FontAttributes="Bold" />
+              <Label Text="{Binding Date}" FontSize="11" />
             </StackLayout>
             <b:Interaction.Behaviors>
               <b:BehaviorCollection>

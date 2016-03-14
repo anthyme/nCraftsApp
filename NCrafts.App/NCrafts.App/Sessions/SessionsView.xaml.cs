@@ -14,5 +14,10 @@ namespace NCrafts.App.Sessions
         {
             InitializeComponent();
         }
+
+        private void ListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            ((ListView)sender).SelectedItem = null;
+        }
     }
 }

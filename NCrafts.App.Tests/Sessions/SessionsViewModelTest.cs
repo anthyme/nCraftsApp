@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Practices.Unity;
-using NCrafts.App.Core.Common;
-using NCrafts.App.Core.Sessions.Query;
+using NCrafts.App.Business.Common;
+using NCrafts.App.Business.Sessions.Query;
 using NCrafts.App.Sessions;
 using Shouldly;
 using Xunit;

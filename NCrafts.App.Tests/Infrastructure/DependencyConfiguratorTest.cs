@@ -1,6 +1,6 @@
 ﻿using Microsoft.Practices.Unity;
 using NCrafts.App.Common.Infrastructure;
-using NCrafts.App.Core.Common.Infrastructure.Fx;
+using NCrafts.App.Business.Common.Infrastructure.Fx;
 using Shouldly;
 using Xunit;
 
@@ -11,7 +11,7 @@ namespace NCrafts.App.Tests.Infrastructure
         [Fact]
         public void Configure_Should_work()
         {
-            DependencyConfigurator.Configure();
+            AppDependencyConfigurator.Configure();
         }
 
         [Fact]

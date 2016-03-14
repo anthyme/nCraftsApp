@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using NCrafts.App.Core.Common.Infrastructure.Fx;
+using NCrafts.App.Business.Common.Infrastructure.Fx;
 
 namespace NCrafts.App.Common.Infrastructure
 {

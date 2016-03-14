@@ -1,5 +1,4 @@
 ﻿using Microsoft.Practices.Unity;
-using NCrafts.App.Core.Common.Infrastructure;
 using Xamarin.Forms;
 
 namespace NCrafts.App.Common.Infrastructure
@@ -10,9 +9,8 @@ namespace NCrafts.App.Common.Infrastructure
 
         protected override void OnStart()
         {
-            dependencyContainer = DependencyConfigurator.Configure();
-            MainPage = dependencyContainer.Resolve<NavigationPage>();
-            dependencyContainer.Resolve<NavigateToSessions>()();
+            dependencyContainer = AppDependencyConfigurator.Configure();
+            MainPage = dependencyContainer.Resolve<Bootstrap>()();
         }
 
         protected override void OnSleep()

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
+             x:Class="NCrafts.App.Speakers.SpeakersView"
+             Title="Speakers">
+
+  <StackLayout x:Name="root" Padding="2,2,2,2">
+    <ListView ItemsSource="{Binding Speakers}" HorizontalOptions="Fill" SeparatorVisibility="None" HasUnevenRows="True" ItemSelected="ListView_OnItemSelected">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Padding="5,5,5,5" Orientation="Horizontal">
+              <Image Aspect="AspectFit" HeightRequest="75" Source="{Binding ProfilPicture}"/>
+              <Label Text="{Binding Name}" LineBreakMode="TailTruncation" FontSize="18" FontAttributes="Bold" VerticalTextAlignment="Center" />
+            </StackLayout>
+            <behaviors:Interaction.Behaviors>
+              <behaviors:BehaviorCollection>
+                <behaviors:EventToCommand
+                    EventName="Tapped"
+                    Command="{Binding Path=BindingContext.OpenSpeakerCommand, Source={x:Reference root}, }"
+                    CommandParameter="{Binding Id}" />
+              </behaviors:BehaviorCollection>
+            </behaviors:Interaction.Behaviors>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>
