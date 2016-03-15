@@ -15,6 +15,8 @@ namespace NCrafts.App.Droid
             base.OnCreate(bundle);
 
             Forms.Init(this, bundle);
+            Xamarin.FormsMaps.Init(this, bundle);
+
             LoadApplication(new Common.Infrastructure.App());
         }
     }

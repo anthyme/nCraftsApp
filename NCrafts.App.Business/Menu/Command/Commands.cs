@@ -6,6 +6,7 @@ namespace NCrafts.App.Business.Menu.Command
     public delegate Task OpenDailyCommand();
     public delegate Task OpenSessionsCommand();
     public delegate Task OpenSpeakersCommand();
+    public delegate Task OpenLocationCommand();
     public delegate Task OpenAboutCommand();
 
     class Commands
@@ -23,6 +24,11 @@ namespace NCrafts.App.Business.Menu.Command
         public static OpenSpeakersCommand CreateOpenSpeakersCommand(NavigateToSpeakersFromMenu navigateToSpeakersFromMenu)
         {
             return () => navigateToSpeakersFromMenu();
+        }
+
+        public static OpenLocationCommand CreateOpenLocationCommand(NavigateToLocationFromMenu navigateToLocationFromMenu)
+        {
+            return () => navigateToLocationFromMenu();
         }
 
         public static OpenAboutCommand CreateOpenAboutCommand(NavigateToAboutFromMenu navigateToAboutFromMenu)

@@ -6,6 +6,7 @@ using NCrafts.App.Business.Common.Infrastructure;
 using NCrafts.App.Sessions;
 using NCrafts.App.Speakers;
 using NCrafts.App.Business.Common.Infrastructure.Fx;
+using NCrafts.App.Location;
 using Xamarin.Forms;
 
 namespace NCrafts.App.Common.Infrastructure
@@ -82,6 +83,16 @@ namespace NCrafts.App.Common.Infrastructure
             {
                 if (HandleNavigationFromMenu(typeof(SpeakersView), navigationPage, setMenuVisibility))
                     await navigateToView(viewFactory.Create<SpeakersView, SpeakersViewModel>());
+            });
+        }
+
+        public static NavigateToLocationFromMenu CreateNavigateToLocationFromMenu(HandleErrorAsync handleErrorAsync,
+            NavigateToViewFromMenu navigateToView, IViewFactory viewFactory, SetMenuVisibility setMenuVisibility, NavigationPage navigationPage)
+        {
+            return () => handleErrorAsync(async () =>
+            {
+                if (HandleNavigationFromMenu(typeof(LocationView), navigationPage, setMenuVisibility))
+                    await navigateToView(viewFactory.Create<LocationView, LocationViewModel>());
             });
         }
 
