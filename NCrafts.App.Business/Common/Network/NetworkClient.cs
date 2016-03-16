@@ -57,6 +57,7 @@ namespace NCrafts.App.Business.Common
                             {
                                 Id = new SessionId(session.Id),
                                 Title = session.Title,
+                                Description = session.Abstract,
                                 Interval = new TimeSlot { StartDate = Convert.ToDateTime(session.StartTime), EndDate = Convert.ToDateTime(session.StartTime).Add(new TimeSpan(session.Duration, 0, 0))},
                                 Room = new Room { Name = session.Place},
                                 Tags = session.Tags.Select(tag => new Tag {Title = tag}).ToList(),
