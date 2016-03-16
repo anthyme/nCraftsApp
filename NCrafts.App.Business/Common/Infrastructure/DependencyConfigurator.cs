@@ -10,6 +10,7 @@ namespace NCrafts.App.Business.Common.Infrastructure
         {
             return container
                 .RegisterType<IDataSourceRepository, DataSourceRepository>(AsSingleton)
+                .RegisterType<NetworkClient>(AsSingleton)
                 .RegisterClosures<Logger>(AsSingleton)
                 .RegisterClosures<ErrorHandler>(AsSingleton)
                 .RegisterClosures<Sessions.Command.Commands>(AsSingleton)

@@ -111,7 +111,7 @@ namespace NCrafts.App.Business.Sessions.Query
                     Room = x.Room.Name,
                     Tags = string.Join(", ", x.Tags.Select(t => t.Title)),
                     Description = x.Description,
-                    SpeakersId = x.SpeakersId
+                    SpeakersId = x.Speakers
                 })
                 .First();
         }

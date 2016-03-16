@@ -7,9 +7,16 @@
 
     public class DataSourceRepository : IDataSourceRepository
     {
+        private readonly DataSource _dataSource;
+
+        public DataSourceRepository()
+        {
+            _dataSource = new DataSource();
+        }
+
         public DataSource Retreive()
         {
-            return new DataSource();
+            return _dataSource;
         }
     }
 }
