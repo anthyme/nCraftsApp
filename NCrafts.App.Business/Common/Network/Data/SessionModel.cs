@@ -13,7 +13,7 @@ namespace NCrafts.App.Business.Common.Network.Data
         public string Place { get; set; }
         public string Title { get; set; }
         public string StartTime { get; set; }
-        public int Duration { get; set; }
+        public int DurationInMinutes { get; set; }
         public IList<string> Tags { get; set; }
     }
 }

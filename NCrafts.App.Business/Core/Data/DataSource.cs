@@ -18,30 +18,30 @@ namespace NCrafts.App.Business.Core.Data
 
         public ICollection<Tag> Tags { get; } = new List<Tag>
             {
-                new Tag { Title = "C#", Count = 4},
-                new Tag { Title = "F#", Count = 17},
-                new Tag { Title = "C++", Count = 1},
-                new Tag { Title = "C", Count = 2},
-                new Tag { Title = "Compiler", Count = 34},
-                new Tag { Title = "NCrafts", Count = 2},
-                new Tag { Title = "Mobile", Count = 6},
-                new Tag { Title = "Android", Count = 7},
-                new Tag { Title = "Xamarin", Count = 21},
-                new Tag { Title = "Testing", Count = 4},
-                new Tag { Title = "iOS", Count = 3},
-                new Tag { Title = "Null", Count = 0},
-                new Tag { Title = "tag_1", Count = 4},
-                new Tag { Title = "tag_2", Count = 17},
-                new Tag { Title = "tag_3", Count = 1},
-                new Tag { Title = "tag_4", Count = 2},
-                new Tag { Title = "tag_5", Count = 34},
-                new Tag { Title = "tag_6", Count = 2},
-                new Tag { Title = "tag_7", Count = 6},
-                new Tag { Title = "tag_8", Count = 7},
-                new Tag { Title = "Cloud", Count = 21},
-                new Tag { Title = "tag_9", Count = 4},
-                new Tag { Title = "tag_10", Count = 3},
-                new Tag { Title = "tag_11", Count = 0},
+                new Tag { Title = "C#", Sessions = new List<SessionId>()},
+                new Tag { Title = "F#", Sessions = new List<SessionId>()},
+                new Tag { Title = "C++", Sessions = new List<SessionId>()},
+                new Tag { Title = "C", Sessions = new List<SessionId>()},
+                new Tag { Title = "Compiler", Sessions = new List<SessionId>()},
+                new Tag { Title = "NCrafts", Sessions = new List<SessionId>()},
+                new Tag { Title = "Mobile", Sessions = new List<SessionId>()},
+                new Tag { Title = "Android", Sessions = new List<SessionId>()},
+                new Tag { Title = "Xamarin", Sessions = new List<SessionId>()},
+                new Tag { Title = "Testing", Sessions = new List<SessionId>()},
+                new Tag { Title = "iOS", Sessions = new List<SessionId>()},
+                new Tag { Title = "Null", Sessions = new List<SessionId>()},
+                new Tag { Title = "tag_1", Sessions = new List<SessionId>()},
+                new Tag { Title = "tag_2", Sessions = new List<SessionId>()},
+                new Tag { Title = "tag_3", Sessions = new List<SessionId>()},
+                new Tag { Title = "tag_4", Sessions = new List<SessionId>()},
+                new Tag { Title = "tag_5", Sessions = new List<SessionId>()},
+                new Tag { Title = "tag_6", Sessions = new List<SessionId>()},
+                new Tag { Title = "tag_7", Sessions = new List<SessionId>()},
+                new Tag { Title = "tag_8", Sessions = new List<SessionId>()},
+                new Tag { Title = "Cloud", Sessions = new List<SessionId>()},
+                new Tag { Title = "tag_9", Sessions = new List<SessionId>()},
+                new Tag { Title = "tag_10", Sessions = new List<SessionId>()},
+                new Tag { Title = "tag_11", Sessions = new List<SessionId>()},
             };
 
         public ICollection<Speaker> Speakers { get; set; } = new List<Speaker>
@@ -106,15 +106,18 @@ namespace NCrafts.App.Business.Core.Data
                     while (tag.MoveNext())
                     {
                         session.Tags.Add(tag.Current);
+                        tag.Current.Sessions.Add(session.Id);
                     }
                 }
                 else if (tag.MoveNext())
                 {
                     session.Tags.Add(tag.Current);
+                    tag.Current.Sessions.Add(session.Id);
                 }
             }
         }
 
+        // TODO: remove Union because right now the data is hard encoded after we will just have network data.
         public void AddSpeakers(ICollection<Speaker> speakers)
         {
             Speakers = Speakers.Union(speakers).ToList();
@@ -123,6 +126,7 @@ namespace NCrafts.App.Business.Core.Data
         public void AddSessions(ICollection<Session> sessions)
         {
             Sessions = Sessions.Union(sessions).ToList();
+            //Tags = Sessions.Select()
         }
     }
 }
