@@ -64,12 +64,10 @@ namespace NCrafts.App.Business.Common
                                 Tags = session.Tags.Select(tag => new Tag {Title = tag}).ToList(),
                                 Speakers = new List<SpeakerId> { new SpeakerId(session.SpeakerId) },
                             }).ToList();
-                var tags = objectResult.SelectMany(session => session.Tags.Select(tag => new Tag { Title = tag, Sessions = new List<SessionId> {new SessionId(session.Id)}}));
-//                var groupByTag = tags.GroupBy(tag => tag.Title);
-                var groupByTag2 = tags.GroupBy(tag => tag.Title);
-                var tmp = groupByTag2.Select(group => new Tag {Title = group.Key, Sessions = new List<SessionId>(group.SelectMany(x => x.Sessions).ToList())}).ToList();
-
-                //var tags2 = objectResult.SelectMany(session => session.Tags).Distinct().ToList();
+                // The code in comment create the TAG list and reference the session who match with it
+                // TODO: have clean it
+                //var tags = objectResult.SelectMany(session => session.Tags.Select(tag => new Tag { Title = tag, Sessions = new List<SessionId> {new SessionId(session.Id)}}));
+                //var tmp = tags.GroupBy(tag => tag.Title).Select(group => new Tag {Title = group.Key, Sessions = new List<SessionId>(group.SelectMany(x => x.Sessions).ToList())}).ToList();
                 dataSourceRepository.Retreive().AddSessions(sessions);
             }
         }
