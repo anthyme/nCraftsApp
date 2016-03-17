@@ -42,6 +42,7 @@
     <Compile Include="Common\Network\Data\SessionModel.cs" />
     <Compile Include="Common\Network\Data\SpeakerModel.cs" />
     <Compile Include="Common\Network\NetworkClient.cs" />
+    <Compile Include="Core\Book.cs" />
     <Compile Include="Core\Data\DataSource.cs" />
     <Compile Include="Core\Data\IDataSourceRepository.cs" />
     <Compile Include="Common\Infrastructure\ErrorHandler.cs" />

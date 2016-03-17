@@ -17,7 +17,7 @@ namespace NCrafts.App.Business.Core.Data
             new TimeSlot { StartDate = Convert.ToDateTime("2016-05-12T08:30:00.0000000+00:00"), EndDate = Convert.ToDateTime("2016-05-12T20:30:00.0000000+00:00")},
         };
 
-        public ICollection<Tag> Tags { get; } = new List<Tag>
+        public ICollection<Tag> Tags { get; set; } = new List<Tag>
             {
                 new Tag { Title = "C#", Sessions = new List<SessionId>()},
                 new Tag { Title = "F#", Sessions = new List<SessionId>()},
@@ -127,6 +127,11 @@ namespace NCrafts.App.Business.Core.Data
         public void AddSessions(ICollection<Session> sessions)
         {
             Sessions = Sessions.Union(sessions).ToList();
+        }
+
+        public void AddTags(ICollection<Tag> tags)
+        {
+            Tags = Tags.Union(tags).ToList();
         }
     }
 }
