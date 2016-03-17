@@ -8,12 +8,13 @@ namespace NCrafts.App.Business.Core.Data
     public class DataSource
     {
         // TODO: check how to manage the days with NCraft, if they send me the opening hours of each day or if I should retreive it form the conferences.
-        public ICollection<TimeSlot> OpeningTime { get; } = new List<TimeSlot>()
+        public ICollection<TimeSlot> OpeningTime { get; } = new List<TimeSlot>
         {
             new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(9, 30, 0), EndDate = DateTime.Now.Date + new TimeSpan(19, 30, 0)},
             new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(1, 9, 30, 0), EndDate = DateTime.Now.Date + new TimeSpan(1, 19, 30, 0)},
             new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(2, 9, 30, 0), EndDate = DateTime.Now.Date + new TimeSpan(2, 19, 30, 0)},
             new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(3, 9, 30, 0), EndDate = DateTime.Now.Date + new TimeSpan(3, 19, 30, 0)},
+            new TimeSlot { StartDate = Convert.ToDateTime("2016-05-12T08:30:00.0000000+00:00"), EndDate = Convert.ToDateTime("2016-05-12T20:30:00.0000000+00:00")},
         };
 
         public ICollection<Tag> Tags { get; } = new List<Tag>
@@ -126,7 +127,6 @@ namespace NCrafts.App.Business.Core.Data
         public void AddSessions(ICollection<Session> sessions)
         {
             Sessions = Sessions.Union(sessions).ToList();
-            //Tags = Sessions.Select()
         }
     }
 }
