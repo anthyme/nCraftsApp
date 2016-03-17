@@ -29,10 +29,12 @@ namespace NCrafts.App.Business.Speakers.Query
                         .Select(x => new SpeakerDetails
                         {
                             Id = x.Id,
-                            FirstName = x.FirstName,
-                            LastName = x.LastName,
+                            Name = x.FirstName + " " + x.LastName,
                             Details = x.Details,
                             ProfilPicture = x.ProfilPicture,
+                            Twitter = x.Twitter,
+                            Company = x.Company,
+                            Github = x.Github,
                             SessionsId = x.Sessions
                         })
                         .First();

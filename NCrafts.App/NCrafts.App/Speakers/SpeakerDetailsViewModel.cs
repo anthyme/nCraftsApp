@@ -17,7 +17,14 @@ namespace NCrafts.App.Speakers
         private readonly SpeakerId id;
         private SpeakerDetails speaker;
         private double heightList;
-        private ObservableCollection<SessionSummary> sessions; 
+        private ObservableCollection<SessionSummary> sessions;
+
+        private bool isStackLayoutEnable;
+        private bool isLabelTwitterEnable;
+        private bool isLabelSeparatorTCEnable;
+        private bool isLabelCompanyEnable;
+        private bool isLabelSeparatorCGEnable;
+        private bool isLabelGithubEnable;
 
         public SpeakerDetailsViewModel(OpenSessionCommand openSessionCommand,
                                        GetSpeakerDetailsQuery getSpeakerDetailsQuery,
@@ -50,13 +57,57 @@ namespace NCrafts.App.Speakers
         {
             get { return sessions; }
             set { sessions = value; OnPropertyChanged(); }
-        } 
+        }
+
+        public bool IsStackLayoutEnable
+        {
+            get { return isStackLayoutEnable; }
+            set { isStackLayoutEnable = value; OnPropertyChanged(); }
+        }
+
+        public bool IsLabelTwitterEnable
+        {
+            get { return isLabelTwitterEnable; }
+            set { isLabelTwitterEnable = value; OnPropertyChanged(); }
+        }
+
+        public bool IsLabelSeparatorTCEnable
+        {
+            get { return isLabelSeparatorTCEnable; }
+            set { isLabelSeparatorTCEnable = value; OnPropertyChanged(); }
+        }
+
+        public bool IsLabelCompanyEnable
+        {
+            get { return isLabelCompanyEnable; }
+            set { isLabelCompanyEnable = value; OnPropertyChanged(); }
+        }
+
+        public bool IsLabelSeparatorCGEnable
+        {
+            get { return isLabelSeparatorCGEnable; }
+            set { isLabelSeparatorCGEnable = value; OnPropertyChanged(); }
+        }
+
+        public bool IsLabelGithubEnable
+        {
+            get { return isLabelGithubEnable; }
+            set { isLabelGithubEnable = value; OnPropertyChanged(); }
+        }
 
         protected override Task OnStart()
         {
             Speaker = getSpeakerDetailsQuery(id);
+
+            IsLabelTwitterEnable = !string.IsNullOrWhiteSpace(Speaker.Twitter);
+            IsLabelCompanyEnable = !string.IsNullOrWhiteSpace(Speaker.Company);
+            IsLabelGithubEnable = !string.IsNullOrWhiteSpace(Speaker.Github);
+            IsLabelSeparatorTCEnable = isLabelTwitterEnable && (isLabelCompanyEnable || isLabelGithubEnable);
+            IsLabelSeparatorCGEnable = isLabelCompanyEnable && isLabelGithubEnable;
+            IsStackLayoutEnable = isLabelTwitterEnable || isLabelCompanyEnable || isLabelGithubEnable;
+
             Sessions = new ObservableCollection<SessionSummary>(getSessionSumariesSpeakerQuery(Speaker.SessionsId));
-            HeightList = sessions.Count*52;
+            HeightList = sessions.Count * 52;
             return Task.FromResult(0);
         }
     }
