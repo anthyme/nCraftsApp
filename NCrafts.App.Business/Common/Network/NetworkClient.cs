@@ -41,6 +41,7 @@ namespace NCrafts.App.Business.Common
                                 Sessions = speaker.Sessions.Select(session => new SessionId(session.Id)).ToList(),
                                 Books = speaker.Books.Select(book => new Book {Title = book.Name, Url = book.Link, Picture = book.ImageLink}).ToList(),
                                 Company = speaker.Company,
+                                Twitter = speaker.Twitter,
                                 Github = speaker.Github,
                                 Slide = speaker.Slides,
                                 Site = speaker.Site,

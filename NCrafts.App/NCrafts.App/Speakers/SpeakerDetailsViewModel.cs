@@ -4,6 +4,7 @@ using System.Windows.Input;
 using NCrafts.App.Business.Common;
 using NCrafts.App.Business.Sessions.Command;
 using NCrafts.App.Business.Sessions.Query;
+using NCrafts.App.Business.Speakers.Command;
 using NCrafts.App.Business.Speakers.Query;
 using NCrafts.App.Common.Infrastructure;
 using Xamarin.Forms;
@@ -27,6 +28,7 @@ namespace NCrafts.App.Speakers
         private bool isLabelGithubEnable;
 
         public SpeakerDetailsViewModel(OpenSessionCommand openSessionCommand,
+                                       OpenUrlCommand openUrlCommand,
                                        GetSpeakerDetailsQuery getSpeakerDetailsQuery,
                                        GetSessionSumariesSpeakerQuery getSessionSumariesSpeakerQuery,
                                        SpeakerId id)
@@ -36,9 +38,12 @@ namespace NCrafts.App.Speakers
             this.getSessionSumariesSpeakerQuery = getSessionSumariesSpeakerQuery;
             heightList = 0;
             OpenSessionCommand = new Command<SessionId>(x => openSessionCommand(x));
+            OpenUrlCommand = new Command<string>(x => openUrlCommand(x));
         }
 
         public ICommand OpenSessionCommand { get; }
+
+        public ICommand OpenUrlCommand { get; }
 
         public SpeakerDetails Speaker
         {

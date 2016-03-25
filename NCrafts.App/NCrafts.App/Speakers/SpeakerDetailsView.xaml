@@ -17,7 +17,12 @@
         </RelativeLayout>
       </StackLayout>
       <StackLayout Orientation="Horizontal" HorizontalOptions="Center" IsVisible="{Binding IsStackLayoutEnable}" >
-        <Label Text="{Binding Speaker.Twitter}" TextColor="#0084b4" IsVisible="{Binding IsLabelTwitterEnable}" />
+        <Label Text="{Binding Speaker.Twitter}" TextColor="#0084b4" IsVisible="{Binding IsLabelTwitterEnable}">
+          <Label.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="{Binding Speaker.Twitter}">
+            </TapGestureRecognizer>
+          </Label.GestureRecognizers>
+        </Label>
         <Label Text=" - " IsVisible="{Binding IsLabelSeparatorTCEnable}" />
         <Label Text="{Binding Speaker.Company}" IsVisible="{Binding IsLabelCompanyEnable}"  />
         <Label Text=" - " IsVisible="{Binding IsLabelSeparatorCGEnable}"  />
