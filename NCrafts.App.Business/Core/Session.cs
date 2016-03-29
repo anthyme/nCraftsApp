@@ -12,5 +12,10 @@ namespace NCrafts.App.Business.Core
         public Room Room { get; set; }
         public List<Tag> Tags { get; set; }
         public string Description { get; set; }
+
+        public bool IsInConflict(Session session)
+        {
+            return Interval.IsOverlap(session.Interval);
+        }
     }
 }

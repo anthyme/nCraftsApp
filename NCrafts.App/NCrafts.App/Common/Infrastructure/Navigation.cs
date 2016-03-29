@@ -76,6 +76,16 @@ namespace NCrafts.App.Common.Infrastructure
             });
         }
 
+        public static NavigateToPersonalScheduleFromMenu CreateNavigateToPersonalScheduleFromMenu(HandleErrorAsync handleErrorAsync,
+            NavigateToViewFromMenu navigateToView, IViewFactory viewFactory, SetMenuVisibility setMenuVisibility, NavigationPage navigationPage)
+        {
+            return () => handleErrorAsync(async () =>
+            {
+                if (HandleNavigationFromMenu(typeof(PersonalScheduleView), navigationPage, setMenuVisibility))
+                    await navigateToView(viewFactory.Create<PersonalScheduleView, PersonalScheduleViewModel>());
+            });
+        }
+
         public static NavigateToSpeakersFromMenu CreateNavigateToSpeakersFromMenu(HandleErrorAsync handleErrorAsync,
             NavigateToViewFromMenu navigateToView, IViewFactory viewFactory, SetMenuVisibility setMenuVisibility, NavigationPage navigationPage)
         {

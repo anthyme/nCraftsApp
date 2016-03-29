@@ -2053,35 +2053,38 @@ namespace NCrafts.App.Droid
 			// aapt resource value: 0x7f020081
 			public const int mr_ic_settings_light = 2130837633;
 			
-			// aapt resource value: 0x7f02008b
-			public const int notification_template_icon_bg = 2130837643;
+			// aapt resource value: 0x7f02008c
+			public const int notification_template_icon_bg = 2130837644;
 			
 			// aapt resource value: 0x7f020082
-			public const int profilpicture = 2130837634;
+			public const int personalscheduleicon = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int profilpictureicon = 2130837635;
+			public const int profilpicture = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int sessionsicon = 2130837636;
+			public const int profilpictureicon = 2130837636;
 			
 			// aapt resource value: 0x7f020085
-			public const int simonbrown = 2130837637;
+			public const int sessionsicon = 2130837637;
 			
 			// aapt resource value: 0x7f020086
-			public const int simonbrown50 = 2130837638;
+			public const int simonbrown = 2130837638;
 			
 			// aapt resource value: 0x7f020087
-			public const int simonbrown75 = 2130837639;
+			public const int simonbrown50 = 2130837639;
 			
 			// aapt resource value: 0x7f020088
-			public const int speakersicon = 2130837640;
+			public const int simonbrown75 = 2130837640;
 			
 			// aapt resource value: 0x7f020089
-			public const int splashscreen = 2130837641;
+			public const int speakersicon = 2130837641;
 			
 			// aapt resource value: 0x7f02008a
-			public const int viseoicon = 2130837642;
+			public const int splashscreen = 2130837642;
+			
+			// aapt resource value: 0x7f02008b
+			public const int viseoicon = 2130837643;
 			
 			static Drawable()
 			{

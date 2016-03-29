@@ -86,6 +86,8 @@ namespace NCrafts.App.Business.Core.Data
                 new Session { Id = new SessionId("15"), Title = "4 Speakers !!", Description = "F# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "SecretRoom"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(2, 14, 30, 0), EndDate = DateTime.Now.Date + new TimeSpan(2, 17, 45, 0)}}
             };
 
+        public ICollection<SessionId> SelectedSessions { get; set; } = new List<SessionId>();
+
         public DataSource()
         {
             var speaker = Speakers.GetEnumerator();
@@ -96,6 +98,10 @@ namespace NCrafts.App.Business.Core.Data
                 {
                     session.Speakers.Add(speaker.Current.Id);
                     speaker.Current.Sessions.Add(session.Id);
+                }
+                if (int.Parse(session.Id.ToString()) % 3 == 0)
+                {
+                    SelectedSessions.Add(session.Id);
                 }
                 if (session.Id.ToString() == "15")
                 {

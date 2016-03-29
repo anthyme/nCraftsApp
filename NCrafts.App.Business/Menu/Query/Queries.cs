@@ -9,6 +9,7 @@ namespace NCrafts.App.Business.Menu.Query
     {
         public static GetMenuItemsQuery CreateGetMenuItemsQuery(OpenDailyCommand openDailyCommand,
                                                                 OpenSessionsCommand openSessionsCommand,
+                                                                OpenPersonalScheduleCommand openPersonalScheduleCommand,
                                                                 OpenSpeakersCommand openSpeakersCommand,
                                                                 OpenLocationCommand openLocationCommand,
                                                                 OpenAboutCommand openAboutCommand)
@@ -16,6 +17,7 @@ namespace NCrafts.App.Business.Menu.Query
             return () => new List<MenuItem>
             {
                 new MenuItem {Title = "Daily", OpenCommand = () => openDailyCommand(), Icon = "dailyicon.png"},
+                new MenuItem {Title = "Personal", OpenCommand = () => openPersonalScheduleCommand(), Icon = "personalscheduleicon.png"},
                 new MenuItem {Title = "Sessions", OpenCommand = () => openSessionsCommand(), Icon = "sessionsicon.png"},
                 new MenuItem {Title = "Speakers", OpenCommand = () => openSpeakersCommand(), Icon = "speakersicon.png"},
                 new MenuItem {Title = "Location", OpenCommand = () => openLocationCommand(), Icon = "mapicon.png"},

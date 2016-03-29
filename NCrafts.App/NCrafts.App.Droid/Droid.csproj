@@ -156,6 +156,7 @@
     <AndroidResource Include="Resources\drawable\simonbrown.jpg" />
     <AndroidResource Include="Resources\drawable\simonbrown50.jpg" />
     <AndroidResource Include="Resources\drawable\simonbrown75.jpg" />
+    <AndroidResource Include="Resources\drawable\personalscheduleicon.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NCrafts.App\App.csproj">

@@ -65,6 +65,10 @@
       <DependentUpon>DailySessionsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sessions\DailySessionViewModel.cs" />
+    <Compile Include="Sessions\PersonalScheduleView.xaml.cs">
+      <DependentUpon>PersonalScheduleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sessions\PersonalScheduleViewModel.cs" />
     <Compile Include="Sessions\SessionDetailsView.xaml.cs">
       <DependentUpon>SessionDetailsView.xaml</DependentUpon>
     </Compile>
@@ -180,6 +184,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Location\LocationView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sessions\PersonalScheduleView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
