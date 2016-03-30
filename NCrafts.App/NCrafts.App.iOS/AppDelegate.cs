@@ -22,9 +22,10 @@ namespace NCrafts.App.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new Common.Infrastructure.App());
 
+            global::Xamarin.Forms.Forms.Init();
+            Xamarin.Behaviors.Infrastructure.Init();
+            LoadApplication(new Common.Infrastructure.App());
             return base.FinishedLaunching(app, options);
         }
     }
