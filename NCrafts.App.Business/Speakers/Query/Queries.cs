@@ -48,6 +48,7 @@ namespace NCrafts.App.Business.Speakers.Query
                             {
                                 Id = x.Id,
                                 Name = x.FirstName + " " + x.LastName,
+                                Twitter = x.Twitter,
                                 ProfilPicture = x.ProfilPictureIcon,
                             })
                             .ToList();

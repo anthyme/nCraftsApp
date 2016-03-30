@@ -62,7 +62,7 @@ namespace NCrafts.App.Sessions
         {
             Session = getSessionDetailsQuery(id);
             Speakers = new ObservableCollection<SpeakerSummary>(getSpeakersSumariesSessionQuery(session.SpeakersId));
-            sharedText += ($"{string.Join(", " , speakers.Select(x => x.Name).ToList())} speaking about {session.Title}! #NCrafts");
+            sharedText += ($"{string.Join(", " , speakers.Select(x => string.IsNullOrWhiteSpace(x.Twitter) ? x.Name : x.Twitter).ToList())} speaking about {session.Title}! #NCrafts");
             HeightList = speakers.Count * 85;
             return Task.FromResult(0);
         }
