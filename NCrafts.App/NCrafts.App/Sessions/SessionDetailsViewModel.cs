@@ -1,7 +1,9 @@
 ﻿using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using NCrafts.App.Business.Common;
+using NCrafts.App.Business.Sessions.Command;
 using NCrafts.App.Business.Sessions.Query;
 using NCrafts.App.Business.Speakers.Command;
 using NCrafts.App.Business.Speakers.Query;
@@ -18,19 +20,24 @@ namespace NCrafts.App.Sessions
         private SessionDetails session;
         private double heightList;
         private ObservableCollection<SpeakerSummary> speakers;
+        private string sharedText = "I'm going to see ";
 
         public SessionDetailsViewModel(OpenSpeakerCommand openSpeakerCommand,
+                                       ShareSessionCommand shareSessionCommand,
                                        GetSessionDetailsQuery getSessionDetailsQuery,
                                        GetSpeakersSumariesSessionQuery getSpeakersSumariesSessionQuery,
                                        SessionId id)
         {
             this.id = id;
             OpenSpeakerCommand = new Command<SpeakerId>(x => openSpeakerCommand(x));
+            ShareSessionCommand = new Command(() => shareSessionCommand(sharedText));
             this.getSessionDetailsQuery = getSessionDetailsQuery;
             this.getSpeakersSumariesSessionQuery = getSpeakersSumariesSessionQuery;
         }
 
         public ICommand OpenSpeakerCommand { get; }
+
+        public ICommand ShareSessionCommand { get; }
 
         public SessionDetails Session
         {
@@ -55,6 +62,7 @@ namespace NCrafts.App.Sessions
         {
             Session = getSessionDetailsQuery(id);
             Speakers = new ObservableCollection<SpeakerSummary>(getSpeakersSumariesSessionQuery(session.SpeakersId));
+            sharedText += ($"{string.Join(", " , speakers.Select(x => x.Name).ToList())} speaking about {session.Title}! #NCrafts");
             HeightList = speakers.Count * 85;
             return Task.FromResult(0);
         }

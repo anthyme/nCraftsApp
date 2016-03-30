@@ -46,6 +46,10 @@
         <Label Text="{Binding Session.Description}" />
       </StackLayout>
 
+      <StackLayout Padding="5,5,5,5">
+        <Button Text="Share" Command="{Binding ShareSessionCommand}"></Button>
+      </StackLayout>
+      
       <StackLayout Padding="3,10,0,-8">
         <Label Text="Speakers"
                FontAttributes="Bold"
