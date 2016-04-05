@@ -88,6 +88,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Calendar\Calendar.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
@@ -98,6 +99,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\NCrafts.App.Business\App.Business.csproj">
+      <Project>{EC47274C-2C46-4AA8-9CDC-196EF6171AE3}</Project>
+      <Name>App.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NCrafts.App\App.csproj">
       <Name>App</Name>
       <Project>{B1F109B6-446E-41AE-BB29-70CC60650124}</Project>
@@ -201,6 +206,18 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\personalscheduleicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\simonbrown.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\simonbrown50.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\simonbrown75.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\personicon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.1.0.6526\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.1.0.6526\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

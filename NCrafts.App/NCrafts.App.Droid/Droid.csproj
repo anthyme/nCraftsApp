@@ -136,6 +136,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calendar\Calendar.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -175,8 +176,13 @@
     <AndroidResource Include="Resources\drawable\simonbrown75.jpg" />
     <AndroidResource Include="Resources\drawable\personalscheduleicon.png" />
     <AndroidResource Include="Resources\drawable\shareicon.png" />
+    <AndroidResource Include="Resources\drawable\exportcalendaricon.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\NCrafts.App.Business\App.Business.csproj">
+      <Project>{EC47274C-2C46-4AA8-9CDC-196EF6171AE3}</Project>
+      <Name>App.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NCrafts.App\App.csproj">
       <Name>App</Name>
       <Project>{B1F109B6-446E-41AE-BB29-70CC60650124}</Project>

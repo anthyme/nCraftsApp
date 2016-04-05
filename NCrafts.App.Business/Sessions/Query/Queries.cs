@@ -9,6 +9,7 @@ using NCrafts.App.Business.Core.Data;
 namespace NCrafts.App.Business.Sessions.Query
 {
     public delegate ICollection<SessionSummary> GetSessionSumariesQuery();
+    public delegate SessionCalendar GetSessionCalendarQuery(SessionId sessionsId);
     public delegate ICollection<Tuple<SessionSummary, bool>> GetSessionSumariesSubscribQuery();
     public delegate ICollection<Grouping<string, SessionSummary>> GetSessionSumariesQuery2();
     public delegate ICollection<SessionSummary> GetSessionSumariesSpeakerQuery(List<SessionId> sessionsId);
@@ -45,13 +46,26 @@ namespace NCrafts.App.Business.Sessions.Query
                             .ToList();
         }
 
+        public static GetSessionCalendarQuery CreateGetSessionCalendarQuery(IDataSourceRepository dataSourceRepository)
+        {
+            return sessionsId => dataSourceRepository.Retreive().Sessions
+                    .Where(session => session.Id.Equals(sessionsId))
+                    .Select(x => new SessionCalendar
+                    {
+                        Id = x.Id.ToString(),
+                        Title = x.Title,
+                        Description = x.Description,
+                        Date = x.Interval
+                    }).First();
+        }
+
         // TODO: check the problem come from the query
         public static GetSessionSumariesSubscribQuery CreateGetSessionSumariesSubscribQuery(IDataSourceRepository dataSourceRepository)
         {
             return () =>
             {
                 return dataSourceRepository.Retreive().Sessions
-                    .Where(session => dataSourceRepository.Retreive().SelectedSessions.Contains(session.Id))
+                    .Where(session => session.IsRegister)
                     .Select(x => new Tuple<SessionSummary, bool>(new SessionSummary
                     {
                         Id = x.Id,
@@ -60,10 +74,7 @@ namespace NCrafts.App.Business.Sessions.Query
                             "Day " + GetDay(dataSourceRepository.Retreive().OpeningTime, x.Interval.StartDate) + ": " +
                             x.Interval.StartDate.ToString("t") + " - " + x.Interval.EndDate.ToString("t"),
                     },
-                        (dataSourceRepository.Retreive().Sessions
-                            .Where(session => dataSourceRepository.Retreive().SelectedSessions.Contains(session.Id))
-                            .ToList()
-                            .Where(session => (!session.Id.Equals(x.Id) && session.IsInConflict(x))).ToList().Any())))
+                        x.SessionsConflit.Count > 0))
                     .ToList();
             };
         }
@@ -138,6 +149,7 @@ namespace NCrafts.App.Business.Sessions.Query
                     Room = x.Room.Name,
                     Tags = string.Join(", ", x.Tags.Select(t => t.Title)),
                     Description = x.Description,
+                    IsRegister = x.IsRegister,
                     SpeakersId = x.Speakers
                 })
                 .First();

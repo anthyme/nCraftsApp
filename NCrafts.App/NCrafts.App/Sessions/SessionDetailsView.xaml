@@ -9,7 +9,7 @@
   <ContentPage.ToolbarItems>
     <ToolbarItem Command="{Binding ShareSessionCommand}" Icon="shareicon.png" ></ToolbarItem>
   </ContentPage.ToolbarItems>
-  
+
   <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand" x:Name="root">
     <StackLayout Padding="5,5,5,5"
                Orientation="Vertical">
@@ -19,24 +19,32 @@
              HorizontalTextAlignment="Center"
              FontAttributes="Bold"
              FontSize="18" />
-      <StackLayout Orientation="Horizontal">
-        <Image Source="clockicon"
-               WidthRequest="18" />
-        <Label Text="{Binding Session.Date}"
-               VerticalOptions="Center"
-               FontSize="12" />
-      </StackLayout>
-      <StackLayout Orientation="Horizontal">
-        <Image Source="mapicon"
-               WidthRequest="18" />
-        <Label Text="{Binding Session.Room}"
-               VerticalOptions="Center"
-               FontSize="12" />
-      </StackLayout>
-      <StackLayout Padding="4,0,0,0">
-        <Label Text="{Binding Session.Tags}"
-               VerticalOptions="Center"
-               FontSize="12" />
+      <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+        <StackLayout Orientation="Vertical">
+          <StackLayout Orientation="Horizontal">
+            <Image Source="clockicon"
+                   WidthRequest="18" />
+            <Label Text="{Binding Session.Date}"
+                   VerticalOptions="Center"
+                   FontSize="12" />
+          </StackLayout>
+          <StackLayout Orientation="Horizontal">
+            <Image Source="mapicon"
+                   WidthRequest="18" />
+            <Label Text="{Binding Session.Room}"
+                   VerticalOptions="Center"
+                   FontSize="12" />
+          </StackLayout>
+          <StackLayout Padding="4,0,0,0">
+            <Label Text="{Binding Session.Tags}"
+                   VerticalOptions="Center"
+                   FontSize="12" />
+          </StackLayout>
+        </StackLayout>
+        <StackLayout HorizontalOptions="FillAndExpand">
+          <Button HorizontalOptions="End" BorderRadius="25" BorderColor="#084d84" BorderWidth="3" TextColor="#084d84" BackgroundColor="Transparent" Text="{Binding ButtonValue}" Command="{Binding OnClickSubscribeCommand}" >
+          </Button>
+        </StackLayout>
       </StackLayout>
 
       <StackLayout Padding="3,0,0,-8">
@@ -49,7 +57,7 @@
       <StackLayout Padding="3,0,0,0">
         <Label Text="{Binding Session.Description}" />
       </StackLayout>
-      
+
       <StackLayout Padding="3,10,0,-8">
         <Label Text="Speakers"
                FontAttributes="Bold"
