@@ -8,7 +8,7 @@ using NCrafts.App.Business.Common.Network.Data;
 using NCrafts.App.Business.Core;
 using NCrafts.App.Business.Core.Data;
 
-namespace NCrafts.App.Business.Common
+namespace NCrafts.App.Business.Common.Network
 {
     public class NetworkClient
     {
@@ -21,7 +21,7 @@ namespace NCrafts.App.Business.Common
         }
 
         // TODO: try to factorize or find a proper way for request
-        public async Task TestSpeakers(IDataSourceRepository dataSourceRepository)
+        public async Task GetSpeakers(IDataSourceRepository dataSourceRepository)
         {
             var response = await _client.GetAsync("speakers");
             if (response.IsSuccessStatusCode)
@@ -50,7 +50,7 @@ namespace NCrafts.App.Business.Common
             }
         }
 
-        public async Task TestSessions(IDataSourceRepository dataSourceRepository)
+        public async Task GetSessions(IDataSourceRepository dataSourceRepository)
         {
             var response = await _client.GetAsync("sessions");
             if (response.IsSuccessStatusCode)

@@ -12,7 +12,12 @@ namespace NCrafts.App.iOS.Calendar
         {
         }
 
-        public void ExportToCalendar(List<SessionCalendar> sessions)
+        public void SetSessionInCalendar(SessionCalendar session)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteSessionInCalendar(SessionCalendar session)
         {
             throw new NotImplementedException();
         }

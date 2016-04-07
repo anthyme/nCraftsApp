@@ -26,6 +26,8 @@ namespace NCrafts.App.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::NCrafts.App.Droid.Resource.String.ApplicationName;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::NCrafts.App.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::NCrafts.App.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -2713,6 +2715,12 @@ namespace NCrafts.App.Droid
 		
 		public partial class String
 		{
+			
+			// aapt resource value: 0x7f050041
+			public const int ApplicationName = 2131034177;
+			
+			// aapt resource value: 0x7f050040
+			public const int Hello = 2131034176;
 			
 			// aapt resource value: 0x7f05002d
 			public const int abc_action_bar_home_description = 2131034157;

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using NCrafts.App.Business.Common;
 
 namespace NCrafts.App.Business.Core
@@ -30,12 +31,13 @@ namespace NCrafts.App.Business.Core
             SessionsConflit.Clear();
         }
 
+        // TODO: Fix register check it the register is not already in the list
         public void Register(List<Session> registerSessions)
         {
             IsRegister = true;
             foreach (var registerSession in registerSessions)
             {
-                if (IsInConflict(registerSession))
+                if (SessionsConflit.All(x => x.Id.ToString() != registerSession.Id.ToString()) && IsInConflict(registerSession))
                 {
                     SessionsConflit.Add(registerSession);
                     registerSession.SessionsConflit.Add(this);
