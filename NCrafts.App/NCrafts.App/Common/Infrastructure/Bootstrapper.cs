@@ -1,8 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
 using NCrafts.App.About;
+using NCrafts.App.Business.Common.Database;
 using NCrafts.App.Business.Common.Infrastructure;
+using NCrafts.App.Business.Common.Network;
+using NCrafts.App.Business.Core.Data;
 using NCrafts.App.Business.Sessions.Query;
 using NCrafts.App.Menu;
 using NCrafts.App.Sessions;
@@ -15,14 +19,16 @@ namespace NCrafts.App.Common.Infrastructure
     public class Bootstrapper
     {
         public static Bootstrap CreateBootstrap(IUnityContainer container, IViewFactory viewFactory, HandleErrorAsync handleErrorAsync,
-            NavigationPage navigationPage, GetDaysNumberQuery getDaysNumberQuery)
+            NavigationPage navigationPage, GetDaysNumberQuery getDaysNumberQuery, SQLDatabase database)
         {
             return () =>
             {
+                StartDataSource(container, database);
+
                 var shell = new Shell();
                 container.RegisterInstance<SetMenuVisibility>(shell.SetMenuVisibility);
 
-                StartFirstView(container, viewFactory, handleErrorAsync, getDaysNumberQuery, navigationPage);
+                StartFirstView(container, viewFactory, handleErrorAsync, getDaysNumberQuery, navigationPage, database);
 
                 shell.Detail = navigationPage;
                 shell.Master = StartView<MenuView, MenuViewModel>(viewFactory, handleErrorAsync);
@@ -31,12 +37,30 @@ namespace NCrafts.App.Common.Infrastructure
             };
         }
 
+        private static void StartDataSource(IUnityContainer container, SQLDatabase database)
+        {
+            database.StartDatabase(container.Resolve<IDataSourceRepository>());
+            Task.Run(async () =>
+            {
+                var network = container.Resolve<NetworkClient>();
+                await network.GetSessions(container.Resolve<IDataSourceRepository>());
+                await network.GetSpeakers(container.Resolve<IDataSourceRepository>());
+                if (network.IsSessionResponse || network.IsSpeakerResponse)
+                {
+                    database.StorageAllToDatabase(container.Resolve<IDataSourceRepository>());
+                }
+            });
+        }
+
         private static void StartFirstView(IUnityContainer container, IViewFactory viewFactory, HandleErrorAsync handleErrorAsync,
-            GetDaysNumberQuery getDaysNumberQuery, NavigationPage navigationPage)
+            GetDaysNumberQuery getDaysNumberQuery, NavigationPage navigationPage, SQLDatabase database)
         {
             var daily = StartView<TabbedDailyView, TabbedDailyViewModel>(viewFactory, handleErrorAsync, new ParameterOverride("childrenPages", GetTabbedChildrenViews(viewFactory, handleErrorAsync, getDaysNumberQuery)));
             container.RegisterInstance<SetTabbedCurrentPage>(daily.SetTabbedCurrentPage);
-            daily.SetTabbedCurrentPage("About");
+            if (!database.WasInstalled)
+            {
+                daily.SetTabbedCurrentPage("About");
+            }
             handleErrorAsync(() => navigationPage.PushAsync(daily, false));
             navigationPage.Navigation.RemovePage(navigationPage.Navigation.NavigationStack.First());
         }
@@ -45,7 +69,7 @@ namespace NCrafts.App.Common.Infrastructure
         {
             var days = getDaysNumberQuery();
             var cpmt = 0;
-            var views = days.Select(day => 
+            var views = days.Select(day =>
                         StartView<DailySessionsView, DailySessionViewModel>(viewFactory, handleErrorAsync,
                                                                             new ParameterOverride("day", day),
                                                                             new ParameterOverride("title", "D" + ++cpmt)))

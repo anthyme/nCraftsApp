@@ -18,10 +18,18 @@ namespace NCrafts.App.Business.Common.Database
 
         public SQLDatabase()
         {
-            var dataBasePath = Path.Combine(DependencyService.Get<IFileHandler>().GetFolderPath(), "myDataBase");
+            var dataBasePath = Path.Combine(DependencyService.Get<IFileHandler>().GetFolderPath(), "myDataBase.db");
             WasInstalled = DependencyService.Get<IFileHandler>().IsFileExist(dataBasePath);
             _myDb = new SQLiteConnection(DependencyService.Get<ISQLitePlatform>(), dataBasePath);
             CreateTable();
+        }
+
+        public void StartDatabase(IDataSourceRepository dataSourceRepository)
+        {
+            if (WasInstalled)
+                GetAllFromDatabase(dataSourceRepository);
+            else
+                StorageAllToDatabase(dataSourceRepository);
         }
 
         /*
