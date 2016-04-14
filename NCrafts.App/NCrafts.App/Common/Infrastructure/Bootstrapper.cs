@@ -39,15 +39,16 @@ namespace NCrafts.App.Common.Infrastructure
 
         private static void StartDataSource(IUnityContainer container, SQLDatabase database)
         {
-            database.StartDatabase(container.Resolve<IDataSourceRepository>());
+            var dataSourceRepository = container.Resolve<IDataSourceRepository>();
+            database.StartDatabase(dataSourceRepository);
             Task.Run(async () =>
             {
                 var network = container.Resolve<NetworkClient>();
-                await network.GetSessions(container.Resolve<IDataSourceRepository>());
-                await network.GetSpeakers(container.Resolve<IDataSourceRepository>());
+                await network.GetSessions(dataSourceRepository);
+                await network.GetSpeakers(dataSourceRepository);
                 if (network.IsSessionResponse || network.IsSpeakerResponse)
                 {
-                    database.StorageAllToDatabase(container.Resolve<IDataSourceRepository>());
+                    database.StorageAllToDatabase(dataSourceRepository);
                 }
             });
         }
