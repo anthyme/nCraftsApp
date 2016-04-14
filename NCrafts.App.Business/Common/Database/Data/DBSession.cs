@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using SQLite.Net.Attributes;
+using SQLiteNetExtensions.Attributes;
 
 namespace NCrafts.App.Business.Common.Database.Data
 {
-    public class DSession
+    public class DBSession
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
@@ -14,5 +16,11 @@ namespace NCrafts.App.Business.Common.Database.Data
         public DateTime End { get; set; }
         public string Room { get; set; }
         public bool IsRegister { get; set; }
+
+        [ManyToMany(typeof(DBSessionSpeaker))]
+        public List<DBSpeaker> DSpeakers { get; set; }
+
+        [ManyToMany(typeof(DBSessionTag))]
+        public List<DBTag> Tags { get; set; }
     }
 }

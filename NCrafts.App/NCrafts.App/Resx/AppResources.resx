@@ -151,13 +151,13 @@
     <value>, </value>
   </data>
   <data name="Sessions" xml:space="preserve">
-    <value>Sessions</value>
+    <value>DSessions</value>
   </data>
   <data name="SpeakersHeader" xml:space="preserve">
-    <value>Speakers:</value>
+    <value>DSpeakers:</value>
   </data>
   <data name="SessionsHeader" xml:space="preserve">
-    <value>Sessions:</value>
+    <value>DSessions:</value>
   </data>
   <data name="SpeakersDetails" xml:space="preserve">
     <value>Who I am:</value>

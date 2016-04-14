@@ -161,7 +161,7 @@ namespace NCrafts.App.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sessions.
+        ///   Looks up a localized string similar to DSessions.
         /// </summary>
         public static string Sessions {
             get {
@@ -170,7 +170,7 @@ namespace NCrafts.App.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sessions:.
+        ///   Looks up a localized string similar to DSessions:.
         /// </summary>
         public static string SessionsHeader {
             get {
@@ -188,7 +188,7 @@ namespace NCrafts.App.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Speakers:.
+        ///   Looks up a localized string similar to DSpeakers:.
         /// </summary>
         public static string SpeakersHeader {
             get {

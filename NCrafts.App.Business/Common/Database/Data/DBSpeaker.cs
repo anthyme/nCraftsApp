@@ -1,8 +1,10 @@
-﻿using SQLite.Net.Attributes;
+﻿using System.Collections.Generic;
+using SQLite.Net.Attributes;
+using SQLiteNetExtensions.Attributes;
 
 namespace NCrafts.App.Business.Common.Database.Data
 {
-    public class DSpeaker
+    public class DBSpeaker
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
@@ -18,5 +20,8 @@ namespace NCrafts.App.Business.Common.Database.Data
         public string Site { get; set; }
         public string Twitter { get; set; }
         public string Github { get; set; }
+
+        [ManyToMany(typeof(DBSessionSpeaker))]
+        public List<DBSession> DSessions { get; set; }
     }
 }

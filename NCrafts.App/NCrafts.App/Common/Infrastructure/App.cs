@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
 using NCrafts.App.Business.Common.Database;
@@ -15,11 +16,27 @@ namespace NCrafts.App.Common.Infrastructure
         protected override void OnStart()
         {
             dependencyContainer = AppDependencyConfigurator.Configure();
-
             var tmp = dependencyContainer.Resolve<SQLDatabase>();
+            // TODO: change the page where I arrive !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            if (tmp.WasInstalled)
+            {
+                tmp.GetAllFromDatabase(dependencyContainer.Resolve<IDataSourceRepository>());
+            }
+            else
+            {
+                tmp.StorageAllToDatabase(dependencyContainer.Resolve<IDataSourceRepository>());
+            }
             // TODO: change those call super ugly...
-            Task.Run(() => dependencyContainer.Resolve<NetworkClient>().GetSessions(dependencyContainer.Resolve<IDataSourceRepository>()));
-            Task.Run(() => dependencyContainer.Resolve<NetworkClient>().GetSpeakers(dependencyContainer.Resolve<IDataSourceRepository>()));
+            Task.Run(async () =>
+            {
+                var network = dependencyContainer.Resolve<NetworkClient>();
+                await network.GetSessions(dependencyContainer.Resolve<IDataSourceRepository>());
+                await network.GetSpeakers(dependencyContainer.Resolve<IDataSourceRepository>());
+                if (network.IsSessionResponse || network.IsSpeakerResponse)
+                {
+                    tmp.StorageAllToDatabase(dependencyContainer.Resolve<IDataSourceRepository>());
+                }
+            });
             MainPage = dependencyContainer.Resolve<Bootstrap>()();
         }
 

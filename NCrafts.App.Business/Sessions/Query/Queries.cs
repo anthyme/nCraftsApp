@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using NCrafts.App.Business.Common;
 using NCrafts.App.Business.Common.Infrastructure.Fx;
-using NCrafts.App.Business.Core;
+//using NCrafts.App.Business.Core;
 using NCrafts.App.Business.Core.Data;
 
 namespace NCrafts.App.Business.Sessions.Query
@@ -100,8 +100,6 @@ namespace NCrafts.App.Business.Sessions.Query
                 return test;
             };
         }
-
-
 
         public static GetSessionSumariesSpeakerQuery CreateGetSessionSumariesSpeakerQuery(IDataSourceRepository dataSourceRepository)
         {

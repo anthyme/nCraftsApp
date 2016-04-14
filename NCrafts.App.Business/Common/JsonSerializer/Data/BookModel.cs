@@ -1,4 +1,4 @@
-﻿namespace NCrafts.App.Business.Common.Network.Data
+﻿namespace NCrafts.App.Business.Common.JsonSerializer.Data
 {
     public class BookModel
     {

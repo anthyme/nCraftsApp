@@ -15,7 +15,7 @@ namespace NCrafts.App.Business.Core
         public List<string> Languages { get; set; }
         public List<Book> Books { get; set; }
         public string Company { get; set; }
-        public string Slide { get; set; }
+        public string Slides { get; set; }
         public string Site { get; set; }
         public string Twitter { get; set; }
         public string Github { get; set; }

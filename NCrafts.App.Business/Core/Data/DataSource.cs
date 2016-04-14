@@ -10,11 +10,9 @@ namespace NCrafts.App.Business.Core.Data
         // TODO: check how to manage the days with NCraft, if they send me the opening hours of each day or if I should retreive it form the conferences.
         public ICollection<TimeSlot> OpeningTime { get; } = new List<TimeSlot>
         {
-            new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(9, 30, 0), EndDate = DateTime.Now.Date + new TimeSpan(19, 30, 0)},
-            new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(1, 9, 30, 0), EndDate = DateTime.Now.Date + new TimeSpan(1, 19, 30, 0)},
-            new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(2, 9, 30, 0), EndDate = DateTime.Now.Date + new TimeSpan(2, 19, 30, 0)},
-            new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(3, 9, 30, 0), EndDate = DateTime.Now.Date + new TimeSpan(3, 19, 30, 0)},
-            new TimeSlot { StartDate = Convert.ToDateTime("2016-05-12T08:30:00.0000000+00:00"), EndDate = Convert.ToDateTime("2016-05-12T20:30:00.0000000+00:00")},
+            new TimeSlot { StartDate = Convert.ToDateTime("2016-05-11T08:30:00.0000000+02:00"), EndDate = Convert.ToDateTime("2016-05-11T20:30:00.0000000+02:00")},
+            new TimeSlot { StartDate = Convert.ToDateTime("2016-05-12T08:30:00.0000000+02:00"), EndDate = Convert.ToDateTime("2016-05-12T20:30:00.0000000+02:00")},
+            new TimeSlot { StartDate = Convert.ToDateTime("2016-05-13T08:30:00.0000000+02:00"), EndDate = Convert.ToDateTime("2016-05-13T20:30:00.0000000+02:00")},
         };
 
         public ICollection<Tag> Tags { get; set; } = new List<Tag>
@@ -69,21 +67,21 @@ namespace NCrafts.App.Business.Core.Data
 
         public ICollection<Session> Sessions { get; set; } = new List<Session>
             {
-                new Session { Id = new SessionId("1"), Title = "C# pour les nuls", Description = "C# pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "42"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(9, 45, 0), EndDate = DateTime.Now.Date + new TimeSpan(14, 30, 0)}, IsRegister  = false, SessionsConflit = new List<Session>()},
-                new Session { Id = new SessionId("2"), Title = "F# pour les nuls", Description = "F# pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "69"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(9, 45, 0), EndDate = DateTime.Now.Date + new TimeSpan(12, 30, 0)}, IsRegister  = false, SessionsConflit = new List<Session>()},
-                new Session { Id = new SessionId("3"), Title = "Xamarin pour les nuls", Description = "Xamarin pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "WhiteRoom"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(16, 30, 0), EndDate = DateTime.Now.Date + new TimeSpan(18, 30, 0)}, IsRegister  = false, SessionsConflit = new List<Session>()},
-                new Session { Id = new SessionId("4"), Title = "Xamarin FORMS", Description = "Xamarin.Forms is a cross-platform UI toolkit that allows developers to easily create native user interface layouts that can be shared across Android, iOS, and Windows Phone. This section contains the introduction to Xamarin.Forms and our guides to help you build Xamarin.Forms apps. You can also learn more about its capabilities, try our samples, and browse the API documentation.", Speakers = new List<SpeakerId>(), Room = new Room {Name = "VIP"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(1, 10, 30, 0), EndDate = DateTime.Now.Date + new TimeSpan(1, 19, 00, 0)}, IsRegister  = false, SessionsConflit = new List<Session>()},
-                new Session { Id = new SessionId("5"), Title = "Random Speak!!", Description = "F# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "SecretRoom"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(2, 11, 30, 0), EndDate = DateTime.Now.Date + new TimeSpan(2, 17, 30, 0)}, IsRegister  = false, SessionsConflit = new List<Session>()},
-                new Session { Id = new SessionId("6"), Title = "AAAAAAAAAAAAAAAA", Description = "C# pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "42"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(2, 10, 30, 0), EndDate = DateTime.Now.Date + new TimeSpan(2, 11, 30, 0)}, IsRegister  = false, SessionsConflit = new List<Session>()},
-                new Session { Id = new SessionId("7"), Title = "oidjfpsdjofpcvd", Description = "F# pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "69"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(2, 10, 30, 0), EndDate = DateTime.Now.Date + new TimeSpan(2, 11, 30, 0)}, IsRegister  = false, SessionsConflit = new List<Session>()},
-                new Session { Id = new SessionId("8"), Title = "ksdosdfh éé sdijpsdjc", Description = "Xamarin pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "WhiteRoom"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(2, 11, 30, 0), EndDate = DateTime.Now.Date + new TimeSpan(2, 14, 30, 0)}, IsRegister  = false, SessionsConflit = new List<Session>()},
-                new Session { Id = new SessionId("9"), Title = "Test long text description", Description = "\tXamarin.Forms is a cross-platform UI toolkit that allows developers to easily create native user interface layouts that can be shared across Android, iOS, and Windows Phone.\n\tThis section contains the introduction to Xamarin.Forms and our guides to help you build Xamarin.Forms apps.\n\tYou can also learn more about its capabilities, try our samples, and browse the API documentation.\n\n DEUXIEME text:\n\tXamarin.Forms is a cross-platform UI toolkit that allows developers to easily create native user interface layouts that can be shared across Android, iOS, and Windows Phone.\n\tThis section contains the introduction to Xamarin.Forms and our guides to help you build Xamarin.Forms apps.\n\tYou can also learn more about its capabilities, try our samples, and browse the API documentation.\n\n TROISIEME text:\n\tXamarin.Forms is a cross-platform UI toolkit that allows developers to easily create native user interface layouts that can be shared across Android, iOS, and Windows Phone.\n\tThis section contains the introduction to Xamarin.Forms and our guides to help you build Xamarin.Forms apps.\n\tYou can also learn more about its capabilities, try our samples, and browse the API documentation.", Speakers = new List<SpeakerId>(), Room = new Room {Name = "VIP"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(2, 12, 0, 0), EndDate = DateTime.Now.Date + new TimeSpan(2, 18, 45, 0)}, IsRegister  = false, SessionsConflit = new List<Session>()},
-                new Session { Id = new SessionId("10"), Title = "sdjkf", Description = "F# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "SecretRoom"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(2, 10, 30, 0), EndDate = DateTime.Now.Date + new TimeSpan(2, 19, 0, 0)}, IsRegister  = false, SessionsConflit = new List<Session>()},
-                new Session { Id = new SessionId("11"), Title = "C# posdckmùsdur les nuls", Description = "C# pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "42"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(2, 15, 30, 0), EndDate = DateTime.Now.Date + new TimeSpan(2, 18, 30, 0)}, IsRegister  = false, SessionsConflit = new List<Session>()},
-                new Session { Id = new SessionId("12"), Title = "F# pour les slkdcjnuls", Description = "F# pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "69"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(2, 11, 30, 0), EndDate = DateTime.Now.Date + new TimeSpan(2, 14, 0, 0)}, IsRegister  = false, SessionsConflit = new List<Session>()},
-                new Session { Id = new SessionId("13"), Title = "X", Description = "Xamarin pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "WhiteRoom"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(2, 15, 0, 0), EndDate = DateTime.Now.Date + new TimeSpan(2, 16, 00, 0)}, IsRegister  = false, SessionsConflit = new List<Session>()},
-                new Session { Id = new SessionId("14"), Title = "LONG sdioufhios iosdufhosdjif oisdufoisdj osidfosfdjif oisfopisdjf oisdufoisjd sidhfosfidj LONG", Description = "Xamarin.Forms is a cross-platform UI toolkit that allows developers to easily create native user interface layouts that can be shared across Android, iOS, and Windows Phone. This section contains the introduction to Xamarin.Forms and our guides to help you build Xamarin.Forms apps. You can also learn more about its capabilities, try our samples, and browse the API documentation.", Speakers = new List<SpeakerId>(), Room = new Room {Name = "VIP"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(2, 11, 15, 0), EndDate = DateTime.Now.Date + new TimeSpan(2, 11, 45, 0)}, IsRegister  = false, SessionsConflit = new List<Session>()},
-                new Session { Id = new SessionId("15"), Title = "4 Speakers !!", Description = "F# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "SecretRoom"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = DateTime.Now.Date + new TimeSpan(2, 14, 30, 0), EndDate = DateTime.Now.Date + new TimeSpan(2, 17, 45, 0)}, IsRegister  = false, SessionsConflit = new List<Session>()}
+                new Session { Id = new SessionId("1"), Title = "C# pour les nuls", Description = "C# pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "42"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = Convert.ToDateTime("2016-05-11T09:30:00.0000000+02:00"), EndDate = Convert.ToDateTime("2016-05-11T12:30:00.0000000+02:00")}, IsRegister = false, SessionsConflit = new List<Session>()},
+                new Session { Id = new SessionId("2"), Title = "F# pour les nuls", Description = "F# pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "69"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = Convert.ToDateTime("2016-05-11T12:00:00.0000000+02:00"), EndDate = Convert.ToDateTime("2016-05-11T13:30:00.0000000+02:00")}, IsRegister = false, SessionsConflit = new List<Session>()},
+                new Session { Id = new SessionId("3"), Title = "Xamarin pour les nuls", Description = "Xamarin pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "WhiteRoom"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = Convert.ToDateTime("2016-05-12T10:30:00.0000000+02:00"), EndDate = Convert.ToDateTime("2016-05-12T13:00:00.0000000+02:00")}, IsRegister = false, SessionsConflit = new List<Session>()},
+                new Session { Id = new SessionId("4"), Title = "Xamarin FORMS", Description = "Xamarin.Forms is a cross-platform UI toolkit that allows developers to easily create native user interface layouts that can be shared across Android, iOS, and Windows Phone. This section contains the introduction to Xamarin.Forms and our guides to help you build Xamarin.Forms apps. You can also learn more about its capabilities, try our samples, and browse the API documentation.", Speakers = new List<SpeakerId>(), Room = new Room {Name = "VIP"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = Convert.ToDateTime("2016-05-12T14:30:00.0000000+02:00"), EndDate = Convert.ToDateTime("2016-05-12T15:30:00.0000000+02:00")}, IsRegister = false, SessionsConflit = new List<Session>()},
+                new Session { Id = new SessionId("5"), Title = "Random Speak!!", Description = "F# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "SecretRoom"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = Convert.ToDateTime("2016-05-12T14:45:00.0000000+02:00"), EndDate = Convert.ToDateTime("2016-05-12T15:15:00.0000000+02:00")}, IsRegister = false, SessionsConflit = new List<Session>()},
+                new Session { Id = new SessionId("6"), Title = "AAAAAAAAAAAAAAAA", Description = "C# pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "42"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = Convert.ToDateTime("2016-05-12T15:45:00.0000000+02:00"), EndDate = Convert.ToDateTime("2016-05-12T16:30:00.0000000+02:00")}, IsRegister = false, SessionsConflit = new List<Session>()},
+                new Session { Id = new SessionId("7"), Title = "oidjfpsdjofpcvd", Description = "F# pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "69"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = Convert.ToDateTime("2016-05-13T08:45:00.0000000+02:00"), EndDate = Convert.ToDateTime("2016-05-13T09:15:00.0000000+02:00")}, IsRegister = false, SessionsConflit = new List<Session>()},
+                new Session { Id = new SessionId("8"), Title = "ksdosdfh éé sdijpsdjc", Description = "Xamarin pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "WhiteRoom"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = Convert.ToDateTime("2016-05-13T09:30:00.0000000+02:00"), EndDate = Convert.ToDateTime("2016-05-13T10:30:00.0000000+02:00")}, IsRegister = false, SessionsConflit = new List<Session>()},
+                new Session { Id = new SessionId("9"), Title = "Test long text description", Description = "\tXamarin.Forms is a cross-platform UI toolkit that allows developers to easily create native user interface layouts that can be shared across Android, iOS, and Windows Phone.\n\tThis section contains the introduction to Xamarin.Forms and our guides to help you build Xamarin.Forms apps.\n\tYou can also learn more about its capabilities, try our samples, and browse the API documentation.\n\n DEUXIEME text:\n\tXamarin.Forms is a cross-platform UI toolkit that allows developers to easily create native user interface layouts that can be shared across Android, iOS, and Windows Phone.\n\tThis section contains the introduction to Xamarin.Forms and our guides to help you build Xamarin.Forms apps.\n\tYou can also learn more about its capabilities, try our samples, and browse the API documentation.\n\n TROISIEME text:\n\tXamarin.Forms is a cross-platform UI toolkit that allows developers to easily create native user interface layouts that can be shared across Android, iOS, and Windows Phone.\n\tThis section contains the introduction to Xamarin.Forms and our guides to help you build Xamarin.Forms apps.\n\tYou can also learn more about its capabilities, try our samples, and browse the API documentation.", Speakers = new List<SpeakerId>(), Room = new Room {Name = "VIP"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = Convert.ToDateTime("2016-05-13T09:15:00.0000000+02:00"), EndDate = Convert.ToDateTime("2016-05-13T09:45:00.0000000+02:00")}, IsRegister = false, SessionsConflit = new List<Session>()},
+                new Session { Id = new SessionId("10"), Title = "sdjkf", Description = "F# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "SecretRoom"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = Convert.ToDateTime("2016-05-13T10:15:00.0000000+02:00"), EndDate = Convert.ToDateTime("2016-05-13T11:30:00.0000000+02:00")}, IsRegister = false, SessionsConflit = new List<Session>()},
+                new Session { Id = new SessionId("11"), Title = "Super Long Session", Description = "C# pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "42"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = Convert.ToDateTime("2016-05-13T09:30:00.0000000+02:00"), EndDate = Convert.ToDateTime("2016-05-13T19:30:00.0000000+02:00")}, IsRegister = false, SessionsConflit = new List<Session>()},
+                new Session { Id = new SessionId("12"), Title = "F# pour les slkdcjnuls", Description = "F# pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "69"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = Convert.ToDateTime("2016-05-13T12:30:00.0000000+02:00"), EndDate = Convert.ToDateTime("2016-05-13T15:15:00.0000000+02:00")}, IsRegister = false, SessionsConflit = new List<Session>()},
+                new Session { Id = new SessionId("13"), Title = "X", Description = "Xamarin pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "WhiteRoom"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = Convert.ToDateTime("2016-05-13T14:00:00.0000000+02:00"), EndDate = Convert.ToDateTime("2016-05-13T15:00:00.0000000+02:00")}, IsRegister = false, SessionsConflit = new List<Session>()},
+                new Session { Id = new SessionId("14"), Title = "LONG sdioufhios iosdufhosdjif oisdufoisdj osidfosfdjif oisfopisdjf oisdufoisjd sidhfosfidj LONG", Description = "Xamarin.Forms is a cross-platform UI toolkit that allows developers to easily create native user interface layouts that can be shared across Android, iOS, and Windows Phone. This section contains the introduction to Xamarin.Forms and our guides to help you build Xamarin.Forms apps. You can also learn more about its capabilities, try our samples, and browse the API documentation.", Speakers = new List<SpeakerId>(), Room = new Room {Name = "VIP"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = Convert.ToDateTime("2016-05-13T16:30:00.0000000+02:00"), EndDate = Convert.ToDateTime("2016-05-13T17:30:00.0000000+02:00")}, IsRegister = false, SessionsConflit = new List<Session>()},
+                new Session { Id = new SessionId("15"), Title = "4 DSpeakers !!!", Description = "F# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bonsF# pour les devs vraiment pas bons", Speakers = new List<SpeakerId>(), Room = new Room {Name = "SecretRoom"}, Tags = new List<Tag>(), Interval = new TimeSlot { StartDate = Convert.ToDateTime("2016-05-13T15:30:00.0000000+02:00"), EndDate = Convert.ToDateTime("2016-05-13T19:30:00.0000000+02:00")}, IsRegister = false, SessionsConflit = new List<Session>()}
             };
 
         public DataSource()
@@ -97,10 +95,10 @@ namespace NCrafts.App.Business.Core.Data
                     session.Speakers.Add(speaker.Current.Id);
                     speaker.Current.Sessions.Add(session.Id);
                 }
-                if (int.Parse(session.Id.ToString()) % 3 == 0)
-                {
-                    session.Register(Sessions.Where(x => x.IsRegister).ToList());
-                }
+                //if (int.Parse(session.Id.ToString()) % 3 == 0)
+                //{
+                //    session.Register(Sessions.Where(x => x.IsRegister).ToList());
+                //}
                 if (session.Id.ToString() == "15")
                 {
                     while (speaker.MoveNext())
@@ -125,17 +123,70 @@ namespace NCrafts.App.Business.Core.Data
         // TODO: remove Union because right now the data is hard encoded after we will just have network data.
         public void AddSpeakers(ICollection<Speaker> speakers)
         {
-            Speakers = Speakers.Union(speakers).ToList();
+            foreach (var newSpeaker in speakers)
+            {
+                foreach (var oldSpeaker in Speakers)
+                {
+                    if (oldSpeaker.Id.ToString() == newSpeaker.Id.ToString())
+                    {
+                        Speakers.Remove(oldSpeaker);
+                        Speakers.Add(newSpeaker);
+                        break;
+                    }
+                    if (oldSpeaker == Speakers.Last())
+                    {
+                        Speakers.Add(newSpeaker);
+                        break;
+                    }
+                }
+            }
         }
 
         public void AddSessions(ICollection<Session> sessions)
         {
-            Sessions = Sessions.Union(sessions).ToList();
+            foreach (var newSession in sessions)
+            {
+                foreach (var oldSession in Sessions)
+                {
+                    if (oldSession.Id.ToString() == newSession.Id.ToString())
+                    {
+                        Sessions.Remove(oldSession);
+                        if (oldSession.IsRegister)
+                        {
+                            oldSession.UnRegister();
+                            newSession.Register(Sessions.Where(x => x.IsRegister).ToList());
+                        }
+                        Sessions.Add(newSession);
+                        break;
+                    }
+                    if (oldSession == Sessions.Last())
+                    {
+                        Sessions.Add(newSession);
+                        break;
+                    }
+                }
+            }
         }
 
         public void AddTags(ICollection<Tag> tags)
         {
-            Tags = Tags.Union(tags).ToList();
+            foreach (var newTag in tags)
+            {
+                foreach (var oldTag in Tags)
+                {
+                    if (oldTag.Title == newTag.Title)
+                    {
+                        Tags.Remove(oldTag);
+                        Tags.Add(newTag);
+                        break;
+                    }
+                    if (oldTag == Tags.Last())
+                    {
+                        Tags.Add(newTag);
+                        break;
+                    }
+                }
+            }
         }
     }
 }
