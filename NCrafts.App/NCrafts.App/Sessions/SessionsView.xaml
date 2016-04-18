@@ -9,7 +9,6 @@
     <ListView ItemsSource="{Binding Sessions2}"
               IsGroupingEnabled="True"
               GroupDisplayBinding="{Binding Key}"
-              GroupShortNameBinding="{Binding Key}"
               VerticalOptions="FillAndExpand"
               HorizontalOptions="Fill"
               SeparatorColor="Gray"
@@ -29,7 +28,7 @@
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout Padding="5,5,5,5" Spacing="5">
+            <StackLayout Padding="10,5,5,5" Spacing="5">
               <Label Text="{Binding Title}" LineBreakMode="TailTruncation" FontSize="18" FontAttributes="Bold" />
               <Label Text="{Binding Date}" FontSize="11" />
             </StackLayout>
