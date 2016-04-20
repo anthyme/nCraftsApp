@@ -19,7 +19,7 @@ namespace NCrafts.App.Common.Infrastructure
     public class Bootstrapper
     {
         public static Bootstrap CreateBootstrap(IUnityContainer container, IViewFactory viewFactory, HandleErrorAsync handleErrorAsync,
-            NavigationPage navigationPage, GetDaysNumberQuery getDaysNumberQuery, SQLDatabase database)
+            NavigationPage navigationPage, SQLDatabase database)
         {
             return () =>
             {
@@ -28,10 +28,16 @@ namespace NCrafts.App.Common.Infrastructure
                 var shell = new Shell();
                 container.RegisterInstance<SetMenuVisibility>(shell.SetMenuVisibility);
 
-                StartFirstView(container, viewFactory, handleErrorAsync, getDaysNumberQuery, navigationPage, database);
+                StartFirstView(viewFactory, handleErrorAsync, navigationPage);
 
                 shell.Detail = navigationPage;
                 shell.Master = StartView<MenuView, MenuViewModel>(viewFactory, handleErrorAsync);
+
+                if (!database.WasInstalled)
+                {
+                    navigationPage.PushAsync(StartView<AboutView, AboutViewModel>(viewFactory, handleErrorAsync));
+                    NavigationPage.SetHasNavigationBar(navigationPage, false);
+                }
 
                 return shell;
             };
@@ -53,39 +59,20 @@ namespace NCrafts.App.Common.Infrastructure
             });
         }
 
-        private static void StartFirstView(IUnityContainer container, IViewFactory viewFactory, HandleErrorAsync handleErrorAsync,
-            GetDaysNumberQuery getDaysNumberQuery, NavigationPage navigationPage, SQLDatabase database)
+        private static void StartFirstView(IViewFactory viewFactory, HandleErrorAsync handleErrorAsync, NavigationPage navigationPage)
         {
-            var daily = StartView<TabbedDailyView, TabbedDailyViewModel>(viewFactory, handleErrorAsync, new ParameterOverride("childrenPages", GetTabbedChildrenViews(viewFactory, handleErrorAsync, getDaysNumberQuery)));
-            container.RegisterInstance<SetTabbedCurrentPage>(daily.SetTabbedCurrentPage);
-            if (!database.WasInstalled)
-            {
-                daily.SetTabbedCurrentPage("About");
-            }
-            handleErrorAsync(() => navigationPage.PushAsync(daily, false));
+            var sessions = StartView<SessionsView, SessionsViewModel>(viewFactory, handleErrorAsync);
+            handleErrorAsync(() => navigationPage.PushAsync(sessions, false));
             navigationPage.Navigation.RemovePage(navigationPage.Navigation.NavigationStack.First());
-        }
-
-        private static List<Page> GetTabbedChildrenViews(IViewFactory viewFactory, HandleErrorAsync handleErrorAsync, GetDaysNumberQuery getDaysNumberQuery)
-        {
-            var days = getDaysNumberQuery();
-            var cpmt = 0;
-            var views = days.Select(day =>
-                        StartView<DailySessionsView, DailySessionViewModel>(viewFactory, handleErrorAsync,
-                                                                            new ParameterOverride("day", day),
-                                                                            new ParameterOverride("title", "D" + ++cpmt)))
-                                                                            .Cast<Page>().ToList();
-            views.Add(StartView<AboutView, AboutViewModel>(viewFactory, handleErrorAsync));
-            return views;
         }
 
         private static TView StartView<TView, TViewModel>(IViewFactory viewFactory, HandleErrorAsync handleErrorAsync, params ResolverOverride[] parameters)
             where TView : Page
             where TViewModel : ViewModelBase
         {
-            var tabbed = viewFactory.Create<TView, TViewModel>(parameters);
-            handleErrorAsync(() => tabbed.ViewModel.Start());
-            return tabbed.View;
+            var viewViewModel = viewFactory.Create<TView, TViewModel>(parameters);
+            handleErrorAsync(() => viewViewModel.ViewModel.Start());
+            return viewViewModel.View;
         }
     }
 }

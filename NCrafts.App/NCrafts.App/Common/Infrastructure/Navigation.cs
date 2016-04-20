@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
+using NCrafts.App.About;
 using NCrafts.App.Business.Common.Infrastructure;
 using NCrafts.App.Sessions;
 using NCrafts.App.Speakers;
@@ -44,65 +45,62 @@ namespace NCrafts.App.Common.Infrastructure
             };
         }
 
-        public static NavigateToMenuFromMenu CreateNavigateToMenuFromMenu(HandleErrorAsync handleErrorAsync,
-            NavigationPage navigationPage, SetMenuVisibility setMenuVisibility, SetTabbedCurrentPage setTabbedCurrentPage)
+        public static NavigateToSessionsFromMenu CreateNavigateToSessionsFromMenu(HandleErrorAsync handleErrorAsync, SetMenuVisibility setMenuVisibility, NavigationPage navigationPage)
         {
             return () => handleErrorAsync(async () =>
             {
                 setMenuVisibility(false);
-                setTabbedCurrentPage("D1");
                 await navigationPage.PopToRootAsync();
             });
         }
 
-        public static NavigateToAboutFromMenu CreateNavigateToAboutFromMenu(HandleErrorAsync handleErrorAsync, ViewFactory viewFactory,
-            NavigationPage navigationPage, SetMenuVisibility setMenuVisibility, SetTabbedCurrentPage setTabbedCurrentPage)
+        public static NavigateToHomeFromAbout CreateNavigateToHomeFromAbout(HandleErrorAsync handleErrorAsync, SetMenuVisibility setMenuVisibility, NavigationPage navigationPage)
         {
             return () => handleErrorAsync(async () =>
             {
-                setMenuVisibility(false);
-                setTabbedCurrentPage("About");
-                await navigationPage.PopToRootAsync();
+                await navigationPage.PopAsync();
             });
         }
 
-        public static NavigateToSessionsFromMenu CreateNavigateToSessionsFromMenu(HandleErrorAsync handleErrorAsync,
-            NavigateToViewFromMenu navigateToView, IViewFactory viewFactory, SetMenuVisibility setMenuVisibility, NavigationPage navigationPage)
+        public static NavigateToAboutFromMenu CreateNavigateToAboutFromMenu(HandleErrorAsync handleErrorAsync,
+            NavigateToView navigateToView, IViewFactory viewFactory, SetMenuVisibility setMenuVisibility, NavigationPage navigationPage)
         {
             return () => handleErrorAsync(async () =>
             {
-                if (HandleNavigationFromMenu(typeof(SessionsView), navigationPage, setMenuVisibility))
-                    await navigateToView(viewFactory.Create<SessionsView, SessionsViewModel>());
+                if (HandleNavigationFromMenu(typeof (AboutView), navigationPage, setMenuVisibility))
+                {
+                    await navigateToView(viewFactory.Create<AboutView, AboutViewModel>());
+                }
             });
         }
 
         public static NavigateToPersonalScheduleFromMenu CreateNavigateToPersonalScheduleFromMenu(HandleErrorAsync handleErrorAsync,
-            NavigateToViewFromMenu navigateToView, IViewFactory viewFactory, SetMenuVisibility setMenuVisibility, NavigationPage navigationPage)
+            NavigateToViewFromMenu navigateToViewFromMenu, IViewFactory viewFactory, SetMenuVisibility setMenuVisibility, NavigationPage navigationPage)
         {
             return () => handleErrorAsync(async () =>
             {
                 if (HandleNavigationFromMenu(typeof(PersonalScheduleView), navigationPage, setMenuVisibility))
-                    await navigateToView(viewFactory.Create<PersonalScheduleView, PersonalScheduleViewModel>());
+                    await navigateToViewFromMenu(viewFactory.Create<PersonalScheduleView, PersonalScheduleViewModel>());
             });
         }
 
         public static NavigateToSpeakersFromMenu CreateNavigateToSpeakersFromMenu(HandleErrorAsync handleErrorAsync,
-            NavigateToViewFromMenu navigateToView, IViewFactory viewFactory, SetMenuVisibility setMenuVisibility, NavigationPage navigationPage)
+            NavigateToViewFromMenu navigateToViewFromMenu, IViewFactory viewFactory, SetMenuVisibility setMenuVisibility, NavigationPage navigationPage)
         {
             return () => handleErrorAsync(async () =>
             {
                 if (HandleNavigationFromMenu(typeof(SpeakersView), navigationPage, setMenuVisibility))
-                    await navigateToView(viewFactory.Create<SpeakersView, SpeakersViewModel>());
+                    await navigateToViewFromMenu(viewFactory.Create<SpeakersView, SpeakersViewModel>());
             });
         }
 
         public static NavigateToLocationFromMenu CreateNavigateToLocationFromMenu(HandleErrorAsync handleErrorAsync,
-            NavigateToViewFromMenu navigateToView, IViewFactory viewFactory, SetMenuVisibility setMenuVisibility, NavigationPage navigationPage)
+            NavigateToViewFromMenu navigateToViewFromMenu, IViewFactory viewFactory, SetMenuVisibility setMenuVisibility, NavigationPage navigationPage)
         {
             return () => handleErrorAsync(async () =>
             {
                 if (HandleNavigationFromMenu(typeof(LocationView), navigationPage, setMenuVisibility))
-                    await navigateToView(viewFactory.Create<LocationView, LocationViewModel>());
+                    await navigateToViewFromMenu(viewFactory.Create<LocationView, LocationViewModel>());
             });
         }
 

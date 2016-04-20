@@ -244,6 +244,27 @@
   <ItemGroup>
     <BundleResource Include="Resources\mapicon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\dotfullicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\dotemptyicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\xamarinicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\twittericon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\exportcalednaricon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\arrowlefticon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\arrowrighticon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.1.0.6526\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.1.0.6526\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

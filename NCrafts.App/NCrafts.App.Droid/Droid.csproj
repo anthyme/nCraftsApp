@@ -188,6 +188,12 @@
     <AndroidResource Include="Resources\drawable\personalscheduleicon.png" />
     <AndroidResource Include="Resources\drawable\shareicon.png" />
     <AndroidResource Include="Resources\drawable\exportcalendaricon.png" />
+    <AndroidResource Include="Resources\drawable\dotfullicon.png" />
+    <AndroidResource Include="Resources\drawable\dotemptyicon.png" />
+    <AndroidResource Include="Resources\drawable\xamarinicon.png" />
+    <AndroidResource Include="Resources\drawable\twittericon.png" />
+    <AndroidResource Include="Resources\drawable\arrowrighticon.png" />
+    <AndroidResource Include="Resources\drawable\arrowlefticon.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\NCrafts.App.Business\App.Business.csproj">

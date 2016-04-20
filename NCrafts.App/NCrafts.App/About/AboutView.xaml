@@ -1,10 +1,109 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NCrafts.App.About.AboutView"
              Title="About">
-  <StackLayout>
-    <Label Text="Waiting for Design..." VerticalOptions="Center" HorizontalOptions="Center" />
-    <Image Source="viseoicon.png" />
-  </StackLayout>
-</ContentPage>
+
+  <CarouselPage.Children>
+    <ContentPage>
+      <StackLayout>
+        <StackLayout Padding="5,20,5,5" VerticalOptions="FillAndExpand">
+          <Label Text="Functionnalities" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
+          <StackLayout Padding="75,0,75,3">
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" />
+          </StackLayout>
+          <StackLayout Padding="5,10,5,0">
+            <Label Text="Export in your calendar when you subscrib to a session" VerticalOptions="Center" HorizontalOptions="Center">
+              <!--<Label.FontFamily>
+              <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.iOS>MarkerFelt-Thin</OnPlatform.iOS>
+                <OnPlatform.Android></OnPlatform.Android>
+                <OnPlatform.WinPhone></OnPlatform.WinPhone>
+              </OnPlatform>
+            </Label.FontFamily>-->
+            </Label>
+            <Image Source="exportcalendaricon.png" />
+          </StackLayout>
+          <StackLayout Padding="5,10,5,0">
+            <Label Text="Share your thought and follow the speakers on Twitter" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Image Source="twittericon.png" />
+          </StackLayout>
+        </StackLayout>
+        <StackLayout Padding="5,5,5,15" Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center" >
+          <Image Source="arrowrighticon.png" HeightRequest="20" />
+          <Image Source="dotfullicon.png" HeightRequest="15" />
+          <Image Source="dotemptyicon.png" HeightRequest="15" />
+          <Image Source="dotemptyicon.png" HeightRequest="15" />
+          <Image Source="dotemptyicon.png" HeightRequest="15" />
+          <Image Source="arrowlefticon.png" HeightRequest="20" />
+        </StackLayout>
+      </StackLayout>
+    </ContentPage>
+
+    <ContentPage>
+      <StackLayout>
+        <StackLayout Padding="5,20,5,5" VerticalOptions="FillAndExpand">
+          <Label Text="NCraft" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
+          <StackLayout Padding="75,0,75,3">
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" />
+          </StackLayout>
+          <Image Source="icon.png" />
+          <Label Text="Little explanation of Ncrafts" VerticalOptions="Center" HorizontalOptions="Center" />
+        </StackLayout>
+        <StackLayout Padding="5,5,5,15" Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center" >
+          <Image Source="arrowrighticon.png" HeightRequest="20" />
+          <Image Source="dotemptyicon.png" HeightRequest="15" />
+          <Image Source="dotfullicon.png" HeightRequest="15" />
+          <Image Source="dotemptyicon.png" HeightRequest="15" />
+          <Image Source="dotemptyicon.png" HeightRequest="15" />
+          <Image Source="arrowlefticon.png" HeightRequest="20" />
+        </StackLayout>
+      </StackLayout>
+    </ContentPage>
+
+    <ContentPage>
+      <StackLayout>
+        <StackLayout Padding="5,20,5,5" VerticalOptions="FillAndExpand">
+          <Label Text="VISEO rox your Mum!!" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
+          <StackLayout Padding="75,0,75,3">
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" />
+          </StackLayout>
+          <Image Source="viseoicon.png" />
+          <Label Text="A little bit about Viseo (selling coding dojo and kata)" VerticalOptions="Center" HorizontalOptions="Center" />
+        </StackLayout>
+        <StackLayout Padding="5,5,5,15" Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center" >
+          <Image Source="arrowrighticon.png" HeightRequest="20" />
+          <Image Source="dotemptyicon.png" HeightRequest="15" />
+          <Image Source="dotemptyicon.png" HeightRequest="15" />
+          <Image Source="dotfullicon.png" HeightRequest="15" />
+          <Image Source="dotemptyicon.png" HeightRequest="15" />
+          <Image Source="arrowlefticon.png" HeightRequest="20" />
+        </StackLayout>
+      </StackLayout>
+    </ContentPage>
+
+    <ContentPage>
+      <StackLayout>
+        <StackLayout Padding="5,20,5,5" VerticalOptions="FillAndExpand">
+          <Label Text="Come to talk!" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
+          <StackLayout Padding="75,0,75,3">
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" />
+          </StackLayout>
+          <Image Source="xamarinicon.png" />
+          <Label Text="Come to Viseo stand arround 7.00 pm to have a talk about the app (code, design pattern, limitations of xamarin forms...)." VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+        </StackLayout>
+        <StackLayout Padding="5,5,5,15" Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center" >
+          <Button  x:Name="ButtonTest" VerticalOptions="End"
+                  HorizontalOptions="Center"
+                  Text="Got it !!!"
+                  HeightRequest="50"
+                  BackgroundColor="Transparent"
+                  BorderRadius="25"
+                  BorderColor="#084d84"
+                  BorderWidth="3"
+                  Command="{Binding ReturnHomeCommand}" />
+        </StackLayout>
+      </StackLayout>
+    </ContentPage>
+  </CarouselPage.Children>
+</CarouselPage>
