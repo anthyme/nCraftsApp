@@ -6,29 +6,51 @@
   x:Class="NCrafts.App.Menu.MenuView"
   Title="MENU">
 
-  <StackLayout Padding="2,2,2,2" x:Name="root">
-    <ListView ItemsSource="{Binding Categories}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" HasUnevenRows="True" SeparatorVisibility="None" ItemSelected="ListView_OnItemSelected">
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <ViewCell>
-            <StackLayout Padding="5,5,5,5" Spacing="20" Orientation="Vertical" VerticalOptions="FillAndExpand">
-              <StackLayout Padding="2,2,2,-4" Orientation="Horizontal" VerticalOptions="FillAndExpand">
-              <Image Source="{Binding Icon}" HeightRequest="40" />
-              <Label Text="{Binding Title}" LineBreakMode="TailTruncation" FontSize="18" FontAttributes="Bold"  VerticalTextAlignment="Center" />
+  <StackLayout Orientation="Horizontal">
+    <StackLayout Padding="2,2,2,2" x:Name="root" Orientation="Vertical">
+      <ListView ItemsSource="{Binding Categories}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" HasUnevenRows="True" SeparatorVisibility="None" ItemSelected="ListView_OnItemSelected">
+        <ListView.Header>
+          <StackLayout >
+            <StackLayout.Padding>
+              <OnPlatform x:TypeArguments="Thickness" >
+                <OnPlatform.iOS>5,25,5,5</OnPlatform.iOS>
+                <OnPlatform.Android>5,5,5,5</OnPlatform.Android>
+                <OnPlatform.WinPhone>5,5,5,5</OnPlatform.WinPhone>
+              </OnPlatform>
+            </StackLayout.Padding>
+            <StackLayout.HeightRequest>
+              <OnPlatform x:TypeArguments="x:Double">
+                <OnPlatform.iOS>26</OnPlatform.iOS>
+                <OnPlatform.Android>0</OnPlatform.Android>
+                <OnPlatform.WinPhone>0</OnPlatform.WinPhone>
+              </OnPlatform>
+            </StackLayout.HeightRequest>
+            <Label Text="NCrafts 2016" FontSize="22" HorizontalOptions="Center" />
+          </StackLayout>
+        </ListView.Header>
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout Padding="5,5,5,5" Spacing="20" Orientation="Vertical" VerticalOptions="FillAndExpand">
+                <StackLayout Padding="2,2,2,-4" Orientation="Horizontal" VerticalOptions="FillAndExpand">
+                  <Image Source="{Binding Icon}" HeightRequest="40" />
+                  <Label Text="{Binding Title}" LineBreakMode="TailTruncation" FontSize="18" FontAttributes="Bold"  VerticalTextAlignment="Center" />
+                </StackLayout>
+                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" />
               </StackLayout>
-              <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" />
-            </StackLayout>
-            <b:Interaction.Behaviors>
-              <b:BehaviorCollection>
-                <b:EventToCommand
-                    EventName="Tapped"
-                    Command="{Binding Path=BindingContext.OpenMenuItemCommand, Source={x:Reference root}, }"
-                    CommandParameter="{Binding .}" />
-              </b:BehaviorCollection>
-            </b:Interaction.Behaviors>
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>
+              <b:Interaction.Behaviors>
+                <b:BehaviorCollection>
+                  <b:EventToCommand
+                      EventName="Tapped"
+                      Command="{Binding Path=BindingContext.OpenMenuItemCommand, Source={x:Reference root}, }"
+                      CommandParameter="{Binding .}" />
+                </b:BehaviorCollection>
+              </b:Interaction.Behaviors>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+    <BoxView VerticalOptions="FillAndExpand" WidthRequest="2" Color="Gray" />
   </StackLayout>
 </ContentPage>

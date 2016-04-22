@@ -8,5 +8,10 @@ namespace NCrafts.App.Common
         {
             IsPresented = isVisible;
         }
+
+        public void SetMenuGestureEnable(bool isEnable)
+        {
+            IsGestureEnabled = isEnable;
+        }
     }
 }

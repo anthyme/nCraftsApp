@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Foundation;
+﻿using Foundation;
+using ImageCircle.Forms.Plugin.iOS;
 using UIKit;
 
 namespace NCrafts.App.iOS
@@ -25,6 +22,7 @@ namespace NCrafts.App.iOS
 
             global::Xamarin.Forms.Forms.Init();
             Xamarin.Behaviors.Infrastructure.Init();
+            ImageCircleRenderer.Init();
             LoadApplication(new Common.Infrastructure.App());
             return base.FinishedLaunching(app, options);
         }

@@ -9,8 +9,9 @@ namespace NCrafts.App.About
 {
     public class AboutViewModel : ViewModelBase
     {
-        public AboutViewModel(ReturnHomeCommand returnHomeCommand)
+        public AboutViewModel(ReturnHomeCommand returnHomeCommand, SetMenuGestureEnable setMenuGestureEnable)
         {
+            setMenuGestureEnable(false);
             ReturnHomeCommand = new Command(() => returnHomeCommand());
         }
 

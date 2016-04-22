@@ -27,18 +27,23 @@ namespace NCrafts.App.Common.Infrastructure
 
                 var shell = new Shell();
                 container.RegisterInstance<SetMenuVisibility>(shell.SetMenuVisibility);
+                container.RegisterInstance<SetMenuGestureEnable>(shell.SetMenuGestureEnable);
 
                 StartFirstView(viewFactory, handleErrorAsync, navigationPage);
 
                 shell.Detail = navigationPage;
                 shell.Master = StartView<MenuView, MenuViewModel>(viewFactory, handleErrorAsync);
 
+                navigationPage.Popped += (sender, args) =>
+                {
+                    shell.SetMenuGestureEnable(true);
+                };
+
                 if (!database.WasInstalled)
                 {
                     navigationPage.PushAsync(StartView<AboutView, AboutViewModel>(viewFactory, handleErrorAsync));
                     NavigationPage.SetHasNavigationBar(navigationPage, false);
                 }
-
                 return shell;
             };
         }

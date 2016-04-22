@@ -2,16 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:behaviors="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              x:Class="NCrafts.App.Speakers.SpeakersView"
              Title="Speakers">
 
-  <StackLayout x:Name="root" Padding="2,2,2,2">
-    <ListView ItemsSource="{Binding Speakers}" HorizontalOptions="Fill" SeparatorVisibility="None" HasUnevenRows="True" ItemSelected="ListView_OnItemSelected">
+  <StackLayout x:Name="root" Padding="5,5,5,5">
+    <ListView ItemsSource="{Binding Speakers}" HorizontalOptions="Fill" SeparatorVisibility="Default" HasUnevenRows="True" ItemSelected="ListView_OnItemSelected">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout Padding="5,5,5,5" Orientation="Horizontal">
-              <Image Aspect="AspectFit" HeightRequest="75" Source="{Binding ProfilPicture}"/>
+            <StackLayout Padding="5,5,5,5" Orientation="Horizontal" Spacing="10">
+              <controls:CircleImage Source="{Binding ProfilPicture}" HeightRequest="75" Aspect="AspectFill" />
               <Label Text="{Binding Name}" LineBreakMode="TailTruncation" FontSize="18" FontAttributes="Bold" VerticalTextAlignment="Center" />
             </StackLayout>
             <behaviors:Interaction.Behaviors>

@@ -15,6 +15,7 @@ namespace NCrafts.App.Common.Infrastructure
     public delegate Task NavigateToView(IViewViewModel viewViewModel);
     public delegate Task NavigateToViewFromMenu(IViewViewModel viewViewModel);
     public delegate void SetMenuVisibility(bool isVisible);
+    public delegate void SetMenuGestureEnable(bool isVisible);
     public delegate void SetTabbedCurrentPage(string title);
 
     public class Navigation
@@ -54,7 +55,7 @@ namespace NCrafts.App.Common.Infrastructure
             });
         }
 
-        public static NavigateToHomeFromAbout CreateNavigateToHomeFromAbout(HandleErrorAsync handleErrorAsync, SetMenuVisibility setMenuVisibility, NavigationPage navigationPage)
+        public static NavigateToHomeFromAbout CreateNavigateToHomeFromAbout(HandleErrorAsync handleErrorAsync, NavigationPage navigationPage)
         {
             return () => handleErrorAsync(async () =>
             {

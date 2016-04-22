@@ -42,7 +42,7 @@
           </StackLayout>
         </StackLayout>
         <StackLayout HorizontalOptions="FillAndExpand">
-          <Button HorizontalOptions="End" BorderRadius="25" BorderColor="#084d84" BorderWidth="3" TextColor="#084d84" BackgroundColor="Transparent" Text="{Binding ButtonValue}" Command="{Binding OnClickSubscribeCommand}" >
+          <Button HorizontalOptions="End" FontSize="15" TextColor="#084d84" BackgroundColor="Transparent" Text="{Binding ButtonValue}" Command="{Binding OnClickSubscribeCommand}" BorderRadius="25" BorderColor="#084d84" BorderWidth="1"  >
           </Button>
         </StackLayout>
       </StackLayout>
