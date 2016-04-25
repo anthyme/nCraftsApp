@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
 using NCrafts.App.About;
@@ -7,7 +6,6 @@ using NCrafts.App.Business.Common.Database;
 using NCrafts.App.Business.Common.Infrastructure;
 using NCrafts.App.Business.Common.Network;
 using NCrafts.App.Business.Core.Data;
-using NCrafts.App.Business.Sessions.Query;
 using NCrafts.App.Menu;
 using NCrafts.App.Sessions;
 using Xamarin.Forms;

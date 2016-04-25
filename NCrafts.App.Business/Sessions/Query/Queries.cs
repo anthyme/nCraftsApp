@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using NCrafts.App.Business.Common;
 using NCrafts.App.Business.Common.Infrastructure.Fx;
-//using NCrafts.App.Business.Core;
 using NCrafts.App.Business.Core.Data;
 
 namespace NCrafts.App.Business.Sessions.Query
@@ -16,7 +15,6 @@ namespace NCrafts.App.Business.Sessions.Query
     public delegate SessionDetails GetSessionDetailsQuery(SessionId sessionId);
 
     public delegate List<int> GetDaysNumberQuery();
-    public delegate ICollection<SessionSummary> GetSessionSumariesByDayQuery(int day);
 
     class Queries
     {
@@ -121,18 +119,6 @@ namespace NCrafts.App.Business.Sessions.Query
                         .Select(x => x.Key).ToList();
         }
 
-        public static GetSessionSumariesByDayQuery CreateGetSessionSumariesByDayQuery(IDataSourceRepository dataSourceRepository)
-        {
-            return day => dataSourceRepository.Retreive().Sessions
-                        .GroupBy(session => session.Interval.StartDate.DayOfYear)
-                        .Where(x => x.Key == day)
-                        .Select(days => days.ToList().Select(x => new SessionSummary
-                        {
-                            Id = x.Id,
-                            Title = x.Title,
-                            Date = "Day " + GetDay(dataSourceRepository.Retreive().OpeningTime, x.Interval.StartDate) + ": " + x.Interval.StartDate.ToString("t") + " - " + x.Interval.EndDate.ToString("t"),
-                        })).SelectMany(x => x).ToList();
-        }
 
         public static GetSessionDetailsQuery CreateGetSessionDetailsQuery(IDataSourceRepository dataSourceRepository)
         {
