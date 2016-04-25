@@ -1,0 +1,35 @@
+[
+  {
+    "speakersId": [
+      "n0f-sb15",
+      "n0f-sb16"
+    ],
+    "details": "talk details here",
+    "id": "n0f-sb1-3",
+    "type": "keynote",
+    "place": "MainRoom",
+    "title": "Test json embedded Biatch !!",
+    "startTime": "2016-05-12T08:30:00.0000000+00:00",
+    "durationInMinutes": 40,
+    "tags": [
+      "architecture",
+      "legacy"
+    ]
+  },
+  {
+    "speakersId": [
+      "n0f-sb15"
+    ],
+    "details": "talk details here",
+    "id": "n0f-sb1-4",
+    "type": "hands-on",
+    "place": "roomE",
+    "title": "Second embedded",
+    "startTime": "2016-05-12T13:00:00.0000000+00:00",
+    "durationInMinutes": 100,
+    "tags": [
+      "architecture",
+      "design"
+    ]
+  }
+]

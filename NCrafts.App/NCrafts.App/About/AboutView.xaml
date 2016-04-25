@@ -13,29 +13,17 @@
             <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" />
           </StackLayout>
           <StackLayout Padding="5,10,5,0">
-            <Label Text="Export in your calendar when you subscrib to a session" VerticalOptions="Center" HorizontalOptions="Center">
-              <!--<Label.FontFamily>
-              <OnPlatform x:TypeArguments="x:String">
-                <OnPlatform.iOS>MarkerFelt-Thin</OnPlatform.iOS>
-                <OnPlatform.Android></OnPlatform.Android>
-                <OnPlatform.WinPhone></OnPlatform.WinPhone>
-              </OnPlatform>
-            </Label.FontFamily>-->
+            <Label Text="Export in your calendar when you subscrib to a session" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center">
             </Label>
             <Image Source="exportcalendaricon.png" />
           </StackLayout>
           <StackLayout Padding="5,10,5,0">
-            <Label Text="Share your thought and follow the speakers on Twitter" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Label Text="Share your thought and follow the speakers on Twitter" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
             <Image Source="twittericon.png" />
           </StackLayout>
         </StackLayout>
-        <StackLayout Padding="5,5,5,15" Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center" >
-          <Image Source="arrowrighticon.png" HeightRequest="20" />
-          <Image Source="dotfullicon.png" HeightRequest="15" />
-          <Image Source="dotemptyicon.png" HeightRequest="15" />
-          <Image Source="dotemptyicon.png" HeightRequest="15" />
-          <Image Source="dotemptyicon.png" HeightRequest="15" />
-          <Image Source="arrowlefticon.png" HeightRequest="20" />
+        <StackLayout Padding="5,5,10,10" HorizontalOptions="End" VerticalOptions="End">
+          <Label Text="Swipe&#10;to the right" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" ></Label>
         </StackLayout>
       </StackLayout>
     </ContentPage>
@@ -48,15 +36,7 @@
             <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" />
           </StackLayout>
           <Image Source="icon.png" />
-          <Label Text="Little explanation of Ncrafts" VerticalOptions="Center" HorizontalOptions="Center" />
-        </StackLayout>
-        <StackLayout Padding="5,5,5,15" Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center" >
-          <Image Source="arrowrighticon.png" HeightRequest="20" />
-          <Image Source="dotemptyicon.png" HeightRequest="15" />
-          <Image Source="dotfullicon.png" HeightRequest="15" />
-          <Image Source="dotemptyicon.png" HeightRequest="15" />
-          <Image Source="dotemptyicon.png" HeightRequest="15" />
-          <Image Source="arrowlefticon.png" HeightRequest="20" />
+          <Label Text="Little explanation of Ncrafts" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
         </StackLayout>
       </StackLayout>
     </ContentPage>
@@ -69,15 +49,7 @@
             <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" />
           </StackLayout>
           <Image Source="viseoicon.png" />
-          <Label Text="A little bit about Viseo (selling coding dojo and kata)" VerticalOptions="Center" HorizontalOptions="Center" />
-        </StackLayout>
-        <StackLayout Padding="5,5,5,15" Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center" >
-          <Image Source="arrowrighticon.png" HeightRequest="20" />
-          <Image Source="dotemptyicon.png" HeightRequest="15" />
-          <Image Source="dotemptyicon.png" HeightRequest="15" />
-          <Image Source="dotfullicon.png" HeightRequest="15" />
-          <Image Source="dotemptyicon.png" HeightRequest="15" />
-          <Image Source="arrowlefticon.png" HeightRequest="20" />
+          <Label Text="A little bit about Viseo (selling coding dojo and kata)" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
         </StackLayout>
       </StackLayout>
     </ContentPage>
@@ -96,12 +68,32 @@
           <Button  x:Name="ButtonTest" VerticalOptions="End"
                   HorizontalOptions="Center"
                   Text="Got it !!!"
+                  FontSize="25"
                   HeightRequest="50"
                   BackgroundColor="Transparent"
-                  BorderRadius="25"
-                  BorderColor="#084d84"
-                  BorderWidth="3"
-                  Command="{Binding ReturnHomeCommand}" />
+                  Command="{Binding ReturnHomeCommand}">
+            <Button.BorderRadius>
+              <OnPlatform x:TypeArguments="x:Int32">
+                <OnPlatform.iOS>0</OnPlatform.iOS>
+                <OnPlatform.Android>25</OnPlatform.Android>
+                <OnPlatform.WinPhone>25</OnPlatform.WinPhone>
+              </OnPlatform>
+            </Button.BorderRadius>
+            <Button.BorderColor>
+              <OnPlatform x:TypeArguments="Color">
+                <OnPlatform.iOS></OnPlatform.iOS>
+                <OnPlatform.Android>#084d84</OnPlatform.Android>
+                <OnPlatform.WinPhone>#084d84</OnPlatform.WinPhone>
+              </OnPlatform>
+            </Button.BorderColor>
+            <Button.BorderWidth>
+              <OnPlatform x:TypeArguments="x:Double">
+                <OnPlatform.iOS></OnPlatform.iOS>
+                <OnPlatform.Android>3</OnPlatform.Android>
+                <OnPlatform.WinPhone>3</OnPlatform.WinPhone>
+              </OnPlatform>
+            </Button.BorderWidth>
+          </Button>
         </StackLayout>
       </StackLayout>
     </ContentPage>

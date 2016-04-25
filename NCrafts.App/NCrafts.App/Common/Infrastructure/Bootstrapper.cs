@@ -1,9 +1,12 @@
-﻿using System.Linq;
+﻿using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
 using NCrafts.App.About;
 using NCrafts.App.Business.Common.Database;
 using NCrafts.App.Business.Common.Infrastructure;
+using NCrafts.App.Business.Common.JsonSerializer;
 using NCrafts.App.Business.Common.Network;
 using NCrafts.App.Business.Core.Data;
 using NCrafts.App.Menu;
@@ -46,9 +49,30 @@ namespace NCrafts.App.Common.Infrastructure
             };
         }
 
+        private static void ExtractDataFromEmbedded(IDataSourceRepository dataSourceRepository)
+        {
+            var assembly = typeof(Bootstrapper).GetTypeInfo().Assembly;
+
+            var streamSessions = assembly.GetManifestResourceStream("NCrafts.App.Resx.sessions.json");
+            var streamReaderSessions = new StreamReader(streamSessions);
+            var resultsSessions = Converter.GetSessionsAndTagsFromJsonTmp(streamReaderSessions.ReadToEnd());
+
+            var streamSpeakers = assembly.GetManifestResourceStream("NCrafts.App.Resx.speakers.json");
+            var streamReaderSpeakers = new StreamReader(streamSpeakers);
+            var resultsSpeakers = Converter.GetSpeakersFromJsonTmp(streamReaderSpeakers.ReadToEnd());
+
+            dataSourceRepository.Retreive().AddSessions(resultsSessions.Item1);
+            dataSourceRepository.Retreive().AddTags(resultsSessions.Item2);
+            dataSourceRepository.Retreive().AddSpeakers(resultsSpeakers);
+        } 
+
         private static void StartDataSource(IUnityContainer container, SQLDatabase database)
         {
             var dataSourceRepository = container.Resolve<IDataSourceRepository>();
+            if (!database.WasInstalled)
+            {
+                ExtractDataFromEmbedded(dataSourceRepository);
+            }
             database.StartDatabase(dataSourceRepository);
             Task.Run(async () =>
             {

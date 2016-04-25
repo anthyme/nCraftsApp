@@ -1,0 +1,44 @@
+[
+  {
+    "avatar": {
+      "iconSmall": "http://www.simonbrown.je/static/img/simonbrownIcon.jpg",
+      "iconBig": "http://www.simonbrown.je/static/img/simonbrownHD.jpg"
+    },
+    "Details": "Here the description about the speaker.",
+    "company": "Viseo",
+    "id": "n0f-sb15",
+    "languages": [
+      "en"
+    ],
+    "firstName": "Anthyme",
+    "lastName": "Monsieur",
+    "sessionsId": [
+      "n0f-sb1-3",
+      "n0f-sb1-4"
+    ],
+    "site": "http://www.simonbrown.je/",
+    "twitter": "@simonbrown",
+    "github": null
+  },
+  {
+    "avatar": {
+      "iconSmall": "http://www.simonbrown.je/static/img/simonbrownIcon.jpg",
+      "iconBig": "http://www.simonbrown.je/static/img/simonbrownHD.jpg"
+    },
+    "Details": "Here the description about the speaker.",
+    "company": null,
+    "id": "n0f-sb16",
+    "languages": [
+      "en",
+      "fr"
+    ],
+    "firstName": "James",
+    "lastName": "Montemagno",
+    "sessionsId": [
+      "n0f-sb1-3"
+    ],
+    "site": null,
+    "twitter": null,
+    "github": "https://github.com/jamesmontemagno"
+  }
+]

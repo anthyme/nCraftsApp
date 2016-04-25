@@ -42,7 +42,36 @@
           </StackLayout>
         </StackLayout>
         <StackLayout HorizontalOptions="FillAndExpand">
-          <Button HorizontalOptions="End" FontSize="15" TextColor="#084d84" BackgroundColor="Transparent" Text="{Binding ButtonValue}" Command="{Binding OnClickSubscribeCommand}" BorderRadius="25" BorderColor="#084d84" BorderWidth="1"  >
+          <Button HorizontalOptions="End" FontSize="15" BackgroundColor="Transparent" Text="{Binding ButtonValue}" Command="{Binding OnClickSubscribeCommand}" >
+            <Button.TextColor>
+              <OnPlatform x:TypeArguments="Color">
+                <OnPlatform.iOS></OnPlatform.iOS>
+                <OnPlatform.Android>#084d84</OnPlatform.Android>
+                <OnPlatform.WinPhone>#084d84</OnPlatform.WinPhone>
+              </OnPlatform>
+            </Button.TextColor>
+            <Button.BorderRadius>
+              <OnPlatform x:TypeArguments="x:Int32">
+                <OnPlatform.iOS>0</OnPlatform.iOS>
+                <OnPlatform.Android>25</OnPlatform.Android>
+                <OnPlatform.WinPhone>25</OnPlatform.WinPhone>
+              </OnPlatform>
+            </Button.BorderRadius>
+            <Button.BorderColor>
+              <OnPlatform x:TypeArguments="Color">
+                <OnPlatform.iOS></OnPlatform.iOS>
+                <OnPlatform.Android>#084d84</OnPlatform.Android>
+                <OnPlatform.WinPhone>#084d84</OnPlatform.WinPhone>
+              </OnPlatform>
+            </Button.BorderColor>
+            <Button.BorderWidth>
+              <OnPlatform x:TypeArguments="x:Double">
+                <OnPlatform.iOS></OnPlatform.iOS>
+                <OnPlatform.Android>1</OnPlatform.Android>
+                <OnPlatform.WinPhone>1</OnPlatform.WinPhone>
+              </OnPlatform>
+            </Button.BorderWidth>
+
           </Button>
         </StackLayout>
       </StackLayout>
