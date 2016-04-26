@@ -175,10 +175,6 @@
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\drawable-hdpi\iconxamarin.png" />
-    <AndroidResource Include="Resources\drawable\icon.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable\mapicon.png" />
     <AndroidResource Include="Resources\drawable\clockicon.png" />
     <AndroidResource Include="Resources\drawable\viseoicon.png" />
@@ -203,6 +199,10 @@
     <AndroidResource Include="Resources\drawable\arrowlefticon.png" />
     <AndroidResource Include="Resources\drawable\backgoundncraft.jpg" />
     <AndroidResource Include="Resources\drawable\shareicon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable\icon.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\NCrafts.App.Business\App.Business.csproj">
