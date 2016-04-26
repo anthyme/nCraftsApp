@@ -7,7 +7,18 @@
              Title="Session details">
 
   <ContentPage.ToolbarItems>
-    <ToolbarItem Command="{Binding ShareSessionCommand}" Icon="shareicon.png" ></ToolbarItem>
+    <ToolbarItem Command="{Binding ShareSessionCommand}" >
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource">
+          <OnPlatform.iOS></OnPlatform.iOS>
+          <OnPlatform.Android>shareicon.png</OnPlatform.Android>
+          <OnPlatform.WinPhone>shareicon.png</OnPlatform.WinPhone>
+        </OnPlatform>
+      </ToolbarItem.Icon>
+      <ToolbarItem.Text>
+        Share
+      </ToolbarItem.Text>
+    </ToolbarItem>
   </ContentPage.ToolbarItems>
 
   <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand" x:Name="root">
@@ -71,7 +82,6 @@
                 <OnPlatform.WinPhone>1</OnPlatform.WinPhone>
               </OnPlatform>
             </Button.BorderWidth>
-
           </Button>
         </StackLayout>
       </StackLayout>

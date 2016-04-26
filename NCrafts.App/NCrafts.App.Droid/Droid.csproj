@@ -194,7 +194,6 @@
     <AndroidResource Include="Resources\drawable\simonbrown50.jpg" />
     <AndroidResource Include="Resources\drawable\simonbrown75.jpg" />
     <AndroidResource Include="Resources\drawable\personalscheduleicon.png" />
-    <AndroidResource Include="Resources\drawable\shareicon.png" />
     <AndroidResource Include="Resources\drawable\exportcalendaricon.png" />
     <AndroidResource Include="Resources\drawable\dotfullicon.png" />
     <AndroidResource Include="Resources\drawable\dotemptyicon.png" />
@@ -203,6 +202,7 @@
     <AndroidResource Include="Resources\drawable\arrowrighticon.png" />
     <AndroidResource Include="Resources\drawable\arrowlefticon.png" />
     <AndroidResource Include="Resources\drawable\backgoundncraft.jpg" />
+    <AndroidResource Include="Resources\drawable\shareicon.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\NCrafts.App.Business\App.Business.csproj">
