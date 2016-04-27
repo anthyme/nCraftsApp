@@ -6,6 +6,14 @@
   x:Class="NCrafts.App.Menu.MenuView"
   Title="MENU">
 
+  <ContentPage.Icon>
+    <OnPlatform x:TypeArguments="FileImageSource" >
+      <OnPlatform.iOS>menubutton.png</OnPlatform.iOS>
+      <OnPlatform.Android></OnPlatform.Android>
+      <OnPlatform.WinPhone></OnPlatform.WinPhone>
+    </OnPlatform>
+  </ContentPage.Icon>
+  
   <StackLayout Orientation="Horizontal">
     <StackLayout Padding="2,2,2,2" x:Name="root" Orientation="Vertical">
       <ListView ItemsSource="{Binding Categories}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" HasUnevenRows="True" SeparatorVisibility="None" ItemSelected="ListView_OnItemSelected">

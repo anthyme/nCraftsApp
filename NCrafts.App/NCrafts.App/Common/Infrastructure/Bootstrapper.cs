@@ -77,6 +77,7 @@ namespace NCrafts.App.Common.Infrastructure
             Task.Run(async () =>
             {
                 var network = container.Resolve<NetworkClient>();
+                await network.GetConf();
                 await network.GetSessions(dataSourceRepository);
                 await network.GetSpeakers(dataSourceRepository);
                 if (network.IsSessionResponse || network.IsSpeakerResponse)

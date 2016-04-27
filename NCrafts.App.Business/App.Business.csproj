@@ -48,8 +48,10 @@
     <Compile Include="Common\JsonSerializer\Converter.cs" />
     <Compile Include="Common\JsonSerializer\Data\AvatarModel.cs" />
     <Compile Include="Common\JsonSerializer\Data\BookModel.cs" />
+    <Compile Include="Common\JsonSerializer\Data\ConfModel.cs" />
     <Compile Include="Common\JsonSerializer\Data\SessionModel.cs" />
     <Compile Include="Common\JsonSerializer\Data\SpeakerModel.cs" />
+    <Compile Include="Common\Network\Conf.cs" />
     <Compile Include="Common\Network\NetworkClient.cs" />
     <Compile Include="Core\Book.cs" />
     <Compile Include="Core\Data\DataSource.cs" />

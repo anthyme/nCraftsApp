@@ -4,29 +4,35 @@
              xmlns:resx="clr-namespace:NCrafts.App.Resx;assembly=NCrafts.App"
              xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
              x:Class="NCrafts.App.Speakers.SpeakerDetailsView"
+             xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              Title="{Binding Speaker.Name}">
 
   <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand" x:Name="root">
     <StackLayout Padding="5,5,5,5" Orientation="Vertical">
       <StackLayout Orientation="Horizontal">
         <RelativeLayout>
-          <Image Source="{Binding Speaker.ProfilPicture}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.30}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.30}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.35}" />
+          <abstractions:CircleImage Source="{Binding Speaker.ProfilPicture}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.50}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.50}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}" />
         </RelativeLayout>
       </StackLayout>
       <StackLayout Orientation="Horizontal" HorizontalOptions="Center" IsVisible="{Binding IsStackLayoutEnable}" >
-        <Label Text="{Binding Speaker.Twitter}" TextColor="#0084b4" IsVisible="{Binding IsLabelTwitterEnable}">
+        <Label Text="{Binding Speaker.Twitter, StringFormat='@{0}'}" TextColor="#0084b4" IsVisible="{Binding IsLabelTwitterEnable}">
           <Label.GestureRecognizers>
-            <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="{Binding Speaker.Twitter}">
+            <TapGestureRecognizer Command="{Binding OpenTwitterCommand}" CommandParameter="{Binding Speaker.Twitter}">
             </TapGestureRecognizer>
           </Label.GestureRecognizers>
         </Label>
         <Label Text=" - " IsVisible="{Binding IsLabelSeparatorTCEnable}" />
-        <Label Text="{Binding Speaker.Company}" IsVisible="{Binding IsLabelCompanyEnable}"  />
+        <Label Text="{Binding Speaker.Company}" IsVisible="{Binding IsLabelCompanyEnable}" />
         <Label Text=" - " IsVisible="{Binding IsLabelSeparatorCGEnable}"  />
-        <Label Text="{Binding Speaker.Github}" TextColor="#800080" IsVisible="{Binding IsLabelGithubEnable}"  />
+        <Label Text="{Binding Speaker.Github}" TextColor="#800080" IsVisible="{Binding IsLabelGithubEnable}">
+          <Label.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding OpenGithubCommand}" CommandParameter="{Binding Speaker.Github}">
+            </TapGestureRecognizer>
+          </Label.GestureRecognizers>
+        </Label>
       </StackLayout>
       <StackLayout Padding="3,0,0,-8">
         <Label Text="{x:Static resx:AppResources.SpeakersDetails}"

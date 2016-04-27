@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NCrafts.App.Business.Common.JsonSerializer.Data;
+using NCrafts.App.Business.Common.Network;
 using NCrafts.App.Business.Core;
 
 namespace NCrafts.App.Business.Common.JsonSerializer
@@ -66,8 +65,6 @@ namespace NCrafts.App.Business.Common.JsonSerializer
                 }).ToList();
         }
 
-
-
         public static Tuple<List<Session>, List<Tag>> GetSessionsAndTagsFromJsonTmp(string json)
         {
             var objectResult = Newtonsoft.Json.JsonConvert.DeserializeObject<List<SessionModelTmp>>(json);
@@ -120,6 +117,12 @@ namespace NCrafts.App.Business.Common.JsonSerializer
                     Github = speaker.Github,
                     Site = speaker.Site,
                 }).ToList();
+        }
+
+        public static Conf GetConfFromJson(string json)
+        {
+            var result = Newtonsoft.Json.JsonConvert.DeserializeObject<ConfModel>(json);
+            return new Conf {Version = result.Version, SessionsUrl = result.Urls.Sessions, SpeakersUrl = result.Urls.Speakers};
         }
     }
 }

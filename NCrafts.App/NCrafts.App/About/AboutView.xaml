@@ -31,7 +31,7 @@
     <ContentPage>
       <StackLayout>
         <StackLayout Padding="5,20,5,5" VerticalOptions="FillAndExpand">
-          <Label Text="NCraft" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
+          <Label Text="NCrafts" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
           <StackLayout Padding="75,0,75,3">
             <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" />
           </StackLayout>
