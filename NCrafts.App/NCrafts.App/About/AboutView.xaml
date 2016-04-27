@@ -13,12 +13,20 @@
             <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" />
           </StackLayout>
           <StackLayout Padding="5,10,5,0">
+            <StackLayout.IsVisible>
+              <OnPlatform x:TypeArguments="x:Boolean">
+                <OnPlatform.iOS>False</OnPlatform.iOS>
+                <OnPlatform.Android>True</OnPlatform.Android>
+                <OnPlatform.WinPhone>True</OnPlatform.WinPhone>
+              </OnPlatform>
+            </StackLayout.IsVisible>
             <Label Text="Export in your calendar when you subscrib to a session" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center">
             </Label>
             <Image Source="exportcalendaricon.png" />
           </StackLayout>
-          <StackLayout Padding="5,10,5,0">
-            <Label Text="Share your thought and follow the speakers on Twitter" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+          <StackLayout Padding="5,20,5,0">
+            <Label Text="Share your favorite sessions and follow the speakers on Twitter" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center">
+            </Label>
             <Image Source="twittericon.png" />
           </StackLayout>
         </StackLayout>
@@ -31,12 +39,17 @@
     <ContentPage>
       <StackLayout>
         <StackLayout Padding="5,20,5,5" VerticalOptions="FillAndExpand">
-          <Label Text="NCrafts" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
+          <Label Text="NCRAFTS" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
           <StackLayout Padding="75,0,75,3">
             <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" />
           </StackLayout>
           <Image Source="icon.png" />
-          <Label Text="Little explanation of Ncrafts" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+          <StackLayout Padding="0,0,0,15">
+            <Label Text="nCrafts is an independent and international software development conference held annually in Paris since 2014." VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+          </StackLayout>
+          <StackLayout>
+            <Label Text="Created by developers for developers, nCrafts is an ephemeral learning ground for professional developers who care for quality code and bettering their practices." VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+          </StackLayout>
         </StackLayout>
       </StackLayout>
     </ContentPage>
@@ -44,12 +57,24 @@
     <ContentPage>
       <StackLayout>
         <StackLayout Padding="5,20,5,5" VerticalOptions="FillAndExpand">
-          <Label Text="VISEO rox your Mum!!" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
+          <Label Text="VISEO" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
           <StackLayout Padding="75,0,75,3">
             <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" />
           </StackLayout>
           <Image Source="viseoicon.png" />
-          <Label Text="A little bit about Viseo (selling coding dojo and kata)" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+          <StackLayout>
+            <Label Text="VISEO Technologies is a company of 400 team members." VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+            <Label Text="By developing a whole range of software, high traffic websites &#38; mobile applications, we are devoted to customer innovations." VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+          </StackLayout>
+          <StackLayout>
+            <Label Text="Most of our .NET community members aim to lead toward the software craftsmanship experience." VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+          </StackLayout>
+          <StackLayout>
+            <Label Text="We are dedicated to Research &#38; Development, trainings via our involvement in major IT conferences and our company weekly event : Brown Bag Lunch, Viseo Share, Coding Dojo &#38; Kata." VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+          </StackLayout>
+          <StackLayout>
+            <Label Text="If you are interested, we would like to get to know you better and see how we can collaborate." VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+          </StackLayout>
         </StackLayout>
       </StackLayout>
     </ContentPage>
@@ -62,12 +87,18 @@
             <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" />
           </StackLayout>
           <Image Source="xamarinicon.png" />
-          <Label Text="Come to Viseo stand arround 7.00 pm to have a talk about the app (code, design pattern, limitations of xamarin forms...)." VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+          <StackLayout Padding="0,0,0,15">
+            <Label Text="Do you want to know more about the application development" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+            <Label Text="or to have a look at Xamarin results on another platform?" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+          </StackLayout>
+          <StackLayout>
+            <Label Text="Come to our stand during your break." FontSize="22" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+          </StackLayout>
         </StackLayout>
         <StackLayout Padding="5,5,5,15" Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center" >
           <Button  x:Name="ButtonTest" VerticalOptions="End"
                   HorizontalOptions="Center"
-                  Text="Got it !!!"
+                  Text="Got it!"
                   FontSize="25"
                   HeightRequest="50"
                   BackgroundColor="Transparent"
