@@ -55,11 +55,11 @@ namespace NCrafts.App.Common.Infrastructure
 
             var streamSessions = assembly.GetManifestResourceStream("NCrafts.App.Resx.sessions.json");
             var streamReaderSessions = new StreamReader(streamSessions);
-            var resultsSessions = Converter.GetSessionsAndTagsFromJsonTmp(streamReaderSessions.ReadToEnd());
+            var resultsSessions = Converter.GetSessionsAndTagsFromJson(streamReaderSessions.ReadToEnd());
 
             var streamSpeakers = assembly.GetManifestResourceStream("NCrafts.App.Resx.speakers.json");
             var streamReaderSpeakers = new StreamReader(streamSpeakers);
-            var resultsSpeakers = Converter.GetSpeakersFromJsonTmp(streamReaderSpeakers.ReadToEnd());
+            var resultsSpeakers = Converter.GetSpeakersFromJson(streamReaderSpeakers.ReadToEnd());
 
             dataSourceRepository.Retreive().AddSessions(resultsSessions.Item1);
             dataSourceRepository.Retreive().AddTags(resultsSessions.Item2);

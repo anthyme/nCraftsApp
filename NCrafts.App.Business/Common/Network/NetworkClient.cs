@@ -39,7 +39,7 @@ namespace NCrafts.App.Business.Common.Network
             IsSpeakerResponse = response.IsSuccessStatusCode;
             if (IsSpeakerResponse)
             {
-                var speakers = Converter.GetSpeakersFromJsonTmp(response.Content.ReadAsStringAsync().Result);
+                var speakers = Converter.GetSpeakersFromJson(response.Content.ReadAsStringAsync().Result);
                 dataSourceRepository.Retreive().AddSpeakers(speakers);
             }
         }
@@ -51,7 +51,7 @@ namespace NCrafts.App.Business.Common.Network
             IsSessionResponse = response.IsSuccessStatusCode;
             if (IsSessionResponse)
             {
-                var results = Converter.GetSessionsAndTagsFromJsonTmp(response.Content.ReadAsStringAsync().Result);
+                var results = Converter.GetSessionsAndTagsFromJson(response.Content.ReadAsStringAsync().Result);
                 dataSourceRepository.Retreive().AddSessions(results.Item1);
                 dataSourceRepository.Retreive().AddTags(results.Item2);
             }

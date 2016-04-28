@@ -47,7 +47,6 @@
     <Compile Include="Common\Infrastructure\Fx\Grouping.cs" />
     <Compile Include="Common\JsonSerializer\Converter.cs" />
     <Compile Include="Common\JsonSerializer\Data\AvatarModel.cs" />
-    <Compile Include="Common\JsonSerializer\Data\BookModel.cs" />
     <Compile Include="Common\JsonSerializer\Data\ConfModel.cs" />
     <Compile Include="Common\JsonSerializer\Data\SessionModel.cs" />
     <Compile Include="Common\JsonSerializer\Data\SpeakerModel.cs" />

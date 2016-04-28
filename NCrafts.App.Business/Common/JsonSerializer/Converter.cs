@@ -15,9 +15,9 @@ namespace NCrafts.App.Business.Common.JsonSerializer
             return new Conf { Version = result.Version, SessionsUrl = result.Urls.Sessions, SpeakersUrl = result.Urls.Speakers };
         }
 
-        public static Tuple<List<Session>, List<Tag>> GetSessionsAndTagsFromJsonTmp(string json)
+        public static Tuple<List<Session>, List<Tag>> GetSessionsAndTagsFromJson(string json)
         {
-            var objectResult = Newtonsoft.Json.JsonConvert.DeserializeObject<List<SessionModelTmp>>(json);
+            var objectResult = Newtonsoft.Json.JsonConvert.DeserializeObject<List<SessionModel>>(json);
             var sessions = objectResult.Select(
                 session =>
                     new Session
@@ -50,9 +50,9 @@ namespace NCrafts.App.Business.Common.JsonSerializer
             return new Tuple<List<Session>, List<Tag>>(sessions, tags);
         }
 
-        public static List<Speaker> GetSpeakersFromJsonTmp(string json)
+        public static List<Speaker> GetSpeakersFromJson(string json)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<SpeakerModelTmp>>(json)
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<SpeakerModel>>(json)
                 .Select(speaker => new Speaker
                 {
                     FirstName = speaker.FirstName,
