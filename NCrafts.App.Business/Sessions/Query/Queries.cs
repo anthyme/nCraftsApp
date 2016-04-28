@@ -39,7 +39,7 @@ namespace NCrafts.App.Business.Sessions.Query
                             {
                                 Id = x.Id,
                                 Title = x.Title,
-                                Date = "Day " + GetDay(dataSourceRepository.Retreive().OpeningTime, x.Interval.StartDate) + ": " + x.Interval.StartDate.ToString("t") + " - " + x.Interval.EndDate.ToString("t"),
+                                Date = x.Interval.StartDate == DateTime.MinValue ? "Day not defined yet" : "Day " + GetDay(dataSourceRepository.Retreive().OpeningTime, x.Interval.StartDate) + ": " + x.Interval.StartDate.ToString("t") + " - " + x.Interval.EndDate.ToString("t"),
                             })
                             .ToList();
         }
@@ -68,7 +68,7 @@ namespace NCrafts.App.Business.Sessions.Query
                     {
                         Id = x.Id,
                         Title = x.Title,
-                        Date =
+                        Date = x.Interval.StartDate == DateTime.MinValue ? "Day not defined yet" :
                             "Day " + GetDay(dataSourceRepository.Retreive().OpeningTime, x.Interval.StartDate) + ": " +
                             x.Interval.StartDate.ToString("t") + " - " + x.Interval.EndDate.ToString("t"),
                     },
@@ -84,14 +84,14 @@ namespace NCrafts.App.Business.Sessions.Query
             {
                 var test = dataSourceRepository.Retreive().Sessions
                     .OrderBy(x => x.Interval.StartDate)
-                    .GroupBy(x => string.Format("Day: {0:dd}/{0:MM} at {0:hhtt}", x.Interval.StartDate))
+                    .GroupBy(x => string.Format(x.Interval.StartDate == DateTime.MinValue ? "Day not defined yet" : "Day: {0:dd}/{0:MM} at {0:hhtt}", x.Interval.StartDate))
                     .Select(
                         days =>
                             new Grouping<string, SessionSummary>(days.Key, days.ToList().Select(x => new SessionSummary
                             {
                                 Id = x.Id,
                                 Title = x.Title,
-                                Date =
+                                Date = x.Interval.StartDate == DateTime.MinValue ? "Day not defined yet" :
                                     "Day " + GetDay(dataSourceRepository.Retreive().OpeningTime, x.Interval.StartDate) +
                                     ": " + x.Interval.StartDate.ToString("t") + " - " + x.Interval.EndDate.ToString("t"),
                             }))).ToList();
@@ -107,7 +107,7 @@ namespace NCrafts.App.Business.Sessions.Query
                             {
                                 Id = x.Id,
                                 Title = x.Title,
-                                Date = "Day " + GetDay(dataSourceRepository.Retreive().OpeningTime, x.Interval.StartDate) + ": " + x.Interval.StartDate.ToString("t") + " - " + x.Interval.EndDate.ToString("t"),
+                                Date = x.Interval.StartDate == DateTime.MinValue ? "Day not defined yet" : "Day " + GetDay(dataSourceRepository.Retreive().OpeningTime, x.Interval.StartDate) + ": " + x.Interval.StartDate.ToString("t") + " - " + x.Interval.EndDate.ToString("t"),
                             })
                             .ToList();
         }
@@ -129,7 +129,7 @@ namespace NCrafts.App.Business.Sessions.Query
                 {
                     Id = x.Id,
                     Title = x.Title,
-                    Date = "Day " + GetDay(dataSourceRepository.Retreive().OpeningTime, x.Interval.StartDate) + ": " + x.Interval.StartDate.ToString("t") + " - " + x.Interval.EndDate.ToString("t"),
+                    Date = x.Interval.StartDate == DateTime.MinValue ? "Day not defined yet" : "Day " + GetDay(dataSourceRepository.Retreive().OpeningTime, x.Interval.StartDate) + ": " + x.Interval.StartDate.ToString("t") + " - " + x.Interval.EndDate.ToString("t"),
                     Room = x.Room.Name,
                     Tags = string.Join(", ", x.Tags.Select(t => t.Title)),
                     Description = x.Description,
