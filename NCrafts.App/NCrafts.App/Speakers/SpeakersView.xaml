@@ -10,6 +10,16 @@
     <ListView ItemsSource="{Binding Speakers}" HorizontalOptions="Fill" SeparatorVisibility="Default" HasUnevenRows="True" ItemSelected="ListView_OnItemSelected">
       <ListView.ItemTemplate>
         <DataTemplate>
+          <!--<ImageCell ImageSource="{Binding ProfilPicture}" Height="75" Text="{Binding Name}">
+            <behaviors:Interaction.Behaviors>
+              <behaviors:BehaviorCollection>
+                <behaviors:EventToCommand
+                    EventName="Tapped"
+                    Command="{Binding Path=BindingContext.OpenSpeakerCommand, Source={x:Reference root}, }"
+                    CommandParameter="{Binding Id}" />
+              </behaviors:BehaviorCollection>
+            </behaviors:Interaction.Behaviors>
+          </ImageCell>-->
           <ViewCell>
             <StackLayout Padding="5,5,5,5" Orientation="Horizontal" Spacing="10">
               <abstractions:CircleImage Source="{Binding ProfilPicture}" HeightRequest="75" Aspect="AspectFill" />

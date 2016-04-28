@@ -1,4 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using NCrafts.App.Business.Common;
@@ -12,7 +14,9 @@ namespace NCrafts.App.Speakers
     public class SpeakersViewModel : ViewModelBase
     {
         private readonly GetSpeakerSumariesQuery getSpeakerSumariesQuery;
-        private ObservableCollection<SpeakerSummary> speakers;
+        // TODO: check to use observalbe collection or the IList because nroamlly IList is more optimized
+        //private ObservableCollection<SpeakerSummary> speakers;
+        private IList<SpeakerSummary> spearkers; 
 
         public SpeakersViewModel(OpenSpeakerCommand openSpeakerCommand, GetSpeakerSumariesQuery getSpeakerSumariesQuery)
         {
@@ -22,15 +26,22 @@ namespace NCrafts.App.Speakers
 
         public ICommand OpenSpeakerCommand { get; }
 
-        public ObservableCollection<SpeakerSummary> Speakers
+        public IList<SpeakerSummary> Speakers
         {
-            get { return speakers;}
-            set { speakers = value; OnPropertyChanged(); }
+            get { return spearkers;}
+            set { spearkers = value; OnPropertyChanged(); }
         }
+
+        //public ObservableCollection<SpeakerSummary> Speakers
+        //{
+        //    get { return speakers;}
+        //    set { speakers = value; OnPropertyChanged(); }
+        //}
 
         protected override Task OnStart()
         {
-            Speakers = new ObservableCollection<SpeakerSummary>(getSpeakerSumariesQuery());
+            //Speakers = new ObservableCollection<SpeakerSummary>(getSpeakerSumariesQuery());
+            Speakers = getSpeakerSumariesQuery().ToList();
             return Task.FromResult(0);
         }
     }

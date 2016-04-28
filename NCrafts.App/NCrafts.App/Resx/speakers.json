@@ -1,8 +1,8 @@
 [
   {
     "Avatar": {
-      "IconBig": "/speakers/AsherGlynnNB.jpg",
-      "IconSmall": "/speakers/AsherGlynnNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/AsherGlynnNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/AsherGlynnNB.jpg"
     },
     "Company": "Rituala Limited",
     "Details": "Asher is a consultant with over 20 years experience in the IT industry, and will use the most appropriate technology at hand, be that Scala or Java, Javascript and when pushed Visual Basic and Excel. With strong hands on knowledge of performance and scale, exposure to platforms from mainframes to mobiles has taught him an appreciation for the subtleties of applying technology to difficult problems - be they technical or people challenges. Asher has had experience in a variety of organisations ranging from the BBC, GSMA, Betfair, Equens, Close Brothers and the TAB to small startups.",
@@ -17,8 +17,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/MatthiasNobackNB.jpg",
-      "IconSmall": "/speakers/MatthiasNobackNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/MatthiasNobackNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/MatthiasNobackNB.jpg"
     },
     "Company": "Ibuildings",
     "Details": "Matthias Noback has 13 years of experience in web application development. He is the author of `A Year With Symfony` and `Principles of Package Design`. Currently he is CTO at Ibuildings, a web development company in the Netherlands, packed with smart people. While always striving for better programming practices he's taken a special interest in application architecture, DDD and application integration.",
@@ -33,8 +33,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/JefClaesNB.jpg",
-      "IconSmall": "/speakers/JefClaesNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/JefClaesNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/JefClaesNB.jpg"
     },
     "Company": null,
     "Details": "Jef Claes is a professional codeslinger, a highly functioning domain linguist and number cruncher, ships software daily, writes on jefclaes.be weekly and speaks in public occasionally. When it comes to buzzwords he often associates himself with DDD(BE), CQRS, C#, FP and F#.",
@@ -49,8 +49,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "http://staging.ncrafts.io/speakers/SebastienFauvelNB.jpg",
-      "IconSmall": "http://staging.ncrafts.io/speakers/SebastienFauvelNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/SebastienFauvelNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/SebastienFauvelNB.jpg"
     },
     "Company": null,
     "Details": "Passionate about development, Sebastien is always looking for the most effective way to build applications. Both Agility and Extreme Programming practices are the foundation of his approach for over 15 years now. He focuses mainly on test automation and code quality. He really loves to highlight technical concepts using Serious Game, the best way for him to raise awareness! He works at Orange Applications for Business (OAB) on development industrialization and agility.",
@@ -65,8 +65,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/JuanDelgadoNB.jpg",
-      "IconSmall": "/speakers/JuanDelgadoNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/JuanDelgadoNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/JuanDelgadoNB.jpg"
     },
     "Company": "ustwo",
     "Details": "I make computers do stuff. I help teams make computers do stuff. Glorified rubber duck at ustwo.",
@@ -81,8 +81,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/SandroMancusoNB.jpg",
-      "IconSmall": "/speakers/SandroMancusoNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/SandroMancusoNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/SandroMancusoNB.jpg"
     },
     "Company": "Codurance",
     "Details": "Sandro Mancuso is a software craftsman, author of [Software Craftsmanship: Professionalism Pragmatism Pride](http://www.amazon.com/Software-Craftsman-Professionalism-Pragmatism-Robert/dp/0134052501/ref=sr_1_1?ie=UTF8&qid=1460826957&sr=8-1&keywords=Sandro+Mancuso), and co-founder of the [London Software Craftsmanship Community (LSCC)](http://www.meetup.com/fr-FR/london-software-craftsmanship/)",
@@ -97,8 +97,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/FredyFadelNB.png",
-      "IconSmall": "/speakers/FredyFadelNB.png"
+      "IconBig": "http://ncrafts.io/speakers/FredyFadelNB.png",
+      "IconSmall": "http://ncrafts.io/speakers/FredyFadelNB.png"
     },
     "Company": "Aspectize",
     "Details": "From punch cards to Javascript, more than 35 years of daily programming.  Co-Founder of Aspectize (2007 forever) building more software with less code.",
@@ -113,8 +113,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/SvenPetersNB.jpg",
-      "IconSmall": "/speakers/SvenPetersNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/SvenPetersNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/SvenPetersNB.jpg"
     },
     "Company": "Atlassian",
     "Details": "Sven is a software geek working as an Evangelist for Atlassian. He started with Java development in 1998 and has been programming for longer that he'd like to admit. Besides coding his passion is getting the right tools into the hands of those who need it to help build fast moving, agile, autonomous teams and getting them to kick-ass. Sven has extensive speaking experience in 25+ countries on myriad topics.",
@@ -129,8 +129,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/JeanHelouNB.jpg",
-      "IconSmall": "/speakers/JeanHelouNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/JeanHelouNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/JeanHelouNB.jpg"
     },
     "Company": "DevLyon",
     "Details": "Tbd",
@@ -145,8 +145,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/ThomasPierrainNB.jpg",
-      "IconSmall": "/speakers/ThomasPierrainNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/ThomasPierrainNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/ThomasPierrainNB.jpg"
     },
     "Company": null,
     "Details": "`Pragmatic architect` working on low latency trading systems at SG CIB for more than 10 years now (after 7 years of web development), Thomas likes to understand how things are working under the hood.\n\neXtreme Programmer since 2005 and obsessed by use cases (Vs. solution-driven approaches), he enjoys to demonstrate at work that Domain Driven Design is fully compliant with the low latency space. \nSpeaker, Brown Bag luncher, Software Craftsman addicted to coding dojos,Thomas is also the creator of [NFluent](http://www.n-fluent.net/): a (Fest-assert like)  .NET open source library.",
@@ -161,8 +161,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/LaurentBossavitNB.jpg",
-      "IconSmall": "/speakers/LaurentBossavitNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/LaurentBossavitNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/LaurentBossavitNB.jpg"
     },
     "Company": null,
     "Details": "Laurent Bossavit is mainly known as an Agilist and was a recipient of the 2006 Gordon Pask award from that community.\n\nHe is, however, a firm believer in belonging to many tribes and traveling far and wide (intellectually and physically) to engage in the trade of that most precious commodity: useful ideas.\n\nHe still likes to code though no longer doing so full-time; as of 2015 he has joined the `State Startups` initiative, part of the French Prime Minister's Modernization Programme.\n\nHis hobbies include slaying software engineering Leprechauns and debugging his own brain.",
@@ -177,8 +177,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/MathiasBrandewinderNB.jpg",
-      "IconSmall": "/speakers/MathiasBrandewinderNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/MathiasBrandewinderNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/MathiasBrandewinderNB.jpg"
     },
     "Company": "fsharpworks",
     "Details": "Mathias Brandewinder has been developing software for about 10 years, and loving every minute of it, except maybe for a few release days. His language of choice was C#, until he discovered F# and fell in love with it. He enjoys arguing about code and how to make it better, and gets very excited when discussing TDD or functional programming. \n    \nHis other professional interests include machine learning and applied math. Mathias is a Microsoft F# MVP, author of [Machine Learning Projects for .NET Developers](http://www.apress.com/9781430267676) (Apress), and the founder of Clear Lines Consulting. He is based in San Francisco, blogs at [www.brandewinder.com](www.brandewinder.com), and can be found on Twitter as [@brandewinder](http://twitter.com/brandewinder).",
@@ -193,8 +193,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/Felienne_Hermans2NB.jpg",
-      "IconSmall": "/speakers/Felienne_Hermans2NB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/Felienne_Hermans2NB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/Felienne_Hermans2NB.jpg"
     },
     "Company": "Delft University of Technology",
     "Details": "Felienne is assistant professor at Delft University of Technology, where she makes programming for non-programmers more awesome. She built an **IDE for spreadsheets** in the form of smell detection, refactoring and unit testing tools for Excel, and has researched code smells and clone detection in the Scratch programming language for kids. \n\nShe is also one of the founders of Joy of Coding, a one day developer conference in Rotterdam, celebrating the love for programming.\n\nWhen not building programs that play board games or card games, she is probably dancing Lindy Hop or killing creeps in a tower defense game.",
@@ -209,8 +209,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/DiegoLemosNB.jpg",
-      "IconSmall": "/speakers/DiegoLemosNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/DiegoLemosNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/DiegoLemosNB.jpg"
     },
     "Company": "Xebia France",
     "Details": "Software engineer, software craftsman.",
@@ -225,8 +225,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/LudwineProbstNB.jpg",
-      "IconSmall": "/speakers/LudwineProbstNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/LudwineProbstNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/LudwineProbstNB.jpg"
     },
     "Company": "Le bon coin",
     "Details": "Ludwine Probst currently works as a Data Engineer at Leboncoin. She is a [Ladies of Code Paris](http://www.meetup.com/fr-FR/Ladies-of-Code-Paris/) leader, and very excited about increasing female involvement in the software industry.",
@@ -241,8 +241,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/PascalBattyNB.jpg",
-      "IconSmall": "/speakers/PascalBattyNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/PascalBattyNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/PascalBattyNB.jpg"
     },
     "Company": "SOAT",
     "Details": "I've been writing code for 12 years, in C# then in Objective-C and now in Swift.\nI'm a curious enthusiast, I love learning new skills and tricks, I'm constantly amazed by what is possible in our line of work.\nI'm fond of playing games.",
@@ -257,8 +257,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/CarloPescioNB.jpg",
-      "IconSmall": "/speakers/CarloPescioNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/CarloPescioNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/CarloPescioNB.jpg"
     },
     "Company": null,
     "Details": "Carlo has been programming since 1978 and somehow managed to maintain a balance between hacking machine code and doing academic research. In his everyday life, he designs software-intensive systems at different scales, using a number of paradigms, languages and technologies. He keep learning and practicing, and occasionally he’s writing and teaching.        His recent work on the physics of software is a step beyond the traditional notions of paradigms, idioms and principles, toward a model of software as a material responding to forces, and to be shaped according to those forces.",
@@ -273,8 +273,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/ClémentBouillierNB.jpg",
-      "IconSmall": "/speakers/ClémentBouillierNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/ClémentBouillierNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/ClémentBouillierNB.jpg"
     },
     "Company": "DevCrafting",
     "Details": "Software Craftsman",
@@ -289,8 +289,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/JeremieGrodziskiNB.jpg",
-      "IconSmall": "/speakers/JeremieGrodziskiNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/JeremieGrodziskiNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/JeremieGrodziskiNB.jpg"
     },
     "Company": null,
     "Details": "Jeremie Grodziski est un expert de la conception et du développement logiciel. Concentré sur la compréhension du domaine et de la valeur qu'un logiciel peut apporter aux personnes qui l'utilise. Jérémie est un fervent promoteur du Domain-Driven Design et des approches de construction du logiciel pragmatiques et efficaces comme le Behavior-Driven Development et les langages fonctionnels comme Clojure. Jérémie apprécie la curiosité, l'apprentissage permanent et les échanges avec tous ceux qui partagent ces valeurs.",
@@ -305,8 +305,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/CedricRupNB.jpg",
-      "IconSmall": "/speakers/CedricRupNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/CedricRupNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/CedricRupNB.jpg"
     },
     "Company": "OCTO Technology",
     "Details": "Sometimes Tech Lead, sometimes Trainer, sometimes Agile or Software Craftsmanship Coach, but really just a developer with a taste for happy users, useful products and well crafted code. Works at OCTO Technology. May contain traces of ukulele ;o)",
@@ -321,8 +321,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/MouraRomeuNB.jpg",
-      "IconSmall": "/speakers/MouraRomeuNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/MouraRomeuNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/MouraRomeuNB.jpg"
     },
     "Company": "Arolla",
     "Details": "Writer of tales `on art, puzzles & crafts` to friends & compilers. Likes dialectics, paradigm jumping, serendipity, endless conversations.",
@@ -337,8 +337,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/JulienJakubowskiNB.jpg",
-      "IconSmall": "/speakers/JulienJakubowskiNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/JulienJakubowskiNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/JulienJakubowskiNB.jpg"
     },
     "Company": "OCTO Technology",
     "Details": "I craft software at OCTO Technology. I love helping development teams and companies to get rid of non-quality. I'm leading Ch'ti JUG (Java User\n Group) and Agile Tour Lille.",
@@ -353,8 +353,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/AudreyNeveuNB.jpg",
-      "IconSmall": "/speakers/AudreyNeveuNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/AudreyNeveuNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/AudreyNeveuNB.jpg"
     },
     "Company": "Streamdata.io",
     "Details": "Audrey est devangelist chez Streamdata.io, spécialisée sur les problématiques API et Big Data. Passionnée par son métier, Audrey a toujours été fortement engagée dans la communauté Java au travers de plusieurs JUGs et conférences (Duchess France, Paris JUG, Devoxx France, Devoxx UK) mais aussi au sein d’initiatives visant à faire découvrir la programmation aux plus jeunes (Programatoo, Devoxx4Kids).",
@@ -369,8 +369,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/HoussamFakihNB.jpg",
-      "IconSmall": "/speakers/HoussamFakihNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/HoussamFakihNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/HoussamFakihNB.jpg"
     },
     "Company": "Arolla",
     "Details": "Software Engineer",
@@ -385,8 +385,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/CyrilleMartraireNB.jpg",
-      "IconSmall": "/speakers/CyrilleMartraireNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/CyrilleMartraireNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/CyrilleMartraireNB.jpg"
     },
     "Company": "Arolla",
     "Details": "Cyrille Martraire (@cyriux on Twitter) is a partner at Arolla (60 consultants), the founder of the Paris Software Craftsmanship community and a regular speaker in international conferences. With 15+ years of experience in startups, software vendors and banks, Cyrille still calls himself a developer. He's passionate about design in every aspect: TDD, BDD and in particular DDD. Cyrille also has an extensive knowledge of capital market finance developed at SG (twice), Engie, CACIB, Sungard and CME. He's also the author of the book Living Documentation on Leanpub.",
@@ -401,8 +401,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/ChristopheThibautNB.jpg",
-      "IconSmall": "/speakers/ChristopheThibautNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/ChristopheThibautNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/ChristopheThibautNB.jpg"
     },
     "Company": "OCTO Technology",
     "Details": "Christophe Thibaut has been working as a consultant at OCTO since 2005. He has a 20 years experience in development, project management and project direction, as well as counselling for corporate companies. He has been practicing agile methodologies for the last 10 years, and has help dozens developers, architects and managers to understand and adopt these methodologies.\n\nChristophe is interested in everything that allows the creation of better software faster, on a technical level (TDD, refactoring, OOP, functional programming) as well as a human level. He is passionate about helping every team to tap into its own greatness, and every manager to gain better results while enabling learning.\n\nHis expertise is based on a continuous learning process of the models used in these domains: XP, Scrum, Lean, coaching models and methods, shared vision process. He has a sharp communication verbal and written skills. He is a facilitator and a coach, an attentive observer, and active listener. \n\nAt OCTO, Christophe helps spreading TDD, review practices, agile management, coaching and change leadership. He facilitates project retrospectives, team and product vision work, and with his coaching team, contributes to the training of agile coaches at OCTO.",
@@ -417,8 +417,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/BodilNB.jpeg",
-      "IconSmall": "/speakers/BodilNB.jpeg"
+      "IconBig": "http://ncrafts.io/speakers/BodilNB.jpeg",
+      "IconSmall": "http://ncrafts.io/speakers/BodilNB.jpeg"
     },
     "Company": null,
     "Details": "Born into an aristocratic Russian-German family, **Bodil** traveled widely around the Soviet Union as a child. Largely self-educated, she developed an interest in computer science during her teenage years. According to her later claims, in 1989 she embarked on a series of world travels visiting Europe, the Americas, and India. She alleged that during this period she encountered a group of mathematical adepts, the 'Haskell Language and Library Committee', who sent her to Glasgow, Scotland, where they trained her to develop her powers of category theory. Both contemporary critics and later biographers have argued that some or all of these foreign visits were fictitious, and that she spent this period writing JavaScript.\n\n**Bodil** was a controversial figure during her lifetime, championed by supporters as an enlightened guru and derided as a fraudulent charlatan by critics. Her doctrines influenced the spread of Homotopy Type Theory in the West as well as the development of Western computer science currents like dependent types, blockchains and isomorphic JavaScript.",
@@ -433,8 +433,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/nicolasdeloofNB.jpg",
-      "IconSmall": "/speakers/nicolasdeloofNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/nicolasdeloofNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/nicolasdeloofNB.jpg"
     },
     "Company": null,
     "Details": "Hacker at CloudBees,\nvidéaste amateur, Dockerista",
@@ -465,8 +465,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/FlorentPELLETNB.jpg",
-      "IconSmall": "/speakers/FlorentPELLETNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/FlorentPELLETNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/FlorentPELLETNB.jpg"
     },
     "Company": "DevLyon",
     "Details": "DDD Addict\nSoftware craftsman freelance in Lyon.\nCo-leader of MUG Lyon and SoftwareCraftsmanship Lyon usergroups.",
@@ -481,8 +481,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/MathiasVerraesNB.jpeg",
-      "IconSmall": "/speakers/MathiasVerraesNB.jpeg"
+      "IconBig": "http://ncrafts.io/speakers/MathiasVerraesNB.jpeg",
+      "IconSmall": "http://ncrafts.io/speakers/MathiasVerraesNB.jpeg"
     },
     "Company": "Value Object",
     "Details": "Mathias Verraes is an independent consultant. He advises companies on how to build enterprise applications for complex business domains. He specializes in curing large legacy projects: the kind where there's half a million lines of spaghetti code, and nobody knows how to get the project under control. \n    \nAs a blogger and and a speaker, Mathias is on a mission to spread the ideas of Domain Driven Design in the web development world. He's the founder of the Belgian DDD community. When he's not working, he's at home in Kortrijk, Belgium, helping his two sons build Lego train tracks.",
@@ -497,8 +497,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/ArnaudBaillyNB.jpg",
-      "IconSmall": "/speakers/ArnaudBaillyNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/ArnaudBaillyNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/ArnaudBaillyNB.jpg"
     },
     "Company": "Capital Match",
     "Details": "Developing software professionally since 1994, now CTO at Capital Match building a peer-to-peer lending platform in Haskell",
@@ -513,8 +513,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "http://staging.ncrafts.io/speakers/QuentinAdamNB.jpg",
-      "IconSmall": "http://staging.ncrafts.io/speakers/QuentinAdamNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/QuentinAdamNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/QuentinAdamNB.jpg"
     },
     "Company": "CleverCloud",
     "Details": "CEO @clever_cloud cloud Platform as a Service for node, scala, java, php, python, docker or ruby apps + DBaaS The best way to host your app, give it a try",
@@ -529,8 +529,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/MichelDomenjoudNB.jpg",
-      "IconSmall": "/speakers/MichelDomenjoudNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/MichelDomenjoudNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/MichelDomenjoudNB.jpg"
     },
     "Company": "OCTO Technology",
     "Details": "* Ever the passionate programmer, Michel made a creer of it. He has been with OCTO Technology for 5 years, and in the Software Craftsmanship tribe since its creation in 2013.\n* He has acquired strong beliefs about Agile practices and eXtreme Programming as a Tech Lead on software delivery projects and TDD, Code review, and Clean Code are his standards. He is now a full-fledged coach in development practices and strives to help teams shift their culture towards quality code.\n* Michel is also one of the authors of the book Culture Code - Software Craftsmanship : Better places with Better code.",
@@ -545,8 +545,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/ClementDelafargueNB.jpg",
-      "IconSmall": "/speakers/ClementDelafargueNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/ClementDelafargueNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/ClementDelafargueNB.jpg"
     },
     "Company": "Clever Cloud",
     "Details": "CTO @clever_cloud / Brittany, FP, feminism, cute baby animals. Not necessarily in this order.",
@@ -561,8 +561,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/PabloPernotNB.jpg",
-      "IconSmall": "/speakers/PabloPernotNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/PabloPernotNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/PabloPernotNB.jpg"
     },
     "Company": "beNext",
     "Details": "After university studies on the Monty Python, on nonsense and absurd, and the start of a PhD on film comedy, it seems normal that Pablo Pernot eventually works in organisational management and change management, it is obviously a logical sequence. Pablo is `agent provocateur` (of changes, emotions, etc.) at beNext, the game changer company [http://benextcompany.com](benextcompany.com).",
@@ -577,8 +577,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/CédricTran-XuanNB.jpg",
-      "IconSmall": "/speakers/CédricTran-XuanNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/CédricTran-XuanNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/CédricTran-XuanNB.jpg"
     },
     "Company": "Streamdata.io",
     "Details": "Dev chez Streamdata.io, C&#233;dric participe &#224; l'&#233;laboration d'une plate-forme de push temps r&#233;el. Pendant son temps libre, il &#233;cume l'Alpes JUG, les meetups de Grenoble et quelques MOOC et il joue avec des technos Java / Scala et Web (Riot.js, AngularJS, EmberJS, etc). &#10;Il a &#233;galement fait quelques pr&#233;sentations &#224; BreizhCamp, Bdx.io et SoftShake et fait partie de l'organisation de SnowCamp.io, une conf&#233;rence technique &#224; Grenoble.",
@@ -593,8 +593,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/Liz-KeoghNB.jpeg",
-      "IconSmall": "/speakers/Liz-KeoghNB.jpeg"
+      "IconBig": "http://ncrafts.io/speakers/Liz-KeoghNB.jpeg",
+      "IconSmall": "http://ncrafts.io/speakers/Liz-KeoghNB.jpeg"
     },
     "Company": null,
     "Details": "\r\nLiz Keogh is a Lean and Agile consultant based in London. She is a well-known blogger and international speaker, a core member of the BDD community and a contributor to a number of open-source projects including JBehave. She specializes in helping people use examples and stories to communicate, build, test and deliver value, particularly when faced with high risk and uncertainty.\r\n\r\nLiz's work covers topics as diverse as story-writing, haiku poetry, Cynefin and complexity thinking, effective personal feedback and OO development, and she has a particular love of people, language, and choices. She has a strong technical background with over 15 years experience in delivering value and coaching others to deliver, from small start-ups to global enterprises. Most of her work now focuses on Lean, Agile and organizational transformations, and the use of transparency, positive language, well-formed outcomes and safe-to-fail experiments in making change innovative, easy and fun.",
@@ -609,8 +609,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/VascoDuarteNB.jpg",
-      "IconSmall": "/speakers/VascoDuarteNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/VascoDuarteNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/VascoDuarteNB.jpg"
     },
     "Company": "Oikosofy",
     "Details": "I want to transform product development organizations into product business organizations. I do that by focusing the work of the product development teams on the end-to-end life-cycle of their products. From Concept to Cash and Back!\r\nCurrently a Managing Partner at Oikosofy. Product Manager, Scrum Master, Project Manager, Director, Agile Coach are only some of the roles that I've taken in software development organizations. Having worked in the software industry since 1997, and Agile practitioner since 2004. I've worked in small, medium and large software organizations as an Agile Coach or leader in agile adoption at those organizations.\r\nI was one of the leaders and catalysts of Agile methods and Agile culture adoption at Avira, Nokia and F-Secure.",
@@ -625,8 +625,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/EtiennePIERROTNB.jpg",
-      "IconSmall": "/speakers/EtiennePIERROTNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/EtiennePIERROTNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/EtiennePIERROTNB.jpg"
     },
     "Company": "Mangopay",
     "Details": "Developer C# since 12 years. I read a lot about TDD, DDD and Software Craftmanship. I go frequently to some meetup like (ALT.NET, SC...)",
@@ -641,8 +641,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/DavidPilatoNB.jpg",
-      "IconSmall": "/speakers/DavidPilatoNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/DavidPilatoNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/DavidPilatoNB.jpg"
     },
     "Company": "elastic",
     "Details": "David Pilato is Developer at elastic and French spoken language User Group creator. In his free time, he likes talking about elasticsearch in conferences like Devoxx FR BE UK, JUGs, Web5, Agile France, Mix-IT, Javazone or in companies (Brown Bag Lunches).",
@@ -657,8 +657,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/GregYoungNB.jpg",
-      "IconSmall": "/speakers/GregYoungNB.jpg"
+      "IconBig": "http://ncrafts.io/speakers/GregYoungNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/GregYoungNB.jpg"
     },
     "Company": null,
     "Details": "Greg Young coined the term `CQRS` (Command Query Responsibility Segregation) and it was instantly picked up by the community who have elaborated upon it ever since.\n\nGreg is an independent consultant and serial entrepreneur. He has 10+ years of varied experience in computer science from embedded operating systems to business systems and he brings a pragmatic and often times unusual viewpoint to discussions.\n\nHe's a frequent contributor to InfoQ, speaker/trainer at Skills Matter and also a well-known speaker at international conferences. Greg also writes about CQRS, DDD and other hot topics on www.codebetter.com.",
@@ -673,8 +673,8 @@
   },
   {
     "Avatar": {
-      "IconBig": "/speakers/JeanLaurenDeMorlhonNB.png",
-      "IconSmall": "/speakers/JeanLaurenDeMorlhonNB.png"
+      "IconBig": "http://ncrafts.io/speakers/JeanLaurenDeMorlhonNB.png",
+      "IconSmall": "http://ncrafts.io/speakers/JeanLaurenDeMorlhonNB.png"
     },
     "Company": "Docker",
     "Details": "Software Engineer @ Docker working on docker desktop. I drink tests for breakfast, write java, coffee & go code.",

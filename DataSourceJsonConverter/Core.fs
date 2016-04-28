@@ -16,7 +16,7 @@ type FindSpeaker = string -> Speakers.Root option
 let save path json = File.WriteAllText (path, json)
 
 let mapSession (findSpeaker:FindSpeaker) (session:Sessions.Root) =
-    let mapped = new SessionModelTmp()
+    let mapped = new SessionModel()
     mapped.Details             <- session.Abstract
     mapped.DurationInMinutes    <- session.DurationMinutes
     mapped.Id                   <- session.Id
@@ -29,7 +29,7 @@ let mapSession (findSpeaker:FindSpeaker) (session:Sessions.Root) =
     mapped
 
 let mapSpeakerSession (findSpeaker:FindSpeaker) (session:Speakers.Session) = 
-    let mapped = new SessionModelTmp()
+    let mapped = new SessionModel()
     mapped.Details             <- session.Abstract
     mapped.DurationInMinutes   <- session.DurationMinutes
     mapped.Id                   <- session.Id
@@ -63,13 +63,17 @@ let mapGithub rawGithub =
     | Some (Name name) -> name
     | Some (ApiPage id) -> getGithubLogin id
     | _ -> null
-    
+
+let mapPicture rawPicture =
+    let result = Regex.Match(rawPicture, @"^.*(speakers\/[0-9a-zA-Zé_-]+\.(jpe?g|png))$")
+    if (result.Success) then "http://ncrafts.io/" + (string result.Groups.[1])
+    else null
 
 let mapSpeaker  (findSpeaker:FindSpeaker) (speaker:Speakers.Root) =
-    let mapped = new SpeakerModelTmp()
-    mapped.Avatar           <- new AvatarModelTmp()
-    mapped.Avatar.IconBig   <- speaker.Photo
-    mapped.Avatar.IconSmall <- speaker.Photo
+    let mapped = new SpeakerModel()
+    mapped.Avatar           <- new AvatarModel()
+    mapped.Avatar.IconBig   <- mapPicture speaker.Photo
+    mapped.Avatar.IconSmall <- mapPicture speaker.Photo
 //    mapped.Books        <- speaker.??
     mapped.Company      <- match speaker.Company with | Some x -> x | None -> null
     mapped.Id           <- speaker.Id
