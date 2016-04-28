@@ -18,7 +18,7 @@ namespace NCrafts.App.Business.Menu.Query
                 new MenuItem {Title = "Sessions", OpenCommand = () => openSessionsCommand(), Icon = "sessionsicon.png"},
                 new MenuItem {Title = "Personal", OpenCommand = () => openPersonalScheduleCommand(), Icon = "personalscheduleicon.png"},
                 new MenuItem {Title = "Speakers", OpenCommand = () => openSpeakersCommand(), Icon = "speakersicon.png"},
-                new MenuItem {Title = "Location", OpenCommand = () => openLocationCommand(), Icon = "mapicon.png"},
+                //new MenuItem {Title = "Location", OpenCommand = () => openLocationCommand(), Icon = "mapicon.png"},
                 new MenuItem {Title = "About", OpenCommand = () => openAboutCommand(), Icon = "abouticon.png"},
             };
         }
