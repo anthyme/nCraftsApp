@@ -18,7 +18,7 @@ namespace NCrafts.App.Business.Speakers.Command
 
         public static OpenUrlCommand CreateOpenUrlCommand()
         {
-            return url => Device.OpenUri(new Uri("http://twitter.com/" + (url.StartsWith("@") ? url.Substring(1) : url)));
+            return url => Device.OpenUri(new Uri(url));
         }
     }
 }

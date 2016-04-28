@@ -1,44 +1,690 @@
 [
   {
-    "avatar": {
-      "iconSmall": "http://www.simonbrown.je/static/img/simonbrownIcon.jpg",
-      "iconBig": "http://www.simonbrown.je/static/img/simonbrownHD.jpg"
+    "Avatar": {
+      "IconBig": "/speakers/AsherGlynnNB.jpg",
+      "IconSmall": "/speakers/AsherGlynnNB.jpg"
     },
-    "Details": "Here the description about the speaker.",
-    "company": "Viseo",
-    "id": "n0f-sb15",
-    "languages": [
-      "en"
-    ],
-    "firstName": "Anthyme",
-    "lastName": "Monsieur",
-    "sessionsId": [
-      "n0f-sb1-3",
-      "n0f-sb1-4"
-    ],
-    "site": "http://www.simonbrown.je/",
-    "twitter": "@simonbrown",
-    "github": null
+    "Company": "Rituala Limited",
+    "Details": "Asher is a consultant with over 20 years experience in the IT industry, and will use the most appropriate technology at hand, be that Scala or Java, Javascript and when pushed Visual Basic and Excel. With strong hands on knowledge of performance and scale, exposure to platforms from mainframes to mobiles has taught him an appreciation for the subtleties of applying technology to difficult problems - be they technical or people challenges. Asher has had experience in a variety of organisations ranging from the BBC, GSMA, Betfair, Equens, Close Brothers and the TAB to small startups.",
+    "Id": "asherglynn",
+    "Languages": [ "en" ],
+    "FirstName": "Asher",
+    "LastName": "Glynn",
+    "SessionsId": [ "nc16-agl01" ],
+    "Site": null,
+    "Twitter": "asherglynn",
+    "Github": "asherglynn"
   },
   {
-    "avatar": {
-      "iconSmall": "http://www.simonbrown.je/static/img/simonbrownIcon.jpg",
-      "iconBig": "http://www.simonbrown.je/static/img/simonbrownHD.jpg"
+    "Avatar": {
+      "IconBig": "/speakers/MatthiasNobackNB.jpg",
+      "IconSmall": "/speakers/MatthiasNobackNB.jpg"
     },
-    "Details": "Here the description about the speaker.",
-    "company": null,
-    "id": "n0f-sb16",
-    "languages": [
-      "en",
-      "fr"
-    ],
-    "firstName": "James",
-    "lastName": "Montemagno",
-    "sessionsId": [
-      "n0f-sb1-3"
-    ],
-    "site": null,
-    "twitter": null,
-    "github": "https://github.com/jamesmontemagno"
+    "Company": "Ibuildings",
+    "Details": "Matthias Noback has 13 years of experience in web application development. He is the author of `A Year With Symfony` and `Principles of Package Design`. Currently he is CTO at Ibuildings, a web development company in the Netherlands, packed with smart people. While always striving for better programming practices he's taken a special interest in application architecture, DDD and application integration.",
+    "Id": "matthiasnoback",
+    "Languages": [ "en", "nl" ],
+    "FirstName": "Matthias",
+    "LastName": "Noback",
+    "SessionsId": [ "nc16-mno01" ],
+    "Site": null,
+    "Twitter": "matthiasnoback",
+    "Github": null
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/JefClaesNB.jpg",
+      "IconSmall": "/speakers/JefClaesNB.jpg"
+    },
+    "Company": null,
+    "Details": "Jef Claes is a professional codeslinger, a highly functioning domain linguist and number cruncher, ships software daily, writes on jefclaes.be weekly and speaks in public occasionally. When it comes to buzzwords he often associates himself with DDD(BE), CQRS, C#, FP and F#.",
+    "Id": "jefclaes",
+    "Languages": [ "en", "nl" ],
+    "FirstName": "Jef",
+    "LastName": "Claes",
+    "SessionsId": [ "nc16-jcl01" ],
+    "Site": "jefclaes.be",
+    "Twitter": "jefclaes",
+    "Github": null
+  },
+  {
+    "Avatar": {
+      "IconBig": "http://staging.ncrafts.io/speakers/SebastienFauvelNB.jpg",
+      "IconSmall": "http://staging.ncrafts.io/speakers/SebastienFauvelNB.jpg"
+    },
+    "Company": null,
+    "Details": "Passionate about development, Sebastien is always looking for the most effective way to build applications. Both Agility and Extreme Programming practices are the foundation of his approach for over 15 years now. He focuses mainly on test automation and code quality. He really loves to highlight technical concepts using Serious Game, the best way for him to raise awareness! He works at Orange Applications for Business (OAB) on development industrialization and agility.",
+    "Id": "sebfauvel",
+    "Languages": [ "fr", "en" ],
+    "FirstName": "Sebastien",
+    "LastName": "Fauvel",
+    "SessionsId": [ "nc16-sfa01" ],
+    "Site": null,
+    "Twitter": "sebfauvel",
+    "Github": null
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/JuanDelgadoNB.jpg",
+      "IconSmall": "/speakers/JuanDelgadoNB.jpg"
+    },
+    "Company": "ustwo",
+    "Details": "I make computers do stuff. I help teams make computers do stuff. Glorified rubber duck at ustwo.",
+    "Id": "wadus",
+    "Languages": [ "en", "es" ],
+    "FirstName": "Juan",
+    "LastName": "Delgado",
+    "SessionsId": [ "nc16-jde01" ],
+    "Site": null,
+    "Twitter": "wadus",
+    "Github": null
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/SandroMancusoNB.jpg",
+      "IconSmall": "/speakers/SandroMancusoNB.jpg"
+    },
+    "Company": "Codurance",
+    "Details": "Sandro Mancuso is a software craftsman, author of [Software Craftsmanship: Professionalism Pragmatism Pride](http://www.amazon.com/Software-Craftsman-Professionalism-Pragmatism-Robert/dp/0134052501/ref=sr_1_1?ie=UTF8&qid=1460826957&sr=8-1&keywords=Sandro+Mancuso), and co-founder of the [London Software Craftsmanship Community (LSCC)](http://www.meetup.com/fr-FR/london-software-craftsmanship/)",
+    "Id": "sandromancuso",
+    "Languages": [ "en", "pt" ],
+    "FirstName": "Sandro",
+    "LastName": "Mancuso",
+    "SessionsId": [ "nc16-sma01" ],
+    "Site": "http://codurance.com",
+    "Twitter": "sandromancuso",
+    "Github": "sandromancuso"
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/FredyFadelNB.png",
+      "IconSmall": "/speakers/FredyFadelNB.png"
+    },
+    "Company": "Aspectize",
+    "Details": "From punch cards to Javascript, more than 35 years of daily programming.  Co-Founder of Aspectize (2007 forever) building more software with less code.",
+    "Id": "fredyfadel",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Fredy",
+    "LastName": "Fadel",
+    "SessionsId": [ "nc16-ffa01" ],
+    "Site": "http://www.aspectize.com",
+    "Twitter": "FredyFadel",
+    "Github": null
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/SvenPetersNB.jpg",
+      "IconSmall": "/speakers/SvenPetersNB.jpg"
+    },
+    "Company": "Atlassian",
+    "Details": "Sven is a software geek working as an Evangelist for Atlassian. He started with Java development in 1998 and has been programming for longer that he'd like to admit. Besides coding his passion is getting the right tools into the hands of those who need it to help build fast moving, agile, autonomous teams and getting them to kick-ass. Sven has extensive speaking experience in 25+ countries on myriad topics.",
+    "Id": "svenpet",
+    "Languages": [ "en", "de" ],
+    "FirstName": "Sven",
+    "LastName": "Peters",
+    "SessionsId": [ "nc16-spe01" ],
+    "Site": "http://atlassian.com",
+    "Twitter": "svenpet",
+    "Github": null
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/JeanHelouNB.jpg",
+      "IconSmall": "/speakers/JeanHelouNB.jpg"
+    },
+    "Company": "DevLyon",
+    "Details": "Tbd",
+    "Id": "jeanhelou",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Jean",
+    "LastName": "Helou",
+    "SessionsId": [ "nc16-fpe01", "nc16-fpe01" ],
+    "Site": null,
+    "Twitter": "jeanhelou",
+    "Github": "jeantil"
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/ThomasPierrainNB.jpg",
+      "IconSmall": "/speakers/ThomasPierrainNB.jpg"
+    },
+    "Company": null,
+    "Details": "`Pragmatic architect` working on low latency trading systems at SG CIB for more than 10 years now (after 7 years of web development), Thomas likes to understand how things are working under the hood.\n\neXtreme Programmer since 2005 and obsessed by use cases (Vs. solution-driven approaches), he enjoys to demonstrate at work that Domain Driven Design is fully compliant with the low latency space. \nSpeaker, Brown Bag luncher, Software Craftsman addicted to coding dojos,Thomas is also the creator of [NFluent](http://www.n-fluent.net/): a (Fest-assert like)  .NET open source library.",
+    "Id": "tpierrain",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Thomas",
+    "LastName": "Pierrain",
+    "SessionsId": [ "nc16-jgr01" ],
+    "Site": null,
+    "Twitter": "tpierrain",
+    "Github": "tpierrain"
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/LaurentBossavitNB.jpg",
+      "IconSmall": "/speakers/LaurentBossavitNB.jpg"
+    },
+    "Company": null,
+    "Details": "Laurent Bossavit is mainly known as an Agilist and was a recipient of the 2006 Gordon Pask award from that community.\n\nHe is, however, a firm believer in belonging to many tribes and traveling far and wide (intellectually and physically) to engage in the trade of that most precious commodity: useful ideas.\n\nHe still likes to code though no longer doing so full-time; as of 2015 he has joined the `State Startups` initiative, part of the French Prime Minister's Modernization Programme.\n\nHis hobbies include slaying software engineering Leprechauns and debugging his own brain.",
+    "Id": "morendil",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Laurent",
+    "LastName": "Bossavit",
+    "SessionsId": [ "nc16-lbo01" ],
+    "Site": null,
+    "Twitter": "morendil",
+    "Github": "Morendil"
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/MathiasBrandewinderNB.jpg",
+      "IconSmall": "/speakers/MathiasBrandewinderNB.jpg"
+    },
+    "Company": "fsharpworks",
+    "Details": "Mathias Brandewinder has been developing software for about 10 years, and loving every minute of it, except maybe for a few release days. His language of choice was C#, until he discovered F# and fell in love with it. He enjoys arguing about code and how to make it better, and gets very excited when discussing TDD or functional programming. \n    \nHis other professional interests include machine learning and applied math. Mathias is a Microsoft F# MVP, author of [Machine Learning Projects for .NET Developers](http://www.apress.com/9781430267676) (Apress), and the founder of Clear Lines Consulting. He is based in San Francisco, blogs at [www.brandewinder.com](www.brandewinder.com), and can be found on Twitter as [@brandewinder](http://twitter.com/brandewinder).",
+    "Id": "brandewinder",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Mathias",
+    "LastName": "Brandewinder",
+    "SessionsId": [ "nc16-mbr01" ],
+    "Site": "http://www.clear-lines.com/blog/",
+    "Twitter": "brandewinder",
+    "Github": "brandewinder"
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/Felienne_Hermans2NB.jpg",
+      "IconSmall": "/speakers/Felienne_Hermans2NB.jpg"
+    },
+    "Company": "Delft University of Technology",
+    "Details": "Felienne is assistant professor at Delft University of Technology, where she makes programming for non-programmers more awesome. She built an **IDE for spreadsheets** in the form of smell detection, refactoring and unit testing tools for Excel, and has researched code smells and clone detection in the Scratch programming language for kids. \n\nShe is also one of the founders of Joy of Coding, a one day developer conference in Rotterdam, celebrating the love for programming.\n\nWhen not building programs that play board games or card games, she is probably dancing Lindy Hop or killing creeps in a tower defense game.",
+    "Id": "felienne",
+    "Languages": [ "en", "nl" ],
+    "FirstName": "Felienne",
+    "LastName": "Hermans",
+    "SessionsId": [ "nc16-fhe01" ],
+    "Site": "http://felienne.com",
+    "Twitter": "Felienne",
+    "Github": "Felienne"
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/DiegoLemosNB.jpg",
+      "IconSmall": "/speakers/DiegoLemosNB.jpg"
+    },
+    "Company": "Xebia France",
+    "Details": "Software engineer, software craftsman.",
+    "Id": "dlresende",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Diego",
+    "LastName": "Lemos",
+    "SessionsId": [ "nc16-dle01" ],
+    "Site": null,
+    "Twitter": "dlresende",
+    "Github": "dlresende"
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/LudwineProbstNB.jpg",
+      "IconSmall": "/speakers/LudwineProbstNB.jpg"
+    },
+    "Company": "Le bon coin",
+    "Details": "Ludwine Probst currently works as a Data Engineer at Leboncoin. She is a [Ladies of Code Paris](http://www.meetup.com/fr-FR/Ladies-of-Code-Paris/) leader, and very excited about increasing female involvement in the software industry.",
+    "Id": "nivdul",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Ludwine",
+    "LastName": "Probst",
+    "SessionsId": [ "nc16-lpr01" ],
+    "Site": "http://techbeyondborders.com/",
+    "Twitter": "nivdul",
+    "Github": null
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/PascalBattyNB.jpg",
+      "IconSmall": "/speakers/PascalBattyNB.jpg"
+    },
+    "Company": "SOAT",
+    "Details": "I've been writing code for 12 years, in C# then in Objective-C and now in Swift.\nI'm a curious enthusiast, I love learning new skills and tricks, I'm constantly amazed by what is possible in our line of work.\nI'm fond of playing games.",
+    "Id": "scalbatty",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Pascal",
+    "LastName": "Batty",
+    "SessionsId": [ "nc16-pba01" ],
+    "Site": null,
+    "Twitter": "scalbatty",
+    "Github": "scalbatty"
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/CarloPescioNB.jpg",
+      "IconSmall": "/speakers/CarloPescioNB.jpg"
+    },
+    "Company": null,
+    "Details": "Carlo has been programming since 1978 and somehow managed to maintain a balance between hacking machine code and doing academic research. In his everyday life, he designs software-intensive systems at different scales, using a number of paradigms, languages and technologies. He keep learning and practicing, and occasionally he’s writing and teaching.        His recent work on the physics of software is a step beyond the traditional notions of paradigms, idioms and principles, toward a model of software as a material responding to forces, and to be shaped according to those forces.",
+    "Id": "CarloPescio",
+    "Languages": [ "en", "it" ],
+    "FirstName": "Carlo",
+    "LastName": "Pescio",
+    "SessionsId": [ "nc16-01" ],
+    "Site": "http://www.carlopescio.com/",
+    "Twitter": "CarloPescio",
+    "Github": null
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/ClémentBouillierNB.jpg",
+      "IconSmall": "/speakers/ClémentBouillierNB.jpg"
+    },
+    "Company": "DevCrafting",
+    "Details": "Software Craftsman",
+    "Id": "clem_bouillier",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Clément",
+    "LastName": "Bouillier",
+    "SessionsId": [ "nc16-fpe01", "nc16-fpe01" ],
+    "Site": null,
+    "Twitter": "clem_bouillier",
+    "Github": "devcrafting"
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/JeremieGrodziskiNB.jpg",
+      "IconSmall": "/speakers/JeremieGrodziskiNB.jpg"
+    },
+    "Company": null,
+    "Details": "Jeremie Grodziski est un expert de la conception et du développement logiciel. Concentré sur la compréhension du domaine et de la valeur qu'un logiciel peut apporter aux personnes qui l'utilise. Jérémie est un fervent promoteur du Domain-Driven Design et des approches de construction du logiciel pragmatiques et efficaces comme le Behavior-Driven Development et les langages fonctionnels comme Clojure. Jérémie apprécie la curiosité, l'apprentissage permanent et les échanges avec tous ceux qui partagent ces valeurs.",
+    "Id": "jgrodziski",
+    "Languages": [ "en" ],
+    "FirstName": "Jeremie",
+    "LastName": "Grodziski",
+    "SessionsId": [ "nc16-jgr01" ],
+    "Site": null,
+    "Twitter": "jgrodziski",
+    "Github": null
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/CedricRupNB.jpg",
+      "IconSmall": "/speakers/CedricRupNB.jpg"
+    },
+    "Company": "OCTO Technology",
+    "Details": "Sometimes Tech Lead, sometimes Trainer, sometimes Agile or Software Craftsmanship Coach, but really just a developer with a taste for happy users, useful products and well crafted code. Works at OCTO Technology. May contain traces of ukulele ;o)",
+    "Id": "CedricRup",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Cédric",
+    "LastName": "Rup",
+    "SessionsId": [ "nc16-cru01" ],
+    "Site": null,
+    "Twitter": "CedricRup",
+    "Github": null
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/MouraRomeuNB.jpg",
+      "IconSmall": "/speakers/MouraRomeuNB.jpg"
+    },
+    "Company": "Arolla",
+    "Details": "Writer of tales `on art, puzzles & crafts` to friends & compilers. Likes dialectics, paradigm jumping, serendipity, endless conversations.",
+    "Id": "malk_zameth",
+    "Languages": [ "en", "fr", "pt" ],
+    "FirstName": "Moura",
+    "LastName": "Romeu",
+    "SessionsId": [ "nc16-mro01" ],
+    "Site": null,
+    "Twitter": "malk_zameth",
+    "Github": null
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/JulienJakubowskiNB.jpg",
+      "IconSmall": "/speakers/JulienJakubowskiNB.jpg"
+    },
+    "Company": "OCTO Technology",
+    "Details": "I craft software at OCTO Technology. I love helping development teams and companies to get rid of non-quality. I'm leading Ch'ti JUG (Java User\n Group) and Agile Tour Lille.",
+    "Id": "jak78",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Julien",
+    "LastName": "Jakubowski",
+    "SessionsId": [ "nc16-cru01" ],
+    "Site": null,
+    "Twitter": "jak78",
+    "Github": "jak78"
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/AudreyNeveuNB.jpg",
+      "IconSmall": "/speakers/AudreyNeveuNB.jpg"
+    },
+    "Company": "Streamdata.io",
+    "Details": "Audrey est devangelist chez Streamdata.io, spécialisée sur les problématiques API et Big Data. Passionnée par son métier, Audrey a toujours été fortement engagée dans la communauté Java au travers de plusieurs JUGs et conférences (Duchess France, Paris JUG, Devoxx France, Devoxx UK) mais aussi au sein d’initiatives visant à faire découvrir la programmation aux plus jeunes (Programatoo, Devoxx4Kids).",
+    "Id": "Audrey_Neveu",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Audrey",
+    "LastName": "Neveu",
+    "SessionsId": [ "nc16-ane01" ],
+    "Site": null,
+    "Twitter": "Audrey_Neveu",
+    "Github": null
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/HoussamFakihNB.jpg",
+      "IconSmall": "/speakers/HoussamFakihNB.jpg"
+    },
+    "Company": "Arolla",
+    "Details": "Software Engineer",
+    "Id": "houssamfakih",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Houssam",
+    "LastName": "Fakih",
+    "SessionsId": [ "nc16-hfa01" ],
+    "Site": null,
+    "Twitter": "houssamfakih",
+    "Github": "fakih"
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/CyrilleMartraireNB.jpg",
+      "IconSmall": "/speakers/CyrilleMartraireNB.jpg"
+    },
+    "Company": "Arolla",
+    "Details": "Cyrille Martraire (@cyriux on Twitter) is a partner at Arolla (60 consultants), the founder of the Paris Software Craftsmanship community and a regular speaker in international conferences. With 15+ years of experience in startups, software vendors and banks, Cyrille still calls himself a developer. He's passionate about design in every aspect: TDD, BDD and in particular DDD. Cyrille also has an extensive knowledge of capital market finance developed at SG (twice), Engie, CACIB, Sungard and CME. He's also the author of the book Living Documentation on Leanpub.",
+    "Id": "cyriux",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Cyrille",
+    "LastName": "Martraire",
+    "SessionsId": [ "nc16-cma01", "nc16-cma02" ],
+    "Site": null,
+    "Twitter": "cyriux",
+    "Github": "cyriux"
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/ChristopheThibautNB.jpg",
+      "IconSmall": "/speakers/ChristopheThibautNB.jpg"
+    },
+    "Company": "OCTO Technology",
+    "Details": "Christophe Thibaut has been working as a consultant at OCTO since 2005. He has a 20 years experience in development, project management and project direction, as well as counselling for corporate companies. He has been practicing agile methodologies for the last 10 years, and has help dozens developers, architects and managers to understand and adopt these methodologies.\n\nChristophe is interested in everything that allows the creation of better software faster, on a technical level (TDD, refactoring, OOP, functional programming) as well as a human level. He is passionate about helping every team to tap into its own greatness, and every manager to gain better results while enabling learning.\n\nHis expertise is based on a continuous learning process of the models used in these domains: XP, Scrum, Lean, coaching models and methods, shared vision process. He has a sharp communication verbal and written skills. He is a facilitator and a coach, an attentive observer, and active listener. \n\nAt OCTO, Christophe helps spreading TDD, review practices, agile management, coaching and change leadership. He facilitates project retrospectives, team and product vision work, and with his coaching team, contributes to the training of agile coaches at OCTO.",
+    "Id": "ToF_",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Christophe",
+    "LastName": "Thibaut",
+    "SessionsId": [ "nc16-cth01", "nc16-cru01" ],
+    "Site": null,
+    "Twitter": "ToF_",
+    "Github": null
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/BodilNB.jpeg",
+      "IconSmall": "/speakers/BodilNB.jpeg"
+    },
+    "Company": null,
+    "Details": "Born into an aristocratic Russian-German family, **Bodil** traveled widely around the Soviet Union as a child. Largely self-educated, she developed an interest in computer science during her teenage years. According to her later claims, in 1989 she embarked on a series of world travels visiting Europe, the Americas, and India. She alleged that during this period she encountered a group of mathematical adepts, the 'Haskell Language and Library Committee', who sent her to Glasgow, Scotland, where they trained her to develop her powers of category theory. Both contemporary critics and later biographers have argued that some or all of these foreign visits were fictitious, and that she spent this period writing JavaScript.\n\n**Bodil** was a controversial figure during her lifetime, championed by supporters as an enlightened guru and derided as a fraudulent charlatan by critics. Her doctrines influenced the spread of Homotopy Type Theory in the West as well as the development of Western computer science currents like dependent types, blockchains and isomorphic JavaScript.",
+    "Id": "bodil",
+    "Languages": [ "en", "no" ],
+    "FirstName": "Bodil",
+    "LastName": "Stokke",
+    "SessionsId": [ "nc16-bst01" ],
+    "Site": "http://bodil.lol/",
+    "Twitter": "bodil",
+    "Github": "bodil"
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/nicolasdeloofNB.jpg",
+      "IconSmall": "/speakers/nicolasdeloofNB.jpg"
+    },
+    "Company": null,
+    "Details": "Hacker at CloudBees,\nvidéaste amateur, Dockerista",
+    "Id": "ndeloof",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "nicolas",
+    "LastName": "de loof",
+    "SessionsId": [ "nc16-nde01" ],
+    "Site": null,
+    "Twitter": "ndeloof",
+    "Github": null
+  },
+  {
+    "Avatar": {
+      "IconBig": "http://ncrafts.io/speakers/simonbrownNB.jpg",
+      "IconSmall": "http://ncrafts.io/speakers/simonbrownNB.jpg"
+    },
+    "Company": "Structurizr",
+    "Details": "\nSimon is an independent software development consultant specialising in software architecture; specifically technical leadership, communication and lightweight, pragmatic approaches to software architecture. \n\nHe is the author of two books about software architecture; [Software Architecture for Developers](https://leanpub.com/software-architecture-for-developers) (a developer-friendly guide to software architecture, technical leadership and the balance with agility) and [The Art of Visualising Software Architecture](https://leanpub.com/visualising-software-architecture) (a guide to communicating software architecture with sketches, diagrams and models). \n\nSimon is also the creator of the `C4 software architecture model` and the founder of [Structurizr](https://www.structurizr.com/), a SaaS product to create web-based software architecture diagrams using code.\n",
+    "Id": "simonbrown",
+    "Languages": [ "en" ],
+    "FirstName": "Simon",
+    "LastName": "Brown",
+    "SessionsId": [ "nc16-sbr02", "nc16-sbr01" ],
+    "Site": "http://www.simonbrown.je/",
+    "Twitter": "simonbrown",
+    "Github": "simonbrowndotje"
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/FlorentPELLETNB.jpg",
+      "IconSmall": "/speakers/FlorentPELLETNB.jpg"
+    },
+    "Company": "DevLyon",
+    "Details": "DDD Addict\nSoftware craftsman freelance in Lyon.\nCo-leader of MUG Lyon and SoftwareCraftsmanship Lyon usergroups.",
+    "Id": "florentpellet",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Florent",
+    "LastName": "PELLET",
+    "SessionsId": [ "nc16-fpe01", "nc16-fpe02" ],
+    "Site": null,
+    "Twitter": "florentpellet",
+    "Github": "fpellet"
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/MathiasVerraesNB.jpeg",
+      "IconSmall": "/speakers/MathiasVerraesNB.jpeg"
+    },
+    "Company": "Value Object",
+    "Details": "Mathias Verraes is an independent consultant. He advises companies on how to build enterprise applications for complex business domains. He specializes in curing large legacy projects: the kind where there's half a million lines of spaghetti code, and nobody knows how to get the project under control. \n    \nAs a blogger and and a speaker, Mathias is on a mission to spread the ideas of Domain Driven Design in the web development world. He's the founder of the Belgian DDD community. When he's not working, he's at home in Kortrijk, Belgium, helping his two sons build Lego train tracks.",
+    "Id": "mathiasverraes",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Mathias",
+    "LastName": "Verraes",
+    "SessionsId": [ "nc16-mve02", "nc16-mve01" ],
+    "Site": "http://verraes.net",
+    "Twitter": "mathiasverraes",
+    "Github": "mathiasverraes"
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/ArnaudBaillyNB.jpg",
+      "IconSmall": "/speakers/ArnaudBaillyNB.jpg"
+    },
+    "Company": "Capital Match",
+    "Details": "Developing software professionally since 1994, now CTO at Capital Match building a peer-to-peer lending platform in Haskell",
+    "Id": "abailly",
+    "Languages": [ "fr", "en" ],
+    "FirstName": "Arnaud",
+    "LastName": "Bailly",
+    "SessionsId": [ "nc16-aba01" ],
+    "Site": "http://abailly.github.com",
+    "Twitter": "abailly",
+    "Github": null
+  },
+  {
+    "Avatar": {
+      "IconBig": "http://staging.ncrafts.io/speakers/QuentinAdamNB.jpg",
+      "IconSmall": "http://staging.ncrafts.io/speakers/QuentinAdamNB.jpg"
+    },
+    "Company": "CleverCloud",
+    "Details": "CEO @clever_cloud cloud Platform as a Service for node, scala, java, php, python, docker or ruby apps + DBaaS The best way to host your app, give it a try",
+    "Id": "waxzce",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Quantin",
+    "LastName": "Adam",
+    "SessionsId": [ "nc16-qad01" ],
+    "Site": "http://clever-cloud.com",
+    "Twitter": "waxzce",
+    "Github": null
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/MichelDomenjoudNB.jpg",
+      "IconSmall": "/speakers/MichelDomenjoudNB.jpg"
+    },
+    "Company": "OCTO Technology",
+    "Details": "* Ever the passionate programmer, Michel made a creer of it. He has been with OCTO Technology for 5 years, and in the Software Craftsmanship tribe since its creation in 2013.\n* He has acquired strong beliefs about Agile practices and eXtreme Programming as a Tech Lead on software delivery projects and TDD, Code review, and Clean Code are his standards. He is now a full-fledged coach in development practices and strives to help teams shift their culture towards quality code.\n* Michel is also one of the authors of the book Culture Code - Software Craftsmanship : Better places with Better code.",
+    "Id": "mdomenjoud",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Michel",
+    "LastName": "Domenjoud",
+    "SessionsId": [ "nc16-mdo01" ],
+    "Site": null,
+    "Twitter": "mdomenjoud",
+    "Github": "mdomenjoud"
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/ClementDelafargueNB.jpg",
+      "IconSmall": "/speakers/ClementDelafargueNB.jpg"
+    },
+    "Company": "Clever Cloud",
+    "Details": "CTO @clever_cloud / Brittany, FP, feminism, cute baby animals. Not necessarily in this order.",
+    "Id": "clementd",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Clement",
+    "LastName": "Delafargue",
+    "SessionsId": [ "nc16-01" ],
+    "Site": "http://clement.delafargue.name",
+    "Twitter": "clementd",
+    "Github": null
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/PabloPernotNB.jpg",
+      "IconSmall": "/speakers/PabloPernotNB.jpg"
+    },
+    "Company": "beNext",
+    "Details": "After university studies on the Monty Python, on nonsense and absurd, and the start of a PhD on film comedy, it seems normal that Pablo Pernot eventually works in organisational management and change management, it is obviously a logical sequence. Pablo is `agent provocateur` (of changes, emotions, etc.) at beNext, the game changer company [http://benextcompany.com](benextcompany.com).",
+    "Id": "pablopernot",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Pablo",
+    "LastName": "Pernot",
+    "SessionsId": [ "nc16-ppe01", "nc16-ppe02" ],
+    "Site": "http://www.benextcompany.com",
+    "Twitter": "pablopernot",
+    "Github": null
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/CédricTran-XuanNB.jpg",
+      "IconSmall": "/speakers/CédricTran-XuanNB.jpg"
+    },
+    "Company": "Streamdata.io",
+    "Details": "Dev chez Streamdata.io, C&#233;dric participe &#224; l'&#233;laboration d'une plate-forme de push temps r&#233;el. Pendant son temps libre, il &#233;cume l'Alpes JUG, les meetups de Grenoble et quelques MOOC et il joue avec des technos Java / Scala et Web (Riot.js, AngularJS, EmberJS, etc). &#10;Il a &#233;galement fait quelques pr&#233;sentations &#224; BreizhCamp, Bdx.io et SoftShake et fait partie de l'organisation de SnowCamp.io, une conf&#233;rence technique &#224; Grenoble.",
+    "Id": "ctranxuan",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Cédric",
+    "LastName": "Tran-Xuan",
+    "SessionsId": [ "nc16-ctr01", "nc16-ctr02" ],
+    "Site": null,
+    "Twitter": "ctranxuan",
+    "Github": null
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/Liz-KeoghNB.jpeg",
+      "IconSmall": "/speakers/Liz-KeoghNB.jpeg"
+    },
+    "Company": null,
+    "Details": "\r\nLiz Keogh is a Lean and Agile consultant based in London. She is a well-known blogger and international speaker, a core member of the BDD community and a contributor to a number of open-source projects including JBehave. She specializes in helping people use examples and stories to communicate, build, test and deliver value, particularly when faced with high risk and uncertainty.\r\n\r\nLiz's work covers topics as diverse as story-writing, haiku poetry, Cynefin and complexity thinking, effective personal feedback and OO development, and she has a particular love of people, language, and choices. She has a strong technical background with over 15 years experience in delivering value and coaching others to deliver, from small start-ups to global enterprises. Most of her work now focuses on Lean, Agile and organizational transformations, and the use of transparency, positive language, well-formed outcomes and safe-to-fail experiments in making change innovative, easy and fun.",
+    "Id": "lunivore",
+    "Languages": [ "en" ],
+    "FirstName": "Liz",
+    "LastName": "Keogh",
+    "SessionsId": [ "nc16-lke01" ],
+    "Site": "http://lizkeogh.com/",
+    "Twitter": "lunivore",
+    "Github": null
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/VascoDuarteNB.jpg",
+      "IconSmall": "/speakers/VascoDuarteNB.jpg"
+    },
+    "Company": "Oikosofy",
+    "Details": "I want to transform product development organizations into product business organizations. I do that by focusing the work of the product development teams on the end-to-end life-cycle of their products. From Concept to Cash and Back!\r\nCurrently a Managing Partner at Oikosofy. Product Manager, Scrum Master, Project Manager, Director, Agile Coach are only some of the roles that I've taken in software development organizations. Having worked in the software industry since 1997, and Agile practitioner since 2004. I've worked in small, medium and large software organizations as an Agile Coach or leader in agile adoption at those organizations.\r\nI was one of the leaders and catalysts of Agile methods and Agile culture adoption at Avira, Nokia and F-Secure.",
+    "Id": "duarte_vasco",
+    "Languages": [ "en", "pt" ],
+    "FirstName": "Vasco",
+    "LastName": "Duarte",
+    "SessionsId": [ "nc16-vd01" ],
+    "Site": "http://noestimatesbook.com/",
+    "Twitter": "duarte_vasco",
+    "Github": null
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/EtiennePIERROTNB.jpg",
+      "IconSmall": "/speakers/EtiennePIERROTNB.jpg"
+    },
+    "Company": "Mangopay",
+    "Details": "Developer C# since 12 years. I read a lot about TDD, DDD and Software Craftmanship. I go frequently to some meetup like (ALT.NET, SC...)",
+    "Id": "EtiennePierrot",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Etienne",
+    "LastName": "PIERROT",
+    "SessionsId": [ "nc16-epi01" ],
+    "Site": null,
+    "Twitter": "EtiennePierrot",
+    "Github": null
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/DavidPilatoNB.jpg",
+      "IconSmall": "/speakers/DavidPilatoNB.jpg"
+    },
+    "Company": "elastic",
+    "Details": "David Pilato is Developer at elastic and French spoken language User Group creator. In his free time, he likes talking about elasticsearch in conferences like Devoxx FR BE UK, JUGs, Web5, Agile France, Mix-IT, Javazone or in companies (Brown Bag Lunches).",
+    "Id": "dadoonet",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "David",
+    "LastName": "Pilato",
+    "SessionsId": [ "nc16-dpi01", "nc16-dpi01" ],
+    "Site": null,
+    "Twitter": "dadoonet",
+    "Github": "dadoonet"
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/GregYoungNB.jpg",
+      "IconSmall": "/speakers/GregYoungNB.jpg"
+    },
+    "Company": null,
+    "Details": "Greg Young coined the term `CQRS` (Command Query Responsibility Segregation) and it was instantly picked up by the community who have elaborated upon it ever since.\n\nGreg is an independent consultant and serial entrepreneur. He has 10+ years of varied experience in computer science from embedded operating systems to business systems and he brings a pragmatic and often times unusual viewpoint to discussions.\n\nHe's a frequent contributor to InfoQ, speaker/trainer at Skills Matter and also a well-known speaker at international conferences. Greg also writes about CQRS, DDD and other hot topics on www.codebetter.com.",
+    "Id": "gregyoung",
+    "Languages": [ "en", "fr", "lt" ],
+    "FirstName": "Greg",
+    "LastName": "Young",
+    "SessionsId": [ "nc16-gyo01" ],
+    "Site": "http://www.privateeye.io/",
+    "Twitter": "gregyoung",
+    "Github": "gregoryyoung"
+  },
+  {
+    "Avatar": {
+      "IconBig": "/speakers/JeanLaurenDeMorlhonNB.png",
+      "IconSmall": "/speakers/JeanLaurenDeMorlhonNB.png"
+    },
+    "Company": "Docker",
+    "Details": "Software Engineer @ Docker working on docker desktop. I drink tests for breakfast, write java, coffee & go code.",
+    "Id": "morlhon",
+    "Languages": [ "en", "fr" ],
+    "FirstName": "Jean Laurent",
+    "LastName": "Morlhon",
+    "SessionsId": [ "nc16-jlm01" ],
+    "Site": "http://docker.com",
+    "Twitter": "morlhon",
+    "Github": "jeanlaurent"
   }
 ]

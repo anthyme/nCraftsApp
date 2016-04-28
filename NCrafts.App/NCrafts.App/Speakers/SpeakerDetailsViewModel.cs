@@ -38,12 +38,16 @@ namespace NCrafts.App.Speakers
             this.getSessionSumariesSpeakerQuery = getSessionSumariesSpeakerQuery;
             heightList = 0;
             OpenSessionCommand = new Command<SessionId>(x => openSessionCommand(x));
-            OpenUrlCommand = new Command<string>(x => openUrlCommand(x));
+
+            //"http://twitter.com/" + (url.StartsWith("@") ? url.Substring(1) : url)
+            OpenTwitterCommand = new Command<string>(x => openUrlCommand("http://twitter.com/" + x));
+            OpenGithubCommand = new Command<string>(x => openUrlCommand("http://github.com/" + x));
         }
 
         public ICommand OpenSessionCommand { get; }
 
-        public ICommand OpenUrlCommand { get; }
+        public ICommand OpenGithubCommand { get; }
+        public ICommand OpenTwitterCommand { get; }
 
         public SpeakerDetails Speaker
         {

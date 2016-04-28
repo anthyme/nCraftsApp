@@ -11,19 +11,31 @@ namespace NCrafts.App.Business.Common.Network
     public class NetworkClient
     {
         private readonly HttpClient _client;
-        public bool IsSessionResponse { get; set; }
+        public bool IsConfResponse { get; set; }
         public bool IsSpeakerResponse { get; set; }
+        public bool IsSessionResponse { get; set; }
+        private Conf _configuration;
 
         public NetworkClient()
         {
-            _client = new HttpClient { BaseAddress = new Uri("http://api.ncrafts.io/events/ncrafts2016/") };
+            _client = new HttpClient();
             _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        // TODO: add inject inside SQLite
+        public async Task GetConf()
+        {
+            var response = await _client.GetAsync("http://raw.githubusercontent.com/anthyme/ncraftsdata/master/conf.json");
+            IsConfResponse = response.IsSuccessStatusCode;
+            if (IsConfResponse)
+            {
+                _configuration = Converter.GetConfFromJson(response.Content.ReadAsStringAsync().Result);
+            }
+        }
+
         public async Task GetSpeakers(IDataSourceRepository dataSourceRepository)
         {
-            var response = await _client.GetAsync("speakers");
+            if (!IsConfResponse) return;
+            var response = await _client.GetAsync(_configuration.SpeakersUrl);
             IsSpeakerResponse = response.IsSuccessStatusCode;
             if (IsSpeakerResponse)
             {
@@ -34,7 +46,8 @@ namespace NCrafts.App.Business.Common.Network
 
         public async Task GetSessions(IDataSourceRepository dataSourceRepository)
         {
-            var response = await _client.GetAsync("sessions");
+            if (!IsConfResponse) return;
+            var response = await _client.GetAsync(_configuration.SessionsUrl);
             IsSessionResponse = response.IsSuccessStatusCode;
             if (IsSessionResponse)
             {
