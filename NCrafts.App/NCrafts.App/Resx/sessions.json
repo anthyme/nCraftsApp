@@ -1,35 +1,453 @@
 [
   {
-    "speakersId": [
-      "n0f-sb15",
-      "n0f-sb16"
-    ],
-    "details": "talk details here",
-    "id": "n0f-sb1-3",
-    "type": "keynote",
-    "place": "MainRoom",
-    "title": "Test json embedded Biatch !!",
-    "startTime": "2016-05-12T08:30:00.0000000+00:00",
-    "durationInMinutes": 40,
-    "tags": [
-      "architecture",
-      "legacy"
-    ]
+    "SpeakersId": [ "ToF_" ],
+    "Details": "Gently make haste, of Labour not afraid;\nA hundred times consider what you've said:\nPolish, repolish, every Colour lay,\nAnd sometimes add; but oft'ner take away.\nBoileau -  Art Poétique\n\nIt's mainstream nowadays: everyone is Agile. But what does it mean to be Agile? It means opting for direct communication and collaboration, embracing change, striving for simplicity.. It also means fostering technical excellence, lest agile become fragile.\n\nNow, to cultivate excellence, and respond in a better way to the customer's constraints and requests, we must learn. Learn about what? About that which schools -- engineering and other schools -- do not teach: we must learn our developer craft. This is where the fashion of the day disappears, and the old habits reappear. At work, one learns very slowly, and lessons, inasmuch as one is ready to listen to them, are expensive. Besides, the goal is not to learn, but to make. \n\nAnd yet, where else could we be learning? Not in school, not in one's room, but on our project, with our team, everyday. Why is it difficult? There's no shortage of information.  After all, do you know any development practice that isn't fully described on the internet?\n\n \nBut in the workplace the mental models -- not to mention prejudices -- die hard: specialization, individual performance, process:  IT work is a factory!\n\nThe fact that our projects, agile or not, invariably end up being rushed and dashed, thus stopping us from taking the time to learn and get better at our craft, is undoubtedly the most remarkable irony of this industry. It's the same old story of the developers not having time to test their code, having all those bugs to fix! \n\nLearning to progress in a continuous way with our team is both simple and difficult. Simple, because agreed-upon standard practices have been there ever since there were development teams. These practices are easy to put in place. And the difficult thing is that you have to decide to so first. And why is that hard?  Because a change of models is necessary:  these practices are not focused on process, tasks, roles, but on feedback, on the diffusion of know-how, and cultivating social skills. Farewell software `factory`!\n\nIn this keynote, I will throw flares on the path of excellence, sharing about what I have been observing in the developer trade for more than two decades.",
+    "Id": "nc16-cth01",
+    "Type": null,
+    "Place": null,
+    "Title": "A Hundred Times....",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "life", "craftsmanship" ]
   },
   {
-    "speakersId": [
-      "n0f-sb15"
-    ],
-    "details": "talk details here",
-    "id": "n0f-sb1-4",
-    "type": "hands-on",
-    "place": "roomE",
-    "title": "Second embedded",
-    "startTime": "2016-05-12T13:00:00.0000000+00:00",
-    "durationInMinutes": 100,
-    "tags": [
-      "architecture",
-      "design"
-    ]
+    "SpeakersId": [ "dadoonet" ],
+    "Details": "How do you mix SQL and NoSQL worlds without starting a messy revolution?\n\nThis live coding talk will show you how to add Elasticsearch to your legacy application without changing all your current development habits. Your application will have suddenly have advanced search features, all without the need to write complex SQL code!\n\nDavid will start from a RestX, Hibernate and Postgresql/MySQL based application and will add a complete integration of Elasticsearch, all live from the stage during his presentation.",
+    "Id": "nc16-dpi01",
+    "Type": null,
+    "Place": null,
+    "Title": "Advanced search for your legacy application",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "Design", "Architecture" ]
+  },
+  {
+    "SpeakersId": [ "brandewinder" ],
+    "Details": "Just like traditional applications development, machine learning involves writing code. One aspect where the two differ is the workflow. While software development follows a fairly linear process (design, develop, and deploy a feature), machine learning is a different beast. You work on a single feature, which is never 100% complete. You constantly run experiments, and re-design your model in depth at a rapid pace. Traditional tests are entirely useless. Validating whether you are on the right track takes minutes, if not hours.\n\nIn this talk, we will take the example of a Machine Learning competition we recently participated in, the Kaggle Home Depot competition, to illustrate what _doing Machine Learning_ looks like. We will explain the challenges we faced, and how we tackled them, setting up a harness to easily create and run experiments, while keeping our sanity. We will also draw comparisons with traditional software development, and highlight how some ideas translate from one context to the other, adapted to different constraints.",
+    "Id": "nc16-mbr01",
+    "Type": null,
+    "Place": null,
+    "Title": "Agile experiments in Machine Learning",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "Functional", "MachineLearning", "Agile" ]
+  },
+  {
+    "SpeakersId": [ "ctranxuan" ],
+    "Details": "It's [the API age](http://www.3scale.net/2013/06/software-is-eating-the-world-apis-are-eating-software/)! APIs are everywhere, especially in the micro-services architectures. How to manage an API that must be exposed to the rest of the world? How to secure it? How to control it? So many questions that can be answered by [Kong](https://getkong.org/) in a few REST calls!",
+    "Id": "nc16-ctr01",
+    "Type": null,
+    "Place": null,
+    "Title": "Become a King with Kong",
+    "StartTime": null,
+    "DurationInMinutes": 15,
+    "Tags": [ "Cloud" ]
+  },
+  {
+    "SpeakersId": [ "matthiasnoback" ],
+    "Details": "Of course, you should read all you can about SOLID, Design patterns, Patterns of Enterprise Application Architecture, etc. Once you have a basic understanding of these topics you still have to write that code though, and write it well too! What is good code? Are there some guidelines, or rules of thumb, which you can follow while making your everyday coding decisions?\n\nIn this talk I'll cover many of these coding guidelines, which aren't usually covered by patterns or principles books. They should help you write better code and give you a richer vocabulary for reviewing other people's code. Some of the subjects that we'll discuss are: state, mutability, CQS, one-method objects, domain-first, API-driven, functional programming influences, object boundaries, (de)serialization, and many more!",
+    "Id": "nc16-mno01",
+    "Type": null,
+    "Place": null,
+    "Title": "Beyond patterns & principles - writing good code",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "Design", "Architecture" ]
+  },
+  {
+    "SpeakersId": [ "lunivore" ],
+    "Details": "\r\nFor millenia, human beings have survived by learning, then applying our learning to different contexts.\r\n\r\nWe're so good at it that we're driven to find those patterns, even when they don't exist. \r\n\r\nOur desire for the predictable suffuses everything we do; \r\nour beliefs, our behaviour and even our identity. \r\n\r\nFrom cognitive bias to the metaphors that underlie our language, we create constructs of words and imagination that keep us from innovating and yet, they're the same constructs that help us move forward in uncertainty. Without them, we'd be unable to make decisions at all.\r\n\r\nIn this talk we look at how our language and perceptions hold us back, and how changing the things we say and the way we look at the world might help us become more resilient, happy and innovative.",
+    "Id": "nc16-lke01",
+    "Type": null,
+    "Place": null,
+    "Title": "Cognitive Cynefin: How language and bias keep us complicated",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "bdd", "practices", "design" ]
+  },
+  {
+    "SpeakersId": [ "cyriux" ],
+    "Details": "Everyone has their own perspective on design, and I'm no exception. In this talk I will explore simple stuff explained in a complicated way, or the other way round, whichever is worse. For example I will talk about congruence as an essential quality of design, and salience as a life-saving approach for testing. Intimidating words indeed, but for real benefits!",
+    "Id": "nc16-cma02",
+    "Type": null,
+    "Place": null,
+    "Title": "Congruent Design, Salient Testing",
+    "StartTime": null,
+    "DurationInMinutes": 15,
+    "Tags": [ "Design", "Architecture" ]
+  },
+  {
+    "SpeakersId": [ "jeanhelou" ],
+    "Details": "Try basics of EventSourcing and CQRS by yourself with proposed koans, which will guide you through different concepts step by step.\nThis session will help you understand it is not so hard, and have support from us to help you make the **'mind shift'** (required if you are really too much used to traditional architectures ;))\nFor this session, you will need to bring your laptop with your favorite developement environment ready (including ability to run unit tests). We propose these koans in PHP 5+, Java 8, C# 6, JavaScript (NodeJS).",
+    "Id": "nc16-fpe01",
+    "Type": null,
+    "Place": null,
+    "Title": "CQRS & EventSourcing discovery",
+    "StartTime": null,
+    "DurationInMinutes": 120,
+    "Tags": [ "Design", "Architecture" ]
+  },
+  {
+    "SpeakersId": [ "asherglynn" ],
+    "Details": "From pocket watches to great cathedrals, craftsmen created wonders of the age. While individual skill, repetition and accomplishment was important, communication between the great craftsmen was key. This talk will explore communications between coders, some of the personality challenges and interactions with `normal` people.\nWe will explore the use of code reviews (specifically Reviewing for Intent) in establishing a common culture and set of values which can adapt with changing conditions (and contrast against fixed `standards`), contrast whether you should use experts or novices in reviews (and the extra challenges from functional programming!) and attack the tricky issue of over engineering with a simple metrics based approach.\nWe will then revisit some of the personality types - the princess programmer, the desperate dev, the cunning customer - who make a crafted solution such a challenge, and see where clear communication can (sometimes) turn an adversary into an ally, and look at the role of respect in crafting the right solution.",
+    "Id": "nc16-agl01",
+    "Type": null,
+    "Place": null,
+    "Title": "Crafty Communications - dealing with the pesky people parts of development",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "life", "craftmanship" ]
+  },
+  {
+    "SpeakersId": [ "pablopernot" ],
+    "Details": "Based on the Lego/cynefin workshop (http://areyouagile.com/2013/04/cynefin-et-son-lego-game/, http://www.agile42.com/en/blog/2011/12/25/cynefin-lego-game/), this workshop is about knowing with which system you are dealing with, and what kind of answers you should think about depending on the context.",
+    "Id": "nc16-ppe02",
+    "Type": null,
+    "Place": null,
+    "Title": "Cynefin trip",
+    "StartTime": null,
+    "DurationInMinutes": 120,
+    "Tags": [ "Agile", "Craftsmanship", "practices" ]
+  },
+  {
+    "SpeakersId": [ "CedricRup" ],
+    "Details": "Tests are your best assets to build your applications.  \nUsing **Behavior Driven Developement**, your team find examples that describe the functionality your users want. With the right DSL and tooling, these examples become acceptance tests, a feedback at the functionnality level.  \n\n**Test Driven Development** guides the developer towards code that works, code that can easily and safely be changed using the quick, precise feedback of unit tests.\n\n\nHow do we mix these two flavors of tests into the developer workflow? One answer is to use many Red/Green/Refactor TDD to make an acceptance pass, and to continue until all your examples  are handled. Big loops of acceptance tests made of fast TDD loops : this practice is known as **Double Loop TDD**.  \nDuring the session, you'll be practicing Double Loop TDD in a .NET environment, using Specflow and NUnit. You'll see how the two kind of tests articulates and how to harness their feedbacks.\n\n_Prerequisites_ :\n* Being acquainted with TDD\n* If you really want to get your hand dirty by yourself : Visual Studio 2015 with Specflow Extensions.\n* For others, we will use randori mode ;o)",
+    "Id": "nc16-cru01",
+    "Type": null,
+    "Place": null,
+    "Title": "Double loop TDD with Specflow",
+    "StartTime": null,
+    "DurationInMinutes": 120,
+    "Tags": [ "Practices" ]
+  },
+  {
+    "SpeakersId": [ "jefclaes" ],
+    "Details": "In this talk, I'll share what my experience has been working in the gambling business, how moving to events helped us gain a better understanding of the domain and which techniques and models casinos have perfected over the years to keep people playing.\nLast year I ventured into the domain of (online) gambling. Given that the industry has been around since forever, I expected most problems to be of the technical kind. As it turned out, the struggle with technology was only part of a bigger problem; to move forward we needed to fully grasp the industry and its consumers.\n\nEvents started out as a way to dismantle a legacy system, but quickly proved to be an effective tool to gain a deeper understanding of our domain. Visualising event streams, we discovered patterns that helped us identify what drives different types of users.\n\nHaving a better understanding of what customers are looking for, we dove into existing literature to learn which techniques and models casinos use to cater for each type of user. We learned how to program chance while staying true to the Random Number God. Even when variance is brutal, casinos have enough data and tools to steer clear from the pain barrier.\n\nAll of this entails interesting problems and software, but isn't my code damaging society? Or is gambling just another human trait?",
+    "Id": "nc16-jcl01",
+    "Type": null,
+    "Place": null,
+    "Title": "Evil by design",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "Design", "Architecture", "DDD" ]
+  },
+  {
+    "SpeakersId": [ "dlresende" ],
+    "Details": "Extreme Carpaccio is a funny coding game in which you need to slice a problem and implement the solution by small increments. How thin can you slice? How fast can you code to satisfy the market? Want to code using your beloved language in small teams? Come for the challenge.",
+    "Id": "nc16-dle01",
+    "Type": null,
+    "Place": null,
+    "Title": "Extreme Carpaccio: slice thin, code fast!",
+    "StartTime": null,
+    "DurationInMinutes": 120,
+    "Tags": [ "Practices" ]
+  },
+  {
+    "SpeakersId": [ "dadoonet" ],
+    "Details": "Let's start to discover elasticsearch and Kibana.\n\nFor this session, you will need:\n\n* a JVM\n* a browser\n\nWe will install elasticsearch, Kibana and Marvel and will use that tools to:\n\n* index/update/get/delete documents\n* search\n* compute\n* build dashboards to make sense of marketing data\n* snapshot and restore our data",
+    "Id": "nc16-dpi01",
+    "Type": null,
+    "Place": null,
+    "Title": "Hands On Elasticsearch",
+    "StartTime": null,
+    "DurationInMinutes": 120,
+    "Tags": [ "Tools" ]
+  },
+  {
+    "SpeakersId": [ "mdomenjoud" ],
+    "Details": "Everybody knows about code review, obviously. It is one of the oldest development practices whose effectiveness in detecting defects early has long been proven. So how is it that so many teams are neither using nor leveraging its well-documented benefits? \nDuring this session, we will explore some of the many avoidable pitfalls using code review situations that went wrong. We'll also provide a few tips so you can actually start enjoying your code reviews.",
+    "Id": "nc16-mdo01",
+    "Type": null,
+    "Place": null,
+    "Title": "How to fail at code review in 5 lessons",
+    "StartTime": null,
+    "DurationInMinutes": 15,
+    "Tags": [ "Practices" ]
+  },
+  {
+    "SpeakersId": [ "cyriux" ],
+    "Details": "Deep conversations with domain experts and careful attention to the language are central in software development and in particular in Domain-Driven Design (DDD). However it takes many years and many failures to get better at this game.\nStill, over time it is possible to extract a growing set of techniques and heuristics that can boost the effectiveness of the interviews with domain experts, to learn faster and converge quickly to better models.\nThere are techniques and heuristics for asking better questions, listening carefully to words and other signals, and for managing credibility as a developer facing business experts.\nIf you think all the above is important, then these interviewing techniques will improve your skills, step up the quality of your collaboration with your domain experts, and will provide benefits for better domain models. And if you find all that boring, then perhaps you could focus your career on Java EE instead.",
+    "Id": "nc16-cma01",
+    "Type": null,
+    "Place": null,
+    "Title": "Interviewing Domain Experts: Heuristics from the trenches",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "Practices" ]
+  },
+  {
+    "SpeakersId": [ "sebfauvel" ],
+    "Details": "Come on and play Lego to bridge the gap between developers and ops!\n        \tLego4DevOps workshop aims to raise awareness on what devops really is. It really highlights things in a funny way. This is a complete non-technical workshop where everyone is welcome!",
+    "Id": "nc16-sfa01",
+    "Type": null,
+    "Place": null,
+    "Title": "Lego4DevOps",
+    "StartTime": null,
+    "DurationInMinutes": 120,
+    "Tags": [ "DevOps", "fun" ]
+  },
+  {
+    "SpeakersId": [ "florentpellet" ],
+    "Details": "What if the complexity of a software was more about business than technology?\nWith this livecode, we'll show you a development method focused on business issues. No need for a specific programming languages or specific Framework.",
+    "Id": "nc16-fpe02",
+    "Type": null,
+    "Place": null,
+    "Title": "Let's code Twitter from scratch with CQRS & EventSourcing",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "Design", "Architecture" ]
+  },
+  {
+    "SpeakersId": [ "tpierrain" ],
+    "Details": "Introduced by Eric Evans in 2004 via his `Blue Book`, Domain Driven Design (DDD) has received tremendous positive feedbacks from many developers & communities over the years. On the other hand, we have to admit that DDD has since not been widely used in the trenches or within most of our development projects... How can we explain such failure in its diffusion? Is DDD in itself difficult or is it just the way people used to present it which makes it hard to grasp and inaccessible?\nThrough our various (more or less successful ;-) experiences, we will try to highlight what DDD is using a simple and more accessible approach. The opportunity for us is to show you how helpful it can be for your day-to-day projects. Wouldn't be the perfect time for all of us to ease the DDD onboarding for beginners and to reboot DDD for experts?",
+    "Id": "nc16-jgr01",
+    "Type": null,
+    "Place": null,
+    "Title": "Let's reboot DDD!",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "Design", "Architecture" ]
+  },
+  {
+    "SpeakersId": [ "abailly" ],
+    "Details": "Relation databases are great... for querying. When it comes to writing/updating data they are not so great and can quickly become the main pain point of your architecture. This talk presents how we implemented Event Sourcing at Capital Match, using Haskell as our backend language and Clojurescript as our frontend language. We shall provide a balanced diet of theory on event sourcing and the benefits of choosing such an architecture, especially in functional programming language setting, mixed with practical insights on how we implemented and deployed it at Capital Match.",
+    "Id": "nc16-aba01",
+    "Type": null,
+    "Place": null,
+    "Title": "Life Beyond Relation Database in Haskell",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "Haskell", "Functional", "Databases", "Event Sourcing" ]
+  },
+  {
+    "SpeakersId": [ "fredyfadel" ],
+    "Details": "As a developer you are certainly acquainted with the DRY and WET styles of programming. The motivation for this talk is to share with you why DRY is hard but WET is a disaster. I will examine the mind-set that made DRY so hard and show how to change that mind-set and use our machines to make it easy. We will consider some AOP techniques in .net that can help us make the reusable reused.",
+    "Id": "nc16-ffa01",
+    "Type": null,
+    "Place": null,
+    "Title": "More Software, Less code",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "design", "agile", "practices" ]
+  },
+  {
+    "SpeakersId": [ "bodil" ],
+    "Details": "Relational programming, or logic programming, is a paradigm that exhibits remarkable and powerful properties, to the extent that its implementation seems frightfully daunting to the layman. &micro;Kanren is a minimal relational language that seeks to strip the paradigm down to its core, leaving us with a succinct and elegant set of primitives on top of which we can rebuild even the most powerful relational constructs.\n\nIn this talk, we will explore the &micro;Kanren language by implementing it from first principles in a simple functional programming language, going on to demonstrate how you can assemble these simple building blocks into a semblance of its richer parent, miniKanren, and maybe solve a logic puzzle or two to make sure it's working as advertised.\n\nThe &micro;Kanren paper, and the original &micro;Kanren implementation, were authored by Jason Hemann and Daniel P. Friedman. The paper is available at [http://webyrd.net/scheme-2013/papers/HemannMuKanren2013.pdf](http://webyrd.net/scheme-2013/papers/HemannMuKanren2013.pdf), and the Scheme implementation at [https://github.com/jasonhemann/microKanren](https://github.com/jasonhemann/microKanren)",
+    "Id": "nc16-bst01",
+    "Type": null,
+    "Place": null,
+    "Title": "Mukanren : Running the little things backwards",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "languages", "functional" ]
+  },
+  {
+    "SpeakersId": [ "pablopernot" ],
+    "Details": "Do you dare to invite people and not to mandate ? Do you feel the paradoxes of change management ? Everybody is speaking about commitment, engagement. Easy to say, but how can you really try to do it ? Everybody is speaking about change management. 30% are successful since 30 years whatever fields say the figures. \n\nOpen (Agile) Adoption, Open Space Agility : let's follow the path of these new approaches. Liminality, storytelling, marketplace, _rite de passage-, stigmergy, during that session we will follow the path of a respectful invitation to change : step by step. At the end you should be able to implement it as a leader, as a facilitator, as a teammate.",
+    "Id": "nc16-ppe01",
+    "Type": null,
+    "Place": null,
+    "Title": "Open Adoption",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "Agile", "Craftsmanship", "people" ]
+  },
+  {
+    "SpeakersId": [ "gregyoung" ],
+    "Details": "Being able to import a module and run it inside of the context of a REPL allows you to easily interact in real time or script exactly what you want. Want a chart of size of allocations of types that start with the letter P? Its just code!",
+    "Id": "nc16-gyo01",
+    "Type": null,
+    "Place": null,
+    "Title": "Private Eye",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "Practices", "F#" ]
+  },
+  {
+    "SpeakersId": [ "wadus" ],
+    "Details": "This is a talk about how shifting the focus from craft to product has affected ustwo. Our delivery teams are required everyday to make trade offs between what would the best technical solution and the one that is right for the product they are delivering. \n\nUltimately, we get paid to solve business problems, not to be perfectionists.\n\nShould the product vision affect your development practices? Could you be delivering perfectly valid, beautiful code that solves the wrong problem? Do your users care as much as you do about design?\n\nAt ustwo we work with all sorts clients, from startups to multinationals, giving us an amazing opportunity to see these issues from a variety of different angles. We like to share our experience and hear everyone else's.",
+    "Id": "nc16-jde01",
+    "Type": null,
+    "Place": null,
+    "Title": "Product vs craft",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "Practices", "Design", "Craftsmanship" ]
+  },
+  {
+    "SpeakersId": [ "felienne" ],
+    "Details": "Despite what your boss thinks, programs don't just appear straight out of specifications. But...what if they did? \n\nIn this session Felienne will show you how to systematically and step-by-step derive a program from a specification. Functional languages especially are very suited to derive programs for, as they are close to the mathematical notation used for proofs. \n\nYou will be surprised to know that you already know and apply many techniques for derivation, like Introduce Parameter as supported by Resharper. Did you know that is actually program derivation technique called generalization?",
+    "Id": "nc16-fhe01",
+    "Type": null,
+    "Place": null,
+    "Title": "Program Derivation for Functional Languages",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "Functional", "languages" ]
+  },
+  {
+    "SpeakersId": [ "malk_zameth" ],
+    "Details": "Use Property-based tests, on your legacy codebase, to reduce test-debt, create smaller and fewer tests that test more, are more readable and better document your problem.",
+    "Id": "nc16-mro01",
+    "Type": null,
+    "Place": null,
+    "Title": "Property-based testing (& domain invariants) for the rest of us",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "Design", "Architecture" ]
+  },
+  {
+    "SpeakersId": [ "morendil" ],
+    "Details": "Are you yearning to write software that really matters to your users, software that does more than line corporate pockets and all too often turn into soul-grinding work? If that is what software craftsmanship means to you, I have an unusual proposition - work for the French government.\n\nFor most of you, `government innovation` probably sounds like an oxymoron. At best the words sound like an incongruous combination, like fish and chocolate. In the 2010 O'Reilly book `Open Government` Matthew Burton wrote: _'In recent years, the government has become almost completely dependent upon contractors for information technology (IT). So deep is this dependency that the government has found itself in a position that may shock those in the tech industry: it has no programmers of its own; code is almost entirely outsourced. (...) On top of keeping the government from innovating, the dependence on contractors hurts the country in much more tangible ways.'_\n\nThis was written about the US government but applies equally well to France. Burton went on that the most skilled developers could be persuaded, out of a sense of civic aspiration, to lend governments these skills for a `tour of duty`. France, it turns out, is one of the countries to have recognized this as a great idea: we call it the State Startups, in French `Startups d'Etat`.\n\nThat may sound like yet another oxymoron. This talk is to convince you, in a short time so as not to risk boring anyone, that fish actually tastes good with chocolate - to entice you to try your hand at being a digital Hussar.",
+    "Id": "nc16-lbo01",
+    "Type": null,
+    "Place": null,
+    "Title": "Rise of the Digital Hussars?",
+    "StartTime": null,
+    "DurationInMinutes": 15,
+    "Tags": [ "life", "craftsmanship" ]
+  },
+  {
+    "SpeakersId": [ "svenpet" ],
+    "Details": "When we talk about automation in software development, we immediately think of automated builds and deployments.  We may also be using scripts to help make our daily work easier. But this is really just the beginning of the rise of the machines.\nI show you how leading developers in our industry are using open source and commercial tools for automating much more. They've got `robots` for monitoring production servers, updating issues, supporting customers, reviewing code, setting up laptops, doing development reporting, conducting customer feedback -- even automating daily standups. In what instances is it useful to automate? In what cases does it not make sense? Automation prevents us from having to do the same thing twice, helps us to work better together, reduces workflow errors and frees up time to write production code.  Plus, as it turns out, spending time on automation is fun! Don't be afraid of robots in software development, embrace them!  Even if I save you just half an hour a week, this talk will be a beneficial investment of your time.",
+    "Id": "nc16-spe01",
+    "Type": null,
+    "Place": null,
+    "Title": "Rise of the Machines - Automate Your Development",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "Tools", "DevOps", "Craftsmanship" ]
+  },
+  {
+    "SpeakersId": [ "houssamfakih" ],
+    "Details": "Software Development Skills do not just happen. So, you need to take the bull by the horns and do it yourself. You need to make a plan because these skills rarely develop during your workdays. You also need to dedicate time to develop these skills. While in other craftsmanship, skills of good crafts are well-known. In software development, there is no consensus on this topic. In this talk, we are going to discuss the main skills every good developer should have and how to improve them. We will also share with you some tips and tricks but also some exercises we used to improve our software development skills.",
+    "Id": "nc16-hfa01",
+    "Type": null,
+    "Place": null,
+    "Title": "Skills For Good Developers",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "Practices" ]
+  },
+  {
+    "SpeakersId": [ "mathiasverraes" ],
+    "Details": "a brilliant new talk special for NCrafts! ...",
+    "Id": "nc16-mve01",
+    "Type": null,
+    "Place": null,
+    "Title": "TBD",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "design", "ddd" ]
+  },
+  {
+    "SpeakersId": [ "nivdul" ],
+    "Details": "In December 2015 I left Paris to travel in Asia and meet Tech communities there. The project [Tech Beyond Borders](http://techbeyondborders.com/) was born!\r\n\r\nBefore I left, I was curious about what is it like being a developer in Nepal, Malaysia or Myanmar in relation to France. Do they work on the same challenges and with the same technologies as we do? How many women work in Tech there? Or what kind of startup do they build?\r\n\r\nDuring my trip I met developers, entrepreneurs and women communities in Nepal, Malaysia, Cambodia, Singapore, Indonesia and Myanmar.\r\n\r\nI learnt a lot. I have been surprised and met amazing people. Now it is time to share this story with you all and tell you what I learnt from this experience.",
+    "Id": "nc16-lpr01",
+    "Type": null,
+    "Place": null,
+    "Title": "Tech Beyond Borders",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "people", "life" ]
+  },
+  {
+    "SpeakersId": [ "simonbrown" ],
+    "Details": "Agility is about moving fast and this requires good communication. A consistent, shared vision is essential in order for teams to push in the same direction, but it's surprising that many teams struggle to effectively communicate the architecture of the software they are building. As an industry we do have the Unified Modeling Language (UML), yet many people favour informal boxes and lines sketches instead. Abandoning UML is one thing but, in the race for agility, many software development teams have lost the ability to communicate visually too.\n            \nThis hands-on session is aimed at those involved in the software development process and is about improving communication. You'll see some patterns and anti-patterns related to `boxes and lines` diagrams, and you'll learn some lightweight techniques for communicating software architecture using simple sketches and the `C4 software architecture model`",
+    "Id": "nc16-sbr02",
+    "Type": null,
+    "Place": null,
+    "Title": "The Art of Visualising Software Architecture",
+    "StartTime": null,
+    "DurationInMinutes": 360,
+    "Tags": [ "Architecture", "Design", "Craftsmanship" ]
+  },
+  {
+    "SpeakersId": [ "simonbrown" ],
+    "Details": "\nAsk somebody in the building industry to visually communicate the architecture of a building and you'll be presented with site plans, floor plans, elevation views, cross-section views and detail drawings. In contrast, ask a software developer to communicate the software architecture of a software system using diagrams and you'll likely get a confused mess of boxes and lines. I've asked thousands of software developers to do just this over the past decade and continue to do so today. The results from these software architecture sketching workshops still surprise me, anecdotally suggesting that effective visual communication of software architecture is a skill that's sorely lacking in the software development industry.\n\nOf course, as an industry, we do have the Unified Modeling Language (UML), but asking whether this provides an effective way to communicate software architecture is often irrelevant because many teams have already thrown out UML in favour of much simpler `boxes and lines` diagrams. Abandoning UML is one thing but, perhaps in the race for agility, many software development teams have lost the ability to communicate visually. This talk explores the visual communication of software architecture based upon my experience of working with software development teams across the globe. We'll look at what is commonplace today, the importance of creating a shared vocabulary, diagram notation, the value of creating a model plus how to use tooling and static analysis techniques to automate diagram generation.\n",
+    "Id": "nc16-sbr01",
+    "Type": null,
+    "Place": null,
+    "Title": "The Art of Visualising Software Architecture",
+    "StartTime": "12-May-16 9:30:00 AM",
+    "DurationInMinutes": 60,
+    "Tags": [ "architecture", "design" ]
+  },
+  {
+    "SpeakersId": [ "waxzce" ],
+    "Details": "Industrial revolution of intellectual production : from computer to team agility, how to work more efficient ?\n            \nIndustrialize your software pipeline, be more efficient\n        \t\nThere is a lot of trending words about hosting and clouds theres years, but just a few focused on the essential : how to make the process and the production of hosting really neat and without problems. We have to focus about industrialization like we did about electricity a century ago : produce stable standard with a high quality of service and availability, and develop the ecosystem of consumer. So, how the PaaS, the cloud and good process will end the server management ?\n        \t\nWhat changes affects developer profession? How to make the process and the production of hosting really neat and without problems? We have to focus about industrialization like we did about electricity a century ago: produce stable standard with a high quality of service and availability, and develop the ecosystem of consumer. Can we end server management and build hosting as a commodity?",
+    "Id": "nc16-qad01",
+    "Type": null,
+    "Place": null,
+    "Title": "The end of server management : hosting have to become a commodity",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "DevOps", "Cloud", "Practices", "Agile" ]
+  },
+  {
+    "SpeakersId": [ "Audrey_Neveu" ],
+    "Details": "In this talk we will live-code in less than 15 mn a mobile application displaying the ISS position on a map in real time. Impossible? Not with the right tools! On one hand, Streamdata.io and its JavaScript SDK which is able to turn any API into a stream of data in less than 10 lines of code and will give us the ISS position as if we were of board. On the other hand, Ionic, the powerful hybrid mobile framework which will help us to build a pretty and highly interactive application, available for all platforms, in less time than it takes to say. I take your bet!",
+    "Id": "nc16-ane01",
+    "Type": null,
+    "Place": null,
+    "Title": "The ISS position in real time on my mobile in less than 15mn ? Yes, we can.",
+    "StartTime": null,
+    "DurationInMinutes": 15,
+    "Tags": [ "Web" ]
+  },
+  {
+    "SpeakersId": [ "sandromancuso" ],
+    "Details": "Choosing the next career step in such a diverse and fast-paced industry is not an easy task. But when it comes to our careers, there is no right or wrong. Or there is? How do we know? \nIn this talk we will be talking about different career choices, how can we choose good companies to work for, what we can learn from interviews and selection processes, when should we look for a new job, and how to change our working environment.",
+    "Id": "nc16-sma01",
+    "Type": null,
+    "Place": null,
+    "Title": "The Long Road",
+    "StartTime": null,
+    "DurationInMinutes": 60,
+    "Tags": [ "craftsmanship", "life" ]
+  },
+  {
+    "SpeakersId": [ "scalbatty" ],
+    "Details": "Hi ! I'm Pascal, a C# developer who fell in love with iOS development when it was still in Objective-C. These past 2 years, discovering Swift was like a second honeymoon.\n\nI'd like to talk to you about why you might be interested in learning this new and shiny language, how you might be already be familiar with some of its concepts and what delights me and surprises me on my journey on the path to Swift Mastery.",
+    "Id": "nc16-pba01",
+    "Type": null,
+    "Place": null,
+    "Title": "Think Sharp, Write Swift",
+    "StartTime": null,
+    "DurationInMinutes": 45,
+    "Tags": [ "Languages" ]
+  },
+  {
+    "SpeakersId": [ "ndeloof" ],
+    "Details": "L'équipe BreizhCamp a développé au cours de ses 6 années d'existence pas moins de ... 5 applications de `Call for Papers` :-)\nEn 2016 nous avons (enfin) trouvé une base de code qui nous convient, reprise d'ailleurs par NCrafts :P\nNous avons donc décidé de la faire évoluer pour offrir un service multi-tenant gratuit pour toutes les conférences et conférenciers.\nCe talk présente le projet, ses enjeux, les solutions techniques, et nos idées pour ce projet communautaire fun.",
+    "Id": "nc16-nde01",
+    "Type": null,
+    "Place": null,
+    "Title": "Un CFP to rule them all",
+    "StartTime": null,
+    "DurationInMinutes": 15,
+    "Tags": [ "life" ]
+  },
+  {
+    "SpeakersId": [ "ctranxuan" ],
+    "Details": "The Web is becoming more and more mobile and real-time... which is not the case of the classical HTTP requests!\nWhy more and more people use WebSockets? And why not the Server-Sent Events? Short recap about these technologies, assets/drawbacks of each and useful links.",
+    "Id": "nc16-ctr02",
+    "Type": null,
+    "Place": null,
+    "Title": "WebSockets & Server-Sent Events: How? Why?",
+    "StartTime": null,
+    "DurationInMinutes": 15,
+    "Tags": [ "Web" ]
+  },
+  {
+    "SpeakersId": [ "EtiennePierrot" ],
+    "Details": "Through the story of my learning about putting in place tests for a legacy code base, with the attempts, failures and of course successes, I will explain :  \n\n - The novice errors :  not maintenable tests, not enough focus on the design and forgetting the big picture\n - How i improved my skills with reading, training and some help from the developer community\n - How i found again  the pleasure of coding",
+    "Id": "nc16-epi01",
+    "Type": null,
+    "Place": null,
+    "Title": "What i wish i had known before starting TDD",
+    "StartTime": null,
+    "DurationInMinutes": 15,
+    "Tags": [ "Practices", "craftsmanship" ]
   }
 ]
