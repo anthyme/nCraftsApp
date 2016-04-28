@@ -203,6 +203,7 @@
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable\icon.png" />
+    <AndroidResource Include="Resources\drawable\githubicon.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\NCrafts.App.Business\App.Business.csproj">

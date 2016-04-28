@@ -18,21 +18,21 @@
         </RelativeLayout>
       </StackLayout>
       <StackLayout Orientation="Horizontal" HorizontalOptions="Center" IsVisible="{Binding IsStackLayoutEnable}" >
-        <Label Text="{Binding Speaker.Twitter, StringFormat='@{0}'}" TextColor="#0084b4" IsVisible="{Binding IsLabelTwitterEnable}">
-          <Label.GestureRecognizers>
+        <Image Source="twittericon.png" HeightRequest="40" IsVisible="{Binding IsLabelTwitterEnable}" VerticalOptions="Center">
+          <Image.GestureRecognizers>
             <TapGestureRecognizer Command="{Binding OpenTwitterCommand}" CommandParameter="{Binding Speaker.Twitter}">
             </TapGestureRecognizer>
-          </Label.GestureRecognizers>
-        </Label>
-        <Label Text=" - " IsVisible="{Binding IsLabelSeparatorTCEnable}" />
-        <Label Text="{Binding Speaker.Company}" IsVisible="{Binding IsLabelCompanyEnable}" />
-        <Label Text=" - " IsVisible="{Binding IsLabelSeparatorCGEnable}"  />
-        <Label Text="{Binding Speaker.Github}" TextColor="#800080" IsVisible="{Binding IsLabelGithubEnable}">
-          <Label.GestureRecognizers>
+          </Image.GestureRecognizers>
+        </Image>
+        <Label Text="  " IsVisible="{Binding IsLabelSeparatorTCEnable}" VerticalOptions="Center" />
+        <Label Text="{Binding Speaker.Company}" IsVisible="{Binding IsLabelCompanyEnable}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18" />
+        <Label Text="  " IsVisible="{Binding IsLabelSeparatorCGEnable}" VerticalOptions="Center" />
+        <Image Source="githubicon.png" HeightRequest="40" IsVisible="{Binding IsLabelGithubEnable}" VerticalOptions="Center">
+          <Image.GestureRecognizers>
             <TapGestureRecognizer Command="{Binding OpenGithubCommand}" CommandParameter="{Binding Speaker.Github}">
             </TapGestureRecognizer>
-          </Label.GestureRecognizers>
-        </Label>
+          </Image.GestureRecognizers>
+        </Image>
       </StackLayout>
       <StackLayout Padding="3,0,0,-8">
         <Label Text="{x:Static resx:AppResources.SpeakersDetails}"
