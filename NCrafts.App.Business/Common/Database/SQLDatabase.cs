@@ -96,7 +96,7 @@ namespace NCrafts.App.Business.Common.Database
                     Description = x.Description,
                     Room = x.Room.Name,
                     Start = x.Interval.StartDate.ToLocalTime(),
-                    End = x.Interval.EndDate.ToUniversalTime(),
+                    End = x.Interval.EndDate.ToLocalTime(),
                     IsRegister = x.IsRegister,
                     DSpeakers = speakers.Where(dspeaker => x.Speakers.Any(speakerSession => speakerSession.ToString() == dspeaker.IdString)).ToList(),
                     Tags = tags.Where(dtag => x.Tags.Any(tagSession => tagSession.Title == dtag.Title)).ToList()
