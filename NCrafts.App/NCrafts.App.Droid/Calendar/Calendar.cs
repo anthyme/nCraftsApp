@@ -82,8 +82,10 @@ namespace NCrafts.App.Droid.Calendar
             string[] eventsProjection =
             {
                 CalendarContract.Events.InterfaceConsts.Id,
+                CalendarContract.Events.InterfaceConsts.Deleted,
                 CalendarContract.Events.InterfaceConsts.Title,
-                CalendarContract.Events.InterfaceConsts.EventColor
+                CalendarContract.Events.InterfaceConsts.EventColor,
+                CalendarContract.Events.InterfaceConsts.CustomAppUri
             };
 
             var cursor2 = Forms.Context.ContentResolver.Query(eventUri, eventsProjection, $"calendar_id={calId}", null, null);
@@ -93,9 +95,8 @@ namespace NCrafts.App.Droid.Calendar
                     cursor2.GetInt(cursor2.GetColumnIndexOrThrow(CalendarContract.Events.InterfaceConsts.EventColor)) == NcraftsColor)
                 {
                     var eventUriMaybe = ContentUris.WithAppendedId(eventUri, cursor2.GetLong(cursor2.GetColumnIndexOrThrow(CalendarContract.Events.InterfaceConsts.Id)));
-                    var result = Forms.Context.ContentResolver.Delete(eventUriMaybe, null, null);
+                    Forms.Context.ContentResolver.Delete(eventUriMaybe, null, null);
                     // TODO: Check the result of the delete request
-                    break;
                 }
             }
         }
