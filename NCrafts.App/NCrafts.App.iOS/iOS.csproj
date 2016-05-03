@@ -47,10 +47,10 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer: Remy Bounthong (R9K5VN726E)</CodesignKey>
+    <CodesignKey>iPhone Developer: Rui Carvalho (FBY287VF4R)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>ad54d06a-b683-421b-9161-4ab91afb8f5c</CodesignProvision>
+    <CodesignProvision>1ed29dd0-9ee5-4a88-9ed4-f37dd924332c</CodesignProvision>
     <CodesignResourceRules />
     <CodesignExtraArgs />
   </PropertyGroup>
@@ -74,9 +74,24 @@
     <ConsolePause>False</ConsolePause>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <BuildIpa>True</BuildIpa>
-    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
-    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignProvision>70954d42-6348-454f-82f7-234c8f605732</CodesignProvision>
+    <CodesignKey>iPhone Distribution: Rui Carvalho (4CMN5TL53Q)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignResourceRules />
+    <CodesignExtraArgs />
+    <MtouchSdkVersion>9.2</MtouchSdkVersion>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchDebug>False</MtouchDebug>
+    <MtouchProfiling>False</MtouchProfiling>
+    <MtouchFastDev>False</MtouchFastDev>
+    <MtouchEnableGenericValueTypeSharing>True</MtouchEnableGenericValueTypeSharing>
+    <MtouchUseLlvm>True</MtouchUseLlvm>
+    <MtouchUseThumb>False</MtouchUseThumb>
+    <MtouchUseSGen>False</MtouchUseSGen>
+    <MtouchUseRefCounting>False</MtouchUseRefCounting>
+    <OptimizePNGs>True</OptimizePNGs>
+    <MtouchFloat32>False</MtouchFloat32>
+    <MtouchI18n />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
     <DebugType>none</DebugType>
@@ -86,9 +101,23 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>False</ConsolePause>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
-    <CodesignProvision>Automatic:AppStore</CodesignProvision>
-    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignProvision>70954d42-6348-454f-82f7-234c8f605732</CodesignProvision>
+    <CodesignKey>iPhone Distribution: Rui Carvalho (4CMN5TL53Q)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchSdkVersion>9.2</MtouchSdkVersion>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchDebug>False</MtouchDebug>
+    <MtouchProfiling>False</MtouchProfiling>
+    <MtouchFastDev>False</MtouchFastDev>
+    <MtouchUseLlvm>True</MtouchUseLlvm>
+    <MtouchUseThumb>False</MtouchUseThumb>
+    <MtouchUseSGen>False</MtouchUseSGen>
+    <MtouchUseRefCounting>False</MtouchUseRefCounting>
+    <OptimizePNGs>True</OptimizePNGs>
+    <MtouchFloat32>False</MtouchFloat32>
+    <MtouchI18n />
+    <CodesignResourceRules />
+    <CodesignExtraArgs />
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Calendar\Calendar.cs" />
@@ -102,6 +131,8 @@
       <SubType>Designer</SubType>
     </None>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <ITunesArtwork Include="iTunesArtwork" />
+    <ITunesArtwork Include="iTunesArtwork%402x" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -178,12 +209,12 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon-60%402x.png" />
-    <BundleResource Include="Resources\Icon-72.png" />
-    <BundleResource Include="Resources\Icon-76%402x.png" />
-    <BundleResource Include="Resources\Icon-76.png" />
-    <BundleResource Include="Resources\Icon-Small%402x.png" />
-    <BundleResource Include="Resources\Icon-Small.png" />
+    <BundleResource Include="Resources\icon-60%402x.png" />
+    <BundleResource Include="Resources\icon-72.png" />
+    <BundleResource Include="Resources\icon-76%402x.png" />
+    <BundleResource Include="Resources\icon-76.png" />
+    <BundleResource Include="Resources\icon-Small%402x.png" />
+    <BundleResource Include="Resources\icon-Small.png" />
     <BundleResource Include="Resources\menubutton%403x.png" />
   </ItemGroup>
   <ItemGroup>
@@ -253,78 +284,70 @@
     <BundleResource Include="Resources\arrowrighticon.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon-Small-50.png" />
+    <BundleResource Include="Resources\icon-Small-50.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon-Small-50%402x.png" />
+    <BundleResource Include="Resources\icon-Small-50%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <ITunesArtwork Include="iTunesArtwork" />
-    <ITunesArtwork Include="iTunesArtwork%402x" />
-    <ITunesArtwork Include="Resources\iTunesArtwork.png" />
+    <BundleResource Include="Resources\icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <ITunesArtwork Include="Resources\iTunesArtwork%402x.png" />
+    <BundleResource Include="Resources\icon%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon.png" />
+    <BundleResource Include="Resources\icon%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon%402x.png" />
+    <BundleResource Include="Resources\icon-16.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon%403x.png" />
+    <BundleResource Include="Resources\icon-24.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon-16.png" />
+    <BundleResource Include="Resources\icon-32.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon-24.png" />
+    <BundleResource Include="Resources\icon-40.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon-32.png" />
+    <BundleResource Include="Resources\icon-40%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon-40.png" />
+    <BundleResource Include="Resources\icon-40%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon-40%402x.png" />
+    <BundleResource Include="Resources\icon-60.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon-40%403x.png" />
+    <BundleResource Include="Resources\icon-60%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon-60.png" />
+    <BundleResource Include="Resources\icon-64.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon-60%403x.png" />
+    <BundleResource Include="Resources\icon-72%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon-64.png" />
+    <BundleResource Include="Resources\icon-120.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon-72%402x.png" />
+    <BundleResource Include="Resources\icon-152.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon-120.png" />
+    <BundleResource Include="Resources\icon-Amazon.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon-152.png" />
+    <BundleResource Include="Resources\icon-Small%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon-Amazon.png" />
+    <BundleResource Include="Resources\icon-Small-40.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon-Small%403x.png" />
+    <BundleResource Include="Resources\icon-Small-40%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon-Small-40.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon-Small-40%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon-Small-40%403x.png" />
+    <BundleResource Include="Resources\icon-Small-40%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\githubicon.png" />
