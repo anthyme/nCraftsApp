@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NCrafts.App.About.AboutView"
              Title="About">
 
-  <CarouselPage.Children>
-    <ContentPage>
-      <StackLayout>
-        <StackLayout Padding="5,20,5,5" VerticalOptions="FillAndExpand">
+  <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+    <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+      <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+        <StackLayout Padding="5,20,5,5">
           <Label Text="Functionnalities" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
           <StackLayout Padding="75,0,75,3">
             <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" />
@@ -36,15 +36,8 @@
             <Image Source="twittericon.png" />
           </StackLayout>
         </StackLayout>
-        <StackLayout Padding="5,5,10,10" HorizontalOptions="End" VerticalOptions="End">
-          <Label Text="Swipe&#10;to the right" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" ></Label>
-        </StackLayout>
-      </StackLayout>
-    </ContentPage>
-
-    <ContentPage>
-      <StackLayout>
-        <StackLayout Padding="5,20,5,5" VerticalOptions="FillAndExpand">
+        
+        <StackLayout Padding="5,20,5,5" >
           <Label Text="NCRAFTS" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
           <StackLayout Padding="75,0,75,3">
             <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" />
@@ -57,12 +50,8 @@
             <Label Text="&#9;Created by developers for developers, nCrafts is an ephemeral learning ground for professional developers who care for quality code and bettering their practices." VerticalOptions="Center" />
           </StackLayout>
         </StackLayout>
-      </StackLayout>
-    </ContentPage>
-
-    <ContentPage>
-      <StackLayout>
-        <StackLayout Padding="5,20,5,5" VerticalOptions="FillAndExpand">
+        
+        <StackLayout Padding="5,20,5,5" >
           <Label Text="VISEO" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
           <StackLayout Padding="75,0,75,3">
             <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" />
@@ -82,17 +71,13 @@
             <Label Text="&#9;If you are interested, we would like to get to know you better and see how we can collaborate." VerticalOptions="Center" />
           </StackLayout>
         </StackLayout>
-      </StackLayout>
-    </ContentPage>
 
-    <ContentPage>
-      <StackLayout>
-        <StackLayout Padding="5,20,5,5" VerticalOptions="FillAndExpand">
-          <Label Text="Curious?" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
+        <StackLayout Padding="5,20,5,5">
+          <Label Text="Curious about the app?" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
           <StackLayout Padding="75,0,75,3">
             <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" />
           </StackLayout>
-          <Image Source="xamarinicon.png" />
+          <!--<Image Source="xamarinicon.png" />-->
           <StackLayout Padding="10,10,10,0">
             <Label Text="&#9;Do you want to have a look behind the scenes of the nCrafts mobile application Build with Xamarin?" VerticalOptions="Center" />
           </StackLayout>
@@ -132,6 +117,6 @@
           </Button>
         </StackLayout>
       </StackLayout>
-    </ContentPage>
-  </CarouselPage.Children>
-</CarouselPage>
+    </ScrollView>
+  </StackLayout>
+</ContentPage>

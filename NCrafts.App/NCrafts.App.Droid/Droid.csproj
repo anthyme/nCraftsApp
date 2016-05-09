@@ -160,6 +160,7 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SplashScreen.cs" />
+    <Compile Include="TimeZoneInfoProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using NCrafts.App.Business.Common.Database.Data;
+using NCrafts.App.Business.Common.Infrastructure;
 using NCrafts.App.Business.Core;
 using NCrafts.App.Business.Core.Data;
 using SQLite.Net;
@@ -14,13 +16,16 @@ namespace NCrafts.App.Business.Common.Database
     public class SQLDatabase
     {
         private readonly SQLiteConnection _myDb;
-        public bool WasInstalled { get; private set; }
+        private readonly TimeZoneInfo conferenceTimeZone;
+
+        public bool WasInstalled { get; }
 
         public SQLDatabase()
         {
             var dataBasePath = Path.Combine(DependencyService.Get<IFileHandler>().GetFolderPath(), "myDataBase.db");
             WasInstalled = DependencyService.Get<IFileHandler>().IsFileExist(dataBasePath);
             _myDb = new SQLiteConnection(DependencyService.Get<ISQLitePlatform>(), dataBasePath);
+            conferenceTimeZone = DependencyService.Get<ITimeZoneInfoProvider>().Get();
             CreateTable();
         }
 
@@ -95,8 +100,8 @@ namespace NCrafts.App.Business.Common.Database
                     Title = x.Title,
                     Description = x.Description,
                     Room = x.Room.Name,
-                    Start = x.Interval.StartDate.ToLocalTime(),
-                    End = x.Interval.EndDate.ToLocalTime(),
+                    Start = x.Interval.StartDate,
+                    End = x.Interval.EndDate,
                     IsRegister = x.IsRegister,
                     DSpeakers = speakers.Where(dspeaker => x.Speakers.Any(speakerSession => speakerSession.ToString() == dspeaker.IdString)).ToList(),
                     Tags = tags.Where(dtag => x.Tags.Any(tagSession => tagSession.Title == dtag.Title)).ToList()
@@ -173,7 +178,7 @@ namespace NCrafts.App.Business.Common.Database
                      Id = new SessionId(x.IdString),
                      Title = x.Title,
                      Description = x.Description,
-                     Interval = new TimeSlot { StartDate = x.Start, EndDate = x.End },
+                     Interval = new TimeSlot { StartDate = ConvertDatabaseToApp(x.Start), EndDate = ConvertDatabaseToApp(x.End) },
                      IsRegister = x.IsRegister,
                      Room = new Room { Name = x.Room },
                      SessionsConflit = new List<Session>(),
@@ -187,6 +192,12 @@ namespace NCrafts.App.Business.Common.Database
             dataSourceRepository.Retreive().Sessions = sessions;
             dataSourceRepository.Retreive().Tags = tagMap.Values.ToList();
             dataSourceRepository.Retreive().Speakers = speakerMap.Values.ToList();
+        }
+
+        private DateTime ConvertDatabaseToApp(DateTime dateTime)
+        {
+            var utc = DateTime.SpecifyKind(dateTime, DateTimeKind.Utc);
+            return conferenceTimeZone == null ? utc.AddHours(2) : TimeZoneInfo.ConvertTime(utc, conferenceTimeZone);
         }
 
         private static void ResolveLinkingSession(IEnumerable<Session> sessions, IReadOnlyDictionary<string, Speaker> speakerMap, IReadOnlyDictionary<string, Tag> tagMap)

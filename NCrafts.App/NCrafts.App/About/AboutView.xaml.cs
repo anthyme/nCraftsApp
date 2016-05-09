@@ -2,11 +2,11 @@
 
 namespace NCrafts.App.About
 {
-    public partial class AboutView : CarouselPage
+    public partial class AboutView : ContentPage
     {
         public AboutView()
         {
-            NavigationPage.SetHasNavigationBar(this, false);
+            //NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
         }
     }
