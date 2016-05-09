@@ -22,6 +22,7 @@ namespace NCrafts.App.iOS
 
             global::Xamarin.Forms.Forms.Init();
             Xamarin.Behaviors.Infrastructure.Init();
+            Xamarin.FormsMaps.Init();
             ImageCircleRenderer.Init();
             LoadApplication(new Common.Infrastructure.App());
             return base.FinishedLaunching(app, options);

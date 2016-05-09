@@ -22,7 +22,7 @@
           </ImageCell>-->
           <ViewCell>
             <StackLayout Padding="5,5,5,5" Orientation="Horizontal" Spacing="10">
-              <abstractions:CircleImage Source="{Binding ProfilPicture}" HeightRequest="75" Aspect="AspectFill" />
+              <abstractions:CircleImage Source="{Binding ProfilPicture}" HeightRequest="75" WidthRequest="75" Aspect="Fill" />
               <Label Text="{Binding Name}" LineBreakMode="TailTruncation" FontSize="18" FontAttributes="Bold" VerticalTextAlignment="Center" />
             </StackLayout>
             <behaviors:Interaction.Behaviors>
