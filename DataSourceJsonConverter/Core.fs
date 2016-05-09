@@ -7,7 +7,22 @@ open System.Text.RegularExpressions
 open NCrafts.App.Business.Common.JsonSerializer.Data
 
 let sessionUrl = "http://ncrafts.io/api/sessions.json"
-type Sessions = JsonProvider<"http://ncrafts.io/api/sessions.json">
+type Sessions = JsonProvider<"""[{
+        "id": "nc16-cth01",
+        "event": "ncrafts2016",
+        "format": "keynote",
+        "durationMinutes": 60,
+        "startTime": "2016-05-13T15:00Z",
+        "room": "keynote",
+        "title": "A Hundred Times....",
+        "abstract": "Gently make haste, of Labour not afraid;\nA hundred times consider what you've said:\nPolish, repolish, every Colour lay,\nAnd sometimes add; but oft'ner take away.\nBoileau -  Art Poétique\n\nIt's mainstream nowadays: everyone is Agile. But what does it mean to be Agile? It means opting for direct communication and collaboration, embracing change, striving for simplicity.. It also means fostering technical excellence, lest agile become fragile.\n\nNow, to cultivate excellence, and respond in a better way to the customer's constraints and requests, we must learn. Learn about what? About that which schools -- engineering and other schools -- do not teach: we must learn our developer craft. This is where the fashion of the day disappears, and the old habits reappear. At work, one learns very slowly, and lessons, inasmuch as one is ready to listen to them, are expensive. Besides, the goal is not to learn, but to make. \n\nAnd yet, where else could we be learning? Not in school, not in one's room, but on our project, with our team, everyday. Why is it difficult? There's no shortage of information.  After all, do you know any development practice that isn't fully described on the internet?\n\n \nBut in the workplace the mental models -- not to mention prejudices -- die hard: specialization, individual performance, process:  IT work is a factory!\n\nThe fact that our projects, agile or not, invariably end up being rushed and dashed, thus stopping us from taking the time to learn and get better at our craft, is undoubtedly the most remarkable irony of this industry. It's the same old story of the developers not having time to test their code, having all those bugs to fix! \n\nLearning to progress in a continuous way with our team is both simple and difficult. Simple, because agreed-upon standard practices have been there ever since there were development teams. These practices are easy to put in place. And the difficult thing is that you have to decide to so first. And why is that hard?  Because a change of models is necessary:  these practices are not focused on process, tasks, roles, but on feedback, on the diffusion of know-how, and cultivating social skills. Farewell software `factory`!\n\nIn this keynote, I will throw flares on the path of excellence, sharing about what I have been observing in the developer trade for more than two decades.",
+        "tags": [
+            "Life",
+            "Craftsmanship",
+            "Practices"
+        ],
+        "cospeakers": []
+    }]""">
 
 let speakerUrl = "http://ncrafts.io/api/speakers.json"
 type Speakers = JsonProvider<"http://ncrafts.io/api/speakers.json">
@@ -20,12 +35,12 @@ let mapSession (findSpeaker:FindSpeaker) (session:Sessions.Root) =
     mapped.Details             <- session.Abstract
     mapped.DurationInMinutes    <- session.DurationMinutes
     mapped.Id                   <- session.Id
-//    mapped.Place                <- session.??
+    mapped.Place                <- session.Room
     mapped.Tags                 <- session.Tags
     mapped.Title                <- session.Title
-//    mapped.Type                 <- session.??
+    mapped.Type                 <- session.Format
     mapped.SpeakersId <- new ResizeArray<string>(match (findSpeaker session.Id) with | Some x  -> [x.Id] | _ -> [])
-    mapped.StartTime <- match session.StartTime with | Some date -> date.ToString() | None -> null
+    mapped.StartTime <- session.StartTime.ToString("o")
     mapped
 
 let mapSpeakerSession (findSpeaker:FindSpeaker) (session:Speakers.Session) = 
