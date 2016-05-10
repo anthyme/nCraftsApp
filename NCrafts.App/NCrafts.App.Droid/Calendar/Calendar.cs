@@ -1,8 +1,10 @@
 using System;
 using Android;
 using Android.Content;
+using Android.Content.PM;
 using Android.OS;
 using Android.Provider;
+using Android.Support.V4.App;
 using NCrafts.App.Business.Common.Calendar;
 using NCrafts.App.Business.Sessions.Query;
 using NCrafts.App.Droid.Calendar;
@@ -18,36 +20,36 @@ namespace NCrafts.App.Droid.Calendar
 {
     public class Calendar : ICalendar
     {
-        private readonly long calId = -1;
+        private long calId = -1;
         private const int NcraftsColor = 544132;
         private bool _isAllow;
         private const string permissionCalendarRead = Manifest.Permission.ReadCalendar;
         private const string permissionCalendarWrite = Manifest.Permission.WriteCalendar;
 
-
-        private void CalendarPermission()
-        {
-            if ((int)Build.VERSION.SdkInt < 23)
-                _isAllow = true;
-            else
-            {
-            }
-        }
-
-
-        // TODO: Check calendar may have some throwable errors
         public Calendar()
         {
             CalendarPermission();
-            if (!_isAllow)
-                return;
+        }
+
+        /// TODO: Check for a snackbar api 23
+        private void CalendarPermission()
+        {
+            if ((int)Build.VERSION.SdkInt < 23 ||
+                (ActivityCompat.CheckSelfPermission(Android.App.Application.Context, permissionCalendarWrite) ==
+                    (int)Permission.Granted &&
+                 ActivityCompat.CheckSelfPermission(Android.App.Application.Context, permissionCalendarRead) ==
+                    (int)Permission.Granted))
+                ActivateCalendar();
+        }
+
+        private void ActivateCalendar()
+        {
+            _isAllow = true;
 
             var calendarsUri = CalendarContract.Calendars.ContentUri;
             string[] calendarsProjection =
             {
-                CalendarsConst.Id,
-                CalendarsConst.IsPrimary,
-                CalendarsConst.AccountType
+                CalendarsConst.Id, CalendarsConst.IsPrimary, CalendarsConst.AccountType
             };
             var cursor = Forms.Context.ContentResolver.Query(calendarsUri, calendarsProjection, null, null, null);
             while (cursor.MoveToNext())
@@ -55,8 +57,9 @@ namespace NCrafts.App.Droid.Calendar
                 var idIndex = cursor.GetColumnIndex(CalendarsConst.Id);
                 var primaryIndex = cursor.GetColumnIndex(CalendarsConst.IsPrimary);
                 var accountTypeIndex = cursor.GetColumnIndex(CalendarsConst.AccountType);
-                if ((primaryIndex != -1 && cursor.GetString(primaryIndex) == "1") ||
-                    (accountTypeIndex != -1 && cursor.GetString(accountTypeIndex) != "LOCAL" && cursor.GetString(1) == "1"))
+                if ((primaryIndex != -1 && cursor.GetString(primaryIndex) == "1")
+                    || (accountTypeIndex != -1 && cursor.GetString(accountTypeIndex) != "LOCAL"
+                    && cursor.GetString(1) == "1"))
                 {
                     calId = cursor.GetLong(idIndex);
                     break;
