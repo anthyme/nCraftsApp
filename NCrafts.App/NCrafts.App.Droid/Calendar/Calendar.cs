@@ -1,5 +1,7 @@
 using System;
+using Android;
 using Android.Content;
+using Android.OS;
 using Android.Provider;
 using NCrafts.App.Business.Common.Calendar;
 using NCrafts.App.Business.Sessions.Query;
@@ -18,10 +20,28 @@ namespace NCrafts.App.Droid.Calendar
     {
         private readonly long calId = -1;
         private const int NcraftsColor = 544132;
+        private bool _isAllow;
+        private const string permissionCalendarRead = Manifest.Permission.ReadCalendar;
+        private const string permissionCalendarWrite = Manifest.Permission.WriteCalendar;
+
+
+        private void CalendarPermission()
+        {
+            if ((int)Build.VERSION.SdkInt < 23)
+                _isAllow = true;
+            else
+            {
+            }
+        }
+
 
         // TODO: Check calendar may have some throwable errors
         public Calendar()
         {
+            CalendarPermission();
+            if (!_isAllow)
+                return;
+
             var calendarsUri = CalendarContract.Calendars.ContentUri;
             string[] calendarsProjection =
             {
@@ -58,7 +78,7 @@ namespace NCrafts.App.Droid.Calendar
 
         public void SetSessionInCalendar(SessionCalendar session)
         {
-            if (calId == -1)
+            if (!_isAllow || calId == -1)
                 return;
             var eventValues = new ContentValues();
 
@@ -76,7 +96,7 @@ namespace NCrafts.App.Droid.Calendar
 
         public void DeleteSessionInCalendar(SessionCalendar session)
         {
-            if (calId == -1)
+            if (!_isAllow || calId == -1)
                 return;
             var eventUri = CalendarContract.Events.ContentUri;
             string[] eventsProjection =

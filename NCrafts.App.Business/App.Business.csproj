@@ -45,6 +45,7 @@
     <Compile Include="Common\Infrastructure\DependencyConfigurator.cs" />
     <Compile Include="Common\Infrastructure\Fx\EnumerableExtension.cs" />
     <Compile Include="Common\Infrastructure\Fx\Grouping.cs" />
+    <Compile Include="Common\Infrastructure\ITimeZoneInfoProvider.cs" />
     <Compile Include="Common\JsonSerializer\Converter.cs" />
     <Compile Include="Common\JsonSerializer\Data\AvatarModel.cs" />
     <Compile Include="Common\JsonSerializer\Data\ConfModel.cs" />
