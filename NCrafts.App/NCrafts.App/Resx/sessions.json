@@ -88,7 +88,7 @@
     "Tags": [ "Design", "Architecture" ]
   },
   {
-    "SpeakersId": [ "florentpellet" ],
+    "SpeakersId": [ "florentpellet", "jeanhelou" ],
     "Details": "Try basics of EventSourcing and CQRS by yourself with proposed koans, which will guide you through different concepts step by step.\nThis session will help you understand it is not so hard, and have support from us to help you make the **'mind shift'** (required if you are really too much used to traditional architectures ;))\nFor this session, you will need to bring your laptop with your favorite developement environment ready (including ability to run unit tests). We propose these koans in PHP 5+, Java 8, C# 6, JavaScript (NodeJS).",
     "Id": "nc16-fpe01",
     "Type": "lab",
@@ -110,7 +110,7 @@
     "Tags": [ "Life", "Craftsmanship" ]
   },
   {
-    "SpeakersId": [ "pablopernot" ],
+    "SpeakersId": [ "pablopernot", "bquinchon" ],
     "Details": "Based on the Lego/cynefin workshop (http://areyouagile.com/2013/04/cynefin-et-son-lego-game/, http://www.agile42.com/en/blog/2011/12/25/cynefin-lego-game/), this workshop is about knowing with which system you are dealing with, and what kind of answers you should think about depending on the context.",
     "Id": "nc16-ppe02",
     "Type": "lab",
@@ -154,7 +154,7 @@
     "Tags": [ "DevOps", "Practices", "Tools" ]
   },
   {
-    "SpeakersId": [ "CedricRup" ],
+    "SpeakersId": [ "CedricRup", "jak78", "ToF_" ],
     "Details": "Tests are your best assets to build your applications.  \nUsing **Behavior Driven Developement**, your team find examples that describe the functionality your users want. With the right DSL and tooling, these examples become acceptance tests, a feedback at the functionnality level.  \n\n**Test Driven Development** guides the developer towards code that works, code that can easily and safely be changed using the quick, precise feedback of unit tests.\n\n\nHow do we mix these two flavors of tests into the developer workflow? One answer is to use many Red/Green/Refactor TDD to make an acceptance pass, and to continue until all your examples  are handled. Big loops of acceptance tests made of fast TDD loops : this practice is known as **Double Loop TDD**.  \nDuring the session, you'll be practicing Double Loop TDD in a .NET environment, using Specflow and NUnit. You'll see how the two kind of tests articulates and how to harness their feedbacks.\n\n_Prerequisites_ :\n* Being acquainted with TDD\n* If you really want to get your hand dirty by yourself : Visual Studio 2015 with Specflow Extensions.\n* For others, we will use randori mode ;o)",
     "Id": "nc16-cru01",
     "Type": "lab",
@@ -176,7 +176,7 @@
     "Tags": [ "Design", "Architecture", "DDD" ]
   },
   {
-    "SpeakersId": [ "dlresende" ],
+    "SpeakersId": [ "dlresende", "aloyer" ],
     "Details": "Extreme Carpaccio is a funny coding game in which you need to slice a problem and implement the solution by small increments. How thin can you slice? How fast can you code to satisfy the market? Want to code using your beloved language in small teams? Come for the challenge.",
     "Id": "nc16-dle01",
     "Type": "lab",
@@ -242,7 +242,7 @@
     "Tags": [ "DevOps", "Fun" ]
   },
   {
-    "SpeakersId": [ "jeanhelou" ],
+    "SpeakersId": [ "jeanhelou", "florentpellet" ],
     "Details": "What if the complexity of a software was more about business than technology?\nWith this livecode, we'll show you a development method focused on business issues. No need for a specific programming languages or specific Framework.",
     "Id": "nc16-jhe01",
     "Type": "talk",
@@ -253,7 +253,7 @@
     "Tags": [ "Design", "Architecture", "DDD", "Code" ]
   },
   {
-    "SpeakersId": [ "jgrodziski" ],
+    "SpeakersId": [ "jgrodziski", "tpierrain" ],
     "Details": "Introduced by Eric Evans in 2004 via his `Blue Book`, Domain Driven Design (DDD) has received tremendous positive feedbacks from many developers & communities over the years. On the other hand, we have to admit that DDD has since not been widely used in the trenches or within most of our development projects... How can we explain such failure in its diffusion? Is DDD in itself difficult or is it just the way people used to present it which makes it hard to grasp and inaccessible?\nThrough our various (more or less successful ;-) experiences, we will try to highlight what DDD is using a simple and more accessible approach. The opportunity for us is to show you how helpful it can be for your day-to-day projects. Wouldn't be the perfect time for all of us to ease the DDD onboarding for beginners and to reboot DDD for experts?",
     "Id": "nc16-jgr01",
     "Type": "talk",

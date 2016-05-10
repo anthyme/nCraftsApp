@@ -35,11 +35,15 @@ type Sessions = JsonProvider<"""[{
 
 let speakerUrl = "http://ncrafts.io/api/speakers.json"
 type Speakers = JsonProvider<"http://ncrafts.io/api/speakers.json">
-type FindSpeaker = string[] -> string -> Speakers.Root option
+type FindSpeakerBySessionId = string[] -> string -> Speakers.Root option
+type FindSpeakerByName = string -> Speakers.Root option
 
 let save path json = File.WriteAllText (path, json)
 
-let mapSession (findSpeaker:FindSpeaker) (session:Sessions.Root) =
+let isSpeakerName (speaker:Speakers.Root) (name:string) = name.ToLower().Contains(speaker.FirstName.ToLower()) && name.ToLower().Contains(speaker.LastName.ToLower())
+
+
+let mapSession (findSpeakerBySessionId:FindSpeakerBySessionId) (findSpeakerByName:FindSpeakerByName) (session:Sessions.Root) =
     let mapped = new SessionModel()
     mapped.Details             <- session.Abstract
     mapped.DurationInMinutes    <- session.DurationMinutes
@@ -48,19 +52,22 @@ let mapSession (findSpeaker:FindSpeaker) (session:Sessions.Root) =
     mapped.Tags                 <- session.Tags
     mapped.Title                <- session.Title
     mapped.Type                 <- session.Format
-    let cospeakerNames = (if session.Cospeakers <> null then (session.Cospeakers |> Array.map (fun x -> x.Name)) else [||]) 
-    mapped.SpeakersId <- new ResizeArray<string>(match (findSpeaker cospeakerNames session.Id) with | Some x  -> [x.Id] | _ -> [])
+    let cospeakerNames = (if session.Cospeakers <> null then (session.Cospeakers |> Array.map (fun x -> x.Name)) else [||])
+    let speaker = (findSpeakerBySessionId cospeakerNames session.Id)
+    let coSpeakers = cospeakerNames |> Seq.filter (fun x->not (isSpeakerName (speaker.Value) x)) |> Seq.map findSpeakerByName |> List.ofSeq
+    let speakers = [speaker] @ coSpeakers |> List.choose id |> List.map (fun x -> x.Id)
+    mapped.SpeakersId <- new ResizeArray<string>(speakers)
     mapped.StartTime <- session.StartTime.ToString("o")
     mapped
 
-let mapSpeakerSession (findSpeaker:FindSpeaker) (session:Speakers.Session) = 
+let mapSpeakerSession (findSpeakerBySessionId:FindSpeakerBySessionId) (session:Speakers.Session) = 
     let mapped = new SessionModel()
     mapped.Details             <- session.Abstract
     mapped.DurationInMinutes   <- session.DurationMinutes
     mapped.Id                   <- session.Id
 //    mapped.Place                <- session.??
     let cospeakerNames = (if session.Cospeakers <> null then (session.Cospeakers |> Array.map (fun x -> x.Name)) else [||]) 
-    mapped.SpeakersId <- new ResizeArray<string>(match (findSpeaker cospeakerNames session.Id) with | Some x  -> [x.Id] | _ -> [])
+    mapped.SpeakersId <- new ResizeArray<string>(match (findSpeakerBySessionId cospeakerNames session.Id) with | Some x  -> [x.Id] | _ -> [])
     mapped.StartTime <- match session.StartTime with | Some date -> date.ToString() | None -> null
     mapped.Tags                 <- session.Tags
     mapped.Title                <- session.Title
@@ -95,7 +102,7 @@ let mapPicture rawPicture =
     if (result.Success) then "http://ncrafts.io/" + (string result.Groups.[1])
     else null
 
-let mapSpeaker  (findSpeaker:FindSpeaker) (speaker:Speakers.Root) =
+let mapSpeaker  (findSpeaker:FindSpeakerBySessionId) (speaker:Speakers.Root) =
     let mapped = new SpeakerModel()
     mapped.Avatar           <- new AvatarModel()
     mapped.Avatar.IconBig   <- mapPicture speaker.Photo
@@ -114,14 +121,18 @@ let mapSpeaker  (findSpeaker:FindSpeaker) (speaker:Speakers.Root) =
     mapped.Twitter      <- speaker.Twitter
     mapped
 
-let findSpeaker (speakers:Speakers.Root[]) (cospeakerNames:string[]) (sessionId:string) =
-    let isACoSpeaker (speaker:Speakers.Root) (cospeakerNames:string[]) = cospeakerNames |> Seq.exists (fun x -> x.ToLower().Contains(speaker.FirstName.ToLower()) && x.ToLower().Contains(speaker.LastName.ToLower()))
+
+let findSpeakerBySessionId (speakers:Speakers.Root[]) (cospeakerNames:string[]) (sessionId:string) =
+    let isACoSpeaker (speaker:Speakers.Root) (cospeakerNames:string[]) = cospeakerNames |> Seq.exists (isSpeakerName speaker)
     let isSpeakerSession (speaker:Speakers.Root) = (not (isACoSpeaker speaker cospeakerNames)) && (speaker.Sessions |> Seq.exists (fun x -> x.Id = sessionId))
     speakers |> Seq.tryFind isSpeakerSession
 
-let extractSessions findSpeaker =
+
+let findSpeakerByName (speakers:Speakers.Root[]) (speakerName:string) = speakers |> Seq.tryFind (fun speaker -> isSpeakerName speaker speakerName)
+
+let extractSessions findSpeakerBySessionId findSpeakerByName =
     Sessions.Load(sessionUrl)
-    |> Seq.map (mapSession findSpeaker)
+    |> Seq.map (mapSession findSpeakerBySessionId findSpeakerByName)
     |> JsonConvert.SerializeObject
     |> save "sessions.json"
 
@@ -134,6 +145,6 @@ let extractSpeakers findSpeaker =
 let extractData() =
     let sessions = Sessions.Load(sessionUrl)
     let speakers = Speakers.Load(speakerUrl)
-    let findSpeaker' = findSpeaker speakers
-    extractSessions findSpeaker'
-    extractSpeakers findSpeaker'
+    let findSpeakerBySessionId' = findSpeakerBySessionId speakers
+    extractSessions findSpeakerBySessionId' (findSpeakerByName speakers)
+    extractSpeakers findSpeakerBySessionId'
