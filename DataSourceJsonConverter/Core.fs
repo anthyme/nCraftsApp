@@ -21,12 +21,21 @@ type Sessions = JsonProvider<"""[{
             "Craftsmanship",
             "Practices"
         ],
-        "cospeakers": []
+        "cospeakers": [{
+                "name": "Jean Helou",
+                "link": "/speaker/jeanhelou",
+                "id": null
+            },
+            {
+                "name": "Clement Bouillier",
+                "link": "/speaker/clem_bouillier",
+                "id": null
+            }]
     }]""">
 
 let speakerUrl = "http://ncrafts.io/api/speakers.json"
 type Speakers = JsonProvider<"http://ncrafts.io/api/speakers.json">
-type FindSpeaker = string -> Speakers.Root option
+type FindSpeaker = string[] -> string -> Speakers.Root option
 
 let save path json = File.WriteAllText (path, json)
 
@@ -39,7 +48,8 @@ let mapSession (findSpeaker:FindSpeaker) (session:Sessions.Root) =
     mapped.Tags                 <- session.Tags
     mapped.Title                <- session.Title
     mapped.Type                 <- session.Format
-    mapped.SpeakersId <- new ResizeArray<string>(match (findSpeaker session.Id) with | Some x  -> [x.Id] | _ -> [])
+    let cospeakerNames = (if session.Cospeakers <> null then (session.Cospeakers |> Array.map (fun x -> x.Name)) else [||]) 
+    mapped.SpeakersId <- new ResizeArray<string>(match (findSpeaker cospeakerNames session.Id) with | Some x  -> [x.Id] | _ -> [])
     mapped.StartTime <- session.StartTime.ToString("o")
     mapped
 
@@ -49,7 +59,8 @@ let mapSpeakerSession (findSpeaker:FindSpeaker) (session:Speakers.Session) =
     mapped.DurationInMinutes   <- session.DurationMinutes
     mapped.Id                   <- session.Id
 //    mapped.Place                <- session.??
-    mapped.SpeakersId <- new ResizeArray<string>(match (findSpeaker session.Id) with | Some x  -> [x.Id] | _ -> [])
+    let cospeakerNames = (if session.Cospeakers <> null then (session.Cospeakers |> Array.map (fun x -> x.Name)) else [||]) 
+    mapped.SpeakersId <- new ResizeArray<string>(match (findSpeaker cospeakerNames session.Id) with | Some x  -> [x.Id] | _ -> [])
     mapped.StartTime <- match session.StartTime with | Some date -> date.ToString() | None -> null
     mapped.Tags                 <- session.Tags
     mapped.Title                <- session.Title
@@ -103,8 +114,9 @@ let mapSpeaker  (findSpeaker:FindSpeaker) (speaker:Speakers.Root) =
     mapped.Twitter      <- speaker.Twitter
     mapped
 
-let findSpeaker (speakers:Speakers.Root[]) (sessionId:string) =
-    let isSpeakerSession (speaker:Speakers.Root) = speaker.Sessions |> Seq.exists (fun x -> x.Id = sessionId)
+let findSpeaker (speakers:Speakers.Root[]) (cospeakerNames:string[]) (sessionId:string) =
+    let isACoSpeaker (speaker:Speakers.Root) (cospeakerNames:string[]) = cospeakerNames |> Seq.exists (fun x -> x.ToLower().Contains(speaker.FirstName.ToLower()) && x.ToLower().Contains(speaker.LastName.ToLower()))
+    let isSpeakerSession (speaker:Speakers.Root) = (not (isACoSpeaker speaker cospeakerNames)) && (speaker.Sessions |> Seq.exists (fun x -> x.Id = sessionId))
     speakers |> Seq.tryFind isSpeakerSession
 
 let extractSessions findSpeaker =

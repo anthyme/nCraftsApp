@@ -154,7 +154,7 @@
     "Tags": [ "DevOps", "Practices", "Tools" ]
   },
   {
-    "SpeakersId": [ "jak78" ],
+    "SpeakersId": [ "CedricRup" ],
     "Details": "Tests are your best assets to build your applications.  \nUsing **Behavior Driven Developement**, your team find examples that describe the functionality your users want. With the right DSL and tooling, these examples become acceptance tests, a feedback at the functionnality level.  \n\n**Test Driven Development** guides the developer towards code that works, code that can easily and safely be changed using the quick, precise feedback of unit tests.\n\n\nHow do we mix these two flavors of tests into the developer workflow? One answer is to use many Red/Green/Refactor TDD to make an acceptance pass, and to continue until all your examples  are handled. Big loops of acceptance tests made of fast TDD loops : this practice is known as **Double Loop TDD**.  \nDuring the session, you'll be practicing Double Loop TDD in a .NET environment, using Specflow and NUnit. You'll see how the two kind of tests articulates and how to harness their feedbacks.\n\n_Prerequisites_ :\n* Being acquainted with TDD\n* If you really want to get your hand dirty by yourself : Visual Studio 2015 with Specflow Extensions.\n* For others, we will use randori mode ;o)",
     "Id": "nc16-cru01",
     "Type": "lab",
@@ -242,7 +242,7 @@
     "Tags": [ "DevOps", "Fun" ]
   },
   {
-    "SpeakersId": [ "florentpellet" ],
+    "SpeakersId": [ "jeanhelou" ],
     "Details": "What if the complexity of a software was more about business than technology?\nWith this livecode, we'll show you a development method focused on business issues. No need for a specific programming languages or specific Framework.",
     "Id": "nc16-jhe01",
     "Type": "talk",
@@ -253,7 +253,7 @@
     "Tags": [ "Design", "Architecture", "DDD", "Code" ]
   },
   {
-    "SpeakersId": [ "tpierrain" ],
+    "SpeakersId": [ "jgrodziski" ],
     "Details": "Introduced by Eric Evans in 2004 via his `Blue Book`, Domain Driven Design (DDD) has received tremendous positive feedbacks from many developers & communities over the years. On the other hand, we have to admit that DDD has since not been widely used in the trenches or within most of our development projects... How can we explain such failure in its diffusion? Is DDD in itself difficult or is it just the way people used to present it which makes it hard to grasp and inaccessible?\nThrough our various (more or less successful ;-) experiences, we will try to highlight what DDD is using a simple and more accessible approach. The opportunity for us is to show you how helpful it can be for your day-to-day projects. Wouldn't be the perfect time for all of us to ease the DDD onboarding for beginners and to reboot DDD for experts?",
     "Id": "nc16-jgr01",
     "Type": "talk",
