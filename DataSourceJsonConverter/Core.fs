@@ -66,7 +66,7 @@ let mapSession (findSpeakerBySessionId:FindSpeakerBySessionId) (findSpeakerByNam
     mapped.DurationInMinutes <- match session.Id with
                                 | "nc16-sma01" -> 45
                                 | "nc16-lke01" -> 45
-                                | "nc16-gyo01" -> 105
+                                | "nc16-gyo02" -> 105
                                 | _ -> session.DurationMinutes
     mapped
 

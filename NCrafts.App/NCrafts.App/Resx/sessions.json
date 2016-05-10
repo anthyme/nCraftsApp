@@ -337,7 +337,7 @@
     "Place": "Sagres",
     "Title": "Private Eye",
     "StartTime": "2016-05-13T09:45:00.0000000Z",
-    "DurationInMinutes": 105,
+    "DurationInMinutes": 45,
     "Tags": [ "Practices", "Tools", "Code" ]
   },
   {
@@ -348,7 +348,7 @@
     "Place": "Okult",
     "Title": "Private Eye Workshop",
     "StartTime": "2016-05-13T12:45:00.0000000Z",
-    "DurationInMinutes": 45,
+    "DurationInMinutes": 105,
     "Tags": [ "Practices", "Tools", "Code" ]
   },
   {
