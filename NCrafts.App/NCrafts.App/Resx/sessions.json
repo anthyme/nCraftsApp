@@ -73,7 +73,7 @@
     "Place": "keynote",
     "Title": "Cognitive Cynefin: How language and bias keep us complicated",
     "StartTime": "2016-05-13T07:30:00.0000000Z",
-    "DurationInMinutes": 60,
+    "DurationInMinutes": 45,
     "Tags": [ "Agile", "Practices", "Design", "People" ]
   },
   {
@@ -149,7 +149,7 @@
     "Type": "talk",
     "Place": "Orval",
     "Title": "Docker on Windows, why didn't we have that from the beginning.",
-    "StartTime": "2016-05-12T09:45:00.0000000Z",
+    "StartTime": "2016-05-13T09:45:00.0000000Z",
     "DurationInMinutes": 45,
     "Tags": [ "DevOps", "Practices", "Tools" ]
   },
@@ -171,7 +171,7 @@
     "Type": "talk",
     "Place": "Sagres",
     "Title": "Evil by design",
-    "StartTime": "2016-05-12T11:45:00.0000000Z",
+    "StartTime": "2016-05-12T13:45:00.0000000Z",
     "DurationInMinutes": 45,
     "Tags": [ "Design", "Architecture", "DDD" ]
   },
@@ -337,7 +337,7 @@
     "Place": "Sagres",
     "Title": "Private Eye",
     "StartTime": "2016-05-13T09:45:00.0000000Z",
-    "DurationInMinutes": 45,
+    "DurationInMinutes": 105,
     "Tags": [ "Practices", "Tools", "Code" ]
   },
   {
@@ -413,7 +413,7 @@
     "Type": "talk",
     "Place": "Orval",
     "Title": "Skills For Good Developers",
-    "StartTime": "2016-05-13T11:45:00.0000000Z",
+    "StartTime": "2016-05-13T13:45:00.0000000Z",
     "DurationInMinutes": 45,
     "Tags": [ "Practices", "People", "Craftsmanship" ]
   },
@@ -469,7 +469,7 @@
     "Place": "keynote",
     "Title": "The Long Road",
     "StartTime": "2016-05-12T07:30:00.0000000Z",
-    "DurationInMinutes": 60,
+    "DurationInMinutes": 45,
     "Tags": [ "Craftsmanship", "Life", "Practices" ]
   },
   {

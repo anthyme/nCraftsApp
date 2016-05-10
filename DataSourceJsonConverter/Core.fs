@@ -46,7 +46,6 @@ let isSpeakerName (speaker:Speakers.Root) (name:string) = name.ToLower().Contain
 let mapSession (findSpeakerBySessionId:FindSpeakerBySessionId) (findSpeakerByName:FindSpeakerByName) (session:Sessions.Root) =
     let mapped = new SessionModel()
     mapped.Details             <- session.Abstract
-    mapped.DurationInMinutes    <- session.DurationMinutes
     mapped.Id                   <- session.Id
     mapped.Place                <- session.Room
     mapped.Tags                 <- session.Tags
@@ -57,7 +56,18 @@ let mapSession (findSpeakerBySessionId:FindSpeakerBySessionId) (findSpeakerByNam
     let coSpeakers = cospeakerNames |> Seq.filter (fun x->not (isSpeakerName (speaker.Value) x)) |> Seq.map findSpeakerByName |> List.ofSeq
     let speakers = [speaker] @ coSpeakers |> List.choose id |> List.map (fun x -> x.Id)
     mapped.SpeakersId <- new ResizeArray<string>(speakers)
-    mapped.StartTime <- session.StartTime.ToString("o")
+
+    mapped.StartTime <- match session.Id with 
+                        | "nc16-jcl01" -> "2016-05-12T13:45:00.0000000Z"
+                        | "nc16-jmo01" -> "2016-05-13T09:45:00.0000000Z"
+                        | "nc16-hfa01" -> "2016-05-13T13:45:00.0000000Z"
+                        | _ -> session.StartTime.ToString("o")
+
+    mapped.DurationInMinutes <- match session.Id with
+                                | "nc16-sma01" -> 45
+                                | "nc16-lke01" -> 45
+                                | "nc16-gyo01" -> 105
+                                | _ -> session.DurationMinutes
     mapped
 
 let mapSpeakerSession (findSpeakerBySessionId:FindSpeakerBySessionId) (session:Speakers.Session) = 
