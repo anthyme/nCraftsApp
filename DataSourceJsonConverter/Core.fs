@@ -1,4 +1,5 @@
-﻿module Core
+﻿//Quick and dirty script that handle the datas problems of the original json
+module Core
 
 open FSharp.Data
 open Newtonsoft.Json
@@ -42,47 +43,50 @@ let save path json = File.WriteAllText (path, json)
 
 let isSpeakerName (speaker:Speakers.Root) (name:string) = name.ToLower().Contains(speaker.FirstName.ToLower()) && name.ToLower().Contains(speaker.LastName.ToLower())
 
-
 let mapSession (findSpeakerBySessionId:FindSpeakerBySessionId) (findSpeakerByName:FindSpeakerByName) (session:Sessions.Root) =
-    let mapped = new SessionModel()
-    mapped.Details             <- session.Abstract
-    mapped.Id                   <- session.Id
-    mapped.Place                <- session.Room
-    mapped.Tags                 <- session.Tags
-    mapped.Title                <- session.Title
-    mapped.Type                 <- session.Format
-    let cospeakerNames = (if session.Cospeakers <> null then (session.Cospeakers |> Array.map (fun x -> x.Name)) else [||])
-    let speaker = (findSpeakerBySessionId cospeakerNames session.Id)
-    let coSpeakers = cospeakerNames |> Seq.filter (fun x->not (isSpeakerName (speaker.Value) x)) |> Seq.map findSpeakerByName |> List.ofSeq
-    let speakers = [speaker] @ coSpeakers |> List.choose id |> List.map (fun x -> x.Id)
-    mapped.SpeakersId <- new ResizeArray<string>(speakers)
+    let speakersId = 
+        let cospeakerNames = (if session.Cospeakers <> null then (session.Cospeakers |> Array.map (fun x -> x.Name)) else [||])
+        let speaker = (findSpeakerBySessionId cospeakerNames session.Id)
+        let coSpeakers = cospeakerNames |> Seq.filter (fun x->not (isSpeakerName (speaker.Value) x)) |> Seq.map findSpeakerByName |> List.ofSeq
+        let speakers = [speaker] @ coSpeakers |> List.choose id |> List.map (fun x -> x.Id)
+        new ResizeArray<string>(speakers)
+    let startTime = 
+        match session.Id with 
+        | "nc16-jcl01" -> "2016-05-12T13:45:00.0000000Z"
+        | "nc16-jmo01" -> "2016-05-13T09:45:00.0000000Z"
+        | "nc16-hfa01" -> "2016-05-13T13:45:00.0000000Z"
+        | _ -> session.StartTime.ToString("o")
+    let durationInMinutes =
+        match session.Id with
+        | "nc16-sma01" -> 45
+        | "nc16-lke01" -> 45
+        | "nc16-gyo02" -> 105
+        | _ -> session.DurationMinutes
 
-    mapped.StartTime <- match session.Id with 
-                        | "nc16-jcl01" -> "2016-05-12T13:45:00.0000000Z"
-                        | "nc16-jmo01" -> "2016-05-13T09:45:00.0000000Z"
-                        | "nc16-hfa01" -> "2016-05-13T13:45:00.0000000Z"
-                        | _ -> session.StartTime.ToString("o")
-
-    mapped.DurationInMinutes <- match session.Id with
-                                | "nc16-sma01" -> 45
-                                | "nc16-lke01" -> 45
-                                | "nc16-gyo02" -> 105
-                                | _ -> session.DurationMinutes
-    mapped
+    new SessionModel 
+        (Details           = session.Abstract,
+         Id                = session.Id,
+         Place             = session.Room,
+         Tags              = session.Tags,
+         Title             = session.Title,
+         Type              = session.Format,
+         SpeakersId        = speakersId,
+         StartTime         = startTime,
+         DurationInMinutes = durationInMinutes)
+    
 
 let mapSpeakerSession (findSpeakerBySessionId:FindSpeakerBySessionId) (session:Speakers.Session) = 
-    let mapped = new SessionModel()
-    mapped.Details             <- session.Abstract
-    mapped.DurationInMinutes   <- session.DurationMinutes
-    mapped.Id                   <- session.Id
-//    mapped.Place                <- session.??
-    let cospeakerNames = (if session.Cospeakers <> null then (session.Cospeakers |> Array.map (fun x -> x.Name)) else [||]) 
-    mapped.SpeakersId <- new ResizeArray<string>(match (findSpeakerBySessionId cospeakerNames session.Id) with | Some x  -> [x.Id] | _ -> [])
-    mapped.StartTime <- match session.StartTime with | Some date -> date.ToString() | None -> null
-    mapped.Tags                 <- session.Tags
-    mapped.Title                <- session.Title
-//    mapped.Type                 <- session.??
-    mapped
+    let speakersId = 
+        let cospeakerNames = (if session.Cospeakers <> null then (session.Cospeakers |> Array.map (fun x -> x.Name)) else [||])
+        new ResizeArray<string>(match (findSpeakerBySessionId cospeakerNames session.Id) with | Some x  -> [x.Id] | _ -> [])
+    new SessionModel
+        (SpeakersId        = speakersId,
+         StartTime         = (match session.StartTime with | Some date -> date.ToString() | None -> null),
+         Details           = session.Abstract,
+         DurationInMinutes = session.DurationMinutes,
+         Id                = session.Id,
+         Tags              = session.Tags,
+         Title             = session.Title)
 
 let mapGithub rawGithub = 
     let (|Name|ApiPage|None|) (input:string) =
@@ -113,30 +117,23 @@ let mapPicture rawPicture =
     else null
 
 let mapSpeaker  (findSpeaker:FindSpeakerBySessionId) (speaker:Speakers.Root) =
-    let mapped = new SpeakerModel()
-    mapped.Avatar           <- new AvatarModel()
-    mapped.Avatar.IconBig   <- mapPicture speaker.Photo
-    mapped.Avatar.IconSmall <- mapPicture speaker.Photo
-//    mapped.Books        <- speaker.??
-    mapped.Company      <- match speaker.Company with | Some x -> x | None -> null
-    mapped.Id           <- speaker.Id
-    mapped.Github       <- mapGithub speaker.Github 
-    mapped.Details      <- speaker.Bio
-    mapped.Languages    <- new ResizeArray<string>(speaker.Languages.Strings)
-    mapped.FirstName    <- speaker.FirstName 
-    mapped.LastName     <- speaker.LastName
-    mapped.SessionsId   <- new ResizeArray<string>(speaker.Sessions |> Seq.map (mapSpeakerSession findSpeaker) |> Seq.map (fun x -> x.Id))
-    mapped.Site         <- match speaker.Site with | Some x -> x | None -> null 
-//    mapped.Slides       <- speaker.??
-    mapped.Twitter      <- speaker.Twitter
-    mapped
-
+    new SpeakerModel 
+        (Avatar     = new AvatarModel(IconBig = mapPicture speaker.Photo, IconSmall = mapPicture speaker.Photo),
+         Languages  = new ResizeArray<string>(speaker.Languages.Strings),
+         SessionsId = new ResizeArray<string>(speaker.Sessions |> Seq.map (mapSpeakerSession findSpeaker) |> Seq.map (fun x -> x.Id)),
+         Site       = (match speaker.Site with | Some x -> x | None -> null),
+         Company    = (match speaker.Company with | Some x -> x | None -> null),
+         Github     = mapGithub speaker.Github,
+         Id         = speaker.Id,
+         Details    = speaker.Bio,
+         FirstName  = speaker.FirstName,
+         LastName   = speaker.LastName,
+         Twitter    = speaker.Twitter)
 
 let findSpeakerBySessionId (speakers:Speakers.Root[]) (cospeakerNames:string[]) (sessionId:string) =
     let isACoSpeaker (speaker:Speakers.Root) (cospeakerNames:string[]) = cospeakerNames |> Seq.exists (isSpeakerName speaker)
     let isSpeakerSession (speaker:Speakers.Root) = (not (isACoSpeaker speaker cospeakerNames)) && (speaker.Sessions |> Seq.exists (fun x -> x.Id = sessionId))
     speakers |> Seq.tryFind isSpeakerSession
-
 
 let findSpeakerByName (speakers:Speakers.Root[]) (speakerName:string) = speakers |> Seq.tryFind (fun speaker -> isSpeakerName speaker speakerName)
 
