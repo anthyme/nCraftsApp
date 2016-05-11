@@ -36,7 +36,7 @@
             <Image Source="twittericon.png" />
           </StackLayout>
         </StackLayout>
-        
+
         <StackLayout Padding="5,20,5,5" >
           <Label Text="NCRAFTS" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
           <StackLayout Padding="75,0,75,3">
@@ -50,7 +50,7 @@
             <Label Text="&#9;Created by developers for developers, nCrafts is an ephemeral learning ground for professional developers who care for quality code and bettering their practices." VerticalOptions="Center" />
           </StackLayout>
         </StackLayout>
-        
+
         <StackLayout Padding="5,20,5,5" >
           <Label Text="VISEO" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
           <StackLayout Padding="75,0,75,3">
@@ -69,6 +69,14 @@
           </StackLayout>
           <StackLayout Padding="10,10,10,0">
             <Label Text="&#9;If you are interested, we would like to get to know you better and see how we can collaborate." VerticalOptions="Center" />
+          </StackLayout>
+          <StackLayout Padding="10,10,10,0">
+            <Label Text="Contact us by mail" FontSize="14" TextColor="Blue" VerticalOptions="Center" HorizontalOptions="Center">
+              <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding OpenMailCommand}" >
+                </TapGestureRecognizer>
+              </Label.GestureRecognizers>
+            </Label>
           </StackLayout>
         </StackLayout>
 
